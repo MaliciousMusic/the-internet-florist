@@ -124,10 +124,10 @@ body {
     background: linear-gradient(#6c9bcf, #7fa8d5 var(--haut-tel));
   }
 
-  /* the name higher in the sky (owner 2026-10-26): 80 px under the toolbar's bottom, the pager between them, whatever the
-     phone's height (the sky goes on above the world) */
+  /* the name high in the sky (owner 2026-10-26, higher again 2026-10-27 once the toolbar went to the bottom): 44 px under
+     the screen's top edge, whatever the phone's height (the sky goes on above the world) */
   .monde:has(#frise-ancre) .nom-ciel {
-    top: calc(var(--entete-bas, 0px) + 80px - var(--haut-tel));
+    top: calc(env(safe-area-inset-top, 0px) + 44px - var(--haut-tel));
   }
 }
 

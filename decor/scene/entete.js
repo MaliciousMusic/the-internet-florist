@@ -1,10 +1,11 @@
 // entete.js: the header and the footer shared by the shop's pages (index.html, about.html, desktop.html, legal.html).
 //
 // - The header is a dock of round frosted-glass icons, drawn here in SVG: a vase with flowers (the bouquets of the day), a
-//   bud vase (the soliflores), a vase with a seal (the bouquets already sold), a screen with a vase (desktop.html: your bouquet
-//   on your computer, the video and the app to download), a sail (our collection on OpenSea) and an i (the About page). On the shop page the first three open and close their shelf under the header (one at a time; the
+//   bud vase (the soliflores), a screen with a vase (desktop.html: your bouquet on your computer, the video and the app to
+//   download) and an i (the About page); the bouquets already sold and our collection on OpenSea left the dock on
+//   2026-10-27 (owner). On the shop page the first two open and close their shelf over the dock (one at a time; the
 //   same icon again folds it): entete.js only keeps the icons' state and tells the page with the event "entete:rayon"
-//   (detail: "bouquets" | "soliflores" | "vendus" | null). On any other page they lead back to the shop, shelf open.
+//   (detail: "bouquets" | "soliflores" | null). On any other page they lead back to the shop, shelf open.
 // - The footer is a small pill at the bottom edge that unfolds a short summary of the legal notice with the links to
 //   legal.html (notice, terms of sale, privacy, the app's licence, accessibility) and folds it back (the pill, the
 //   cross, Escape or a click outside). It also holds the language switch: the same page in each language; a choice
@@ -47,11 +48,13 @@
       '<rect x="2.6" y="3.4" width="18.8" height="13" rx="1.9"/><path d="M8.6 20.6h6.8M12 16.4v4.2"/>' +
         '<path d="M10.5 10.6h3l-.45 3.1h-2.1z"/><path d="M12 10.6V8.3"/><circle cx="12" cy="7.2" r="1.25"/><path d="M12 9.4c.9-.1 1.6-.6 1.9-1.4-.9 0-1.6.5-1.9 1.4z"/>',
     ),
+    // a phone: an arrow into a tray (Belai Bureau to download)
+    telecharger: svg('<path d="M12 3.6v11"/><path d="M7.4 10.4 12 15l4.6-4.6"/><path d="M4.4 15.8v2.6c0 1.1.9 2 2 2h11.2c1.1 0 2-.9 2-2v-2.6"/>'),
     apropos: svg('<circle cx="12" cy="12" r="9.4"/><path d="M12 10.8v5.8"/><circle cx="12" cy="7.5" r=".9" fill="currentColor" stroke="none"/>'),
     plier: svg('<path d="M6 15l6-6 6 6"/>'),
     fermer: svg('<path d="M7 7l10 10M17 7 7 17"/>'),
   };
-  const SHELVES = ['bouquets', 'soliflores', 'vendus'].map((n) => [n, T.shelves[n]]);
+  const SHELVES = ['bouquets', 'soliflores'].map((n) => [n, T.shelves[n]]);
 
   // ---------- the header
   const head = document.createElement('header');
@@ -80,27 +83,21 @@
     el.innerHTML = ICONS[name];
     dock.append(el);
   }
-  // your bouquet on your computer: the how-to video and the desktop app (desktop.html)
+  // your bouquet on your computer: the how-to video and the desktop app (desktop.html); on a phone, the same page as the
+  // place to download Belai Bureau, the app that sets the widgets (owner, 2026-10-27), with a download icon
+  const phone = !matchMedia('(min-width: 900px) and (min-aspect-ratio: 4/3)').matches;
   const desk = document.createElement('a');
   desk.className = 'dock-bouton';
-  desk.href = `${P}desktop.html`;
-  desk.title = T.desktopTitle;
-  desk.setAttribute('aria-label', T.desktopLabel);
-  desk.innerHTML = ICONS.bureau;
+  desk.href = `${P}desktop.html${phone ? '#telecharger' : ''}`;
+  desk.title = phone ? T.appTitle : T.desktopTitle;
+  desk.setAttribute('aria-label', phone ? T.appLabel : T.desktopLabel);
+  desk.innerHTML = phone ? ICONS.telecharger : ICONS.bureau;
   if (I18N.page === 'desktop') desk.setAttribute('aria-current', 'page');
   dock.append(desk);
   const sep = document.createElement('span');
   sep.className = 'dock-sep';
   sep.setAttribute('aria-hidden', 'true');
   dock.append(sep);
-  const sea = document.createElement('a');
-  sea.className = 'dock-bouton';
-  sea.href = OPENSEA;
-  sea.target = '_blank';
-  sea.rel = 'noopener';
-  sea.title = T.openSeaTitle;
-  sea.setAttribute('aria-label', T.openSeaLabel);
-  sea.innerHTML = ICONS.opensea;
   const about = document.createElement('a');
   about.className = 'dock-bouton';
   about.href = `${P}about.html`;
@@ -108,7 +105,7 @@
   about.setAttribute('aria-label', T.about);
   about.innerHTML = ICONS.apropos;
   if (I18N.page === 'about') about.setAttribute('aria-current', 'page');
-  dock.append(sea, about);
+  dock.append(about);
   head.append(dock);
   document.body.prepend(head);
 

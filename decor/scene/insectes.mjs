@@ -110,8 +110,12 @@ async function start(clumpsOn) {
   const { Sprite, Assets } = await import(BASE + 'runtime/vendor/pixi-8.6.6.min.mjs');
   const zOf = (d) => F * (1 - d / D_REF);
 
-  // the canvases, from the back: over the far meadow, over the middle ground, three between the bouquet's boxes, in front
-  // of the bouquet; then the renderer's own canvas, the front layer, over the foreground
+  // On the frieze, the scene's one canvas (toile.mjs, decor/SPRITES.md, owner 2026-10-27): the insects are sprites of its
+  // stage, in its layers between the decor's (beyond the far slices, over the middle ground, between the bouquets' four
+  // depth groups, in front of them, and the front layer with the clumps), placed before it draws each frame.
+  const TOILE = FRISE ? await window.Frise.toile : null;
+  // otherwise the canvases, from the back: over the far meadow, over the middle ground, three between the bouquet's
+  // boxes, in front of the bouquet; then the renderer's own canvas, the front layer, over the foreground
   const mk = (z) => {
     const c = document.createElement('canvas');
     c.className = 'insectes';
@@ -119,32 +123,34 @@ async function start(clumpsOn) {
     c.setAttribute('aria-hidden', 'true');
     return c;
   };
-  const far = mk(4), mid = mk(6), between = [mk(), mk(), mk()], front = mk(8);
-  const layer = (src) => monde.querySelector(`img[data-src="${src}"]`);
-  if (FRISE) {
-    // the frieze's strips (frise.js): the far canvas over the slices beyond about 6 m, the middle one behind the pillars
-    const band = (id) => monde.querySelector(`[data-bande="${id}"]`);
-    (band('z6') || plane).after(far);
-    mid.style.zIndex = 4;
-    (band('arriere') || plane).after(mid);
+  let essaim, canvases = [], between = [];
+  if (TOILE) {
+    essaim = await Essaim.create({
+      stage: { app: TOILE.app, layers: ['insectes-loin', 'insectes-milieu', 'entre-0', 'entre-1', 'entre-2', 'insectes-devant', 'premier'].map(TOILE.layer) },
+      zCuts: [zOf(D_FAR), ...ZB, zOf(D_TOP)],
+      size: () => [scene.clientWidth, scene.clientHeight],
+    });
   } else {
+    const far = mk(4), mid = mk(6), front = mk(8);
+    between = [mk(), mk(), mk()];
+    const layer = (src) => monde.querySelector(`img[data-src="${src}"]`);
     (layer('sol-loin.svg') || plane).after(far);
     monde.insertBefore(mid, layer('sol-pres.svg') || plane);
+    plane.after(front);
+    essaim = await Essaim.create({
+      layers: [far, mid, ...between, front],
+      zCuts: [zOf(D_FAR), ...ZB, zOf(D_TOP)],
+      size: () => [scene.clientWidth, scene.clientHeight],
+      direct: true,
+    });
+    canvases = essaim.layers.map((L) => L.canvas);
+    const topCanvas = essaim.canvas;
+    topCanvas.className = 'insectes';
+    topCanvas.style.cssText = 'position:absolute;left:0;top:0;pointer-events:none;z-index:9';
+    topCanvas.setAttribute('aria-hidden', 'true');
+    document.getElementById('premier').after(topCanvas);
   }
-  plane.after(front);
-  const essaim = await Essaim.create({
-    layers: [far, mid, ...between, front],
-    zCuts: [zOf(D_FAR), ...ZB, zOf(D_TOP)],
-    size: () => [scene.clientWidth, scene.clientHeight],
-    direct: true,
-  });
   const TOP = essaim.layers.length - 1;
-  const canvases = essaim.layers.map((L) => L.canvas);
-  const topCanvas = essaim.canvas;
-  topCanvas.className = 'insectes';
-  topCanvas.style.cssText = 'position:absolute;left:0;top:0;pointer-events:none;z-index:9';
-  topCanvas.setAttribute('aria-hidden', 'true');
-  document.getElementById('premier').after(topCanvas);
 
   // the cast's kinds load one at a time once the scene's loop runs (loadCast below), the page idle between two (each atlas is
   // decoded and sent to the graphics card); the Open button's carrier comes first
@@ -269,15 +275,14 @@ async function start(clumpsOn) {
   const readBouquet = () => {
     const b = bouquet;
     vol = null;
-    if (!b || grownFor !== b || !b.el.isConnected || !b.manifeste.boite) {
+    if (!b || grownFor !== b || !(b.vivant ?? b.el.isConnected) || !b.manifeste.boite) {
       bqFlowers.length = 0;
       return rebuild();
     }
     const m = b.manifeste, [vx, vy, vw, vh] = m.vb, bt = m.boite;
     const e = bt[2] / vw; // world units per drawing unit
     // (on the frieze, the bouquet stands on its place's pillar: its plane's offset in the frame at c = 0, frise.js)
-    const pl = FRISE && b.el.closest('.frise-bouquet');
-    const ox = pl ? (parseFloat(pl.style.left) / 100) * WW : 0, oy = pl ? (parseFloat(pl.style.top) / 100) * WH : 0;
+    const ox = FRISE && b.lieu ? b.lieu.x : 0, oy = FRISE && b.lieu ? b.lieu.y : 0;
     const fx = (x) => ox + bt[0] + (x - vx) * e, fy = (y) => oy + bt[1] + (y - vy) * e;
     const px = (x) => sx(fx(x)), py = (y) => sy(fy(y));
     const now = [];
@@ -322,6 +327,7 @@ async function start(clumpsOn) {
     loadClumps().then(rebuild);
   };
   const placeCanvases = () => {
+    // (the scene's one canvas holds the insects' layers: nothing to place)
     for (const c of canvases) {
       let dx = 0, dy = 0;
       // (on the frieze, the canvases between a bouquet's boxes are inside its place's plane, which moves with the camera)
@@ -336,7 +342,7 @@ async function start(clumpsOn) {
   };
   // between the boxes of the bouquet on the pillar
   const interleave = (b) => {
-    if (!b?.plans || b.plans.length < 4) return;
+    if (TOILE || !b?.plans || b.plans.length < 4) return;
     for (let g = 0; g < 3; g++) b.plans[g].after(between[g]);
     if (FRISE) placeCanvases();
   };
@@ -629,7 +635,7 @@ async function start(clumpsOn) {
 
   let last = performance.now(), first = true;
   const frame = (now) => {
-    requestAnimationFrame(frame);
+    if (!TOILE) requestAnimationFrame(frame);
     if (document.hidden || scene.classList.contains('paused')) {
       last = now;
       return;
@@ -656,7 +662,9 @@ async function start(clumpsOn) {
       clumpsOn(true);
     }
   };
-  requestAnimationFrame(frame);
+  // (in the scene's canvas, before each of its frames)
+  if (TOILE) TOILE.chaqueImage(frame);
+  else requestAnimationFrame(frame);
   window.__insectes = { essaim, insects, flowers, lists, clumps, W };
   loadCast().catch((err) => console.error('[insectes]', err));
 }

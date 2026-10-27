@@ -12,14 +12,14 @@
 }
 
 /* ---------- the shelf (soliflores, bouquets sold) ---------- */
-/* the shelf hangs under the header (entete.css); folded, it slides up behind it */
+/* the shelf stands on the dock (entete.css, at the bottom); folded, it slides down behind it */
 .cartes {
   position: fixed;
-  top: calc(var(--entete-bas) + 6px - var(--leve) - 2px);
+  bottom: calc(var(--dessus-dock) - 4px);
   left: 0;
   right: 0;
   z-index: 40;
-  transform: translateY(calc(-100% - var(--entete-bas)));
+  transform: translateY(calc(100% + var(--dessus-dock)));
   visibility: hidden;
   transition:
     transform 0.42s cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -101,8 +101,8 @@
 .achat {
   position: fixed;
   left: 50%;
-  /* above the footer's pill (entete.css: 6 px + 22 px) */
-  bottom: calc(env(safe-area-inset-bottom) + 36px + clamp(0px, 1dvh, 10px));
+  /* above the dock (entete.css) */
+  bottom: var(--dessus-dock);
   z-index: 40;
   transform: translateX(-50%);
   display: flex;
@@ -334,12 +334,11 @@
 }
 
 /* ---------- the close-up: a click on the bouquet brings the camera closer ----------
-   The whole scene is scaled by one transform (boutique.js sets it), from its top left corner; the bouquet's box takes the
-   room between the header and the Buy button. Not kept on its own layer (no will-change): once still, the browser draws
-   the decor again at the new size, sharp. */
+   The whole scene is scaled by one transform from its top left corner, moved by boutique.js at every frame with the
+   canvas's stage (toile.mjs), 0.9 s on cubic-bezier(0.3, 0.1, 0.2, 1); the bouquet's box takes the room between the header
+   and the Buy button. */
 .scene {
   transform-origin: 0 0;
-  transition: transform 0.9s cubic-bezier(0.3, 0.1, 0.2, 1);
 }
 
 /* the pager: one dot per bouquet of the day, in a glass pill fixed on the screen (boutique.js); the shown bouquet's dot is
@@ -348,7 +347,7 @@
 .pager {
   position: fixed;
   left: 50%;
-  top: calc(var(--entete-bas) + 10px);
+  bottom: calc(var(--dock-pied) + var(--dock-h) + 10px);
   z-index: 30;
   display: flex;
   padding: 0 6px;
@@ -398,9 +397,8 @@
   border-radius: 999px;
 }
 
-/* the close-up: no pager, and only the chosen bouquet (owner 2026-10-26: the neighbours on their pillars hide) */
-.scene.proche .pager,
-.scene.proche .frise-bouquet:not(.choisi) {
+/* the close-up: no pager (the neighbours' bouquets are hidden in the canvas: Frise.seul) */
+.scene.proche .pager {
   visibility: hidden;
 }
 
@@ -478,26 +476,6 @@
 }
 
 /* computer: the dock is at the bottom, the shelf opens above it and folds down behind it; the price bubble stands above it */
-@media (min-width: 900px) and (min-aspect-ratio: 4/3) {
-  .cartes {
-    top: auto;
-    bottom: calc(var(--dessus-dock) - 4px);
-    transform: translateY(calc(100% + var(--dessus-dock)));
-  }
-
-  .cartes.ouvert {
-    transform: none;
-  }
-
-  .achat {
-    bottom: var(--dessus-dock);
-  }
-
-  .pager {
-    top: auto;
-    bottom: calc(var(--dock-pied) + var(--dock-h) + 10px);
-  }
-}
 
 /* the purchase sheet above the Buy button: the express waiver of the right of withdrawal, then "Confirm and pay" */
 .accord {

@@ -13,6 +13,10 @@
 // canvas (e.canvas) the last layer, drawn into at every frame without a copy, which the page lays in place; prop(obj)
 // puts a display object of the page's (placed by the page in canvas px) in that layer, sorted by its zIndex with the
 // insects.
+// Or the page's own stage (the shop since 2026-10-27, decor/SPRITES.md: one canvas for the whole scene): stage = { app,
+// layers: [Container, ...] } from the back to the front; the swarm then draws nothing itself: render() places every sprite
+// in its layer's container (scene px, the page's renderer at its own resolution) and the page draws its stage once per
+// frame; prop() puts an object in the front container; setView() only tells the zoom, for the levels of detail.
 import { Application, Assets, Container, MeshSimple, Rectangle, Sprite, Texture } from './vendor/pixi-8.6.6.min.mjs';
 import { bodyFrame, viewOf, pickCell, flapAxes } from './vue.mjs';
 
@@ -20,11 +24,21 @@ export const PERSPECTIVE = 1400;
 
 export class Essaim {
   // layers: canvases from the back to the front; zCuts[i]: depth that separates layer i from layer i + 1.
-  static async create({ layers, zCuts, size = null, direct = false }) {
+  static async create({ layers, zCuts, size = null, direct = false, stage = null }) {
     const e = new Essaim();
-    e.layers = layers.map((c) => ({ canvas: c, ctx: c.getContext('2d'), box: null }));
     e.zCuts = zCuts;
-    e.size = size; e.centre = null; e.ox = 0; e.oy = 0; e.vs = 1; e.props = [];
+    e.size = size; e.centre = null; e.ox = 0; e.oy = 0; e.vs = 1; e.props = []; e.zoom = 1;
+    if (stage) {
+      e.shared = true;
+      e.app = stage.app;
+      e.layers = stage.layers.map((c) => ({ container: c }));
+      e.stage = stage.layers[stage.layers.length - 1];
+      e.insects = [];
+      e.kinds = {};
+      e.resize();
+      return e;
+    }
+    e.layers = layers.map((c) => ({ canvas: c, ctx: c.getContext('2d'), box: null }));
     e.app = new Application();
     await e.app.init({ width: 8, height: 8, backgroundAlpha: 0, antialias: false, autoStart: false, preference: 'webgl', autoDensity: false, resolution: 1 });
     if (direct) { e.canvas = e.app.canvas; e.layers.push({ canvas: e.canvas, ctx: null, box: null, direct: true }); }
@@ -40,6 +54,12 @@ export class Essaim {
     const dpr = Math.min(2, window.devicePixelRatio || 1);
     this.dpr = dpr;
     [this.w, this.h] = this.size ? this.size() : [window.innerWidth, window.innerHeight];
+    if (this.shared) {
+      // the page's renderer has its own resolution: the sprites are placed in scene px
+      this.res = 1;
+      [this.cx, this.cy] = this.centre || [this.w / 2, this.h / 2];
+      return;
+    }
     // canvas px per scene px
     this.res = dpr * this.vs;
     [this.cx, this.cy] = this.centre || [this.w / 2, this.h / 2];
@@ -54,6 +74,10 @@ export class Essaim {
   centreAt(x, y) { this.centre = [x, y]; [this.cx, this.cy] = this.centre; }
 
   setView(ox, oy, s) {
+    if (this.shared) {
+      this.zoom = s;
+      return;
+    }
     if (ox === this.ox && oy === this.oy && s === this.vs) return;
     this.ox = ox; this.oy = oy; this.vs = s;
     this.resize();
@@ -204,7 +228,16 @@ export class Essaim {
       const v = b.view ? { az: b.view.az, el: b.view.el, rotation: b.view.rotation } : viewOf(fr, [eye[0] / el, eye[1] / el, eye[2] / el]);
       const pxmm = (b.lengthPx / K.bodyMm) * q.s;
       const shown = K.idx.span * pxmm;
-      const lodName = b.view?.lod || (b.lod && K.lods[b.lod] ? b.lod : K.lods.L && shown * this.vs > K.lods.S.cell * 1.25 && K.lods.L.poses.includes(b.pose) ? 'L' : 'S');
+      // the large level as soon as the small one would be shown larger than its cell in device pixels (owner, 2026-10-27:
+      // some insects were blurry: the small level was stretched up to 1.25 times, and twice that on a 2x screen)
+      const devPx = shown * (this.shared ? this.zoom * this.dpr : this.vs * this.dpr);
+      // (that large level is loaded the first time one of its kind needs it, not before: ten of them weigh about 120 MB of
+      // the graphics card's memory)
+      if (!K.lods.L && K.idx.lod.L && !K.loadingL && K.lods.S && devPx > K.lods.S.cell * 0.9) {
+        K.loadingL = true;
+        this.more(b.kind, ['L']).catch(() => (K.loadingL = false));
+      }
+      const lodName = b.view?.lod || (b.lod && K.lods[b.lod] ? b.lod : K.lods.L && devPx > K.lods.S.cell * 0.9 && K.lods.L.poses.includes(b.pose) ? 'L' : 'S');
       const lod = K.lods[lodName] || Object.values(K.lods)[0]; // a level asked for but not loaded: the one there is
       const c = pickCell(lod, lod.el || K.idx.el, b.pose, b.frame, K.idx.frames[b.pose], v);
       if (c.i === undefined) { sp.visible = false; if (b.carrySprite) b.carrySprite.visible = false; if (b.wingMeshes) for (const g of b.wingMeshes) g.m.visible = false; continue; }
@@ -243,6 +276,18 @@ export class Essaim {
       }
       b.layer = b.layerHint ?? this.layerOf(b.P[2]);
       stats.sprites++;
+    }
+    if (this.shared) {
+      // each sprite into its layer's container, sorted there by depth; the page draws the stage
+      for (const b of this.insects) {
+        const C = this.layers[Math.min(this.layers.length - 1, b.layer ?? 0)].container;
+        const parts = [b.sprite, b.carrySprite, ...(b.wingMeshes ? b.wingMeshes.map((g) => g.m) : [])];
+        for (const o of parts) if (o && o.parent !== C) C.addChild(o);
+        b.sprite.renderable = b.visible;
+        if (b.carrySprite) b.carrySprite.renderable = b.visible;
+        if (b.wingMeshes) for (const g of b.wingMeshes) g.m.renderable = b.visible && b.wingsShown !== false;
+      }
+      return stats;
     }
     const r = this.app.renderer;
     this.layers.forEach((L, li) => {

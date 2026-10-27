@@ -308,6 +308,8 @@ export default {
     shelves: { bouquets: 'Bouquets of the day', soliflores: 'Bud vases', vendus: 'Bouquets collected' },
     desktopTitle: 'On my desktop',
     desktopLabel: 'Your bouquet on your desktop',
+    appTitle: 'Belai Bureau',
+    appLabel: 'Download Belai Bureau, the app that sets your bouquet on your screen',
     openSeaTitle: 'Our collection on OpenSea',
     openSeaLabel: 'Our collection on OpenSea (new tab)',
     about: 'About',

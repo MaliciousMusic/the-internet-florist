@@ -4,8 +4,9 @@
 // - The catalogue frieze (frise.js, owner 2026-10-26): every bouquet stands on its own pillar along a looping landscape of
 //   21 places, the bouquets of the day repeated to fill them; the camera travels along it (drag, swipe, wheel, arrow keys).
 //   The bouquet the camera stops facing is the one on sale. A pager of dots (one per place) travels to a place.
-// - Each bouquet shows open and already swaying (no growth): one file, bouquets/<id>/ouvert.json (paquet.mjs), read once
-//   for all its places, each place drawn hidden, then shown whole at once (eclosion.js, Eclosion.pose); frise.js asks for
+// - Each bouquet shows open (no growth) as sprites of the scene's canvas (decor/SPRITES.md, owner 2026-10-27): one index,
+//   bouquets/<id>/sprites/sprites.json (sprites.mjs), read once for all its places; on the frieze its one still picture,
+//   in the close-up its finer images swaying (frise.js, Frise.poseSprites); frise.js asks for
 //   the places in view, the nearest the centre first, and takes down those far away.
 // - The Buy button (bottom) for the bouquet on the pillar; the purchase (Seaport) is not wired yet: it only says "soon".
 // - The shelves under the header (entete.js): the bouquets are the scene itself; the soliflores and the bouquets sold
@@ -140,8 +141,8 @@
       if (b) ahead(CFG.produits[+b.dataset.i]);
     }, true);
 
-  // a bouquet's one file (paquet.mjs), read once: the shown one at first, its neighbours ahead when the page is idle
-  const fileOf = (p) => p.bouquet.replace(/manifeste\.json$/, 'ouvert.json');
+  // a bouquet's sprites index (sprites.mjs), read once: the shown one at first, its neighbours ahead when the page is idle
+  const fileOf = (p) => p.bouquet.replace(/manifeste\.json$/, 'sprites/sprites.json');
   const files = new Map();
   function read(p, low) {
     const u = fileOf(p);
@@ -228,7 +229,42 @@
     // covering the whole screen
     const tx = Math.min(0, Math.max(W - W * s, W / 2 - sax * s));
     const ty = Math.min(0, Math.max(H - H * s, (top + bottom) / 2 - (sy + (h * k) / 2) * s));
-    scene.style.transform = `translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px) scale(${s.toFixed(4)})`;
+    zoomTo(tx, ty, s);
+  }
+  // The close-up's move: the page's scene and the canvas's stage (toile.mjs) take the same transform at every frame, from
+  // where they are to where they go, in 0.9 s on the curve the scene's CSS transition had (scene.css); the canvas element is
+  // held still inside the scaled scene so its sprites are drawn at the screen's resolution, sharp.
+  let zoom = { tx: 0, ty: 0, s: 1 };
+  let zoomRaf = 0;
+  const bezier = (x1, y1, x2, y2) => (x) => {
+    let t = x;
+    for (let i = 0; i < 8; i++) {
+      const cx = 3 * x1 * t * (1 - t) ** 2 + 3 * x2 * t * t * (1 - t) + t ** 3 - x;
+      const d = 3 * x1 * (1 - t) ** 2 + 6 * (x2 - x1) * t * (1 - t) + 3 * (1 - x2) * t * t;
+      if (Math.abs(cx) < 1e-5 || !d) break;
+      t -= cx / d;
+    }
+    return 3 * y1 * t * (1 - t) ** 2 + 3 * y2 * t * t * (1 - t) + t ** 3;
+  };
+  const zoomEase = bezier(0.3, 0.1, 0.2, 1);
+  const applyZoom = ({ tx, ty, s }) => {
+    zoom = { tx, ty, s };
+    scene.style.transform = s === 1 && !tx && !ty ? '' : `translate(${tx.toFixed(2)}px,${ty.toFixed(2)}px) scale(${s.toFixed(5)})`;
+    if (window.TOILE) window.TOILE.vue(tx, ty, s);
+  };
+  function zoomTo(tx, ty, s) {
+    cancelAnimationFrame(zoomRaf);
+    const from = { ...zoom };
+    const to = { tx, ty, s };
+    if (reduced) return applyZoom(to);
+    const t0 = performance.now();
+    const step = (now) => {
+      const u = Math.min(1, (now - t0) / 900);
+      const e = zoomEase(u);
+      applyZoom({ tx: from.tx + (to.tx - from.tx) * e, ty: from.ty + (to.ty - from.ty) * e, s: from.s + (to.s - from.s) * e });
+      if (u < 1) zoomRaf = requestAnimationFrame(step);
+    };
+    zoomRaf = requestAnimationFrame(step);
   }
   function closeUp(on, keepShelf) {
     if (on === near || (on && !box)) return;
@@ -236,10 +272,11 @@
     // the camera stays facing the bouquet while it is seen close
     Frise.fige(on);
     scene.classList.toggle('proche', on);
-    // only the chosen bouquet in the close-up (owner 2026-10-26): its place's plane is marked, the others hide (scene.css)
-    for (const el of document.querySelectorAll('.frise-bouquet.choisi')) el.classList.remove('choisi');
-    const b = on ? Frise.bouquet(Frise.face()) : null;
-    if (b && b.el.closest('.frise-bouquet')) b.el.closest('.frise-bouquet').classList.add('choisi');
+    // only the chosen bouquet in the close-up (owner 2026-10-26), swaying in its finer sprites (owner 2026-10-27)
+    const f = Frise.face();
+    const b = f >= 0 ? Frise.bouquet(f) : null;
+    Frise.seul(on && f >= 0 ? f : null);
+    if (b && b.proche) b.proche(on);
     target.setAttribute('aria-pressed', String(on));
     target.setAttribute('aria-label', on ? T.stepBack : T.lookCloser);
     $('achat').classList.toggle('loin', !on);
@@ -249,7 +286,7 @@
       openShelf(null);
       frameCloseUp();
     } else {
-      scene.style.transform = '';
+      zoomTo(0, 0, 1);
       if (!keepShelf && keptShelf !== undefined) openShelf(keptShelf);
       keptShelf = undefined;
     }
@@ -520,7 +557,7 @@
     if (!into.isConnected) return null;
     // past its lifespan: shown still (the faded drawing is still to be pre-drawn)
     // four depth boxes: the insects (insectes.mjs) fly between them, in front of some flowers and behind others
-    const b = await Eclosion.pose(into, fileOf(p), { monde: [WW, WH], final: faded(p), plans: 4, donnees: data });
+    const b = await Frise.poseSprites(into, fileOf(p), { donnees: data });
     await b.pret;
     if (!into.isConnected) return (b.arret(), null);
     const t2 = await b.montre();

@@ -11,7 +11,8 @@
   --dock-h: 52px;
   --entete-haut: calc(env(safe-area-inset-top) + 14px);
   --entete-bas: calc(var(--entete-haut) + var(--dock-h));
-  /* on a computer the dock is at the bottom: its foot just above the footer's pill, and what stands above it */
+  /* the dock is at the bottom (on a phone too since 2026-10-27, owner): its foot just above the footer's pill, and what
+     stands above it */
   --dock-pied: calc(env(safe-area-inset-bottom) + 38px);
   --dessus-dock: calc(var(--dock-pied) + var(--dock-h) + 12px);
 }
@@ -19,7 +20,7 @@
 /* ---------- the header ---------- */
 .entete {
   position: fixed;
-  top: var(--entete-haut);
+  bottom: var(--dock-pied);
   left: 0;
   right: 0;
   z-index: 50;
@@ -291,16 +292,9 @@
   }
 }
 
-/* computer: the dock goes to the bottom, above the footer's pill */
-@media (min-width: 900px) and (min-aspect-ratio: 4/3) {
-  .entete {
-    top: auto;
-    bottom: var(--dock-pied);
-  }
-
-  .pied.ouvert {
-    z-index: 55;
-  }
+/* the footer's panel, unfolded, over the dock */
+.pied.ouvert {
+  z-index: 55;
 }
 
 /* the language switch, in the footer's panel */

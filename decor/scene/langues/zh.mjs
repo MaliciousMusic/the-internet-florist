@@ -285,6 +285,8 @@ export default {
     shelves: { bouquets: '今日花束', soliflores: '单枝花瓶', vendus: '已被收藏的花束' },
     desktopTitle: '摆上我的桌面',
     desktopLabel: '把你的花束摆上桌面',
+    appTitle: 'Belai Bureau',
+    appLabel: '下载 Belai Bureau，把花束摆上屏幕的应用',
     openSeaTitle: '我们在 OpenSea 上的收藏系列',
     openSeaLabel: '我们在 OpenSea 上的收藏系列（新标签页）',
     about: '关于我们',

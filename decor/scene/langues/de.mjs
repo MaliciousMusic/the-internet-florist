@@ -326,6 +326,8 @@ export default {
     shelves: { bouquets: 'Blumensträuße des Tages', soliflores: 'Solitärvasen', vendus: 'Gesammelte Blumensträuße' },
     desktopTitle: 'Auf meinem Desktop',
     desktopLabel: 'Ihr Blumenstrauß auf Ihrem Desktop',
+    appTitle: 'Belai Bureau',
+    appLabel: 'Belai Bureau herunterladen, die App, die Ihren Strauß auf Ihren Bildschirm stellt',
     openSeaTitle: 'Unsere Sammlung auf OpenSea',
     openSeaLabel: 'Unsere Sammlung auf OpenSea (neuer Tab)',
     about: 'Über uns',
