@@ -342,6 +342,8 @@ export default {
     'bouteille-dragon': '午夜蓝绿松石龙纹瓶',
     'jarre-carpes': '浮雕鲤鱼陶罐',
     'bronze-lys': '百合纹古铜花瓶',
+    'gres-chauve-souris': '釉面蝙蝠炻器花瓶',
+    'balustre-perce-neige': '雪花莲纹栏柱花瓶',
   },
   flowers: {
     'cerisier-du-japon-sato-zakura': '日本樱花',

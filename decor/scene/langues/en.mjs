@@ -365,6 +365,8 @@ export default {
     'bouteille-dragon': 'a midnight-blue bottle with a turquoise dragon',
     'jarre-carpes': 'a terracotta jar with carp in relief',
     'bronze-lys': 'a patinated bronze vase with lilies',
+    'gres-chauve-souris': 'a stoneware vase with a glazed bat',
+    'balustre-perce-neige': 'a baluster vase with snowdrops',
   },
   flowers: {
     'cerisier-du-japon-sato-zakura': 'Japanese cherry blossom',

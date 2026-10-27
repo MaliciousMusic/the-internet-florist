@@ -379,6 +379,8 @@ export default {
     'bouteille-dragon': 'une bouteille bleu nuit au dragon turquoise',
     'jarre-carpes': 'une jarre en terre cuite aux carpes en relief',
     'bronze-lys': 'un vase en bronze patiné aux lys',
+    'gres-chauve-souris': 'un grès à la chauve-souris',
+    'balustre-perce-neige': 'un balustre aux perce-neige',
   },
   flowers: {
     'cerisier-du-japon-sato-zakura': 'fleur de cerisier du Japon',

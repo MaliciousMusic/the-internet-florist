@@ -383,6 +383,8 @@ export default {
     'bouteille-dragon': 'einer nachtblauen Flasche mit türkisem Drachen',
     'jarre-carpes': 'einem Terrakotta-Krug mit Karpfen im Relief',
     'bronze-lys': 'einer patinierten Bronzevase mit Lilien',
+    'gres-chauve-souris': 'einer Steinzeugvase mit glasierter Fledermaus',
+    'balustre-perce-neige': 'einer Balustervase mit Schneeglöckchen',
   },
   flowers: {
     'cerisier-du-japon-sato-zakura': 'Japanische Zierkirsche',

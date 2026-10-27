@@ -380,6 +380,8 @@ export default {
     'bouteille-dragon': 'una botella azul noche con un dragón turquesa',
     'jarre-carpes': 'una tinaja de terracota con carpas en relieve',
     'bronze-lys': 'un jarrón de bronce patinado con lirios',
+    'gres-chauve-souris': 'un jarrón de gres con un murciélago esmaltado',
+    'balustre-perce-neige': 'un jarrón balaustre con campanillas de invierno',
   },
   flowers: {
     'cerisier-du-japon-sato-zakura': 'flor de cerezo japonés',

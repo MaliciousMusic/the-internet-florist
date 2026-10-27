@@ -19,6 +19,69 @@
   },
   "produits": [
     {
+      "id": "printemps-a-la-carpe",
+      "nom": "Printemps à la carpe",
+      "vase": "bronze-carpe",
+      "graine": 23,
+      "recette": [
+        ["cerisier-du-japon-sato-zakura~1",3,1],
+        ["cognassier-du-japon~0",2,2],
+        ["forsythia~1",2,2],
+        ["iris-hollandais~0",3,3],
+        ["iris-hollandais~2",2,3],
+        ["lilas~0",2,4],
+        ["tulipe-perroquet~0",3,5],
+        ["tulipe-double~4",3,5],
+        ["tulipe-simple~7",3,6],
+        ["tulipe-simple~12",2,6],
+        ["tulipe-frangee~6",2,6],
+        ["renoncule-classique~16",3,7],
+        ["renoncule-classique~7",3,6],
+        ["renoncule-classique~3",2,6],
+        ["narcisse-trompette~0",3,5],
+        ["narcisse-bouquet~3",3,6],
+        ["jacinthe~0",2,7],
+        ["jacinthe~4",2,7],
+        ["anemone-coronaria~3",3,8],
+        ["anemone-sauvage~0",2,8],
+        ["freesia~2",2,6],
+        ["pois-de-senteur~3",3,7],
+        ["pois-de-senteur~10",2,7],
+        ["muscari~0",4,9],
+        ["fritillaire-meleagris~0",2,8],
+        ["glycine~1",2,9],
+        ["viburnum-roseum~0",3,5],
+        ["alchemille~0",2,6]
+      ],
+      "tiges": [
+        ["cerisier-du-japon-sato-zakura",3,1050],
+        ["cognassier-du-japon",2,850],
+        ["forsythia",2,380],
+        ["iris-hollandais",5,260],
+        ["lilas",2,800],
+        ["tulipe-perroquet",3,450],
+        ["tulipe-double",3,420],
+        ["tulipe-simple",5,220],
+        ["tulipe-frangee",2,420],
+        ["renoncule-classique",8,400],
+        ["narcisse-trompette",3,160],
+        ["narcisse-bouquet",3,220],
+        ["jacinthe",4,340],
+        ["anemone-coronaria",3,360],
+        ["anemone-sauvage",2,300],
+        ["freesia",2,270],
+        ["pois-de-senteur",5,320],
+        ["muscari",4,180],
+        ["fritillaire-meleagris",2,300],
+        ["glycine",2,1850],
+        ["viburnum-roseum",3,650],
+        ["alchemille",2,260]
+      ],
+      "prix": { "centimes": 30070, "eth": 0.138, "eur": 300, "ethTxt": "0,138 ETH", "eurTxt": "≈ 300 €", "tiges": 70 },
+      "bouquet": "bouquets/printemps-a-la-carpe/manifeste.json",
+      "vignette": "bouquets/printemps-a-la-carpe/vignette.svg"
+    },
+    {
       "id": "citrine",
       "nom": "Citrine",
       "vase": "prisme-jaune",
@@ -111,6 +174,31 @@
       "vignette": "bouquets/nuit-d-ambre/vignette.svg"
     },
     {
+      "id": "ronde-bleue",
+      "ecartModele": "tulipe-perroquet 1/2, renoncule-classique 2/3, jacinthe 2/4, lilas 4/5, muscari 0/7, pois-de-senteur 3/4, narcisse-bouquet 1/3, fritillaire-meleagris 0/2",
+      "nom": "Ronde bleue",
+      "vase": "verre-danseuses",
+      "graine": 7,
+      "modele": 1001,
+      "tiges": [
+        ["cognassier-du-japon",3,850],
+        ["iris-hollandais",7,260],
+        ["anemone-coronaria",6,360],
+        ["viburnum-roseum",3,650],
+        ["tulipe-simple",3,220],
+        ["tulipe-perroquet",1,450],
+        ["renoncule-classique",2,400],
+        ["jacinthe",2,340],
+        ["lilas",4,800],
+        ["freesia",2,270],
+        ["pois-de-senteur",3,320],
+        ["narcisse-bouquet",1,220]
+      ],
+      "prix": { "centimes": 15990, "eth": 0.0736, "eur": 160, "ethTxt": "0,0736 ETH", "eurTxt": "≈ 160 €", "tiges": 37 },
+      "bouquet": "bouquets/ronde-bleue/manifeste.json",
+      "vignette": "bouquets/ronde-bleue/vignette.svg"
+    },
+    {
       "id": "ciel-de-faience",
       "nom": "Ciel de faïence",
       "vase": "colonne-art-nouveau",
@@ -174,6 +262,37 @@
       "vignette": "bouquets/souffle-du-dragon/vignette.svg"
     },
     {
+      "id": "vol-de-nuit",
+      "nom": "Vol de nuit",
+      "vase": "gres-chauve-souris",
+      "graine": 18,
+      "recette": [
+        ["delphinium~9",3,2],
+        ["lilas~2",2,3],
+        ["tulipe-simple~17",3,4],
+        ["phalaenopsis~0",1,5],
+        ["dahlia-decoratif~9",2,6],
+        ["rose-standard~22",3,6],
+        ["anemone-coronaria~9",3,7],
+        ["scabieuse~0",3,8],
+        ["freesia~0",2,8]
+      ],
+      "tiges": [
+        ["delphinium",3,600],
+        ["lilas",2,800],
+        ["tulipe-simple",3,220],
+        ["phalaenopsis",1,2400],
+        ["dahlia-decoratif",2,500],
+        ["rose-standard",3,450],
+        ["anemone-coronaria",3,360],
+        ["scabieuse",3,400],
+        ["freesia",2,270]
+      ],
+      "prix": { "centimes": 11630, "eth": 0.0536, "eur": 116, "ethTxt": "0.0536 ETH", "eurTxt": "≈ 116 €", "tiges": 22 },
+      "bouquet": "bouquets/vol-de-nuit/manifeste.json",
+      "vignette": "bouquets/vol-de-nuit/vignette.svg"
+    },
+    {
       "id": "etang-d-abricot",
       "nom": "Étang d'abricot",
       "vase": "jarre-carpes",
@@ -234,6 +353,37 @@
       "prix": { "centimes": 12010, "eth": 0.0553, "eur": 120, "ethTxt": "0.0553 ETH", "eurTxt": "≈ 120 €", "tiges": 21 },
       "bouquet": "bouquets/bronze-poudre/manifeste.json",
       "vignette": "bouquets/bronze-poudre/vignette.svg"
+    },
+    {
+      "id": "neige-de-mars",
+      "nom": "Neige de mars",
+      "vase": "balustre-perce-neige",
+      "graine": 19,
+      "recette": [
+        ["tulipe-frangee~1",3,4],
+        ["viburnum-roseum~0",2,4],
+        ["fritillaire-meleagris~4",2,5],
+        ["renoncule-classique~0",3,6],
+        ["jacinthe~7",2,6],
+        ["anemone-coronaria~0",4,7],
+        ["narcisse-bouquet~0",3,7],
+        ["muscari~6",3,9],
+        ["alchemille~2",2,8]
+      ],
+      "tiges": [
+        ["tulipe-frangee",3,420],
+        ["viburnum-roseum",2,650],
+        ["fritillaire-meleagris",2,300],
+        ["renoncule-classique",3,400],
+        ["jacinthe",2,340],
+        ["anemone-coronaria",4,360],
+        ["narcisse-bouquet",3,220],
+        ["muscari",3,180],
+        ["alchemille",2,260]
+      ],
+      "prix": { "centimes": 8200, "eth": 0.0378, "eur": 82, "ethTxt": "0.0378 ETH", "eurTxt": "≈ 82 €", "tiges": 24 },
+      "bouquet": "bouquets/neige-de-mars/manifeste.json",
+      "vignette": "bouquets/neige-de-mars/vignette.svg"
     }
   ]
 }
