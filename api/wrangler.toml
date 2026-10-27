@@ -1,0 +1,29 @@
+# The shop's account and gift server (decor/COMPTE.md), a Cloudflare Worker with a D1 database.
+# Local: npm run dev (wrangler dev, a local D1, text messages written to the console). Online: once the owner has made the
+# Cloudflare account, `wrangler d1 create belai` gives the database_id below, and the secrets go in with
+# `wrangler secret put` (never in this file): POIVRE, CLE_NUMEROS, OVH_* (and STRIPE_* for lot C3).
+name = "belai-api"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+# where the site is served from (cross-origin requests with their cookie are accepted from these)
+ORIGINES = "http://localhost:8835,http://127.0.0.1:8835"
+# "faux": the code is written to the console instead of being sent; "ovh": OVHcloud SMS
+SMS = "faux"
+# the default country for a number written without its prefix (06 12 34 56 78)
+PAYS = "FR"
+# the payment: "faux" (a payment page of this server's own, local work only) or "stripe" (STRIPE_SECRET, STRIPE_WEBHOOK_SECRET)
+PAIEMENT = "faux"
+# what the shop sells: the site's own boutique.json (prices, the month's collection)
+CATALOGUE = "http://localhost:8835/decor/scene/boutique.json"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "belai"
+database_id = "local"
+migrations_dir = "migrations"
+
+# once a day: expired codes and sessions go, accounts deleted 30 days ago are anonymised (compte.js menage)
+[triggers]
+crons = ["17 3 * * *"]

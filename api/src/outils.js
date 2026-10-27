@@ -1,0 +1,87 @@
+// outils.js: the small pieces every route uses: hashing and encryption (Web Crypto, as in a Worker and in Node), random
+// identifiers, phone numbers, JSON answers and cookies.
+
+const enc = new TextEncoder();
+const dec = new TextDecoder();
+const hex = (buf) => [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
+const b64u = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+const unb64u = (s) => Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), (c) => c.charCodeAt(0));
+
+export const sha256 = async (text) => hex(await crypto.subtle.digest('SHA-256', enc.encode(text)));
+
+// a keyed fingerprint (HMAC-SHA-256 with the server's pepper): the same number always gives the same fingerprint, and
+// nobody without the pepper can test a number against the table
+export async function empreinte(poivre, texte) {
+  const key = await crypto.subtle.importKey('raw', enc.encode(poivre), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  return hex(await crypto.subtle.sign('HMAC', key, enc.encode(texte)));
+}
+
+// the phone number encrypted with the server's key (AES-GCM, a fresh nonce each time): "<nonce>.<cipher>" in base64url
+async function cleAes(cle) {
+  const raw = unb64u(cle);
+  if (raw.length !== 32) throw new Error('CLE_NUMEROS : 32 octets en base64url attendus');
+  return crypto.subtle.importKey('raw', raw, 'AES-GCM', false, ['encrypt', 'decrypt']);
+}
+export async function chiffre(cle, texte) {
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const c = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, await cleAes(cle), enc.encode(texte));
+  return `${b64u(iv)}.${b64u(c)}`;
+}
+export async function dechiffre(cle, boite) {
+  const [iv, c] = boite.split('.');
+  return dec.decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64u(iv) }, await cleAes(cle), unb64u(c)));
+}
+
+// random: an identifier, a session token, a numeric code
+export const identifiant = () => b64u(crypto.getRandomValues(new Uint8Array(12)));
+export const jeton = () => b64u(crypto.getRandomValues(new Uint8Array(32)));
+export function codeChiffres(n = 6) {
+  // rejection sampling: no digit more likely than another
+  let out = '';
+  while (out.length < n) {
+    const b = crypto.getRandomValues(new Uint8Array(n));
+    for (const x of b) if (x < 250 && out.length < n) out += String(x % 10);
+  }
+  return out;
+}
+// two strings compared in a time that does not depend on where they differ
+export function egal(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string' || a.length !== b.length) return false;
+  let d = 0;
+  for (let i = 0; i < a.length; i++) d |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return d === 0;
+}
+
+// a phone number in E.164 (+33612345678): written with its prefix, or national with the default country's
+const PREFIXES = { FR: '33', BE: '32', CH: '41', LU: '352', DE: '49', ES: '34', IT: '39', GB: '44', US: '1', CA: '1' };
+export function numero(brut, pays = 'FR') {
+  if (typeof brut !== 'string') return null;
+  let s = brut.trim().replace(/[\s.\-()]/g, '');
+  if (s.startsWith('00')) s = '+' + s.slice(2);
+  if (!s.startsWith('+')) {
+    const p = PREFIXES[pays] || PREFIXES.FR;
+    s = '+' + p + s.replace(/^0/, '');
+  }
+  return /^\+[1-9]\d{7,14}$/.test(s) ? s : null;
+}
+// a first name as people write it: 1 to 40 letters, spaces, apostrophes and hyphens
+export function prenom(brut) {
+  if (typeof brut !== 'string') return null;
+  const s = brut.normalize('NFC').trim().replace(/\s+/g, ' ');
+  return /^[\p{L}][\p{L}\p{M} '’-]{0,39}$/u.test(s) ? s : null;
+}
+
+// answers
+export function json(corps, statut = 200, entetes = {}) {
+  return new Response(JSON.stringify(corps), { status: statut, headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', ...entetes } });
+}
+export const erreur = (code, statut = 400, plus = {}) => json({ erreur: code, ...plus }, statut);
+
+export function cookies(req) {
+  const out = {};
+  for (const part of (req.headers.get('cookie') || '').split(';')) {
+    const i = part.indexOf('=');
+    if (i > 0) out[part.slice(0, i).trim()] = decodeURIComponent(part.slice(i + 1).trim());
+  }
+  return out;
+}
