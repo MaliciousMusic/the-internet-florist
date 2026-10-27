@@ -66,6 +66,110 @@
   // when each piece of decor came (ms), and the decor as a whole: window.FRISE_TEMPS
   const T = (window.FRISE_TEMPS = { pieces: {} });
 
+  // ---------- the landing whole at once, then sharper (amorce.py; owner 2026-10-28: « on affiche un truc complet direct
+  // qui scale en qualité progressivement »). The page's own <picture> of the landing (#affiche) shows before any script,
+  // under the canvas; the sharp sprites come over it in the same places, and once the landing's are all there it goes (at
+  // once if the camera moves first). Wherever it does not cover (after a swipe, a ?b= link), a piece shows its light sprite
+  // from amorce.json's sheets (a sixth of the definition) until its sharp one has come.
+  let affiche = $('affiche');
+  const amorce = fetch(`${OUT}frise/amorce.json`)
+    .then((r) => (r.ok ? r.json() : null))
+    .catch(() => null);
+  const light = { frames: null, sheets: [], cache: new Map() };
+  const waiting = new Set(); // the pieces still without their sharp sprite: { s, key, w, h, sharp, gone, montre() }
+  const keyOf = (url) => url.split('?')[0];
+  const lightTex = (key) => {
+    const f = light.frames && light.frames[key];
+    if (!f || !light.sheets[f[0]]) return null;
+    if (!light.cache.has(key)) {
+      const { Texture, Rectangle } = toile.PIXI;
+      light.cache.set(key, new Texture({ source: light.sheets[f[0]].source, frame: new Rectangle(f[1], f[2], f[3], f[4]) }));
+    }
+    return light.cache.get(key);
+  };
+  const showLight = (P) => {
+    if (P.sharp || P.gone || affiche) return;
+    const tex = lightTex(P.key);
+    if (!tex) return;
+    P.s.texture = tex;
+    P.s.width = P.w;
+    P.s.height = P.h;
+    P.montre();
+  };
+  // a piece's sharp sprite: in its place of its light one (or of nothing), the size kept
+  const sharpen = (P, tex) => {
+    if (P.gone) return;
+    P.sharp = true;
+    waiting.delete(P);
+    P.s.texture = tex;
+    P.s.width = P.w;
+    P.s.height = P.h;
+    P.montre();
+  };
+  // the light sheets, as AVIF where the browser takes it (as it did for #affiche's <picture>), else WebP; behind the
+  // landing's sharp sprites when the landing's picture is up, first otherwise
+  const AVIF1 =
+    'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADrbWV0YQAAAAAAAAAhaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAETAAAAKAAAAChpaW5mAAAAAAABAAAAGmluZmUCAAAAAAEAAGF2MDFDb2xvcgAAAABqaXBycAAAAEtpcGNvAAAAFGlzcGUAAAAAAAAAAQAAAAEAAAAQcGl4aQAAAAADCAgIAAAADGF2MUOBAAwAAAAAE2NvbHJuY2x4AAEADQAGgAAAABdpcG1hAAAAAAAAAAEAAQQBAoMEAAAAMG1kYXQSAAoIGAAGiAhoNCAyGhlHh4Yhh5555oAAAJBAyRxhSytNj1FFTqSg';
+  const avif = () => {
+    const img = affiche && affiche.querySelector('img');
+    if (img && img.currentSrc) return Promise.resolve(/\.avif(\?|$)/.test(img.currentSrc));
+    return new Promise((r) => {
+      const t = new Image();
+      t.onload = () => r(t.width > 0);
+      t.onerror = () => r(false);
+      t.src = AVIF1;
+    });
+  };
+  function lightSheets(A) {
+    light.frames = A.cadres;
+    return avif().then((ok) =>
+      Promise.all(
+        A.feuilles.map(
+          (f, n) =>
+            new Promise((done) => {
+              const img = new Image();
+              img.decoding = 'async';
+              img.fetchPriority = affiche ? 'low' : 'high';
+              img.onload = () =>
+                img
+                  .decode()
+                  .catch(() => {})
+                  .then(() => {
+                    const tex = toile.PIXI.Texture.from(img);
+                    tex.source.scaleMode = 'linear';
+                    light.sheets[n] = tex;
+                    for (const P of waiting) showLight(P);
+                    done();
+                  });
+              img.onerror = () => done();
+              img.src = OUT + 'frise/' + (ok ? f.avif : f.webp);
+            }),
+        ),
+      ).then(() => (T.leger = Math.round(performance.now()))),
+    );
+  }
+  // the landing's picture goes: the canvas shows the same places (two frames later, so its last sprites are drawn), or the
+  // camera leaves them (at once); the pieces still waiting show their light sprites
+  function retireAffiche(now) {
+    if (!affiche) return;
+    const el = affiche;
+    affiche = null;
+    T.affiche = Math.round(performance.now());
+    if (now) el.remove();
+    else requestAnimationFrame(() => requestAnimationFrame(() => el.remove()));
+    for (const P of waiting) showLight(P);
+  }
+  // the landing's places (amorce.json affiche.places, the camera at 0): each resolves once its bouquet is sharp
+  const sharpAt = new Map();
+  const placeSharp = (i) => {
+    if (!sharpAt.has(i)) {
+      let r;
+      const p = new Promise((x) => (r = x));
+      sharpAt.set(i, { p, r });
+    }
+    return sharpAt.get(i);
+  };
+
   // ---------- the world in view
   const measure = () => {
     const cs = getComputedStyle(monde);
@@ -104,24 +208,23 @@
     s.position.set(x + dx, y);
     s.visible = false;
     layer.addChild(s);
-    const P = { s, url, gone: false, y, h };
+    const P = { s, url, key: keyOf(url), gone: false, sharp: false, y, w, h, montre: () => (s.visible = true) };
     hold(url);
+    waiting.add(P);
+    showLight(P);
     decorWait.push(
       toile
         .texture(url)
         .then((tex) => {
-          if (P.gone) return;
-          s.texture = tex;
-          s.width = w;
-          s.height = h;
-          s.visible = true;
-          T.pieces[src.split('?')[0]] = Math.round(performance.now());
+          sharpen(P, tex);
+          T.pieces[keyOf(src)] = Math.round(performance.now());
         })
         .catch(() => {}),
     );
     return P;
   }
   const drop = (P) => {
+    waiting.delete(P);
     P.gone = true;
     P.s.destroy();
     letGo(P.url);
@@ -399,6 +502,8 @@
   // ---------- one frame of the camera
   let dirty = true;
   function draw() {
+    // (the landing's picture shows the camera at 0 only)
+    if (affiche && c !== 0) retireAffiche(true);
     measure();
     for (const B of bands) strip(B, 260);
     pillars();
@@ -616,10 +721,9 @@
     const F = m.frise;
     // (each bouquet lowered or raised so its vase stands on its pillar's top: sprites.mjs "assise")
     const dy = m.assise || 0;
-    const still = new toile.PIXI.Sprite(await toile.texture(base + F.src));
+    // its light sprite at once where the landing's picture does not stand for it, its sharp one over it when it comes
+    const still = new toile.PIXI.Sprite();
     still.position.set(F.x, F.y + dy);
-    still.width = F.w;
-    still.height = F.h;
     still.visible = false;
     plane.groups[0].addChild(still);
     // the depth groups of the close-up's images (as eclosion.js split them into its four boxes)
@@ -628,6 +732,14 @@
     let shown = false;
     let gone = false;
     let near = null; // { sprites, sway, sheets }
+    let drawn = false; // a sprite (light or sharp) to show
+    const vis = () => (still.visible = shown && !near && !gone && drawn);
+    const S = { s: still, key: keyOf(base + F.src), w: F.w, h: F.h, sharp: false, gone: false, montre: () => ((drawn = true), vis()) };
+    waiting.add(S);
+    showLight(S);
+    const i = Math.round(plane.x / M.pas);
+    const sharp = toile.texture(base + F.src).then((tex) => sharpen(S, tex));
+    sharp.then(() => placeSharp(i).r(), () => placeSharp(i).r());
     const b = {
       manifeste: { vb: m.vb, boite: [m.boite[0], m.boite[1] + dy, m.boite[2], m.boite[3]], pied: m.pied, echelle: m.echelle, pieces: m.orig, finCroissanceMs: 0 },
       // the place's offset in the world (the insects place the bouquet's flowers from it)
@@ -641,7 +753,7 @@
       montre() {
         if (!shown) {
           shown = true;
-          still.visible = !near;
+          vis();
         }
         return Promise.resolve(performance.now());
       },
@@ -675,13 +787,13 @@
           };
           if (!RM) swaying.add(sway);
           near = { sprites, sway, sheets };
-          still.visible = false;
+          vis();
         } else if (!on && near) {
           swaying.delete(near.sway);
           for (const s of near.sprites) s.destroy();
           for (const u of near.sheets) toile.oublie(u);
           near = null;
-          still.visible = shown && !gone;
+          vis();
         }
       },
       repli() {
@@ -692,6 +804,8 @@
         if (gone) return;
         b.proche(false);
         gone = true;
+        S.gone = true;
+        waiting.delete(S);
         still.destroy();
       },
     };
@@ -762,12 +876,25 @@
             .catch(() => {}),
         { once: true },
       );
+      // (asked for in the page's head, beside frise.json)
+      const A = await amorce;
       measure();
       draw();
-      // the decor in view, then its tiles are waited for (6 s at most)
       T.dessine = Math.round(performance.now());
-      await Promise.race([Promise.all(decorWait.splice(0)), new Promise((r) => setTimeout(r, 6000))]);
-      T.decor = Math.round(performance.now());
+      const now = () => Math.round(performance.now());
+      const vue = Promise.all(decorWait.splice(0)).then(() => (T.net = now()));
+      const sheets = A ? lightSheets(A) : Promise.resolve();
+      if (affiche) {
+        // the landing's picture stands for the decor in view: the bouquets come at once; it goes once the landing's sharp
+        // decor and bouquets are all drawn (12 s at most)
+        T.decor = now();
+        const places = (A && A.affiche.places) || [];
+        Promise.race([vue.then(() => Promise.all(places.map((i) => placeSharp(i).p))), new Promise((r) => setTimeout(r, 12000))]).then(() => retireAffiche());
+      } else {
+        // the decor in view, light or sharp, is waited for (6 s at most)
+        await Promise.race([vue, sheets, new Promise((r) => setTimeout(r, 6000))]);
+        T.decor = now();
+      }
       requestAnimationFrame(() => requestAnimationFrame(() => decorRes(Math.round(performance.now()))));
       stop();
       return M;
@@ -783,6 +910,8 @@
 
   window.Frise = {
     pret,
+    // amorce.json (amorce.py): the bouquets' sprites indices among it (boutique.js reads them from there)
+    amorce,
     decor,
     toile: toileReady,
     poseSprites,
@@ -807,6 +936,7 @@
     },
     fige(on) {
       frozen = !!on;
+      if (frozen) retireAffiche(true);
       if (frozen) {
         travel = null;
         v = 0;
@@ -816,9 +946,11 @@
     ajusteNom: () => fitName(),
     // the world folded into the ground but the bouquets (true), or standing again (false)
     replie(on) {
+      retireAffiche(true);
       replieTo = on ? 1 : 0;
     },
     seul(place) {
+      retireAffiche(true);
       only = place == null ? null : place;
       if (only == null) {
         // the others' bouquets come back once their pillars are up (foldStep)

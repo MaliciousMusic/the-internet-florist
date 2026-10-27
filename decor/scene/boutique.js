@@ -162,7 +162,8 @@
       if (b) ahead(CFG.produits[+b.dataset.i]);
     }, true);
 
-  // a bouquet's sprites index (sprites.mjs), read once: the shown one at first, its neighbours ahead when the page is idle
+  // a bouquet's sprites index (sprites.mjs), read once: from frise.js's amorce.json, which holds every bouquet's (amorce.py:
+  // no file to wait for per bouquet), else on its own, the shown one at first, its neighbours ahead when the page is idle
   const fileOf = (p) => p.bouquet.replace(/manifeste\.json$/, 'sprites/sprites.json');
   const files = new Map();
   function read(p, low) {
@@ -170,10 +171,16 @@
     if (!files.has(u))
       files.set(
         u,
-        fetch(u, low ? { priority: 'low' } : {}).then((r) => {
-          if (!r.ok) throw new Error(`${u} ${r.status}`);
-          return r.json();
-        }),
+        Promise.resolve(window.Frise && Frise.amorce)
+          .then((A) => A && A.sprites && A.sprites[u])
+          .then(
+            (idx) =>
+              idx ||
+              fetch(u, low ? { priority: 'low' } : {}).then((r) => {
+                if (!r.ok) throw new Error(`${u} ${r.status}`);
+                return r.json();
+              }),
+          ),
       );
     const f = files.get(u);
     f.catch(() => files.delete(u));

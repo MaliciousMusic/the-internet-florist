@@ -49,9 +49,12 @@
 </noscript>
 <main class="scene" id="scene">
   <div class="monde" id="monde">
-    <!-- the sky over the world's top edge (a phone held upright shows it): the same gradients carried on (ciel.mjs) -->
-    <img class="plan ciel-haut" style="--z:0" data-src="ciel-haut.svg" alt="" decoding="async">
-    <img class="plan" style="--z:0" data-src="ciel.svg" alt="" decoding="async" fetchpriority="high">
+    <!-- the sky, in pure CSS (ciel_css.mjs, inlined in the head by build.mjs): ciel.svg's gradients, carried on over the
+         world's top edge (a phone held upright shows it) -->
+    <div class="ciel" aria-hidden="true"></div>
+    <!-- the landing whole at once (amorce.py, written by build.mjs): one picture of what the canvas shows at rest on the
+         first place, under the canvas, which lays its sharp sprites over it; frise.js takes it away -->
+    {{affiche}}
     <div class="plan nuages hauts" style="--z:1" id="nuages-hauts"></div>
     <div class="plan nuages bas" style="--z:2" id="nuages-bas"></div>
     <!-- The catalogue frieze (frise.js, decor/FRISE.md): the horizon and the ground's depth slices as looping strips of
@@ -217,7 +220,7 @@
   </div>
   <iframe id="facture-page" title="{{index.invoices}}"></iframe>
 </dialog>
-<script src="scene.js"></script>
+<script src="scene.js" defer></script>
 <script src="entete.js" defer></script>
 <script src="frise.js" defer></script>
 <script src="boutique.js" defer></script>

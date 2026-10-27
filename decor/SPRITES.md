@@ -72,11 +72,40 @@ Sur téléphone, éteindre un seul poste n'aide pas.
   pixels CSS, ×1,25). Le grand niveau se charge à la première demande.
 - **Corrigé au passage** : la cétoine des porteuses plantait à son premier vol (phase de battement non définie).
 
+## Chargement de l'arrivée (28 octobre 2026)
+
+Décisions du porteur : la page arrive entière tout de suite, puis gagne en netteté (« à l'œil ce sera trompeur et ça fera
+le job ») ; le ciel passe en CSS pur ; jamais plus de 20 bouquets sur la frise.
+
+- **Ciel en CSS pur** (`scene/ciel_css.mjs`). Les deux dégradés de `out/ciel.svg` (vertical et voile solaire en diagonale)
+  sont recalculés en deux `linear-gradient` posés point pour point au même endroit du monde, sur une seule boîte `.ciel`,
+  du haut de `ciel-haut.svg` (1 400 unités au-dessus du monde) jusqu'en bas. `build.mjs` l'inscrit dans la page (1,5 Ko) :
+  le ciel s'affiche avec les premiers octets. `ciel.svg` reste la source ; `ciel-haut.svg` n'est plus lu.
+- **L'affiche de l'arrivée** (`scene/amorce.py`, dans `out/frise/amorce/`). Une image de ce que la toile montre au repos
+  sur la première place : tuiles, piliers et bouquets en vue, composés dans l'ordre de la toile, sur un ciel transparent.
+  Deux versions : le monde entier pour un ordinateur (0,45 pixel par unité, 92 Ko en AVIF) et la colonne d'un téléphone
+  (0,75 pixel par unité, 87 Ko). La page la porte dans son HTML (`<picture id="affiche">`), sous la toile, avant tout
+  script. Les sprites nets viennent par-dessus, aux mêmes places (vérifié au pixel près sur ordinateur et téléphone).
+  L'affiche s'en va quand le décor net et les bouquets nets de l'arrivée sont tous là, ou tout de suite si la caméra bouge.
+- **Les planches légères** (même script). Tous les sprites de la frise au sixième de leur définition, sur une planche
+  (665 Ko en AVIF, 1 Mo en WebP). Partout où l'affiche ne couvre pas (après un glissement, un lien `?b=`), une pièce montre
+  son sprite léger jusqu'à l'arrivée du net. On les charge en priorité basse derrière les sprites nets de l'arrivée.
+- **Les index des bouquets** sont tous dans `amorce.json`, préchargé dans l'en-tête : plus de fichier à attendre par bouquet.
+- **AVIF d'abord, WebP en repli.** Une `<picture>` avec des sources WebP typées faisait télécharger les deux formats :
+  l'image demande l'AVIF seul, et un navigateur qui ne sait pas le lire prend le WebP de la même image.
+- **`scene.js` en `defer`.** Le script bloquant retardait le premier affichage de son aller-retour.
+- **Mesures en local** (serveur `servir.py`, ordinateur 1280 × 720) : premier affichage à 1,43 s avant, puis 0,58 s ;
+  l'arrivée entière (affiche, plus grand affichage) à 0,65 s ; tout net vers 2,8 à 3,2 s. Sur un lien `?b=`, le ciel
+  d'abord, la scène légère vers 1,9 s, puis le net.
+- **Ordre de fabrication :** `frise_cuisson.mjs` / `frise_versions.mjs`, `sprites.mjs`, puis `python scene/amorce.py`, puis
+  `node scene/build.mjs`.
+
 ## Reste
 
 - Les porteuses du bandeau gardent leurs deux canvases, au-dessus du bandeau HTML. On peut les réunir en une seule.
-- Le ciel reste une image SVG dans la page (48 Mo décodés sur téléphone) : un dégradé CSS ou un sprite suffirait.
 - `ouvert.json`, `p*.svg` et `vignette.svg` restent publiés comme sources, mais la page ne les lit plus.
+- Les liens `?b=` (ceux des vidéos) attendent la planche légère : une affiche par bouquet les rendrait instantanés eux aussi.
+- Les textures compressées (KTX2) : elles attendent l'accord du porteur pour télécharger l'encodeur et le transcodeur.
 
 ## Questions ouvertes
 

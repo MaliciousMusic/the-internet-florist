@@ -48,14 +48,6 @@ body {
   user-select: none;
 }
 
-/* the sky over the world's top edge, where a phone held upright shows sky above the world (owner, 2026-10-27: the CSS
-   gradient there made a visible step): ciel.svg's own gradients carried on over the 1400 units above it (ciel-haut.svg) */
-.ciel-haut {
-  top: auto;
-  bottom: 100%;
-  height: calc(100% * 1400 / 1350);
-}
-
 
 /* Computer (a landscape screen 900 px wide or more): the world hangs from the top edge, whatever the window's shape, so
    a window wider than 16:9 (not full screen) frames the sky and the frames as the full screen does and only shows less of

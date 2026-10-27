@@ -32,13 +32,13 @@
 <meta property="og:locale:alternate" content="zh_CN">
 <meta property="og:locale:alternate" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
+<style>.ciel{position:absolute;left:0;width:100%;top:-103.704%;height:203.704%;z-index:0;pointer-events:none;background:linear-gradient(158.9969deg,rgba(242,246,251,0.1994) 38.510%,rgba(242,246,251,0.1918) 39.884%,rgba(242,246,251,0.1825) 41.254%,rgba(242,246,251,0.1626) 43.998%,rgba(242,246,251,0.123) 49.485%,rgba(242,246,251,0.1043) 52.229%,rgba(242,246,251,0.0869) 54.973%,rgba(242,246,251,0.0712) 57.716%,rgba(242,246,251,0.057) 60.460%,rgba(242,246,251,0.0446) 63.204%,rgba(242,246,251,0.0338) 65.948%,rgba(242,246,251,0.0245) 68.691%,rgba(242,246,251,0.017) 71.435%,rgba(242,246,251,0.0111) 74.179%,rgba(242,246,251,0.0065) 76.922%,rgba(242,246,251,0.0029) 79.666%,rgba(242,246,251,0.0004) 82.410%),linear-gradient(180deg,rgb(108,155,207) 50.909%,rgb(113,160,210) 54.464%,rgb(115,162,211) 56.241%,rgb(116,164,212) 57.131%,rgb(119,165,213) 58.018%,rgb(124,169,214) 59.795%,rgb(127,171,215) 60.686%,rgb(130,174,216) 61.573%,rgb(134,176,217) 62.463%,rgb(139,179,219) 63.350%,rgb(143,182,220) 64.240%,rgb(147,184,221) 65.127%,rgb(162,194,225) 68.682%,rgb(167,197,226) 69.572%,rgb(169,199,226) 70.015%,rgb(173,201,227) 70.459%,rgb(176,203,228) 70.903%,rgb(181,206,229) 71.349%,rgb(188,210,230) 71.793%,rgb(195,214,232) 72.236%,rgb(200,217,233) 72.458%,rgb(205,220,234) 72.680%,rgb(209,223,235) 72.902%,rgb(212,225,236) 73.126%,rgb(215,226,236) 73.348%,rgb(216,227,237) 73.570%,rgb(218,228,237) 74.014%,rgb(219,229,237) 74.457%,rgb(220,229,237) 74.904%,rgb(220,230,238) 75.791%,rgb(221,230,238) 79.345%)}</style>
 <link rel="preload" href="boutique.json" as="fetch" crossorigin>
-<link rel="preload" href="../out/ciel.svg" as="image" fetchpriority="high">
 <link rel="preload" href="../out/frise/frise.json" as="fetch" crossorigin>
+<link rel="preload" href="../out/frise/amorce.json" as="fetch" crossorigin>
 <link rel="modulepreload" href="toile.mjs">
 <link rel="modulepreload" href="../../insectes/runtime/vendor/pixi-8.6.6.min.mjs">
-<link rel="preload" href="bouquets/printemps-a-la-carpe/sprites/sprites.json" as="fetch" crossorigin>
-<link rel="stylesheet" href="scene.css?v=e7a888109e">
+<link rel="stylesheet" href="scene.css?v=b2268b607f">
 <link rel="stylesheet" href="boutique.css?v=c501544a6d">
 <link rel="stylesheet" href="entete.css?v=3fb3031db0">
 <link rel="stylesheet" href="demo.css?v=4b96a7a4ec">
@@ -585,9 +585,16 @@
 </noscript>
 <main class="scene" id="scene">
   <div class="monde" id="monde">
-    <!-- the sky over the world's top edge (a phone held upright shows it): the same gradients carried on (ciel.mjs) -->
-    <img class="plan ciel-haut" style="--z:0" data-src="ciel-haut.svg" alt="" decoding="async">
-    <img class="plan" style="--z:0" data-src="ciel.svg" alt="" decoding="async" fetchpriority="high">
+    <!-- the sky, in pure CSS (ciel_css.mjs, inlined in the head by build.mjs): ciel.svg's gradients, carried on over the
+         world's top edge (a phone held upright shows it) -->
+    <div class="ciel" aria-hidden="true"></div>
+    <!-- the landing whole at once (amorce.py, written by build.mjs): one picture of what the canvas shows at rest on the
+         first place, under the canvas, which lays its sharp sprites over it; frise.js takes it away -->
+    <picture id="affiche">
+      <source media="(max-aspect-ratio: 1/1)" srcset="../out/frise/amorce/affiche-colonne.avif?v=40bc186f">
+      <img src="../out/frise/amorce/affiche-large.avif?v=bb09e268" alt="" fetchpriority="high" onerror="this.onerror=null;var s=this.parentNode.querySelector('source');s&&s.remove();this.src=matchMedia('(max-aspect-ratio: 1/1)').matches?'../out/frise/amorce/affiche-colonne.webp?v=f8e79063':'../out/frise/amorce/affiche-large.webp?v=24fc3f8d'" style="position:absolute;left:0;width:100%;top:18.1481%;height:90.0741%;z-index:3;pointer-events:none;user-select:none">
+    </picture>
+    <script>if (/[?&](b|c)=/.test(location.search)) document.getElementById('affiche').remove();</script>
     <div class="plan nuages hauts" style="--z:1" id="nuages-hauts"></div>
     <div class="plan nuages bas" style="--z:2" id="nuages-bas"></div>
     <!-- The catalogue frieze (frise.js, decor/FRISE.md): the horizon and the ground's depth slices as looping strips of
@@ -753,10 +760,10 @@
   </div>
   <iframe id="facture-page" title="Facturas"></iframe>
 </dialog>
-<script src="scene.js?v=5f34f66be8"></script>
+<script src="scene.js?v=5f34f66be8" defer></script>
 <script src="entete.js?v=6eb5841632" defer></script>
-<script src="frise.js?v=9560579b90" defer></script>
-<script src="boutique.js?v=9a7041a6ca" defer></script>
+<script src="frise.js?v=b1c5713812" defer></script>
+<script src="boutique.js?v=eb26f0623a" defer></script>
 <script type="module" src="insectes.mjs"></script>
 <script type="module" src="porteuses.mjs"></script>
 </body>
