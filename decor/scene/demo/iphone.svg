@@ -1,47 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1640" width="800" height="1640">
-  <!-- A smartphone of the latest kind seen from the front (demo "On your desktop", owner 2026-10-27: a realistic phone OS, no
-       logo): flat titanium edges, a thin black border, the island at the top. The screen is a hole (x 70, y 62, 660 x 1516,
-       radius 96); the island is drawn over what shows through it. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1540" width="800" height="1540">
+  <!-- A smartphone of the latest kind seen from the front (demo "On your desktop", owner 2026-10-27: realistic, from reference
+       photos, no logo), in its real proportions (1 : 2.09), 9.96 px a millimetre: a thin titanium band, a uniform black
+       border, corners of 15 % of the width, the island at the top, the buttons where they are
+       (action, volume up and down on the left; the side button and the camera control on the right). Of the 18th kind
+       (September 2026): its island narrower, 13.5 mm wide instead of 20.8 mm, still in the middle. The screen is a hole
+       (x 66, y 42, 668 x 1446, radius 86); the island is drawn over what shows through it. -->
   <defs>
     <linearGradient id="titane" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#8d9096"/>
-      <stop offset="0.04" stop-color="#d5d8dc"/>
-      <stop offset="0.5" stop-color="#b9bdc2"/>
-      <stop offset="0.96" stop-color="#d5d8dc"/>
-      <stop offset="1" stop-color="#8d9096"/>
+      <stop offset="0" stop-color="#7f8389"/>
+      <stop offset="0.03" stop-color="#c9ccd0"/>
+      <stop offset="0.5" stop-color="#b4b8bd"/>
+      <stop offset="0.97" stop-color="#c9ccd0"/>
+      <stop offset="1" stop-color="#7f8389"/>
+    </linearGradient>
+    <linearGradient id="bouton" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8e9297"/>
+      <stop offset="1" stop-color="#c3c6ca"/>
     </linearGradient>
     <linearGradient id="reflet" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fff" stop-opacity="0.14"/>
+      <stop offset="0" stop-color="#fff" stop-opacity="0.12"/>
       <stop offset="0.34" stop-color="#fff" stop-opacity="0.03"/>
       <stop offset="0.35" stop-color="#fff" stop-opacity="0"/>
     </linearGradient>
     <radialGradient id="ombre" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#0b1a33" stop-opacity="0.32"/>
+      <stop offset="0" stop-color="#0b1a33" stop-opacity="0.3"/>
       <stop offset="1" stop-color="#0b1a33" stop-opacity="0"/>
     </radialGradient>
     <mask id="trou" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
       <rect width="100%" height="100%" fill="#fff"/>
-      <rect x="70" y="62" width="660" height="1516" rx="96" fill="#000"/>
+      <rect x="66" y="42" width="668" height="1446" rx="86" fill="#000"/>
     </mask>
   </defs>
-  <ellipse cx="400" cy="1622" rx="330" ry="14" fill="url(#ombre)"/>
-  <!-- the body, its screen cut out by the mask -->
+  <ellipse cx="400" cy="1522" rx="320" ry="12" fill="url(#ombre)"/>
   <g mask="url(#trou)">
-  <!-- the side buttons -->
-  <rect x="38" y="300" width="8" height="70" rx="3" fill="#a3a7ad"/>
-  <rect x="38" y="410" width="8" height="120" rx="3" fill="#a3a7ad"/>
-  <rect x="38" y="550" width="8" height="120" rx="3" fill="#a3a7ad"/>
-  <rect x="754" y="440" width="8" height="180" rx="3" fill="#a3a7ad"/>
-  <!-- the titanium frame, the black border, the screen cut out -->
-  <rect x="44" y="20" width="712" height="1600" rx="132" fill="url(#titane)"/>
-  <path fill="#07080a" fill-rule="evenodd" d="M182 30h436a128 128 0 0 1 128 128v1324a128 128 0 0 1-128 128H182A128 128 0 0 1 54 1482V158A128 128 0 0 1 182 30z
-    M166 62a96 96 0 0 0-96 96v1324a96 96 0 0 0 96 96h468a96 96 0 0 0 96-96V158a96 96 0 0 0-96-96z"/>
+    <!-- the buttons: action, volume up, volume down (left); side button, camera control (right) -->
+    <rect x="39" y="318" width="7" height="68" rx="3" fill="url(#bouton)"/>
+    <rect x="39" y="466" width="7" height="102" rx="3" fill="url(#bouton)"/>
+    <rect x="39" y="616" width="7" height="102" rx="3" fill="url(#bouton)"/>
+    <rect x="754" y="516" width="7" height="150" rx="3" fill="url(#bouton)"/>
+    <rect x="755" y="1012" width="5" height="122" rx="2.5" fill="#6f7378"/>
+    <!-- the titanium band, the black border -->
+    <rect x="44" y="20" width="712" height="1490" rx="108" fill="url(#titane)"/>
+    <rect x="50" y="26" width="700" height="1478" rx="102" fill="#060708"/>
   </g>
-
   <!-- the island -->
-  <rect x="318" y="88" width="164" height="48" rx="24" fill="#000"/>
-  <circle cx="456" cy="112" r="10" fill="#0c1018"/>
-  <circle cx="454" cy="110" r="3" fill="#2b3a52"/>
+  <rect x="333" y="62" width="134" height="56" rx="28" fill="#000"/>
+  <circle cx="445" cy="90" r="11" fill="#0b0f17"/>
+  <circle cx="442.7" cy="87.7" r="3.3" fill="#24344d"/>
   <!-- the glass -->
-  <rect x="70" y="62" width="660" height="1516" rx="96" fill="url(#reflet)" pointer-events="none"/>
+  <rect x="66" y="42" width="668" height="1446" rx="86" fill="url(#reflet)" pointer-events="none"/>
 </svg>

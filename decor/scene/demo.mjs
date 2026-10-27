@@ -20,11 +20,13 @@
 // frame and its buttons, the long press's ring). The real bouquet (the canvas) is moved and sized into the screen by the
 // close-up's zoom, the stage alone (boutique.js zoomTo, stageOnly).
 
+import { row } from './demo/apps.mjs';
+
 const DEVICES = {
-  pc: { svg: 'demo/laptop.svg', vb: [1600, 1080], ecran: [236, 96, 1128, 705, 6], os: 'windows', tel: false },
-  mac: { svg: 'demo/imac.svg', vb: [1600, 1360], ecran: [196, 76, 1208, 680, 4], os: 'macos', tel: false },
+  pc: { svg: 'demo/laptop.svg', vb: [1600, 1080], ecran: [250, 74, 1100, 688, 5], os: 'windows', tel: false },
+  mac: { svg: 'demo/imac.svg', vb: [1600, 1160], ecran: [184, 64, 1232, 693, 3], os: 'macos', tel: false },
   android: { svg: 'demo/android.svg', vb: [800, 1640], ecran: [66, 56, 668, 1528, 76], os: 'android', tel: true },
-  iphone: { svg: 'demo/iphone.svg', vb: [800, 1640], ecran: [70, 62, 660, 1516, 96], os: 'ios', tel: true },
+  iphone: { svg: 'demo/iphone.svg', vb: [800, 1540], ecran: [66, 42, 668, 1446, 86], os: 'ios', tel: true },
 };
 const ORDER = ['pc', 'mac', 'android', 'iphone'];
 // the all-in-one's colours: chin, chin's foot, stand
@@ -253,13 +255,13 @@ function frame() {
 function desktop(dv) {
   const T = A.T, U = T.demoUi;
   const hour = new Intl.DateTimeFormat(A.I18N.locale, { hour: '2-digit', minute: '2-digit' }).format(new Date());
-  const icons = (n, from = 0) => Array.from({ length: n }, (_, i) => `<i class="ic ic${(i + from) % 6}"></i>`).join('');
-  const nav = '<i class="ic ic-nav"></i>';
+  // the apps (demo/apps.mjs): the browser the cursor opens, the usual ones, Belai Bureau once installed
+  const grid = row(['agenda', 'photos', 'musique', 'notes', 'reglages', 'dossier', 'courriel', 'belai']);
   D.ecran.innerHTML = {
-    windows: `<div class="os-fond"></div><div class="os-barre-win"><span class="os-icones"><i class="ic ic-demarrer"></i>${nav}${icons(4, 1)}</span><span class="os-heure">${hour}</span></div>`,
-    macos: `<div class="os-fond"></div><div class="os-menu"><b>${esc(U.finder)}</b><span>${hour}</span></div><div class="os-dock">${nav}${icons(7, 1)}</div>`,
-    android: `<div class="os-fond"></div><div class="os-statut"><span>${hour}</span><span class="os-pile"></span></div><div class="os-grille">${icons(8)}</div><div class="os-recherche"></div><div class="os-dock-and">${nav}${icons(3, 1)}</div><div class="os-nav"></div>`,
-    ios: `<div class="os-fond"></div><div class="os-statut ios"><span>${hour}</span><span class="os-pile"></span></div><div class="os-grille">${icons(8)}</div><div class="os-dock-ios">${nav}${icons(3, 1)}</div><div class="os-nav"></div>`,
+    windows: `<div class="os-fond"></div><div class="os-barre-win"><span class="os-icones"><i class="ic ic-demarrer"></i>${row(['nav', 'dossier', 'courriel', 'agenda', 'photos', 'musique', 'belai'])}</span><span class="os-heure">${hour}</span></div>`,
+    macos: `<div class="os-fond"></div><div class="os-menu"><b>${esc(U.finder)}</b><span>${hour}</span></div><div class="os-dock">${row(['dossier', 'nav', 'courriel', 'messages', 'agenda', 'photos', 'musique', 'notes', 'reglages', 'belai'])}</div>`,
+    android: `<div class="os-fond"></div><div class="os-statut"><span>${hour}</span><span class="os-pile"></span></div><div class="os-grille">${grid}</div><div class="os-recherche"></div><div class="os-dock-and">${row(['messages', 'nav', 'courriel', 'musique'])}</div><div class="os-nav"></div>`,
+    ios: `<div class="os-fond"></div><div class="os-statut ios"><span>${hour}</span><span class="os-pile"></span></div><div class="os-grille">${grid}</div><div class="os-cherche"></div><div class="os-dock-ios">${row(['messages', 'nav', 'courriel', 'musique'])}</div><div class="os-nav"></div>`,
   }[dv.os] + '<div class="d-fenetre d-notes" hidden><div class="d-titre"><i></i><i></i><i></i></div><div class="d-lignes"><p></p><p></p><p></p><p></p></div></div>';
   D.notes = D.ecran.querySelector('.d-notes');
   D.navIcone = D.ecran.querySelector('.ic-nav');
@@ -447,6 +449,7 @@ function reset() {
   for (const el of [D.dl, D.appw, D.liste, D.cadreBq, D.anneau, D.notes]) el.hidden = true;
   showNav(false);
   D.cnx.hidden = false;
+  D.ecran.classList.remove('installe');
   for (const c of D.dessus.querySelectorAll('.d-champ')) c.textContent = '';
   D.dl.classList.remove('fini');
   D.dl.querySelector('.d-dl-barre i').style.transform = 'scaleX(0)';
@@ -591,6 +594,7 @@ async function download(ctx, icon) {
   await wait(1500, ctx);
   D.dl.classList.add('fini');
   D.dl.querySelector('.d-dl-etat').textContent = A.T.demoUi.installed;
+  D.ecran.classList.add('installe'); // its icon in the bar
   await wait(500, ctx);
   showNav(false);
   show(D.dl, false);
