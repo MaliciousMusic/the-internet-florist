@@ -66,7 +66,8 @@ Le porteur veut rendre le moins d'argent possible, dans ce que la loi permet.
   regagne les jours perdus (sa fanaison est repoussée d'autant). On ne rembourse que si la correction échoue.
 - **Geste encadré : l'échange sous 24 heures.** Une seule fois, dans les 24 h qui suivent l'achat, et seulement si le
   bouquet n'a pas été offert. On peut l'échanger contre un bouquet du jour encore disponible, de prix égal ou
-  inférieur. La différence va dans une **cagnotte** du compte, déduite du prochain achat ; aucun argent n'est rendu. Le
+  inférieur. La différence va dans une **cagnotte** du compte, déduite du prochain achat ; aucun argent n'est rendu. La
+  cagnotte n'expire jamais tant que le compte existe (porteur, 2026-10-27) ; elle disparaît avec lui. Le
   nouveau bouquet repart pour 30 jours, et l'exemplaire rendu revient en vente.
 - **Contestation bancaire** (rétrofacturation Stripe) : on conteste avec les preuves (renonciation datée, livraison). Si la
   banque donne raison à l'acheteur, le bouquet est retiré, y compris chez la personne à qui il a été offert.
@@ -116,8 +117,6 @@ Le porteur veut rendre le moins d'argent possible, dans ce que la loi permet.
 
 ## Questions ouvertes
 
-- La cagnotte expire-t-elle ? Proposition : non, tant que le compte existe (un compte supprimé la perd, ce que disent les
-  CGV). Le porteur peut demander une durée, par exemple 12 mois.
 
 - Le nom exact d'une collection : « Collection d'octobre 2026 », ou un nom poétique par mois ?
 - Les bouquets d'une collection terminée : retirés de la vitrine, ou montrés comme épuisés ?
