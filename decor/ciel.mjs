@@ -402,6 +402,16 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
     const o = { variante, ras, under };
     const svg = sky(seed, o);
     writeFileSync(f, svg);
+    // the sky above the world (owner, 2026-10-27: a phone held upright shows sky over the world's top edge, and the
+    // band drawn there in CSS made a step): the same two gradients, in the same world units, over the 1400 units above
+    // y = 0, so the colour runs on without a seam, its tint and its veil included
+    if (f.endsWith('ciel.svg') && !a.includes('--out'))
+      writeFileSync(
+        f.replace(/ciel\.svg$/, 'ciel-haut.svg'),
+        svg
+          .replace(`viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"`, `viewBox="0 -1400 ${W} 1400" width="${W}" height="1400"`)
+          .replace(/<rect width="(\d+)" height="\d+" fill="url\(#(csg|csv)\)"\/>/g, '<rect y="-1400" width="$1" height="1400" fill="url(#$2)"/>'),
+      );
     const p = skyParams(seed, o);
     const v = sunVeil(p);
     const n = (svg.match(/<stop/g) || []).length;
