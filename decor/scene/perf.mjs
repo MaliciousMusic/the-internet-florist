@@ -7,6 +7,7 @@
 //
 //   --phone : 390 x 844, 3 device pixels per CSS pixel, touch, processor slowed 4 times (a mid-range phone)
 //   --css   : a style sheet added to the page before it loads (to switch a layer off and measure what it costs)
+//   --js    : a script run once the page has loaded, for a layer the style sheet cannot reach
 //
 // Its own throwaway profile (CHROME_PROFILE), its own port (CHROME_PORT, 9351); Chrome is closed at the end.
 import { spawn } from 'node:child_process';
@@ -33,6 +34,7 @@ const flag = (k) => {
 };
 const phone = flag('--phone');
 const css = opt('--css', '');
+const js = opt('--js', ''); // a script run in the page once it has loaded (to stop a layer the style sheet cannot reach)
 const label = opt('--label', 'complet');
 const [url, outFile] = args;
 const W = phone ? 390 : 1440;
@@ -207,6 +209,7 @@ const pageNote = `(() => {
   const loop = (t) => { F.frames.push(t); requestAnimationFrame(loop); };
   requestAnimationFrame(loop);
   window.__perfMark = (n) => { F.marks[n] = performance.now(); console.timeStamp('phase:' + n); };
+  try { new PerformanceObserver((l) => { for (const e of l.getEntries()) F.lcp = Math.round(e.startTime); }).observe({ type: 'largest-contentful-paint', buffered: true }); } catch (_) {}
 })();`;
 
 try {
@@ -236,6 +239,7 @@ try {
     await P('Page.addScriptToEvaluateOnNewDocument', {
       source: `document.addEventListener('DOMContentLoaded', () => { const s = document.createElement('style'); s.textContent = ${JSON.stringify(css)}; document.head.append(s); });`,
     });
+  if (js) await P('Page.addScriptToEvaluateOnNewDocument', { source: `addEventListener('load', () => { ${js} });` });
   const gpu = await send('SystemInfo.getInfo').catch(() => null);
 
   await send('Tracing.start', {
@@ -308,7 +312,12 @@ try {
     const anims = document.getAnimations().map((a) => (a.effect && a.effect.target && (a.effect.target.className?.baseVal ?? a.effect.target.className)) || '?');
     const byCls = {}; for (const a of anims) byCls[a] = (byCls[a] || 0) + 1;
     const willChange = [...document.querySelectorAll('*')].filter((e) => getComputedStyle(e).willChange !== 'auto').length;
-    return { dpr, nodes: document.getElementsByTagName('*').length, imgs, canv, anims: byCls, willChange, F: { frames: F.frames, marks: F.marks }, mem: performance.memory && { used: performance.memory.usedJSHeapSize, total: performance.memory.totalJSHeapSize } };
+    // the load: first paints, the shop's own milestones, every file with when it ended (ms after navigation)
+    const paint = Object.fromEntries(performance.getEntriesByType('paint').map((e) => [e.name, Math.round(e.startTime)]));
+    const res = performance.getEntriesByType('resource').map((e) => [e.name.replace(location.origin, ''), e.transferSize, e.decodedBodySize, Math.round(e.startTime), Math.round(e.responseEnd)]);
+    const BM = window.BOUTIQUE_MESURES || {};
+    const load = { paint, lcp: F.lcp, premiere: BM.premiere && { ...BM.premiere, echelle: undefined }, suivantes: BM.suivantes, decor: window.FRISE_TEMPS && window.FRISE_TEMPS.pieces, res };
+    return { load, dpr, nodes: document.getElementsByTagName('*').length, imgs, canv, anims: byCls, willChange, F: { frames: F.frames, marks: F.marks }, mem: performance.memory && { used: performance.memory.usedJSHeapSize, total: performance.memory.totalJSHeapSize } };
   })()`);
   const layers = await (async () => {
     let list = null;
@@ -458,6 +467,7 @@ try {
   res.noeuds = page.nodes;
   res.willChange = page.willChange;
   res.jsHeapMo = page.mem && Math.round(page.mem.used / 2 ** 20);
+  res.chargement = { ...page.load, res: page.load.res.map(([u, t, d, a, b]) => [short(u), t, d, a, b, kind(u)]) };
   // round
   for (const ph of Object.values(res.phases)) {
     for (const o of [ph.main, ph.js, ph.threads]) for (const k in o) o[k] = Math.round(o[k]);
