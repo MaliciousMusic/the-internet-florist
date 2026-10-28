@@ -290,7 +290,7 @@
   transform-origin: 50% 100%;
 }
 
-/* above the Buy button: the wallpaper demo */
+/* above the Buy button: "Try on your desktop" (essai.mjs) */
 .achat-haut {
   display: flex;
   align-items: center;
@@ -332,86 +332,6 @@
 .achat-demo:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 2px;
-}
-
-/* ---------- the demo video ---------- */
-.demo {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  display: grid;
-  place-items: center;
-  padding: 16px;
-  background: rgb(10 30 60 / 0.35);
-}
-
-.demo[hidden] {
-  display: none;
-}
-
-.demo-boite {
-  width: min(100%, 720px);
-  max-height: 100%;
-  overflow: auto;
-  box-sizing: border-box;
-  padding: 14px;
-  border: 1px solid var(--glass-bord);
-  border-radius: 18px;
-  background: var(--glass-texte);
-  -webkit-backdrop-filter: var(--glass-flou);
-  backdrop-filter: var(--glass-flou);
-  box-shadow: var(--glass-ombre);
-  color: #fff;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-}
-
-.demo-tete {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.demo-tete h2 {
-  margin: 0;
-  font: 600 16px/1.25 inherit;
-}
-
-.demo-fermer {
-  display: grid;
-  place-items: center;
-  flex: 0 0 auto;
-  width: 34px;
-  height: 34px;
-  padding: 0;
-  border: 1px solid rgb(255 255 255 / 0.4);
-  border-radius: 999px;
-  background: none;
-  color: #fff;
-  cursor: pointer;
-}
-
-.demo-fermer:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-}
-
-.demo-video {
-  display: block;
-  width: 100%;
-  max-height: 70dvh;
-  border-radius: 12px;
-  background: rgb(0 0 0 / 0.35);
-}
-
-.demo-video[hidden] {
-  display: none;
-}
-
-.demo-absente {
-  margin: 0;
-  font: 400 14px/1.5 inherit;
 }
 
 .achat-bouton:focus-visible {

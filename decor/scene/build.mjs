@@ -276,16 +276,15 @@ function i18n(L, page) {
 
 // ---------- the pages
 // The page's own stylesheets and scripts carry a digest of their content (?v=): a changed file is never taken from a
-// browser's cache beside a new one (owner's captures of 2026-10-27: an old demo.css with a new script). The demo's module,
-// loaded later by boutique.js, and the files it reads carry one digest of them all, on the page's <html data-demo-v>.
+// browser's cache beside a new one (owner's captures of 2026-10-27: an old demo.css with a new script). The try's module
+// (essai.mjs), loaded later by boutique.js, carries its digest on the page's <html data-essai-v>.
 const digest = (...files) => createHash('sha256').update(files.map((f) => readFileSync(join(HERE, f))).join('\0')).digest('hex').slice(0, 10);
-const DEMO_FILES = ['demo.mjs', 'demo.css', 'demo/apps.mjs', 'demo/laptop.svg', 'demo/imac.svg', 'demo/android.svg', 'demo/iphone.svg'];
-const demoV = digest(...DEMO_FILES);
+const essaiV = digest('essai.mjs');
 const versioned = (html) =>
   html
     .replace(/(<link rel="stylesheet" href=")([\w-]+\.css)(")/g, (m, a, f, b) => (existsSync(join(HERE, f)) ? `${a}${f}?v=${digest(f)}${b}` : m))
     .replace(/(<script src=")([\w-]+\.js)(")/g, (m, a, f, b) => (existsSync(join(HERE, f)) ? `${a}${f}?v=${digest(f)}${b}` : m))
-    .replace(/<html /, `<html data-demo-v="${demoV}" `);
+    .replace(/<html /, `<html data-essai-v="${essaiV}" `);
 let written = 0;
 for (const L of langs) {
   const p = prefix(L);
