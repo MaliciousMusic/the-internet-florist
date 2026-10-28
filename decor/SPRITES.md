@@ -113,13 +113,56 @@ le job ») ; le ciel passe en CSS pur ; jamais plus de 20 bouquets sur la frise.
 - **Ordre de fabrication :** `frise_cuisson.mjs` / `frise_versions.mjs`, `sprites.mjs`, `python scene/ktx2.py`, puis
   `python scene/amorce.py`, puis `node scene/build.mjs`.
 
+## Entrée d'un bloc (28 octobre 2026, soir)
+
+Le porteur a filmé l'arrivée : flou au départ, puis « une vague d'éléments déployés », un goût de produit bas de gamme. Il
+préfère encore un écran d'attente à ça ; il a choisi « affiche nette, bascule d'un bloc » et le cache des retours.
+
+- **Règle :** la première image montrée est complète et nette ; ensuite rien ne change que par le mouvement (brise, insectes,
+  fourmis qui apportent le dock).
+- **Affiche nette** (`amorce.py`) : à la définition de l'écran, le navigateur choisissant par `srcset` (1280, 1920 et 2880
+  pixels de large pour un ordinateur, 141 à 487 Ko en AVIF ; 2400 et 3360 pour la colonne d'un téléphone, 141 et 227 Ko).
+  Elle comprend les touffes de premier plan, au repos.
+- **Rien à moitié :** l'affiche et le nom du bouquet (écrit dans la page par `build.mjs`, sa police préchargée) restent
+  cachés jusqu'au décodage complet de l'image (`html.entree`, posée par la tête de la page). Avant, le ciel seul.
+- **Bascule d'un bloc** (`frise.js`) : la toile reste cachée jusqu'à ce que tout ce qui est en vue soit net (décor, bouquets
+  des places en vue, touffes), puis elle prend la place de l'affiche en une image ; les deux coïncident au pixel près.
+  Si le visiteur bouge avant, la toile vient tout de suite, avec des sprites légers là où les nets manquent.
+- **Touffes :** `frise.js` les pose dès le départ ; `insectes.mjs` les reprend en une image quand toutes les siennes sont là
+  (`Frise.touffesPrises`). La brise monte sur 2,5 s après la bascule (`Frise.brise`), pour que rien ne saute.
+- **Fourmis du dock :** elles partent quand la scène est entrée (`window.ENTREE`), plus sur un ciel vide. La classe
+  `porteuses` est posée par la tête de la page (`scene.js` est désormais différé).
+- **Ciel :** prolongé sous le monde (une bande bleue apparaissait en bas d'un téléphone avant l'entrée).
+- **Priorités :** tout ce qui n'est pas l'affiche (PixiJS, les JSON, la toile) est demandé en priorité basse.
+- **Service worker** (`scene/sw.js`, enregistré après le chargement ; jamais en local sauf `?sw=oui`, `?sw=non` le retire) :
+  les fichiers à empreinte (`?v=`) gardés pour de bon, une version par fichier ; pages, données et scripts depuis le réseau,
+  le cache s'il ne répond pas en 3 s ; le reste depuis le cache, rafraîchi derrière ; sons et vidéos laissés au navigateur.
+  Les images des bouquets portent maintenant leur empreinte dans `amorce.json`.
+- **Filmé** (`scene/film.mjs` + `film_planche.py` : Chrome sans en-tête, profil vierge, réseau 4G, chaque image peinte gardée) :
+
+  | | Ciel seul jusqu'à | Scène complète et nette | Changements visibles ensuite |
+  |---|---|---|---|
+  | Ordinateur, 1re visite | 1,0 s | 1,03 s | aucun (bascule invisible à 1,6 s) |
+  | Téléphone ralenti ×4, 1re visite | 2,0 s | 2,0 s | aucun |
+  | Téléphone, retour (service worker, 0 octet) | 0,79 s | 0,79 s | aucun |
+  | Ordinateur, retour | 0,5 s | 0,5 s | aucun |
+  | Téléphone, lien `?b=5`, 1re visite | 7,3 s | 7,3 s | aucun |
+
+  En 1,6 Mb/s, l'ordinateur reste 6,2 s sur le ciel. Le serveur local ne compresse rien et ne suit pas les priorités :
+  c'est un majorant.
+- **Défauts trouvés en filmant et corrigés :** la reprise des touffes libérait leurs textures, que les insectes partagent
+  (toile vide à 4,9 s) ; l'ancienne amorce posait les sprites nets un à un sur l'image (les piliers disparaissaient à 0,67 s).
+- Au début, sur téléphone émulé, le ciel seul se décale une fois vers 0,5 s, avant l'entrée. C'est probablement l'émulation
+  (`dvh`) : à vérifier sur un vrai téléphone.
+
 ## Reste
 
 - Les porteuses du bandeau gardent leurs deux canvases, au-dessus du bandeau HTML. On peut les réunir en une seule.
 - `ouvert.json`, `p*.svg` et `vignette.svg` restent publiés comme sources, mais la page ne les lit plus.
 - La cétoine des porteuses plante encore à son vol (`cetoine.mjs` ligne 109, `strokeWings` : `main` indéfini), vu dans la
   console le 28 octobre ; hors de ce lot.
-- Les liens `?b=` (ceux des vidéos) attendent la planche légère : une affiche par bouquet les rendrait instantanés eux aussi.
+- Les liens `?b=` (ceux des vidéos) attendent toute la toile nette (7,3 s sur téléphone ralenti) : une affiche par bouquet
+  les rendrait instantanés (environ 0,4 Mo en AVIF par bouquet, colonne et 1920 seulement).
 
 ## Questions ouvertes
 

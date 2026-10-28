@@ -32,12 +32,17 @@
 <meta property="og:locale:alternate" content="zh_CN">
 <meta property="og:locale:alternate" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
-<style>.ciel{position:absolute;left:0;width:100%;top:-103.704%;height:203.704%;z-index:0;pointer-events:none;background:linear-gradient(158.9969deg,rgba(242,246,251,0.1994) 38.510%,rgba(242,246,251,0.1918) 39.884%,rgba(242,246,251,0.1825) 41.254%,rgba(242,246,251,0.1626) 43.998%,rgba(242,246,251,0.123) 49.485%,rgba(242,246,251,0.1043) 52.229%,rgba(242,246,251,0.0869) 54.973%,rgba(242,246,251,0.0712) 57.716%,rgba(242,246,251,0.057) 60.460%,rgba(242,246,251,0.0446) 63.204%,rgba(242,246,251,0.0338) 65.948%,rgba(242,246,251,0.0245) 68.691%,rgba(242,246,251,0.017) 71.435%,rgba(242,246,251,0.0111) 74.179%,rgba(242,246,251,0.0065) 76.922%,rgba(242,246,251,0.0029) 79.666%,rgba(242,246,251,0.0004) 82.410%),linear-gradient(180deg,rgb(108,155,207) 50.909%,rgb(113,160,210) 54.464%,rgb(115,162,211) 56.241%,rgb(116,164,212) 57.131%,rgb(119,165,213) 58.018%,rgb(124,169,214) 59.795%,rgb(127,171,215) 60.686%,rgb(130,174,216) 61.573%,rgb(134,176,217) 62.463%,rgb(139,179,219) 63.350%,rgb(143,182,220) 64.240%,rgb(147,184,221) 65.127%,rgb(162,194,225) 68.682%,rgb(167,197,226) 69.572%,rgb(169,199,226) 70.015%,rgb(173,201,227) 70.459%,rgb(176,203,228) 70.903%,rgb(181,206,229) 71.349%,rgb(188,210,230) 71.793%,rgb(195,214,232) 72.236%,rgb(200,217,233) 72.458%,rgb(205,220,234) 72.680%,rgb(209,223,235) 72.902%,rgb(212,225,236) 73.126%,rgb(215,226,236) 73.348%,rgb(216,227,237) 73.570%,rgb(218,228,237) 74.014%,rgb(219,229,237) 74.457%,rgb(220,229,237) 74.904%,rgb(220,230,238) 75.791%,rgb(221,230,238) 79.345%)}</style>
-<link rel="preload" href="boutique.json" as="fetch" crossorigin>
-<link rel="preload" href="../out/frise/frise.json" as="fetch" crossorigin>
-<link rel="preload" href="../out/frise/amorce.json" as="fetch" crossorigin>
-<link rel="modulepreload" href="toile.mjs">
-<link rel="modulepreload" href="../../insectes/runtime/vendor/pixi-8.6.6.min.mjs">
+<style>.ciel{position:absolute;left:0;width:100%;top:-103.704%;height:255.556%;z-index:0;pointer-events:none;background:linear-gradient(158.9969deg,rgba(242,246,251,0.1994) 32.343%,rgba(242,246,251,0.1918) 33.497%,rgba(242,246,251,0.1825) 34.648%,rgba(242,246,251,0.1626) 36.952%,rgba(242,246,251,0.123) 41.561%,rgba(242,246,251,0.1043) 43.865%,rgba(242,246,251,0.0869) 46.170%,rgba(242,246,251,0.0712) 48.474%,rgba(242,246,251,0.057) 50.778%,rgba(242,246,251,0.0446) 53.083%,rgba(242,246,251,0.0338) 55.387%,rgba(242,246,251,0.0245) 57.692%,rgba(242,246,251,0.017) 59.996%,rgba(242,246,251,0.0111) 62.300%,rgba(242,246,251,0.0065) 64.605%,rgba(242,246,251,0.0029) 66.909%,rgba(242,246,251,0.0004) 69.214%),linear-gradient(180deg,rgb(108,155,207) 40.580%,rgb(113,160,210) 43.413%,rgb(115,162,211) 44.830%,rgb(116,164,212) 45.539%,rgb(119,165,213) 46.246%,rgb(124,169,214) 47.663%,rgb(127,171,215) 48.373%,rgb(130,174,216) 49.080%,rgb(134,176,217) 49.789%,rgb(139,179,219) 50.496%,rgb(143,182,220) 51.206%,rgb(147,184,221) 51.913%,rgb(162,194,225) 54.746%,rgb(167,197,226) 55.456%,rgb(169,199,226) 55.809%,rgb(173,201,227) 56.163%,rgb(176,203,228) 56.517%,rgb(181,206,229) 56.873%,rgb(188,210,230) 57.226%,rgb(195,214,232) 57.580%,rgb(200,217,233) 57.757%,rgb(205,220,234) 57.933%,rgb(209,223,235) 58.110%,rgb(212,225,236) 58.289%,rgb(215,226,236) 58.466%,rgb(216,227,237) 58.643%,rgb(218,228,237) 58.996%,rgb(219,229,237) 59.350%,rgb(220,229,237) 59.706%,rgb(220,230,238) 60.413%,rgb(221,230,238) 63.246%)}</style>
+<style>html:not(.entree) #affiche img,html:not(.entree) .nom-cadre{visibility:hidden}</style>
+<script>(function(){var d=document.documentElement,q=new URLSearchParams(location.search),r;window.ENTREE=new Promise(function(x){r=x});window.ENTREE_FAITE=function(){if(d.classList.contains('entree'))return;d.classList.add('entree');r(Math.round(performance.now()))};setTimeout(window.ENTREE_FAITE,5000);window.AFFICHE=new Promise(function(x){window.AFFICHE_LUE=x});if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&q.get('porteuses')!=='0'&&q.get('insectes')!=='0'){d.classList.add('porteuses');window.ENTREE.then(function(){setTimeout(function(){if(!window.PORTEUSES_EN_ROUTE)d.classList.remove('porteuses')},6000)})}if('serviceWorker' in navigator){var w=q.get('sw');if(w==='non')navigator.serviceWorker.getRegistrations().then(function(l){l.forEach(function(x){x.unregister()})});else if(w==='oui'||!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))addEventListener('load',function(){navigator.serviceWorker.register('sw.js')})}})();</script>
+<link rel="preload" href="boutique.json" as="fetch" crossorigin fetchpriority="low">
+<link rel="preload" href="../out/frise/frise.json" as="fetch" crossorigin fetchpriority="low">
+<link rel="preload" href="../out/frise/amorce.json" as="fetch" crossorigin fetchpriority="low">
+<link rel="preload" href="polices/nunito-extralight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../out/scene.json" as="fetch" crossorigin fetchpriority="low">
+<link rel="preload" href="../out/premier.json" as="fetch" crossorigin fetchpriority="low">
+<link rel="modulepreload" href="toile.mjs" fetchpriority="low">
+<link rel="modulepreload" href="../../insectes/runtime/vendor/pixi-8.6.6.min.mjs" fetchpriority="low">
 <link rel="stylesheet" href="scene.css?v=b2268b607f">
 <link rel="stylesheet" href="boutique.css?v=c501544a6d">
 <link rel="stylesheet" href="entete.css?v=3fb3031db0">
@@ -591,8 +596,8 @@
     <!-- the landing whole at once (amorce.py, written by build.mjs): one picture of what the canvas shows at rest on the
          first place, under the canvas, which lays its sharp sprites over it; frise.js takes it away -->
     <picture id="affiche">
-      <source media="(max-aspect-ratio: 1/1)" srcset="../out/frise/amorce/affiche-colonne.avif?v=40bc186f">
-      <img src="../out/frise/amorce/affiche-large.avif?v=bb09e268" alt="" fetchpriority="high" onerror="this.onerror=null;var s=this.parentNode.querySelector('source');s&&s.remove();this.src=matchMedia('(max-aspect-ratio: 1/1)').matches?'../out/frise/amorce/affiche-colonne.webp?v=f8e79063':'../out/frise/amorce/affiche-large.webp?v=24fc3f8d'" style="position:absolute;left:0;width:100%;top:18.1481%;height:90.0741%;z-index:3;pointer-events:none;user-select:none">
+      <source media="(max-aspect-ratio: 1/1)" srcset="../out/frise/amorce/affiche-colonne-2400.avif?v=77b73347 2400w, ../out/frise/amorce/affiche-colonne-3360.avif?v=c19b5ddd 3360w" sizes="282.353vw">
+      <img src="../out/frise/amorce/affiche-large-1920.avif?v=b8ff8ce5" srcset="../out/frise/amorce/affiche-large-1280.avif?v=5bcea830 1280w, ../out/frise/amorce/affiche-large-1920.avif?v=b8ff8ce5 1920w, ../out/frise/amorce/affiche-large-2880.avif?v=be13b5c4 2880w" sizes="max(100vw, 177.778vh)" alt="" fetchpriority="high" onload="window.AFFICHE_LUE&&AFFICHE_LUE(this)" onerror="this.onerror=null;var s=this.parentNode.querySelector('source');if(s)s.srcset='../out/frise/amorce/affiche-colonne-2400.webp?v=fbd7cde4 2400w, ../out/frise/amorce/affiche-colonne-3360.webp?v=a5053e24 3360w';this.srcset='../out/frise/amorce/affiche-large-1280.webp?v=561bc5d2 1280w, ../out/frise/amorce/affiche-large-1920.webp?v=b991c518 1920w, ../out/frise/amorce/affiche-large-2880.webp?v=6fccc972 2880w';this.src='../out/frise/amorce/affiche-large-1920.webp?v=b991c518'" style="position:absolute;left:0;width:100%;top:18.1481%;height:93.4074%;z-index:3;pointer-events:none;user-select:none">
     </picture>
     <script>if (/[?&](b|c)=/.test(location.search)) document.getElementById('affiche').remove();</script>
     <div class="plan nuages hauts" style="--z:1" id="nuages-hauts"></div>
@@ -607,6 +612,8 @@
     <div class="plan premier" style="--z:9" id="premier"></div>
     <div class="colonne" aria-hidden="true"></div>
   </div>
+  <div class="nom-cadre"><div class="nom-ciel" aria-hidden="true" style="opacity:1"><span class="nom-ligne"><span class="nom-titre">Printemps à la carpe</span><span class="nom-copies"></span><span class="nom-fane"></span></span><span class="nom-sous"></span></div></div>
+  <script>if (/[?&](b|c)=/.test(location.search)) document.querySelector('.nom-cadre').remove();</script>
   <!-- the pager (boutique.js): one dot per bouquet of the day, fixed on the screen by the dock (entete.css) -->
   <div class="pager" id="pager" role="group" aria-label="Ramos del día" hidden></div>
   <div class="perf" id="perf" hidden></div>
@@ -760,9 +767,9 @@
   </div>
   <iframe id="facture-page" title="Facturas"></iframe>
 </dialog>
-<script src="scene.js?v=5f34f66be8" defer></script>
+<script src="scene.js?v=ae4a7493df" defer></script>
 <script src="entete.js?v=6eb5841632" defer></script>
-<script src="frise.js?v=53c824d5fd" defer></script>
+<script src="frise.js?v=2958fd9132" defer></script>
 <script src="boutique.js?v=eb26f0623a" defer></script>
 <script type="module" src="insectes.mjs"></script>
 <script type="module" src="porteuses.mjs"></script>

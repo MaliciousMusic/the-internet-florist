@@ -1,7 +1,7 @@
 // ciel_css.mjs: the sky as pure CSS (owner, 2026-10-28: « remplacé le ciel en css pur »), read from decor/out/ciel.svg
 // (ciel.mjs), which stays its source. The SVG's two gradients, the vertical one (csg) and the sun's diagonal veil (csv),
 // both in the world's units (2400 x 1350), become two CSS linear gradients over one box, .ciel: the world's width, from
-// 1400 units above its top edge (what ciel-haut.svg covered, for a phone held upright) to its bottom. Each SVG stop is
+// 1400 units above its top edge (what ciel-haut.svg covered, for a phone held upright) to 700 under it. Each SVG stop is
 // placed on the CSS gradient line at the very point of the world the SVG gave it, so the colours match point for point; the
 // SVG's padding (the first and last stops' colours beyond the line) is CSS's own.
 //
@@ -14,7 +14,10 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const W = 2400;
 const WH = 1350;
 const ABOVE = 1400; // the world's units of sky over its top edge
-const BOX = { x: 0, y: -ABOVE, w: W, h: WH + ABOVE };
+// and under its bottom edge: a phone held upright sees below the world until the ground is in (the scene's own zenith blue
+// showed there as a band, 2026-10-28); the ground covers it
+const BELOW = 700;
+const BOX = { x: 0, y: -ABOVE, w: W, h: WH + ABOVE + BELOW };
 
 const attrs = (tag) => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map((m) => [m[1], m[2]]));
 const pct = (v) => `${(v * 100).toFixed(3)}%`;

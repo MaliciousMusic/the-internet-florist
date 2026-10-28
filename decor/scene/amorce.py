@@ -2,18 +2,18 @@
 puis lourds on affiche un truc complet direct qui scale en qualité progressivement »). From the frieze's sprites (frise.json:
 the strips' tiles and the pillars, frise_cuisson.mjs; bouquets/<id>/sprites/, sprites.mjs) it writes, in decor/out/frise/:
 
-  amorce/affiche-large.avif|webp, amorce/affiche-colonne.avif|webp
-      the landing as one picture each (the camera at rest on the first place, decor/scene/frise.js): every tile, pillar and
-      bouquet in view, composited in the canvas's order, over a transparent sky (the sky is CSS). The page shows it from its
-      own HTML, before any script, under the canvas, which lays its sharp sprites over it in the same places, then the
-      picture goes. "large": the whole world (a computer); "colonne": the VUE units a phone held upright sees, at a finer
-      definition, transparent elsewhere (the same box, so one <picture> lays either).
+  amorce/affiche-large-<w>.avif|webp, amorce/affiche-colonne-<w>.avif|webp
+      the landing as one sharp picture (the camera at rest on the first place, decor/scene/frise.js): every tile, pillar,
+      bouquet and foreground clump in view, composited in the canvas's order, over a transparent sky (the sky is CSS), w
+      pixels across the world. The page shows it whole from its own HTML once decoded, before any script; the canvas, held
+      hidden until all its sprites in view are there, takes its place in one frame. "large": the whole world (a computer);
+      "colonne": the VUE units a phone held upright sees, transparent elsewhere (the same box, so one <picture> lays either).
   amorce/feuille-<n>.avif|webp
       every sprite of the frieze at 1/DOWN of its definition, in sheets: what frise.js shows of a piece before its sharp
       sprite has come (anywhere the landing's picture does not cover: the other places, after a swipe, ?b= links).
   amorce.json
-      { affiche: { large, colonne, boite: [x, y, w, h] (world), colonneMedia }, feuilles: [pictures], where a picture is
-      { avif: src, webp: src }, cadres: { key: [sheet, x,
+      { affiche: { large: [{ w, avif, webp }], colonne: [...], boite: [x, y, w, h] (world), colonneMedia, places },
+      feuilles: [pictures], where a picture is { avif: src, webp: src }, cadres: { key: [sheet, x,
       y, w, h] (pixels) }, sprites: { url: index } } where key is a sharp sprite's url as frise.js asks for it, without its
       ?v= ("../out/frise/z3/4.webp", "bouquets/citrine/sprites/frise.webp"), ktx2 maps a decor sprite's key to its
       GPU-compressed picture (ktx2.py, run before), and sprites holds every bouquet's sprites.json
@@ -31,8 +31,12 @@ DEST = os.path.join(FR, 'amorce')
 WW = 2400
 VUE = 850  # frise.js: the world's units a phone held upright sees
 DOWN = 6  # the sheets' sprites: a sixth of the sharp sprites' definition (0.2 pixel a world unit)
-PX_LARGE = 0.45  # the landing's picture, computer: some three eighths of the sharp sprites' definition
-PX_COLONNE = 0.75  # phone: the column only, finer
+# the landing's pictures, sharp (owner, 2026-10-28: « ça commence flou puis il y a une vague d'éléments déployés », a
+# low-end taste): one per screen class, as wide (pixels over the world's 2400 units) as the screen's device pixels need,
+# never finer than the sharp sprites themselves (1.2 a unit), the browser picking by srcset; a phone's column only, its
+# box the whole world's (transparent but the column)
+LARGES = [1280, 1920, 2880]
+COLONNES = [2400, 3360]
 SHEET = 2048
 GAP = 4  # between two sprites of a sheet, filled by their own edges (no seam where two tiles meet)
 # each picture in AVIF (a third lighter at the same look) and in WebP for the browsers without it (the page picks what the
@@ -120,7 +124,12 @@ for k, p in enumerate(cfg['produits']):
     sprites[url] = idx
     key = url.replace('sprites.json', '') + idx['frise']['src']
     pieces[key] = os.path.join(HERE, key)
+    # its pictures named with a digest of their content, as the decor's (the page's service worker keeps them for good)
+    dig = lambda f: hashlib.sha1(open(os.path.join(HERE, url.replace('sprites.json', ''), f), 'rb').read()).hexdigest()[:8]
+    idx['frise']['src'] += '?v=' + dig(idx['frise']['src'])
+    idx['proche']['sheets'] = [f'{f}?v={dig(f)}' for f in idx['proche']['sheets']]
 n = fr['places']
+places = []  # the landing's places whose bouquet is in its picture
 for i in range(-2, 3):
     p = cfg['produits'][slots[i % n]]
     url = p['bouquet'].replace('manifeste.json', 'sprites/sprites.json')
@@ -129,10 +138,24 @@ for i in range(-2, 3):
     dy = fr['piliers'][i % n]['sommet'] - fr['piliers'][0]['sommet']
     X, Y = F['x'] + i * fr['pas'], F['y'] + sprites[url].get('assise', 0) + dy
     if X + F['w'] > 0 and X < WW:
-        landing.append((order + 1, url.replace('sprites.json', '') + F['src'], X, Y, F['w'], F['h']))
+        landing.append((order + 1, url.replace('sprites.json', '') + nokey(F['src']), X, Y, F['w'], F['h']))
+        places.append(i)
+
+# the foreground's clumps (out/premier.json, premier.mjs), at rest (frise.js and insectes.mjs let them sway only once the
+# canvas has taken the picture's place): every copy along their strip in view, the farthest first, over the bouquets
+clump_files = {}
+for c in json.load(open(os.path.join(OUT, 'premier.json'), encoding='utf-8')):
+    key = '../out/' + c['src']
+    clump_files[key] = os.path.join(OUT, c['src'])
+    bx, by, bw, bh = c['box']
+    for m in range(-2, 3):
+        X = bx + m * fr['touffes']['periode']
+        if X + bw > 0 and X < WW:
+            landing.append((order + 2 + (100 - c['Z']) / 1000, key, X, by, bw, bh))
+
 
 def im(key):
-    return Image.open(pieces[key]).convert('RGBA')
+    return Image.open(pieces.get(key) or clump_files[key]).convert('RGBA')
 
 
 def shrink(img, w, h):
@@ -186,13 +209,13 @@ def save(img, name, q):
     return out
 
 
-large = poster(PX_LARGE, -1e9, 1e9, 'affiche-large')
-col = poster(PX_COLONNE, WW / 2 - VUE / 2 - 40, WW / 2 + VUE / 2 + 40, 'affiche-colonne')
+large = [{'w': w, **poster(w / WW, -1e9, 1e9, f'affiche-large-{w}')} for w in LARGES]
+col = [{'w': w, **poster(w / WW, WW / 2 - VUE / 2 - 40, WW / 2 + VUE / 2 + 40, f'affiche-colonne-{w}')} for w in COLONNES]
 
 # ---------- the sheets: the landing's pieces first, then the bouquets, then the rest
 first = []
 for t in landing:
-    if t[1] not in first:
+    if t[1] not in first and t[1] in pieces:  # (the clumps are not in the sheets: they come in one go, frise.js)
         first.append(t[1])
 rest = [k for k in pieces if k not in first]
 bq = [k for k in rest if k.startswith('bouquets/')]
@@ -249,7 +272,9 @@ out = {
         'colonne': col,
         'colonneMedia': '(max-aspect-ratio: 1/1)',
         'boite': box,
-        'places': [-1, 0, 1],
+        'places': places,
+        # the name of the bouquet facing the camera at the landing (build.mjs writes it in the page: frise.js's name in the sky)
+        'nom': cfg['produits'][slots[0]]['nom'],
     },
     'feuilles': feuilles,
     'cadres': frames,
@@ -258,8 +283,9 @@ out = {
 }
 json.dump(out, open(os.path.join(FR, 'amorce.json'), 'w', encoding='utf-8', newline='\n'), separators=(',', ':'))
 kb = lambda p: f'{os.path.getsize(os.path.join(FR, nokey(p["avif"]))) // 1024}/{os.path.getsize(os.path.join(FR, nokey(p["webp"]))) // 1024}'
+sizes = lambda L: ', '.join(str(a['w']) + ' ' + kb(a) for a in L)
 print(
-    f'(Ko AVIF/WebP) affiches : large {kb(large)}, colonne {kb(col)} (boite {box}) ; '
+    f'(Ko AVIF/WebP) affiches : large {sizes(large)} ; colonne {sizes(col)} (boite {box}) ; '
     f'{len(frames)} sprites sur {len(feuilles)} feuille(s) : {", ".join(kb(f) for f in feuilles)} ; '
     f'amorce.json {os.path.getsize(os.path.join(FR, "amorce.json")) // 1024} Ko'
 )

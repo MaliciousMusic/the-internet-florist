@@ -550,6 +550,8 @@ async function start() {
   if (!root.classList.contains('porteuses')) { app.destroy(true); return; } // scene.js gave up waiting: the HUD stands as it was
   // when the page opens (owner, 2026-10-25): first the toolbar (the dock: two ants; two butterflies on a phone, until 2026-10-27) and
   // the pager (its two beetles); then the footer's Legal pill (the Open button and its carrier are gone, owner 2026-10-26)
+  // (once the scene has come in whole: the page's head, build.mjs ENTREE)
+  if (window.ENTREE) await window.ENTREE;
   if (dock) order(dockIn());
   window.PORTEUSES_EN_ROUTE = true;
   // on a phone the dock is at the top: two butterflies lay it (airlift, above); if they cannot, it stands in its place
