@@ -179,7 +179,11 @@ export async function ouvrir(api) {
     actions.replaceChildren(
       ...buttons.map(([label, fn, primary, href]) => {
         const el = document.createElement(href ? 'a' : 'button');
-        if (href) el.href = href;
+        if (href) {
+          // (the installer, as the dock's Belai Bureau stack gives it: entete.js)
+          el.href = href;
+          el.setAttribute('download', '');
+        }
         else el.type = 'button';
         el.className = 'essai-bouton' + (primary ? ' essai-bouton-1' : '');
         el.textContent = label;
@@ -260,7 +264,7 @@ export async function ouvrir(api) {
   const B = api.I18N.bureau || {};
   const win = /Windows/.test(navigator.userAgent);
   const fin = PHONE ? [T.finTel, [[T.retour, fermer, true]]] : win && B.installer
-      ? [fill(T.fin, { jours: api.jours || 30 }), [[T.telecharger, null, true, B.installer], [T.retour, fermer]]]
+      ? [fill(T.fin, { jours: api.jours || 30 }), [[T.telecharger, null, true, `telechargements/${B.installer}`], [T.retour, fermer]]]
       : [fill(T.finAutre, { jours: api.jours || 30 }), [[T.retour, fermer, true]]];
   etape(fin[0], fin[1], besideBq);
 
