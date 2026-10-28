@@ -18,7 +18,7 @@
 //   A click anywhere on the scene, Escape or a header icon takes it back. The bubble's price: set in ETH, shown at its exact
 //   value in the visitor's currency only (owner 2026-10-26: no crypto price; euros in the euro area, US dollars elsewhere;
 //   the country is set on <html data-pays> by _worker.js, else read from the browser's language) at the live rate
-//   (CoinGecko, else the configured one). In the Buy button, under the price, the lifespan; above it, the desktop demo
+//   (CoinGecko, else the configured one). In the Buy button, under the price, the lifespan; above it, the try on the visitor's desktop
 //   video.
 // - The purchase sheet: Buy opens it above the button; its box (unticked) asks for immediate delivery and the waiver of
 //   the right of withdrawal (French Consumer Code L221-28, 13°); "Confirm and pay" goes on only once it is ticked, with
@@ -706,66 +706,28 @@
     buy.setAttribute('aria-label', fill(T.buyLabel, { name: p.nom, fiat: fiatOf(p) }));
   }
 
-  // ---------- the demo video: setting a bouquet as a widget or a wallpaper, on a phone and a computer
-  const demo = $('demo');
-  const video = $('demo-video');
-  function openDemo(on) {
-    demo.hidden = !on;
-    if (on) {
-      if (!video.src) {
-        video.addEventListener('error', () => {
-          video.hidden = true;
-          $('demo-absente').hidden = false;
-        }, { once: true });
-        video.src = video.dataset.src;
-        video.load();
-      }
-      $('demo-fermer').focus({ preventScroll: true });
-    } else {
-      video.pause();
-      $('achat-demo').focus({ preventScroll: true });
-    }
-  }
-  // "On your desktop": the demo in the scene (demo.mjs, owner 2026-10-27: the world folds, a device comes forward with the
-  // bouquet in its screen and plays the way there); the video stays the fallback if the module cannot load
-  let demoMod = null;
-  const demoApi = () => ({
-    T,
-    I18N,
-    CFG,
-    Frise,
-    toile: window.TOILE,
-    zoomTo,
-    onScreen,
-    getBox: () => box,
-    pied: CFG.scene.pied[0],
-    product: () => curP,
-    reframe: frameCloseUp,
-    focusBack: () => $('achat-demo').focus({ preventScroll: true }),
-  });
+  // ---------- "Try on your desktop" (essai.mjs, owner 2026-10-28, in place of the device demo): the page seems to vanish on
+  // the visitor's own desktop (a picture of it, taken once), the bouquet framed on it, a honeybee giving the steps
+  let essaiMod = null;
   $('achat-demo').addEventListener('click', () => {
-    if (!window.TOILE || !box) return openDemo(true);
-    // (with the digest of the demo's files: never an old module from a cache)
-    (demoMod ||= import(`./demo.mjs?v=${document.documentElement.dataset.demoV || ''}`))
-      .then((m) => m.ouvrir(demoApi()))
-      .catch((err) => {
-        console.error('[demo]', err);
-        openDemo(true);
-      });
+    const p = curP;
+    if (!p) return;
+    // (with the digest of the try's files: never an old module from a cache)
+    (essaiMod ||= import(`./essai.mjs?v=${document.documentElement.dataset.essaiV || ''}`))
+      .then((m) =>
+        m.ouvrir({
+          T,
+          I18N,
+          jours: (CFG.vie && CFG.vie.jours) || 30,
+          index: () => read(p),
+          base: fileOf(p).replace(/sprites\.json$/, ''),
+          focusBack: () => $('achat-demo').focus({ preventScroll: true }),
+        }),
+      )
+      .catch((err) => console.error('[essai]', err));
   });
-  // a shelf opened from the toolbar closes the demo
-  document.addEventListener('entete:rayon', () => demoMod && demoMod.then((m) => m.fermer()));
-  $('demo-fermer').addEventListener('click', () => openDemo(false));
-  demo.addEventListener('click', (e) => e.target === demo && openDemo(false));
-  document.addEventListener(
-    'keydown',
-    (e) => {
-      if (e.key !== 'Escape' || demo.hidden) return;
-      openDemo(false);
-      e.stopPropagation();
-    },
-    true,
-  );
+  // a shelf opened from the toolbar closes it
+  document.addEventListener('entete:rayon', () => essaiMod && essaiMod.then((m) => m.fermer()));
 
   // ---------- the Buy button: the bouquet on the pillar, its price; it opens the purchase sheet
   function buyFor(p) {
