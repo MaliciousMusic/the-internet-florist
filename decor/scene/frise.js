@@ -75,7 +75,7 @@
   const amorce = fetch(`${OUT}frise/amorce.json`)
     .then((r) => (r.ok ? r.json() : null))
     .catch(() => null);
-  const light = { frames: null, sheets: [], cache: new Map() };
+  const light = { frames: null, sheets: [], cache: new Map(), ktx2: null };
   const waiting = new Set(); // the pieces still without their sharp sprite: { s, key, w, h, sharp, gone, montre() }
   const keyOf = (url) => url.split('?')[0];
   const lightTex = (key) => {
@@ -203,12 +203,15 @@
   };
   function piece(layer, svg, box, pre, dx) {
     const [src, x, y, w, h] = pre && AP !== 'non' ? pre : [svg, ...box];
-    const url = OUT + 'frise/' + src;
+    // (its sharp sprite GPU-compressed where the canvas takes it, ktx2.py; its light one keyed by its WebP)
+    const pic = OUT + 'frise/' + src;
+    const k2 = toile.ktx2 && light.ktx2 && light.ktx2[keyOf(pic)];
+    const url = k2 ? OUT + 'frise/' + k2 : pic;
     const s = new toile.PIXI.Sprite();
     s.position.set(x + dx, y);
     s.visible = false;
     layer.addChild(s);
-    const P = { s, url, key: keyOf(url), gone: false, sharp: false, y, w, h, montre: () => (s.visible = true) };
+    const P = { s, url, key: keyOf(pic), gone: false, sharp: false, y, w, h, montre: () => (s.visible = true) };
     hold(url);
     waiting.add(P);
     showLight(P);
@@ -878,6 +881,7 @@
       );
       // (asked for in the page's head, beside frise.json)
       const A = await amorce;
+      if (A) light.ktx2 = A.ktx2 || null;
       measure();
       draw();
       T.dessine = Math.round(performance.now());

@@ -97,15 +97,29 @@ le job ») ; le ciel passe en CSS pur ; jamais plus de 20 bouquets sur la frise.
 - **Mesures en local** (serveur `servir.py`, ordinateur 1280 × 720) : premier affichage à 1,43 s avant, puis 0,58 s ;
   l'arrivée entière (affiche, plus grand affichage) à 0,65 s ; tout net vers 2,8 à 3,2 s. Sur un lien `?b=`, le ciel
   d'abord, la scène légère vers 1,9 s, puis le net.
-- **Ordre de fabrication :** `frise_cuisson.mjs` / `frise_versions.mjs`, `sprites.mjs`, puis `python scene/amorce.py`, puis
-  `node scene/build.mjs`.
+- **Textures compressées (KTX2), sur écran tactile seulement** (`scene/ktx2.py`, porteur le 28 octobre : « je prends »).
+  Chaque tuile et chaque pilier a un KTX2 Basis ETC1S à côté de son WebP, avec ses mipmaps : 16,9 Mo pour toute la boucle,
+  contre 15,5 Mo en WebP. `toile.mjs` charge `loadKTX2` de PixiJS et son transcodeur `libktx` (930 Ko, servi depuis
+  `insectes/runtime/vendor/ktx/`, voir son SOURCE.md) quand la carte graphique lit un format compressé.
+  - Mesures (arrivée, mémoire des textures) : ordinateur 178 → 76 Mo, téléphone émulé 88 → 42 Mo. Mais sur ordinateur,
+    l'arrivée est nette 0,7 s plus tard (4,8 s contre 3,3 à 4,1 s en local), avec une fois une tâche de 250 ms au
+    démarrage du transcodeur. À l'écran, la différence ne se voit pas.
+  - D'où le choix : KTX2 sur écran tactile (`pointer: coarse`), où c'est la mémoire qui fait planter un onglet ; WebP sur
+    ordinateur. `?ktx2=oui|non` force l'un ou l'autre.
+  - Les bouquets restent en WebP : l'ETC1S tache leurs pétales (erreur moyenne 4,4 contre 3,3 sur l'herbe, vu à l'œil).
+  - L'outil `ktx` (KTX-Software 4.4.2, Apache 2.0) est extrait dans `~/.belai-ktx/` (hors dépôt) : le Python du Microsoft
+    Store ne voit pas les fichiers de `AppData/Local`.
+  - Non mesuré sur un vrai téléphone.
+- **Ordre de fabrication :** `frise_cuisson.mjs` / `frise_versions.mjs`, `sprites.mjs`, `python scene/ktx2.py`, puis
+  `python scene/amorce.py`, puis `node scene/build.mjs`.
 
 ## Reste
 
 - Les porteuses du bandeau gardent leurs deux canvases, au-dessus du bandeau HTML. On peut les réunir en une seule.
 - `ouvert.json`, `p*.svg` et `vignette.svg` restent publiés comme sources, mais la page ne les lit plus.
+- La cétoine des porteuses plante encore à son vol (`cetoine.mjs` ligne 109, `strokeWings` : `main` indéfini), vu dans la
+  console le 28 octobre ; hors de ce lot.
 - Les liens `?b=` (ceux des vidéos) attendent la planche légère : une affiche par bouquet les rendrait instantanés eux aussi.
-- Les textures compressées (KTX2) : elles attendent l'accord du porteur pour télécharger l'encodeur et le transcodeur.
 
 ## Questions ouvertes
 

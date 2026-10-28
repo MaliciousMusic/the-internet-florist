@@ -15,10 +15,11 @@ the strips' tiles and the pillars, frise_cuisson.mjs; bouquets/<id>/sprites/, sp
       { affiche: { large, colonne, boite: [x, y, w, h] (world), colonneMedia }, feuilles: [pictures], where a picture is
       { avif: src, webp: src }, cadres: { key: [sheet, x,
       y, w, h] (pixels) }, sprites: { url: index } } where key is a sharp sprite's url as frise.js asks for it, without its
-      ?v= ("../out/frise/z3/4.webp", "bouquets/citrine/sprites/frise.webp"), and sprites holds every bouquet's sprites.json
+      ?v= ("../out/frise/z3/4.webp", "bouquets/citrine/sprites/frise.webp"), ktx2 maps a decor sprite's key to its
+      GPU-compressed picture (ktx2.py, run before), and sprites holds every bouquet's sprites.json
       (boutique.js reads them from here: no file to wait for per bouquet).
 
-  python decor/scene/amorce.py        (after frise_cuisson.mjs / frise_versions.mjs and sprites.mjs; then build.mjs)
+  python decor/scene/amorce.py        (after frise_cuisson.mjs / frise_versions.mjs, sprites.mjs and ktx2.py; then build.mjs)
 """
 import hashlib, io, json, os, sys
 from PIL import Image
@@ -107,6 +108,9 @@ for B in fr['bandes']:
         order += 1
 if not pil_done:
     pillars_at_landing()
+# every pillar of the loop has its light sprite, not only the landing's
+for P in fr['piliers']:
+    decor(P['apercu'][0])
 
 slots = lay(len(cfg['produits']), fr['places'])
 sprites = {}
@@ -231,6 +235,13 @@ feuilles = []
 for n_, s in enumerate(sheets):
     feuilles.append(save(s[0].crop((0, 0, s[4], s[5])), f'feuille-{n_}', Q))
 
+# the decor's sharp sprites as GPU-compressed textures (ktx2.py), where one is there and up to date: key -> src
+ktx2 = {}
+for key, path in pieces.items():
+    k2 = path[: -len('.webp')] + '.ktx2'
+    if key.startswith('../out/frise/') and os.path.exists(k2) and os.path.getmtime(k2) >= os.path.getmtime(path):
+        ktx2[key] = versioned(k2)
+
 out = {
     'version': 1,
     'affiche': {
@@ -242,6 +253,7 @@ out = {
     },
     'feuilles': feuilles,
     'cadres': frames,
+    'ktx2': ktx2,
     'sprites': sprites,
 }
 json.dump(out, open(os.path.join(FR, 'amorce.json'), 'w', encoding='utf-8', newline='\n'), separators=(',', ':'))

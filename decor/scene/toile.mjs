@@ -21,9 +21,11 @@
 //   const T = await creer({ scene, apres: monde, bandes: ['horizon', ...], loin: 'z6', milieu: 'arriere', devant: 'avant' })
 //   T.layer(name) -> Container       T.chaqueImage(fn)   fn(now) before every frame's drawing
 //   T.texture(url) -> Promise<Texture> (shared, mipmapped)   T.vue(tx, ty, s)   T.PIXI (the module)
+//   T.ktx2: true where KTX2 textures are taken (url ending .ktx2)
 import * as PIXI from '../../insectes/runtime/vendor/pixi-8.6.6.min.mjs';
 
 const { Application, Container, Assets } = PIXI;
+const KTX2_URL = /\.ktx2(\?|$)/;
 
 export async function creer({ scene, apres, bandes, loin, milieu, devant }) {
   const app = new Application();
@@ -37,6 +39,21 @@ export async function creer({ scene, apres, bandes, loin, milieu, devant }) {
     width: scene.clientWidth,
     height: scene.clientHeight,
   });
+  // On touch screens only (measured 2026-10-28, landing on a computer: graphics memory 178 -> 76 MB, but the landing sharp
+  // 0.7 s later, the transcoder's 930 KB and its decoding in the way): a phone's tab is what runs out of memory, a
+  // computer's does not. ?ktx2=oui | non forces it.
+  const gl = app.renderer.gl;
+  const askKtx2 = new URLSearchParams(location.search).get('ktx2');
+  const ktx2 =
+    !!gl &&
+    askKtx2 !== 'non' &&
+    (askKtx2 === 'oui' || matchMedia('(pointer: coarse)').matches) &&
+    ['WEBGL_compressed_texture_astc', 'EXT_texture_compression_bptc', 'WEBGL_compressed_texture_s3tc', 'WEBGL_compressed_texture_etc'].some((e) => gl.getExtension(e));
+  if (ktx2) {
+    const at = (f) => new URL(`../../insectes/runtime/vendor/ktx/${f}`, import.meta.url).href;
+    PIXI.setKTXTranscoderPath({ jsUrl: at('libktx.js'), wasmUrl: at('libktx.wasm') });
+    PIXI.extensions.add(PIXI.loadKTX2);
+  }
   const canvas = app.canvas;
   canvas.className = 'toile';
   canvas.setAttribute('aria-hidden', 'true');
@@ -103,20 +120,26 @@ export async function creer({ scene, apres, bandes, loin, milieu, devant }) {
     chaqueImage(fn) {
       each.push(fn);
     },
-    // a texture of the page's (a WebP sprite or atlas), loaded once, mipmapped: the frieze shows it smaller than baked
+    // a texture of the page's (a WebP sprite or atlas), loaded once, mipmapped: the frieze shows it smaller than baked; a
+    // KTX2 (ktx2.py) brings its own mipmaps
     texture(url) {
       if (!cache.has(url))
         cache.set(
           url,
           Assets.load(url).then((tex) => {
             tex.source.scaleMode = 'linear';
-            tex.source.autoGenerateMipmaps = true;
-            tex.source.updateMipmaps?.();
+            if (!KTX2_URL.test(url)) {
+              tex.source.autoGenerateMipmaps = true;
+              tex.source.updateMipmaps?.();
+            }
             return tex;
           }),
         );
       return cache.get(url);
     },
+    // GPU-compressed textures (ktx2.py; owner 2026-10-28): taken on a touch screen whose graphics card reads a compressed
+    // format (BC7, BC3, ASTC, ETC2), transcoded in a worker by libktx
+    ktx2,
     oublie(url) {
       if (!cache.has(url)) return;
       cache.get(url).then((tex) => Assets.unload(url).catch(() => tex.destroy(true)));
