@@ -199,12 +199,14 @@ async function start(clumpsOn) {
   const ease = (f) => f * f * (3 - 2 * f);
   const sway = (now) => {
     const t = now / 1000;
+    // (on the frieze, still until the canvas takes the landing picture's place, then into the breeze: frise.js brise)
+    const k = FRISE && window.Frise.brise ? window.Frise.brise(now) : 1;
     for (const c of clumps) {
       if (!c.on && !FRISE) continue;
       const u = (t - c.d) / c.t, n = Math.floor(u);
       let f = u - n;
       if (n & 1) f = 1 - f;
-      c.ang = ((-c.a + 2 * c.a * ease(f)) * Math.PI) / 180;
+      c.ang = (k * (-c.a + 2 * c.a * ease(f)) * Math.PI) / 180;
       if (FRISE) continue;
       const sc = (c.box[2] / c.px[0]) * W.k * essaim.res;
       c.s.scale.set(sc);
@@ -388,7 +390,7 @@ async function start(clumpsOn) {
         }
         const s = clumpSprite(c);
         s.texture = c.tex;
-        s.visible = true;
+        s.visible = FZ.handed;
         const C = { c, m, s };
         C.heads = (heads.touffes[c.src.replace(/^premier\//, '').replace(/\.webp$/, '.svg')] || [])
           .filter((h) => h[1] <= WH - 12)
@@ -397,6 +399,12 @@ async function start(clumpsOn) {
         clumpHeads.push(...C.heads);
         FZ.flip = true;
       });
+    }
+    // (frise.js draws the clumps until all of ours in view are there: then ours show and its go, in one frame)
+    if (!FZ.handed && want.size && [...want].every((key) => copies.has(key))) {
+      FZ.handed = true;
+      for (const C of copies.values()) C.s.visible = true;
+      if (window.Frise.touffesPrises) window.Frise.touffesPrises();
     }
     for (const [key, C] of copies) {
       if (want.has(key)) continue;

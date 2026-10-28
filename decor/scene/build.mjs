@@ -15,6 +15,7 @@ import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { cielCss } from './ciel_css.mjs';
 
 const ORIGIN = 'https://belai.garden';
 const SITE = "Belai's Garden";
@@ -60,6 +61,7 @@ function describe(L, p) {
 }
 
 // ---------- the head of a page
+const SKY = cielCss();
 function head(L, page) {
   const t = L.pages[page];
   const alt = langs.map((A) => `<link rel="alternate" hreflang="${A.code}" href="${pageUrl(A, page)}">`);
@@ -91,7 +93,9 @@ function head(L, page) {
     '<link rel="manifest" href="site.webmanifest">',
     ...og.map(([k, v]) => `<meta property="${k}" content="${esc(v)}">`),
     '<meta name="twitter:card" content="summary_large_image">',
-    ...(page === 'index' ? preloads() : []),
+    // the sky, in the page itself: it shows with the first bytes (ciel_css.mjs)
+    ...(['index', 'about', 'legal'].includes(page) ? [`<style>${SKY}</style>`] : []),
+    ...(page === 'index' ? [...ENTREE, ...preloads()] : []),
   ].join('\n');
 }
 
@@ -109,34 +113,80 @@ const apercu = (html) =>
     return `${m} data-apercu='${JSON.stringify(v)}'`;
   });
 
-function preloads() {
-  // the first bouquet's sprites index (sprites.mjs); its picture is read by PixiJS's own loader (a worker), which a preload
-  // would not serve
-  const first = cfg.produits[0].bouquet.replace(/manifeste\.json$/, 'sprites/');
-  const COL = '(max-aspect-ratio: 28/45)';
-  const WIDE = '(min-aspect-ratio: 28.001/45)';
-  // a layer with a compiled preview (calques.mjs) is asked for by its preview, which the page shows first
-  const layer = (name, hi) => {
-    const a = calques[name];
-    const col = a ? a.colonne?.src : ['horizon.svg', 'sol-loin.svg', 'sol-milieu.svg', 'sol-pres.svg'].includes(name) && `colonne/${name}`;
-    const full = a ? a.plein.src : name;
-    const pri = hi ? ' fetchpriority="high"' : '';
-    return col
-      ? [
-          `<link rel="preload" href="../out/${col}" as="image" media="${COL}"${pri}>`,
-          `<link rel="preload" href="../out/${full}" as="image" media="${WIDE}"${pri}>`,
-        ]
-      : [`<link rel="preload" href="../out/${full}" as="image"${pri}>`];
-  };
+// the landing whole at once (amorce.py): its picture in the page itself, a phone's column or a computer's whole world, in
+// AVIF or WebP, laid over the world's box as the canvas lays its sprites; gone at once for a link to another place (?b=, ?c=)
+const amorceFile = join(HERE, '..', 'out', 'frise', 'amorce.json');
+const AMORCE = existsSync(amorceFile) ? JSON.parse(readFileSync(amorceFile, 'utf8')).affiche : null;
+function affiche() {
+  if (!AMORCE) return '';
+  const src = (x) => `../out/frise/${x}`;
+  const set = (L, fmt) => L.map((a) => `${src(a[fmt])} ${a.w}w`).join(', ');
+  const mid = (L) => L[Math.floor(L.length / 2)];
+  const [, y, , h] = AMORCE.boite;
+  const style = `position:absolute;left:0;width:100%;top:${((y / 1350) * 100).toFixed(4)}%;height:${((h / 1350) * 100).toFixed(4)}%;z-index:3;pointer-events:none;user-select:none`;
+  // the picture as wide as the world is laid: a phone's column (frise.js VUE 850 units across the screen), else the
+  // world's cover (scene.css .monde: max(100vw, 16:9 of the height))
+  const COL_SIZE = `${((2400 / 850) * 100).toFixed(3)}vw`;
+  const LARGE_SIZE = 'max(100vw, 177.778vh)';
+  // (AVIF asked for alone: a <picture> with typed WebP sources had the browser fetch both; a browser without AVIF fails
+  // to decode it and takes the WebP of the same sizes)
+  const webp =
+    `this.onerror=null;var s=this.parentNode.querySelector('source');` +
+    `if(s)s.srcset='${set(AMORCE.colonne, 'webp')}';this.srcset='${set(AMORCE.large, 'webp')}';this.src='${src(mid(AMORCE.large).webp)}'`;
   return [
-    '<link rel="preload" href="boutique.json" as="fetch" crossorigin>',
-    ...layer('ciel.svg', true),
+    '<picture id="affiche">',
+    `      <source media="${AMORCE.colonneMedia}" srcset="${set(AMORCE.colonne, 'avif')}" sizes="${COL_SIZE}">`,
+    `      <img src="${src(mid(AMORCE.large).avif)}" srcset="${set(AMORCE.large, 'avif')}" sizes="${LARGE_SIZE}" alt="" fetchpriority="high" onload="window.AFFICHE_LUE&&AFFICHE_LUE(this)" onerror="${webp}" style="${style}">`,
+    '    </picture>',
+    "    <script>if (/[?&](b|c)=/.test(location.search)) document.getElementById('affiche').remove();</script>",
+  ].join('\n');
+}
+// the landing bouquet's name in the sky, in the page itself so it comes in with the picture (frise.js takes the element over
+// and writes the names that follow; a link to another place has its own name, written once the page runs)
+function nomCiel() {
+  if (!AMORCE || !AMORCE.nom) return '';
+  const nom = AMORCE.nom.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  return (
+    '<div class="nom-cadre"><div class="nom-ciel" aria-hidden="true" style="opacity:1">' +
+    `<span class="nom-ligne"><span class="nom-titre">${nom}</span><span class="nom-copies"></span><span class="nom-fane"></span></span><span class="nom-sous"></span></div></div>` +
+    "\n  <script>if (/[?&](b|c)=/.test(location.search)) document.querySelector('.nom-cadre').remove();</script>"
+  );
+}
+
+// The page's entrance (owner, 2026-10-28: nothing coming in piece by piece): the landing's picture and the bouquet's name
+// stay hidden until the picture is decoded (html.entree, set by frise.js, by the canvas showing, or after 5 s); the HUD's
+// carriers (porteuses.mjs) wait for it too, their pieces off screen from the first paint.
+const ENTREE = [
+  '<style>html:not(.entree) #affiche img,html:not(.entree) .nom-cadre{visibility:hidden}</style>',
+  '<script>(function(){var d=document.documentElement,q=new URLSearchParams(location.search),r;' +
+    'window.ENTREE=new Promise(function(x){r=x});' +
+    "window.ENTREE_FAITE=function(){if(d.classList.contains('entree'))return;d.classList.add('entree');r(Math.round(performance.now()))};" +
+    'setTimeout(window.ENTREE_FAITE,5000);' +
+    'window.AFFICHE=new Promise(function(x){window.AFFICHE_LUE=x});' +
+    "if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&q.get('porteuses')!=='0'&&q.get('insectes')!=='0'){" +
+    "d.classList.add('porteuses');window.ENTREE.then(function(){setTimeout(function(){if(!window.PORTEUSES_EN_ROUTE)d.classList.remove('porteuses')},6000)})}" +
+    // the service worker (sw.js) for the visits that follow, once the page has loaded; not on localhost unless ?sw=oui
+    "if('serviceWorker' in navigator){var w=q.get('sw');if(w==='non')navigator.serviceWorker.getRegistrations().then(function(l){l.forEach(function(x){x.unregister()})});" +
+    "else if(w==='oui'||!/^(localhost|127\\.0\\.0\\.1)$/.test(location.hostname))addEventListener('load',function(){navigator.serviceWorker.register('sw.js')})}" +
+    '})();</script>',
+];
+
+function preloads() {
+  // (all after the landing's picture, which alone makes the first screen: the canvas, its data and PixiJS come behind it)
+  return [
+    '<link rel="preload" href="boutique.json" as="fetch" crossorigin fetchpriority="low">',
     // the catalogue frieze's manifest (frise.js): its strips' tiles follow
-    '<link rel="preload" href="../out/frise/frise.json" as="fetch" crossorigin>',
+    '<link rel="preload" href="../out/frise/frise.json" as="fetch" crossorigin fetchpriority="low">',
+    // the light sheets' frames and every bouquet's sprites index (amorce.py)
+    '<link rel="preload" href="../out/frise/amorce.json" as="fetch" crossorigin fetchpriority="low">',
+    // the name's thin face (scene.css "Nunito Frise"): the name in the sky comes in with the picture, in its own letters
+    '<link rel="preload" href="polices/nunito-extralight.woff2" as="font" type="font/woff2" crossorigin>',
+    // the foreground's clumps, laid from the start (frise.js)
+    '<link rel="preload" href="../out/scene.json" as="fetch" crossorigin fetchpriority="low">',
+    '<link rel="preload" href="../out/premier.json" as="fetch" crossorigin fetchpriority="low">',
     // the scene's canvas (toile.mjs) and PixiJS, asked for at once instead of after frise.js has started
-    '<link rel="modulepreload" href="toile.mjs">',
-    '<link rel="modulepreload" href="../../insectes/runtime/vendor/pixi-8.6.6.min.mjs">',
-    `<link rel="preload" href="${first}sprites.json" as="fetch" crossorigin>`,
+    '<link rel="modulepreload" href="toile.mjs" fetchpriority="low">',
+    '<link rel="modulepreload" href="../../insectes/runtime/vendor/pixi-8.6.6.min.mjs" fetchpriority="low">',
   ];
 }
 
@@ -251,6 +301,8 @@ for (const L of langs) {
       steps: L.desktop.steps.map((s) => `        <li>${s}</li>`).join('\n'),
       toc: Object.entries(L.legal.toc).map(([id, label]) => `      <li><a href="{{legal}}#${id}">${label}</a></li>`).join('\n'),
       installer,
+      affiche: page === 'index' ? affiche() : '',
+      nomCiel: page === 'index' ? nomCiel() : '',
       sha256,
       fingerprint: L.desktop.fingerprint.replace('{v}', version),
     };

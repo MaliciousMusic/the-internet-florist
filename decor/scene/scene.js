@@ -22,14 +22,8 @@
   // its own (the camera travels along them); here only the sky and its veils. The insects follow its camera
   // (insectes.mjs).
   const FRISE = !!document.getElementById('frise-ancre');
-  const bugs = q.get('insectes') !== '0';
-  // the HUD's carriers (porteuses.mjs): from the first paint the pieces their ants bring wait off screen (boutique.css); with
-  // prefers-reduced-motion, ?porteuses=0 or ?insectes=0 they stand in their places as before, and they are put back if the
-  // ants have not set out after 6 s
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && q.get('porteuses') !== '0' && bugs) {
-    document.documentElement.classList.add('porteuses');
-    setTimeout(() => { if (!window.PORTEUSES_EN_ROUTE) document.documentElement.classList.remove('porteuses'); }, 6000);
-  }
+  // (the HUD's carriers, porteuses.mjs: the class "porteuses" is set by the page's head since 2026-10-28, scene.js running
+  // deferred, after the first paint; build.mjs ENTREE)
   const scene = document.getElementById('scene');
   const OUT = `../${q.get('out') || 'out'}/`;
   if (q.has('debug')) scene.classList.add('debug');

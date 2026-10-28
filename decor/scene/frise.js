@@ -66,6 +66,123 @@
   // when each piece of decor came (ms), and the decor as a whole: window.FRISE_TEMPS
   const T = (window.FRISE_TEMPS = { pieces: {} });
 
+  // ---------- the landing whole at once, then sharper (amorce.py; owner 2026-10-28: « on affiche un truc complet direct
+  // qui scale en qualité progressivement »). The page's own <picture> of the landing (#affiche) shows before any script,
+  // under the canvas; the sharp sprites come over it in the same places, and once the landing's are all there it goes (at
+  // once if the camera moves first). Wherever it does not cover (after a swipe, a ?b= link), a piece shows its light sprite
+  // from amorce.json's sheets (a sixth of the definition) until its sharp one has come.
+  let affiche = $('affiche');
+  const amorce = fetch(`${OUT}frise/amorce.json`)
+    .then((r) => (r.ok ? r.json() : null))
+    .catch(() => null);
+  const light = { frames: null, sheets: [], cache: new Map(), ktx2: null };
+  const waiting = new Set(); // the pieces still without their sharp sprite: { s, key, w, h, sharp, gone, montre() }
+  const keyOf = (url) => url.split('?')[0];
+  const lightTex = (key) => {
+    const f = light.frames && light.frames[key];
+    if (!f || !light.sheets[f[0]]) return null;
+    if (!light.cache.has(key)) {
+      const { Texture, Rectangle } = toile.PIXI;
+      light.cache.set(key, new Texture({ source: light.sheets[f[0]].source, frame: new Rectangle(f[1], f[2], f[3], f[4]) }));
+    }
+    return light.cache.get(key);
+  };
+  const showLight = (P) => {
+    if (P.sharp || P.gone) return;
+    const tex = lightTex(P.key);
+    if (!tex) return;
+    P.s.texture = tex;
+    P.s.width = P.w;
+    P.s.height = P.h;
+    P.montre();
+  };
+  // a piece's sharp sprite: in its place of its light one (or of nothing), the size kept
+  const sharpen = (P, tex) => {
+    if (P.gone) return;
+    P.sharp = true;
+    waiting.delete(P);
+    P.s.texture = tex;
+    P.s.width = P.w;
+    P.s.height = P.h;
+    P.montre();
+  };
+  // the light sheets, as AVIF where the browser takes it (as it did for #affiche's <picture>), else WebP; behind the
+  // landing's sharp sprites when the landing's picture is up, first otherwise
+  const AVIF1 =
+    'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADrbWV0YQAAAAAAAAAhaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAETAAAAKAAAAChpaW5mAAAAAAABAAAAGmluZmUCAAAAAAEAAGF2MDFDb2xvcgAAAABqaXBycAAAAEtpcGNvAAAAFGlzcGUAAAAAAAAAAQAAAAEAAAAQcGl4aQAAAAADCAgIAAAADGF2MUOBAAwAAAAAE2NvbHJuY2x4AAEADQAGgAAAABdpcG1hAAAAAAAAAAEAAQQBAoMEAAAAMG1kYXQSAAoIGAAGiAhoNCAyGhlHh4Yhh5555oAAAJBAyRxhSytNj1FFTqSg';
+  const avif = () => {
+    const img = affiche && affiche.querySelector('img');
+    if (img && img.currentSrc) return Promise.resolve(/\.avif(\?|$)/.test(img.currentSrc));
+    return new Promise((r) => {
+      const t = new Image();
+      t.onload = () => r(t.width > 0);
+      t.onerror = () => r(false);
+      t.src = AVIF1;
+    });
+  };
+  function lightSheets(A) {
+    light.frames = A.cadres;
+    return avif().then((ok) =>
+      Promise.all(
+        A.feuilles.map(
+          (f, n) =>
+            new Promise((done) => {
+              const img = new Image();
+              img.decoding = 'async';
+              img.fetchPriority = affiche ? 'low' : 'high';
+              img.onload = () =>
+                img
+                  .decode()
+                  .catch(() => {})
+                  .then(() => {
+                    const tex = toile.PIXI.Texture.from(img);
+                    tex.source.scaleMode = 'linear';
+                    light.sheets[n] = tex;
+                    for (const P of waiting) showLight(P);
+                    done();
+                  });
+              img.onerror = () => done();
+              img.src = OUT + 'frise/' + (ok ? f.avif : f.webp);
+            }),
+        ),
+      ).then(() => (T.leger = Math.round(performance.now()))),
+    );
+  }
+  // The canvas is held hidden until every sprite in view is sharp (the decor, the bouquets, the clumps: prete below; owner
+  // 2026-10-28, « une vague d'éléments déployés » gave a low-end taste), then it takes the landing picture's place in one
+  // frame, the two matching pixel for pixel. The camera moving first brings it at once, light sprites standing in for the
+  // sharp ones still on their way. From then on the clumps sway, coming into the breeze over 2.5 s (brise).
+  let revealed = false;
+  let briseT0 = 0;
+  function revele() {
+    if (revealed) return;
+    revealed = true;
+    T.revele = T.affiche = Math.round(performance.now());
+    if (toile) toile.canvas.style.visibility = '';
+    if (affiche) {
+      affiche.remove();
+      affiche = null;
+    }
+    if (window.ENTREE_FAITE) window.ENTREE_FAITE();
+    briseT0 = performance.now();
+    for (const P of waiting) showLight(P);
+  }
+  const brise = (now) => {
+    if (!briseT0 || RM) return 0;
+    const u = Math.min(1, Math.max(0, (now - briseT0) / 2500));
+    return u * u * (3 - 2 * u);
+  };
+  // the landing's places (amorce.json affiche.places, the camera at 0): each resolves once its bouquet is sharp
+  const sharpAt = new Map();
+  const placeSharp = (i) => {
+    if (!sharpAt.has(i)) {
+      let r;
+      const p = new Promise((x) => (r = x));
+      sharpAt.set(i, { p, r });
+    }
+    return sharpAt.get(i);
+  };
+
   // ---------- the world in view
   const measure = () => {
     const cs = getComputedStyle(monde);
@@ -99,29 +216,30 @@
   };
   function piece(layer, svg, box, pre, dx) {
     const [src, x, y, w, h] = pre && AP !== 'non' ? pre : [svg, ...box];
-    const url = OUT + 'frise/' + src;
+    // (its sharp sprite GPU-compressed where the canvas takes it, ktx2.py; its light one keyed by its WebP)
+    const pic = OUT + 'frise/' + src;
+    const k2 = toile.ktx2 && light.ktx2 && light.ktx2[keyOf(pic)];
+    const url = k2 ? OUT + 'frise/' + k2 : pic;
     const s = new toile.PIXI.Sprite();
     s.position.set(x + dx, y);
     s.visible = false;
     layer.addChild(s);
-    const P = { s, url, gone: false, y, h };
+    const P = { s, url, key: keyOf(pic), gone: false, sharp: false, y, w, h, montre: () => (s.visible = true) };
     hold(url);
-    decorWait.push(
-      toile
-        .texture(url)
-        .then((tex) => {
-          if (P.gone) return;
-          s.texture = tex;
-          s.width = w;
-          s.height = h;
-          s.visible = true;
-          T.pieces[src.split('?')[0]] = Math.round(performance.now());
-        })
-        .catch(() => {}),
-    );
+    waiting.add(P);
+    showLight(P);
+    P.pret = toile
+      .texture(url)
+      .then((tex) => {
+        sharpen(P, tex);
+        T.pieces[keyOf(src)] = Math.round(performance.now());
+      })
+      .catch(() => {});
+    decorWait.push(P.pret);
     return P;
   }
   const drop = (P) => {
+    waiting.delete(P);
     P.gone = true;
     P.s.destroy();
     letGo(P.url);
@@ -312,8 +430,12 @@
   // premier.mjs, as the insects' sprites draw them), never their SVG, whose reading stalled a phone's travel for a second.
   let clumpList = [];
   const clumpOn = new Map(); // "j:m" -> { s, t, url }
+  const clumpPending = [];
+  // insectes.mjs draws the clumps with its insects once it runs (they fly in front of some, behind others): it takes them
+  // over in one frame, its copies shown as ours go (Frise.touffesPrises)
+  let clumpsHanded = false;
   function clumps() {
-    if (!clumpList.length) return;
+    if (!clumpList.length || clumpsHanded) return;
     const T2 = M.touffes;
     const shift = c * T2.f;
     const a = M.cx - half - 300 + shift, b = M.cx + half + 300 + shift;
@@ -333,14 +455,19 @@
         const url = OUT + t.src + (t.v ? `?v=${t.v}` : '');
         const C = { s, t, url, gone: false };
         hold(url);
-        toile.texture(url).then((tex) => {
-          if (C.gone) return;
-          s.texture = tex;
-          s.anchor.set(t.ox, t.oy);
-          s.position.set(x0 + t.ox * bw, by + t.oy * bh);
-          s.scale.set(bw / tex.width, bh / tex.height);
-          s.visible = true;
-        });
+        clumpPending.push(
+          toile
+            .texture(url)
+            .then((tex) => {
+              if (C.gone) return;
+              s.texture = tex;
+              s.anchor.set(t.ox, t.oy);
+              s.position.set(x0 + t.ox * bw, by + t.oy * bh);
+              s.scale.set(bw / tex.width, bh / tex.height);
+              s.visible = true;
+            })
+            .catch(() => {}),
+        );
         clumpOn.set(key, C);
       });
     }
@@ -356,12 +483,12 @@
   // each clump from -a to a and back, ease-in-out, t s each way, the gust crossing the field left to right (scene.css)
   const swayClumps = (now) => {
     if (!clumpOn.size || RM) return;
-    const t = now / 1000;
+    const t = now / 1000, k = brise(now);
     for (const C of clumpOn.values()) {
       const u = (t - C.t.d) / C.t.t, n = Math.floor(u);
       let f = u - n;
       if (n & 1) f = 1 - f;
-      C.s.rotation = ((-C.t.a + 2 * C.t.a * f * f * (3 - 2 * f)) * Math.PI) / 180;
+      C.s.rotation = (k * (-C.t.a + 2 * C.t.a * f * f * (3 - 2 * f)) * Math.PI) / 180;
     }
   };
 
@@ -439,6 +566,8 @@
     else stop();
   }
   function go() {
+    // (the visitor moves the camera: the canvas at once, whatever is still on its way)
+    revele();
     if (!moving) {
       moving = true;
       document.dispatchEvent(new CustomEvent('frise:depart'));
@@ -616,10 +745,9 @@
     const F = m.frise;
     // (each bouquet lowered or raised so its vase stands on its pillar's top: sprites.mjs "assise")
     const dy = m.assise || 0;
-    const still = new toile.PIXI.Sprite(await toile.texture(base + F.src));
+    // its light sprite at once where the landing's picture does not stand for it, its sharp one over it when it comes
+    const still = new toile.PIXI.Sprite();
     still.position.set(F.x, F.y + dy);
-    still.width = F.w;
-    still.height = F.h;
     still.visible = false;
     plane.groups[0].addChild(still);
     // the depth groups of the close-up's images (as eclosion.js split them into its four boxes)
@@ -628,6 +756,15 @@
     let shown = false;
     let gone = false;
     let near = null; // { sprites, sway, sheets }
+    let drawn = false; // a sprite (light or sharp) to show
+    const vis = () => (still.visible = shown && !near && !gone && drawn);
+    const S = { s: still, key: keyOf(base + F.src), w: F.w, h: F.h, sharp: false, gone: false, montre: () => ((drawn = true), vis()) };
+    waiting.add(S);
+    showLight(S);
+    const i = Math.round(plane.x / M.pas);
+    const sharp = toile.texture(base + F.src).then((tex) => sharpen(S, tex));
+    S.pret = sharp.catch(() => {});
+    S.pret.then(() => placeSharp(i).r());
     const b = {
       manifeste: { vb: m.vb, boite: [m.boite[0], m.boite[1] + dy, m.boite[2], m.boite[3]], pied: m.pied, echelle: m.echelle, pieces: m.orig, finCroissanceMs: 0 },
       // the place's offset in the world (the insects place the bouquet's flowers from it)
@@ -641,7 +778,7 @@
       montre() {
         if (!shown) {
           shown = true;
-          still.visible = !near;
+          vis();
         }
         return Promise.resolve(performance.now());
       },
@@ -675,13 +812,13 @@
           };
           if (!RM) swaying.add(sway);
           near = { sprites, sway, sheets };
-          still.visible = false;
+          vis();
         } else if (!on && near) {
           swaying.delete(near.sway);
           for (const s of near.sprites) s.destroy();
           for (const u of near.sheets) toile.oublie(u);
           near = null;
-          still.visible = shown && !gone;
+          vis();
         }
       },
       repli() {
@@ -692,6 +829,8 @@
         if (gone) return;
         b.proche(false);
         gone = true;
+        S.gone = true;
+        waiting.delete(S);
         still.destroy();
       },
     };
@@ -700,6 +839,29 @@
     b.parti = Promise.resolve(0);
     return b;
   }
+
+  // Everything in view sharp: the decor laid by the first draws, the bouquets of the places in view (posed one by one as
+  // the camera rests), the clumps in view; then the canvas shows (revele), two frames on so its sprites are drawn. Waited
+  // for once the first bouquet is posed, the camera then on its first place (a ?b= link travels there); 8 s at most each.
+  let touffesP = Promise.resolve();
+  async function prete() {
+    const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+    await Promise.race([new Promise((r) => document.addEventListener('boutique:bouquet', r, { once: true })), wait(8000)]);
+    const lo = Math.ceil((c - half - 200) / M.pas), hi = Math.floor((c + half + 200) / M.pas);
+    const ps = [];
+    for (let i = lo; i <= hi; i++) ps.push(placeSharp(i).p);
+    await Promise.race([Promise.all([...[...waiting].map((P) => P.pret), ...ps, touffesP.then(() => Promise.all(clumpPending))]), wait(8000)]);
+    T.net = Math.round(performance.now());
+    requestAnimationFrame(() => requestAnimationFrame(revele));
+  }
+  // the landing's picture shows whole once decoded, with the bouquet's name (both in the page, held hidden by its head
+  // until then: html.entree); without the picture, the page enters with the canvas
+  if (affiche && window.AFFICHE)
+    window.AFFICHE.then((img) => (img && img.decode ? img.decode().catch(() => {}) : null))
+      .then(() => {
+        T.entree = Math.round(performance.now());
+        if (window.ENTREE_FAITE) window.ENTREE_FAITE();
+      });
 
   // ---------- start
   let decorRes;
@@ -715,6 +877,7 @@
       // bouquets over all the ground, the clumps in front (toile.mjs)
       toile = await (await toileP).creer({ scene, apres: monde, bandes: M.bandes.map((s) => s.id), loin: 'z6', milieu: 'arriere', devant: M.devant });
       window.TOILE = toile;
+      toile.canvas.style.visibility = 'hidden';
       toileRes(toile);
       for (const s of M.bandes) bands.push({ ...s, tiles: s.tuiles, on: new Map(), layer: toile.layer('bande:' + s.id) });
       toile.chaqueImage((now) => {
@@ -723,14 +886,18 @@
         swayClumps(now);
         for (const fn of swaying) fn(now);
       });
-      nameEl = document.createElement('div');
-      nameEl.className = 'nom-ciel';
-      nameEl.setAttribute('aria-hidden', 'true');
-      nameEl.innerHTML = '<span class="nom-ligne"><span class="nom-titre"></span><span class="nom-copies"></span><span class="nom-fane"></span></span><span class="nom-sous"></span>';
+      // (the landing bouquet's, written in the page by build.mjs so it comes in with the landing's picture: taken over)
+      const pre = scene.querySelector('.nom-cadre');
+      nameEl = pre ? pre.querySelector('.nom-ciel') : document.createElement('div');
+      if (!pre) {
+        nameEl.className = 'nom-ciel';
+        nameEl.setAttribute('aria-hidden', 'true');
+        nameEl.innerHTML = '<span class="nom-ligne"><span class="nom-titre"></span><span class="nom-copies"></span><span class="nom-fane"></span></span><span class="nom-sous"></span>';
+      }
       // in the screen's top band (owner, 2026-10-27), behind the bouquets (« les textes doivent être derrière le
       // bouquet »): just under the canvas, over the sky; held still in the close-up as the canvas is
       // (in a frame over the whole scene, so the close-up's counter-transform starts from the scene's corner as the canvas's)
-      const cadre = document.createElement('div');
+      const cadre = pre || document.createElement('div');
       cadre.className = 'nom-cadre';
       cadre.append(nameEl);
       toile.canvas.before(cadre);
@@ -738,36 +905,36 @@
       addEventListener('resize', fitName);
       // (the name's thin face arrives after the first measure)
       if (document.fonts) document.fonts.ready.then(fitName);
-      // the clumps come once the first bouquet is shown (scene.js's order), and only without the insects' sprites (insectes.mjs
-      // draws them with the insects, along the same strip, while it runs: window.PREMIER_PIXI); each clump turns about its
-      // foot (scene.json: the bottom middle of its frame), its picture cut to its drawn box
-      document.addEventListener(
-        'boutique:bouquet',
-        () =>
-          (window.PREMIER_PIXI ? window.PREMIER_PIXI.then(() => Promise.reject(), () => null) : Promise.resolve())
-            .then(() => Promise.all([fetch(`${OUT}scene.json`).then((r) => r.json()), fetch(`${OUT}premier.json`).then((r) => r.json())]))
-            .then(([j, pre]) => {
-              const byName = new Map(pre.map((p) => [p.src.replace(/^premier\//, '').replace(/\.webp$/, '.svg'), p]));
-              clumpList = (j.touffes || [])
-                .map((t) => {
-                  const p = byName.get(t.src);
-                  if (!p) return null;
-                  const fx = ((t.x + t.w / 2) / 100) * WW, fy = WH * (1 - t.b / 100);
-                  const [bx, by, bw, bh] = p.box;
-                  return { src: p.src, v: p.v, box: p.box, a: t.a, t: t.t, d: -t.t + (t.x / 100) * 1.6, ox: (fx - bx) / bw, oy: (fy - by) / bh };
-                })
-                .filter(Boolean);
-              draw();
+      // the clumps from the start, in the landing's picture and in what the canvas must have before it shows; each turns
+      // about its foot (scene.json: the bottom middle of its frame), its picture cut to its drawn box
+      touffesP = Promise.all([fetch(`${OUT}scene.json`).then((r) => r.json()), fetch(`${OUT}premier.json`).then((r) => r.json())])
+        .then(([j, pre]) => {
+          const byName = new Map(pre.map((p) => [p.src.replace(/^premier\//, '').replace(/\.webp$/, '.svg'), p]));
+          clumpList = (j.touffes || [])
+            .map((t) => {
+              const p = byName.get(t.src);
+              if (!p) return null;
+              const fx = ((t.x + t.w / 2) / 100) * WW, fy = WH * (1 - t.b / 100);
+              const [bx, by, bw, bh] = p.box;
+              return { src: p.src, v: p.v, box: p.box, a: t.a, t: t.t, d: -t.t + (t.x / 100) * 1.6, ox: (fx - bx) / bw, oy: (fy - by) / bh };
             })
-            .catch(() => {}),
-        { once: true },
-      );
+            .filter(Boolean);
+          draw();
+        })
+        .catch(() => {});
+      // (asked for in the page's head, beside frise.json)
+      const A = await amorce;
+      if (A) light.ktx2 = A.ktx2 || null;
       measure();
       draw();
-      // the decor in view, then its tiles are waited for (6 s at most)
       T.dessine = Math.round(performance.now());
-      await Promise.race([Promise.all(decorWait.splice(0)), new Promise((r) => setTimeout(r, 6000))]);
-      T.decor = Math.round(performance.now());
+      const now = () => Math.round(performance.now());
+      const vue = Promise.all(decorWait.splice(0));
+      if (A) lightSheets(A);
+      // the bouquets come at once: the canvas is hidden until all in view is sharp (prete), the landing's picture over it
+      T.decor = now();
+      vue.then(() => (T.decorNet = now()));
+      prete();
       requestAnimationFrame(() => requestAnimationFrame(() => decorRes(Math.round(performance.now()))));
       stop();
       return M;
@@ -783,6 +950,21 @@
 
   window.Frise = {
     pret,
+    // amorce.json (amorce.py): the bouquets' sprites indices among it (boutique.js reads them from there)
+    amorce,
+    // the breeze's strength (0 to 1) at a frame's time: none until the canvas shows, then rising over 2.5 s
+    brise,
+    // insectes.mjs has its clumps on: ours go in the same frame (their pictures stay loaded: its sprites show the same ones,
+    // from the same cache of PixiJS)
+    touffesPrises() {
+      if (clumpsHanded) return;
+      clumpsHanded = true;
+      for (const C of clumpOn.values()) {
+        C.gone = true;
+        C.s.destroy();
+      }
+      clumpOn.clear();
+    },
     decor,
     toile: toileReady,
     poseSprites,
@@ -807,6 +989,7 @@
     },
     fige(on) {
       frozen = !!on;
+      if (frozen) revele();
       if (frozen) {
         travel = null;
         v = 0;
@@ -816,9 +999,11 @@
     ajusteNom: () => fitName(),
     // the world folded into the ground but the bouquets (true), or standing again (false)
     replie(on) {
+      revele();
       replieTo = on ? 1 : 0;
     },
     seul(place) {
+      revele();
       only = place == null ? null : place;
       if (only == null) {
         // the others' bouquets come back once their pillars are up (foldStep)
