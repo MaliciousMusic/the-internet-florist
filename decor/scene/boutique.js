@@ -326,7 +326,7 @@
       open.hidden = true;
       const own = productOf(b.produit);
       const max = own ? own.prix.centimes : 0;
-      const choices = CFG.produits.filter((p) => p.id !== b.produit && p.prix && p.prix.centimes <= max && copiesOf(p) && copiesOf(p).left > 0);
+      const choices = CFG.produits.filter((p) => p.id !== b.produit && p.prix && p.prix.centimes <= max);
       if (!choices.length) return void (pfNote.textContent = T.exchangeNone);
       // the bouquets to choose from: cards with their picture (the frieze's sprite), their name and their price
       const sel = document.createElement('div');
@@ -380,7 +380,6 @@
         }
         await showAccount();
         pfNote.textContent = T.exchangeDone;
-        copiesLeft().catch(() => {});
       });
       box.append(sel, why, go);
       sel.children[0].focus({ preventScroll: true });
@@ -548,7 +547,7 @@
     const f = Frise.face();
     const b = f >= 0 ? Frise.bouquet(f) : null;
     Frise.seul(on && f >= 0 ? f : null);
-    // the top band: the name alone on the frieze, with the copies, the fading and the collection in the close-up
+    // the top band: the name alone on the frieze, with the fading and the collection in the close-up
     document.documentElement.classList.toggle('gros-plan', on);
     Frise.ajusteNom();
     if (b && b.proche) b.proche(on);
@@ -628,15 +627,8 @@
     return e;
   }
   const faded = (p) => lifeEnd(p) <= Date.now();
-  // ---------- the month's collection (one a month, a limited series of each bouquet, owner 2026-10-27): its name in the
-  // page's language from its month, and the copies left of this bouquet (boutique.json collection, product "vendus"; the
-  // count will come from the shop's server, decor/COMPTE.md)
-  function copiesOf(p) {
-    const C = CFG.collection;
-    if (!C) return null;
-    const total = p.exemplaires || C.exemplaires;
-    return { total, left: Math.max(0, total - (p.vendus || 0)) };
-  }
+  // ---------- the month's collection (one a month, owner 2026-10-27; no copies counted since 2026-10-28: « il n'y a plus de
+  // rareté sur aucun bouquet »): its name in the page's language from its month (boutique.json collection)
   const monthOf = () => {
     const [y, mo] = CFG.collection.mois.split('-').map(Number);
     let month = new Intl.DateTimeFormat(I18N.locale, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(Date.UTC(y, mo - 1, 1));
@@ -661,18 +653,13 @@
     let month = new Intl.DateTimeFormat(I18N.locale, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(Date.UTC(y, mo - 1, 1));
     // (in French: « Collection d’octobre 2026 », « Collection de mars 2027 »)
     if (I18N.code === 'fr') month = (/^[aeiouyàâéèêîôû]/i.test(month) ? 'd’' : 'de ') + month;
-    const total = p.exemplaires || C.exemplaires;
-    const left = Math.max(0, total - (p.vendus || 0));
-    return fill(T.series, { month, left: nInt.format(left), total: nInt.format(total) });
+    return fill(T.series, { month });
   }
-  // the top band (owner's sketch, 2026-10-27): the name, the copies available, the fading; under them the month's collection
-  // and when it ends
+  // the top band (owner's sketch, 2026-10-27): the name, the fading; under them the month's collection and when it ends
   const nameOf = (s) => {
     const p = productAt(s);
-    const c = copiesOf(p);
     return {
       nom: p.nom,
-      copies: c ? fill(T.copiesLeft, { left: nInt.format(c.left), total: nInt.format(c.total) }) : '',
       fane: fill(T.fadeShort, { n: nInt.format((CFG.vie && CFG.vie.jours) || 30) }),
       sous: collectionTxt(),
     };
@@ -894,7 +881,6 @@
         // (no sentence under the button, owner 2026-10-27: only the receipt's link)
         note.textContent = '';
         receipt({ p, order: o });
-        copiesLeft().catch(() => {});
         return;
       }
       if (o.etat && o.etat !== 'en_attente') break;
@@ -921,7 +907,7 @@
     const when = new Date(order.paye || Date.now());
     const rows = [
       [R.bouquet, `${e(p.nom)} (${e(p.id)})`],
-      [R.copy, e(fill(R.copyOf, { n: order.bouquet.numero, total: p.exemplaires || CFG.collection.exemplaires, month: seriesTxt(p).split(' · ')[0] }))],
+      [R.copy, e(fill(R.copyOf, { n: order.bouquet.numero, month: seriesTxt(p) }))],
       [R.price, `${e(new Intl.NumberFormat(I18N.locale, { style: 'currency', currency: 'EUR' }).format(order.centimes / 100))} · ${e(R.taxes)}`],
       [R.date, e(when.toLocaleString(I18N.locale))],
       [R.order, `<code>${e(order.id)}</code>`],
@@ -1100,26 +1086,13 @@
     const k = want == null ? 0 : /^\d+$/.test(want) ? +want : CFG.produits.findIndex((p) => p.id === want);
     const at = order.indexOf(k >= 0 && k < CFG.produits.length ? k : 0);
     if (PERF) measure();
-    // the name in the sky, and under it the month's collection and the copies left (owner, 2026-10-27)
+    // the name in the sky, and under it the month's collection (owner, 2026-10-27)
     Frise.nommer(nameOf);
     if (at > 0) Frise.va(at, { instant: true });
     Frise.poser(poseAt);
     const f = Frise.face();
     if (f >= 0) facing(f);
     retourPaiement().catch((err) => console.error('[boutique] retour', err));
-    copiesLeft().catch(() => {});
-  }
-  // the copies left, from the shop's server (sold and held ones counted), under the names and in the bubble
-  async function copiesLeft() {
-    if (!apiBase() || !CFG.collection) return;
-    const r = await api(`/api/collection?mois=${CFG.collection.mois}&produits=${CFG.produits.map((p) => p.id).join(',')}`);
-    if (!r.restants) return;
-    for (const p of CFG.produits) {
-      const x = r.restants[p.id];
-      if (x) Object.assign(p, { exemplaires: x.total, vendus: x.total - x.restants });
-    }
-    Frise.nommer(nameOf);
-    showLives();
   }
 
   // nothing grows or sways while the tab is hidden (only what was running starts again: a finished entrance stays finished)

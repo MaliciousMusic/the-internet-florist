@@ -1,10 +1,10 @@
 {
-  "_lisez-moi": "Bouquets de la vitrine. tiges : [espèce, tiges, prix fleuriste d’une tige en centimes] ; les prix viennent de catalogue/recettes/sens_prix_0X.json (prix TTC d’un fleuriste en France en 2026, repris dans RECIPES.price de k0.js et dans skus.csv) ; les nombres sont les tiges que le moteur dessine vraiment pour cette graine. recette : [SKU, tiges, place 1 (fond) à 10 (devant)]. modele : numéro du bouquet modèle du moteur (MODELS, k0.js/k2.js), dans son vase. Prix d’un bouquet = somme de ses tiges, vase offert, en euros, payé par carte (porteur, 27 octobre 2026 : plus de NFT ni de crypto) ; en dollars hors zone euro au cours cours.usdParEur. vie.jours : durée de vie d’un bouquet (30 jours). collection : la collection du mois (mois AAAA-MM, exemplaires par bouquet, sauf « exemplaires » propre à un produit) ; « vendus » viendra du serveur de la boutique (decor/COMPTE.md). prix, bouquet, vignette : écrits par predessin.mjs, puis sprites.mjs cuit les sprites.",
+  "_lisez-moi": "Bouquets de la vitrine. tiges : [espèce, tiges, prix fleuriste d’une tige en centimes] ; les prix viennent de catalogue/recettes/sens_prix_0X.json (prix TTC d’un fleuriste en France en 2026, repris dans RECIPES.price de k0.js et dans skus.csv) ; les nombres sont les tiges que le moteur dessine vraiment pour cette graine. recette : [SKU, tiges, place 1 (fond) à 10 (devant)]. modele : numéro du bouquet modèle du moteur (MODELS, k0.js/k2.js), dans son vase. Prix d’un bouquet = somme de ses tiges, vase offert, en euros, payé par carte (porteur, 27 octobre 2026 : plus de NFT ni de crypto) ; en dollars hors zone euro au cours cours.usdParEur. vie.jours : durée de vie d’un bouquet (30 jours). collection : la collection du mois (mois AAAA-MM) ; plus d’exemplaires limités depuis le 28 octobre 2026 (porteur : « il n’y a plus de rareté sur aucun bouquet ») : un bouquet n’a de plafond que si « exemplaires » lui est donné, ici ou dans la base du serveur (decor/COMPTE.md). prix, bouquet, vignette : écrits par predessin.mjs, puis sprites.mjs cuit les sprites.",
   "cours": { "usdParEur": 1.07, "date": "2026-10-27", "source": "BCE, cours de référence (provisoire, à relire chaque mois)" },
   "prix": { "regle": "somme des prix réels des tiges, vase offert, en euros", "provisoire": true },
   "vie": { "jours": 30 },
   "contact": "lonjaret.hadrien@proton.me",
-  "collection": { "mois": "2026-10", "exemplaires": 100 },
+  "collection": { "mois": "2026-10" },
   "scene": {
     "pied": [1200,700],
     "echelle": 0.855,

@@ -57,7 +57,7 @@ export async function achat(req, env, now = Date.now()) {
   retour.searchParams.delete('commande');
   retour.searchParams.delete('paiement');
 
-  // the copy is held in one statement: two buyers of the last copy cannot both have it
+  // the copy is held in one statement: two buyers of the last copy cannot both have it (a bouquet with no cap: always)
   const id = identifiant();
   const expire = now + TENUE;
   const tot = await total(env, p.id, p.mois, p.exemplaires);
@@ -66,7 +66,7 @@ export async function achat(req, env, now = Date.now()) {
   const r = await env.DB.prepare(
     `INSERT INTO commandes (id, compte, produit, mois, centimes, etat, cree, expire, consentement, retour, langue, cagnotte)
      SELECT ?4, ?5, ?1, ?2, ?6, 'en_attente', ?3, ?7, ?8, ?9, ?10, ?12
-     WHERE ${PRIS} < ?11`,
+     WHERE ?11 IS NULL OR ${PRIS} < ?11`,
   )
     .bind(p.id, p.mois, now, id, s.compte.id, p.centimes, expire, consent, retour.href, String(corps.langue || 'fr').slice(0, 5), tot, cg)
     .run();
@@ -152,7 +152,7 @@ export async function livre(env, id, reference, now = Date.now()) {
   const b = await ajouteBouquet(env, { compte: c.compte, produit: c.produit, mois: c.mois, origine: 'achat', commande: id }, now);
   await env.DB.prepare('UPDATE commandes SET bouquet = ? WHERE id = ?').bind(b.id, id).run();
   let nom = c.produit;
-  let tot = 100;
+  let tot = null;
   try {
     const p = await produitDe(env, c.produit, now);
     if (p) {

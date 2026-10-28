@@ -21,9 +21,9 @@ export default {
   pages: {
     index: {
       title: "Ramo de flores digital, dibujado tallo a tallo | Belai's Garden",
-      description: 'Ramos de flores digitales dibujados tallo a tallo a partir de flores reales. Una colección cada mes, en series limitadas, para regalar y poner en tu pantalla.',
+      description: 'Ramos de flores digitales dibujados tallo a tallo a partir de flores reales. Una colección cada mes, para regalar y poner en tu pantalla.',
       ogTitle: 'Ramos de flores digitales, dibujados tallo a tallo',
-      ogDescription: 'Cada mes, una colección de ramos en series limitadas, cada uno en un jarrón real. Míralos florecer, regala uno, ponlo en tu pantalla.',
+      ogDescription: 'Cada mes, una colección de ramos, cada uno en un jarrón real. Míralos florecer, regala uno, ponlo en tu pantalla.',
     },
     about: {
       title: "Acerca de: ramos digitales de flores reales | Belai's Garden",
@@ -52,7 +52,7 @@ export default {
   index: {
     h1: "Belai's Garden: ramos de flores digitales que viven",
     intro:
-      'Ramos de flores digitales dibujados tallo a tallo a partir de flores reales. Cada mes, una nueva colección de ramos en series limitadas, cada uno en un jarrón real. Un ramo vive treinta días y luego queda marchito para siempre. Regálalo, o ponlo en tu pantalla con Belai Bureau.',
+      'Ramos de flores digitales dibujados tallo a tallo a partir de flores reales. Cada mes, una nueva colección de ramos, cada uno en un jarrón real. Un ramo vive treinta días y luego queda marchito para siempre. Regálalo, o ponlo en tu pantalla con Belai Bureau.',
     noscript:
       'Este jardín necesita JavaScript para que los ramos florezcan. Lee <a href="{{p}}about.html">más sobre los ramos</a>, descubre <a href="{{p}}desktop.html">cómo poner uno en tu escritorio</a> o consulta el <a href="{{legal}}">aviso legal y las condiciones</a>.',
     galleryLabel: 'Ramos del día',
@@ -116,7 +116,7 @@ export default {
   <p>El precio de un ramo es la suma de lo que cuestan sus tallos en una floristería de Francia. El jarrón es un regalo. Se paga con tarjeta.</p>
 
   <h2>Una colección cada mes</h2>
-  <p>Cada mes tiene su colección. Cada ramo existe en un número limitado de ejemplares, indicado bajo su nombre, y el ramo que compras es exactamente el que ves.</p>
+  <p>Cada mes tiene su colección, y el ramo que compras es exactamente el que ves.</p>
 
   <h2>Regalar un ramo</h2>
   <p>Al comprar, puedes regalar el ramo: un mensaje corto que llevan los insectos, una música y un código para transmitir. La persona a quien lo regalas lo recibe en «Mis regalos» con tu nombre y ese código.</p>
@@ -134,7 +134,6 @@ export default {
       ['¿Cómo se fija el precio de un ramo?', 'Es la suma de lo que costarían sus tallos en una floristería de Francia. El jarrón es un regalo. El precio se muestra en euros (en dólares estadounidenses fuera de la zona euro) y se paga con tarjeta.'],
       ['¿Qué pasa a los treinta días?', 'El ramo se marchita y queda marchito e inmóvil para siempre. Sigue siendo tuyo.'],
       ['¿Cómo regalo un ramo?', 'Al comprar, elige regalarlo: escribe un mensaje corto, elige una música y los insectos que lo llevarán. Recibes un enlace y un código; la persona los introduce en «Mis regalos» con tu nombre, y el ramo pasa a su cuenta.'],
-      ['¿Cuántos ejemplares hay de cada ramo?', 'Cada ramo de la colección del mes existe en un número limitado de ejemplares, indicado bajo su nombre. Cuando se acaban, no hay más.'],
     ],
     back: '← Volver a los ramos',
   },
@@ -201,8 +200,7 @@ export default {
 
     <h3>2. Objeto: el ramo</h3>
     <p>Un ramo es una obra digital: flores dibujadas en gráficos vectoriales, en un jarrón, animadas en la pantalla. Cada
-      ramo pertenece a la colección de un mes y solo se vende en un número limitado de ejemplares, indicado bajo su
-      nombre junto con los ejemplares que quedan. El ramo que compra es exactamente el que ve, sin variación. Su página
+      ramo pertenece a la colección de un mes. El ramo que compra es exactamente el que ve, sin variación. Su página
       indica, antes de la compra, su nombre, su jarrón, su colección y su precio.</p>
     <p>Un ramo vive treinta días desde su compra: florece y se mece, y una cuenta atrás indica el tiempo que le queda.
       Después se marchita y queda marchito e inmóvil para siempre. Esta evolución forma parte de la obra y no es un
@@ -231,8 +229,7 @@ export default {
     <p>Usted paga con tarjeta, o con Apple Pay o Google Pay, en la página de pago de nuestro proveedor Stripe (Stripe
       Payments Europe, Ltd., Dublín, Irlanda). Nunca vemos ni conservamos los números de su tarjeta. Antes de pagar,
       marca una casilla para pedir la entrega inmediata (véase el artículo 9). La validación del pago constituye un
-      pedido con obligación de pago. Se le reserva un ejemplar mientras la página de pago está abierta, treinta minutos
-      como máximo.</p>
+      pedido con obligación de pago.</p>
 
     <h3>7. Entrega y factura</h3>
     <p>El ramo se añade a su cuenta en cuanto Stripe confirma el pago. Se le entrega un recibo: indica el ramo, su
@@ -393,7 +390,7 @@ export default {
     legal: 'Legal',
     closeLegal: 'Cerrar el panel legal',
     footer:
-      '<p>Cada ramo es un ramo digital de serie limitada, pagado con tarjeta, sin IVA (IVA no aplicable, art. 293 B del Código General de Impuestos francés). Vive treinta días desde su compra y luego queda marchito para siempre. La entrega es inmediata: el derecho de desistimiento deja de aplicarse una vez confirmada tu compra.</p><p>Sin rastreo ni publicidad: como mucho una cookie, para recordar el idioma que has elegido.</p>',
+      '<p>Cada ramo es un ramo digital, pagado con tarjeta, sin IVA (IVA no aplicable, art. 293 B del Código General de Impuestos francés). Vive treinta días desde su compra y luego queda marchito para siempre. La entrega es inmediata: el derecho de desistimiento deja de aplicarse una vez confirmada tu compra.</p><p>Sin rastreo ni publicidad: como mucho una cookie, para recordar el idioma que has elegido.</p>',
     links: { notice: 'Aviso legal', terms: 'Condiciones de venta', privacy: 'Privacidad', app: 'Licencia de Belai Bureau', accessibility: 'Accesibilidad', contact: 'Contacto' },
     credit: '',
     language: 'Idioma',
@@ -409,9 +406,8 @@ export default {
     fadedLower: 'marchito',
     fadedForGood: 'Marchito para siempre',
     // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
-    series: 'Colección de {month} · quedan {left} de {total}',
+    series: 'Colección de {month}',
     fadeReminder: '(Los ramos se marchitan en {n} días)',
-    copiesLeft: '{left}/{total} disponibles',
     fadeShort: 'Se marchita en {n} días',
     collectionEnds: 'Colección de {month}, termina {when}',
     collectionDone: 'Colección de {month}, cerrada',
@@ -428,9 +424,9 @@ export default {
     soldOut: 'No queda ningún ejemplar de este ramo.',
     payError: 'El pago no se ha podido completar. Inténtalo de nuevo en un momento.',
     redirecting: 'Hacia la página de pago…',
-    paid: 'Tu ramo es tuyo: ejemplar n.º {n} de {total}.',
+    paid: 'Tu ramo es tuyo: ejemplar n.º {n}.',
     paymentPending: 'Confirmando el pago…',
-    cancelled: 'Pago cancelado: el ejemplar vuelve a estar a la venta.',
+    cancelled: 'Pago cancelado.',
     accountSoon: 'Tu cuenta llega pronto: iniciarás sesión con tu número de móvil y encontrarás aquí tus ramos.',
     accountSignIn: 'Iniciar sesión',
     hello: 'Hola, {name}',
@@ -486,7 +482,7 @@ export default {
       terms: 'Condiciones de venta aceptadas ese día: {url}',
       taxes: 'IVA no aplicable, art. 293 B del Código General de Impuestos francés.',
       copy: 'Ejemplar',
-      copyOf: 'n.º {n} de {total}, {month}',
+      copyOf: 'n.º {n}, {month}',
       order: 'Pedido',
       payment: 'Pago',
     },

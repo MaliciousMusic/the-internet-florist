@@ -121,3 +121,11 @@ Le porteur veut rendre le moins d'argent possible, dans ce que la loi permet.
 - Le nom exact d'une collection : « Collection d'octobre 2026 », ou un nom poétique par mois ?
 - Les bouquets d'une collection terminée : retirés de la vitrine, ou montrés comme épuisés ?
 - La liste des musiques proposées pour un cadeau : à composer, ou à prendre parmi les morceaux de `music` ?
+
+## Plus d'exemplaires limités (28 octobre 2026)
+
+Le porteur : « il n'y a plus de rareté sur aucun bouquet ». Le compteur « 100/100 disponibles » et toute mention de série
+limitée sont retirés du site (5 langues : descriptions, page À propos, FAQ, conditions de vente, pied de page, reçu). Côté
+serveur, un bouquet n'a plus de plafond sauf si on lui en donne un (tables `exemplaires` et `collections`, ou « exemplaires »
+dans `boutique.json`) : la réservation passe toujours, la facture dit « exemplaire n° 12 » sans « sur 100 », et
+`/api/collection` renvoie `null`. Les 31 tests du serveur passent. Le serveur ne change en ligne qu'une fois redéployé.

@@ -16,9 +16,9 @@ export default {
   pages: {
     index: {
       title: "Bouquet de fleurs numérique, dessiné tige à tige | Belai's Garden",
-      description: 'Bouquets de fleurs numériques dessinés tige à tige d’après de vraies fleurs. Une collection par mois, en séries limitées, à offrir et à poser sur votre écran.',
+      description: 'Bouquets de fleurs numériques dessinés tige à tige d’après de vraies fleurs. Une collection par mois, à offrir et à poser sur votre écran.',
       ogTitle: 'Bouquets de fleurs numériques, dessinés tige à tige',
-      ogDescription: 'Chaque mois, une collection de bouquets en séries limitées, chacun dans un vrai vase. Regardez-les fleurir, offrez-en un, posez-le sur votre écran.',
+      ogDescription: 'Chaque mois, une collection de bouquets, chacun dans un vrai vase. Regardez-les fleurir, offrez-en un, posez-le sur votre écran.',
     },
     about: {
       title: "À propos : bouquets numériques d’après nature | Belai's Garden",
@@ -47,7 +47,7 @@ export default {
   index: {
     h1: "Belai's Garden : des bouquets de fleurs numériques vivants",
     intro:
-      'Des bouquets de fleurs numériques dessinés tige à tige d’après de vraies fleurs. Chaque mois, une nouvelle collection de bouquets en séries limitées, chacun dans un vrai vase. Un bouquet vit trente jours, puis reste fané pour toujours. Offrez-le, ou posez-le sur votre écran avec Belai Bureau.',
+      'Des bouquets de fleurs numériques dessinés tige à tige d’après de vraies fleurs. Chaque mois, une nouvelle collection de bouquets, chacun dans un vrai vase. Un bouquet vit trente jours, puis reste fané pour toujours. Offrez-le, ou posez-le sur votre écran avec Belai Bureau.',
     noscript:
       'Ce jardin a besoin de JavaScript pour faire fleurir les bouquets. Lisez <a href="{{p}}about.html">la présentation des bouquets</a>, découvrez <a href="{{p}}desktop.html">comment en poser un sur votre bureau</a>, ou consultez les <a href="{{legal}}">mentions légales et conditions de vente</a>.',
     galleryLabel: 'Bouquets du jour',
@@ -111,7 +111,7 @@ export default {
   <p>Le prix d’un bouquet est la somme de ce que coûtent ses tiges chez un fleuriste en France. Le vase est offert. Vous le réglez par carte bancaire.</p>
 
   <h2>Une collection par mois</h2>
-  <p>Chaque mois a sa collection. Chaque bouquet y existe en un nombre limité d’exemplaires, indiqué sous son nom, et le bouquet que vous achetez est exactement celui que vous voyez.</p>
+  <p>Chaque mois a sa collection, et le bouquet que vous achetez est exactement celui que vous voyez.</p>
 
   <h2>Offrir un bouquet</h2>
   <p>À l’achat, vous pouvez offrir le bouquet : un court message porté par les insectes, une musique, et un code à transmettre. La personne à qui vous l’offrez le reçoit dans « Mes cadeaux » avec votre prénom et ce code.</p>
@@ -129,7 +129,6 @@ export default {
       ['Comment le prix d’un bouquet est-il fixé ?', 'À la somme de ce que coûteraient ses tiges chez un fleuriste en France. Le vase est offert. Le prix est affiché en euros (en dollars américains hors de la zone euro) et se règle par carte bancaire.'],
       ['Que se passe-t-il au bout de trente jours ?', 'Le bouquet fane et reste fané, immobile, pour de bon. Il reste à vous.'],
       ['Comment offrir un bouquet ?', 'Au moment de l’achat, choisissez de l’offrir : écrivez un court message, choisissez une musique et les insectes qui le porteront. Vous recevez un lien et un code ; la personne les saisit dans « Mes cadeaux » avec votre prénom, et le bouquet passe sur son compte.'],
-      ['Combien d’exemplaires de chaque bouquet ?', 'Chaque bouquet de la collection du mois existe en un nombre limité d’exemplaires, indiqué sous son nom. Quand ils sont partis, il n’y en a plus.'],
     ],
     back: '← Retour aux bouquets',
   },
@@ -196,8 +195,7 @@ export default {
 
     <h3>2. Objet : le bouquet</h3>
     <p>Un bouquet est une œuvre numérique : des fleurs dessinées en graphisme vectoriel, dans un vase, animées à l’écran.
-      Chaque bouquet appartient à la collection d’un mois et n’est vendu qu’en un nombre limité d’exemplaires, indiqué
-      sous son nom avec le nombre d’exemplaires restants. Le bouquet que vous achetez est exactement celui que vous
+      Chaque bouquet appartient à la collection d’un mois. Le bouquet que vous achetez est exactement celui que vous
       voyez, sans variation. Sa page indique, avant l’achat, son nom, son vase, sa collection et son prix.</p>
     <p>Un bouquet vit trente jours à compter de son achat : il fleurit et se balance, et un compte à rebours indique le
       temps restant. Il fane ensuite et demeure définitivement fané et immobile. Cette évolution fait partie de l’œuvre
@@ -226,8 +224,7 @@ export default {
     <p>Vous payez par carte bancaire, ou par Apple Pay ou Google Pay, sur la page de paiement de notre prestataire Stripe
       (Stripe Payments Europe, Ltd., Dublin, Irlande). Nous ne voyons ni ne conservons les numéros de votre carte. Avant
       de payer, vous cochez une case pour demander la livraison immédiate (voir l’article 9). La validation du paiement
-      vaut commande avec obligation de paiement. Un exemplaire vous est réservé pendant la durée de la page de paiement,
-      trente minutes au plus.</p>
+      vaut commande avec obligation de paiement.</p>
 
     <h3>7. Livraison et facture</h3>
     <p>Le bouquet est ajouté à votre compte dès que Stripe confirme le paiement. Un reçu vous est remis : il indique le
@@ -394,7 +391,7 @@ export default {
     legal: 'Mentions légales',
     closeLegal: 'Fermer le panneau des mentions légales',
     footer:
-      '<p>Chaque bouquet est un bouquet numérique en série limitée, payé par carte bancaire, sans TVA (TVA non applicable, art. 293 B du CGI). Il vit trente jours à compter de son achat, puis reste fané pour de bon. La livraison est immédiate : le droit de rétractation ne s’applique donc plus une fois votre achat confirmé.</p><p>Aucun pistage, aucune publicité : un cookie au plus, pour retenir la langue que vous avez choisie.</p>',
+      '<p>Chaque bouquet est un bouquet numérique, payé par carte bancaire, sans TVA (TVA non applicable, art. 293 B du CGI). Il vit trente jours à compter de son achat, puis reste fané pour de bon. La livraison est immédiate : le droit de rétractation ne s’applique donc plus une fois votre achat confirmé.</p><p>Aucun pistage, aucune publicité : un cookie au plus, pour retenir la langue que vous avez choisie.</p>',
     links: { notice: 'Mentions légales', terms: 'Conditions générales de vente', privacy: 'Confidentialité', app: 'Licence de Belai Bureau', accessibility: 'Accessibilité', contact: 'Contact' },
     credit: '',
     language: 'Langue',
@@ -410,9 +407,8 @@ export default {
     fadedLower: 'fané',
     fadedForGood: 'Fané pour toujours',
     // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
-    series: 'Collection {month} · {left} sur {total}',
+    series: 'Collection {month}',
     fadeReminder: '(Les bouquets fanent en {n} jours)',
-    copiesLeft: '{left}/{total} disponibles',
     fadeShort: 'Fane en {n} jours',
     collectionEnds: 'Collection {month}, se termine {when}',
     collectionDone: 'Collection {month}, terminée',
@@ -429,9 +425,9 @@ export default {
     soldOut: 'Plus aucun exemplaire de ce bouquet n’est disponible.',
     payError: 'Le paiement n’a pas pu aboutir. Réessayez dans un instant.',
     redirecting: 'Vers la page de paiement…',
-    paid: 'Votre bouquet est à vous : exemplaire n° {n} sur {total}.',
+    paid: 'Votre bouquet est à vous : exemplaire n° {n}.',
     paymentPending: 'Paiement en cours de confirmation…',
-    cancelled: 'Paiement annulé : l’exemplaire est remis en vente.',
+    cancelled: 'Paiement annulé.',
     accountSoon: 'Votre compte arrive bientôt : vous vous connecterez avec votre numéro de mobile, et retrouverez ici vos bouquets.',
     accountSignIn: 'Connexion',
     hello: 'Bonjour {name}',
@@ -487,7 +483,7 @@ export default {
       terms: 'Conditions générales de vente acceptées à cette date : {url}',
       taxes: 'TVA non applicable, art. 293 B du CGI.',
       copy: 'Exemplaire',
-      copyOf: 'n° {n} sur {total}, {month}',
+      copyOf: 'n° {n}, {month}',
       order: 'Commande',
       payment: 'Paiement',
     },

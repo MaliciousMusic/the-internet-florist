@@ -16,9 +16,9 @@ export default {
   pages: {
     index: {
       title: "Digitaler Blumenstrauß, von Hand gezeichnet | Belai's Garden",
-      description: 'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet. Jeden Monat eine Kollektion in limitierten Serien, zum Verschenken und für Ihren Bildschirm.',
+      description: 'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet. Jeden Monat eine Kollektion, zum Verschenken und für Ihren Bildschirm.',
       ogTitle: 'Digitale Blumensträuße, Stiel für Stiel gezeichnet',
-      ogDescription: 'Jeden Monat eine Kollektion von Sträußen in limitierten Serien, jeder in einer echten Vase. Sehen Sie ihnen beim Blühen zu, verschenken Sie einen, stellen Sie ihn auf Ihren Bildschirm.',
+      ogDescription: 'Jeden Monat eine Kollektion von Sträußen, jeder in einer echten Vase. Sehen Sie ihnen beim Blühen zu, verschenken Sie einen, stellen Sie ihn auf Ihren Bildschirm.',
     },
     about: {
       title: "So entstehen unsere digitalen Blumensträuße | Belai's Garden",
@@ -47,7 +47,7 @@ export default {
   index: {
     h1: "Belai's Garden: lebendige digitale Blumensträuße",
     intro:
-      'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet. Jeden Monat eine neue Kollektion von Sträußen in limitierten Serien, jeder in einer echten Vase. Ein Strauß lebt dreißig Tage und bleibt dann für immer verblüht. Verschenken Sie ihn, oder stellen Sie ihn mit Belai Bureau auf Ihren Bildschirm.',
+      'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet. Jeden Monat eine neue Kollektion von Sträußen, jeder in einer echten Vase. Ein Strauß lebt dreißig Tage und bleibt dann für immer verblüht. Verschenken Sie ihn, oder stellen Sie ihn mit Belai Bureau auf Ihren Bildschirm.',
     noscript:
       'Dieser Garten braucht JavaScript, damit die Blumensträuße erblühen. Lesen Sie <a href="{{p}}about.html">mehr über die Blumensträuße</a>, sehen Sie, <a href="{{p}}desktop.html">wie Sie einen auf Ihren Desktop stellen</a>, oder lesen Sie <a href="{{legal}}">Impressum und AGB</a>.',
     galleryLabel: 'Blumensträuße des Tages',
@@ -111,7 +111,7 @@ export default {
   <p>Der Preis eines Straußes ist die Summe dessen, was seine Stiele bei einem Floristen in Frankreich kosten. Die Vase gibt es dazu. Bezahlt wird mit Karte.</p>
 
   <h2>Eine Kollektion pro Monat</h2>
-  <p>Jeder Monat hat seine Kollektion. Jeder Strauß darin gibt es in einer begrenzten Zahl von Exemplaren, angegeben unter seinem Namen, und der Strauß, den Sie kaufen, ist genau der, den Sie sehen.</p>
+  <p>Jeder Monat hat seine Kollektion, und der Strauß, den Sie kaufen, ist genau der, den Sie sehen.</p>
 
   <h2>Einen Strauß verschenken</h2>
   <p>Beim Kauf können Sie den Strauß verschenken: eine kurze Nachricht, von den Insekten getragen, eine Musik und ein Code zum Weitergeben. Die beschenkte Person erhält ihn unter „Meine Geschenke“ mit Ihrem Vornamen und diesem Code.</p>
@@ -129,7 +129,6 @@ export default {
       ['Wie wird der Preis eines Blumenstraußes festgelegt?', 'Nach der Summe dessen, was seine Stiele bei einem Floristen in Frankreich kosten würden. Die Vase gibt es dazu. Der Preis wird in Euro angezeigt (außerhalb des Euroraums in US-Dollar) und mit Karte bezahlt.'],
       ['Was passiert nach dreißig Tagen?', 'Der Blumenstrauß verblüht und bleibt verblüht und unbewegt, für immer. Er bleibt Ihrer.'],
       ['Wie verschenke ich einen Strauß?', 'Wählen Sie beim Kauf „Verschenken“: Schreiben Sie eine kurze Nachricht, wählen Sie eine Musik und die Insekten, die sie tragen. Sie erhalten einen Link und einen Code; die Person gibt sie mit Ihrem Vornamen unter „Meine Geschenke“ ein, und der Strauß geht auf ihr Konto über.'],
-      ['Wie viele Exemplare gibt es von jedem Strauß?', 'Jeder Strauß der Monatskollektion gibt es in einer begrenzten Zahl von Exemplaren, angegeben unter seinem Namen. Sind sie vergriffen, gibt es keine mehr.'],
     ],
     back: '← Zurück zu den Blumensträußen',
   },
@@ -197,8 +196,7 @@ export default {
 
     <h3>2. Gegenstand: der Blumenstrauß</h3>
     <p>Ein Blumenstrauß ist ein digitales Werk: in Vektorgrafik gezeichnete Blumen in einer Vase, auf dem Bildschirm
-      animiert. Jeder Strauß gehört zur Kollektion eines Monats und wird nur in einer begrenzten Zahl von Exemplaren
-      verkauft, die unter seinem Namen zusammen mit den verbleibenden Exemplaren angegeben ist. Der Strauß, den Sie
+      animiert. Jeder Strauß gehört zur Kollektion eines Monats. Der Strauß, den Sie
       kaufen, ist genau der, den Sie sehen, ohne Abweichung. Seine Seite zeigt vor dem Kauf seinen Namen, seine Vase,
       seine Kollektion und seinen Preis.</p>
     <p>Ein Strauß lebt dreißig Tage ab dem Kauf: Er blüht und wiegt sich, und ein Countdown zeigt die verbleibende Zeit.
@@ -230,8 +228,7 @@ export default {
     <p>Sie bezahlen mit Karte, Apple Pay oder Google Pay auf der Zahlungsseite unseres Anbieters Stripe (Stripe Payments
       Europe, Ltd., Dublin, Irland). Wir sehen und speichern Ihre Kartennummern nie. Vor der Zahlung kreuzen Sie ein Feld
       an, um die sofortige Lieferung zu verlangen (siehe Artikel 9). Die Bestätigung der Zahlung gilt als
-      zahlungspflichtige Bestellung. Ein Exemplar wird für Sie reserviert, solange die Zahlungsseite geöffnet ist,
-      höchstens dreißig Minuten.</p>
+      zahlungspflichtige Bestellung.</p>
 
     <h3>7. Lieferung und Rechnung</h3>
     <p>Der Strauß wird Ihrem Konto hinzugefügt, sobald Stripe die Zahlung bestätigt. Sie erhalten einen Beleg: Er nennt
@@ -401,7 +398,7 @@ export default {
     legal: 'Rechtliches',
     closeLegal: 'Rechtliche Hinweise schließen',
     footer:
-      '<p>Jeder Blumenstrauß ist ein digitaler Strauß in limitierter Serie, mit Karte bezahlt, ohne Mehrwertsteuer (nicht anwendbar, Art. 293 B des französischen Steuergesetzbuchs). Er lebt dreißig Tage ab dem Kauf und bleibt dann für immer verblüht. Die Lieferung erfolgt sofort, daher gilt das Widerrufsrecht nach Bestätigung Ihres Kaufs nicht mehr.</p><p>Kein Tracking, keine Werbung: höchstens ein Cookie, um die gewählte Sprache zu speichern.</p>',
+      '<p>Jeder Blumenstrauß ist ein digitaler Strauß, mit Karte bezahlt, ohne Mehrwertsteuer (nicht anwendbar, Art. 293 B des französischen Steuergesetzbuchs). Er lebt dreißig Tage ab dem Kauf und bleibt dann für immer verblüht. Die Lieferung erfolgt sofort, daher gilt das Widerrufsrecht nach Bestätigung Ihres Kaufs nicht mehr.</p><p>Kein Tracking, keine Werbung: höchstens ein Cookie, um die gewählte Sprache zu speichern.</p>',
     links: { notice: 'Impressum', terms: 'AGB', privacy: 'Datenschutz', app: 'Lizenz von Belai Bureau', accessibility: 'Barrierefreiheit', contact: 'Kontakt' },
     credit: '',
     language: 'Sprache',
@@ -417,9 +414,8 @@ export default {
     fadedLower: 'verblüht',
     fadedForGood: 'Für immer verblüht',
     // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
-    series: 'Kollektion {month} · noch {left} von {total}',
+    series: 'Kollektion {month}',
     fadeReminder: '(Sträuße verblühen in {n} Tagen)',
-    copiesLeft: '{left}/{total} verfügbar',
     fadeShort: 'Verblüht in {n} Tagen',
     collectionEnds: 'Kollektion {month}, endet {when}',
     collectionDone: 'Kollektion {month}, beendet',
@@ -436,9 +432,9 @@ export default {
     soldOut: 'Von diesem Strauß ist kein Exemplar mehr verfügbar.',
     payError: 'Die Zahlung konnte nicht abgeschlossen werden. Versuchen Sie es gleich noch einmal.',
     redirecting: 'Weiter zur Zahlungsseite…',
-    paid: 'Ihr Strauß gehört Ihnen: Exemplar Nr. {n} von {total}.',
+    paid: 'Ihr Strauß gehört Ihnen: Exemplar Nr. {n}.',
     paymentPending: 'Zahlung wird bestätigt…',
-    cancelled: 'Zahlung abgebrochen: Das Exemplar ist wieder im Verkauf.',
+    cancelled: 'Zahlung abgebrochen.',
     accountSoon: 'Ihr Konto kommt bald: Sie melden sich mit Ihrer Mobilnummer an und finden hier Ihre Sträuße.',
     accountSignIn: 'Anmelden',
     hello: 'Hallo {name}',
@@ -494,7 +490,7 @@ export default {
       terms: 'An diesem Tag akzeptierte AGB: {url}',
       taxes: 'Gemäß Art. 293 B des französischen Steuergesetzbuchs (CGI) wird keine Umsatzsteuer berechnet.',
       copy: 'Exemplar',
-      copyOf: 'Nr. {n} von {total}, {month}',
+      copyOf: 'Nr. {n}, {month}',
       order: 'Bestellung',
       payment: 'Zahlung',
     },

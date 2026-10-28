@@ -16,10 +16,10 @@ export async function catalogue(env, now = Date.now()) {
   return cache;
 }
 
-// a product of the month's collection: { id, nom, centimes, mois, exemplaires } or null
+// a product of the month's collection: { id, nom, centimes, mois, exemplaires (null: no cap) } or null
 export async function produit(env, id, now = Date.now()) {
   const C = await catalogue(env, now);
   const p = (C.produits || []).find((x) => x.id === id);
   if (!p || !p.prix || !(p.prix.centimes > 0) || !C.collection) return null;
-  return { id: p.id, nom: p.nom, centimes: p.prix.centimes, mois: C.collection.mois, exemplaires: p.exemplaires || C.collection.exemplaires, vie: (C.vie && C.vie.jours) || 30 };
+  return { id: p.id, nom: p.nom, centimes: p.prix.centimes, mois: C.collection.mois, exemplaires: p.exemplaires || C.collection.exemplaires || null, vie: (C.vie && C.vie.jours) || 30 };
 }

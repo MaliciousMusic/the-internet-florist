@@ -16,9 +16,9 @@ export default {
   pages: {
     index: {
       title: "Digital flower bouquets, drawn stem by stem | Belai's Garden",
-      description: 'Digital flower bouquets drawn stem by stem from real flowers. A new collection every month, in limited series, to give and to set on your screen.',
+      description: 'Digital flower bouquets drawn stem by stem from real flowers. A new collection every month, to give and to set on your screen.',
       ogTitle: 'Digital flower bouquets, drawn stem by stem',
-      ogDescription: 'Every month, a collection of bouquets in limited series, each in a real vase. Watch them bloom, give one, set it on your screen.',
+      ogDescription: 'Every month, a collection of bouquets, each in a real vase. Watch them bloom, give one, set it on your screen.',
     },
     about: {
       title: "About: digital bouquets drawn from real flowers | Belai's Garden",
@@ -47,7 +47,7 @@ export default {
   index: {
     h1: "Belai's Garden: living digital flower bouquets",
     intro:
-      'Digital flower bouquets drawn stem by stem from real flowers. Every month, a new collection of bouquets in limited series, each in a real vase. A bouquet lives thirty days, then stays faded forever. Give it, or set it on your screen with Belai Bureau.',
+      'Digital flower bouquets drawn stem by stem from real flowers. Every month, a new collection of bouquets, each in a real vase. A bouquet lives thirty days, then stays faded forever. Give it, or set it on your screen with Belai Bureau.',
     noscript:
       'This garden needs JavaScript to let the bouquets bloom. Read <a href="{{p}}about.html">about the bouquets</a>, see <a href="{{p}}desktop.html">how to set one on your desktop</a>, or the <a href="{{legal}}">legal notice and terms</a>.',
     galleryLabel: 'Bouquets of the day',
@@ -111,7 +111,7 @@ export default {
   <p>A bouquet costs what its stems would cost at a florist in France. The vase comes free. You pay by card.</p>
 
   <h2>A collection every month</h2>
-  <p>Every month has its collection. Each bouquet in it comes in a limited number of copies, shown under its name, and the bouquet you buy is exactly the one you see.</p>
+  <p>Every month has its collection, and the bouquet you buy is exactly the one you see.</p>
 
   <h2>Giving a bouquet</h2>
   <p>When you buy, you can give the bouquet: a short message carried by the insects, a piece of music, and a code to pass on. The person you give it to receives it in “My gifts” with your first name and that code.</p>
@@ -129,7 +129,6 @@ export default {
       ['How is a bouquet priced?', 'At the sum of what its stems would cost at a florist in France. The vase comes free. The price is shown in euros (in US dollars outside the euro area) and paid by card.'],
       ['What happens after thirty days?', 'The bouquet fades and stays faded, still, for good. It remains yours.'],
       ['How do I give a bouquet?', 'When you buy, choose to give it: write a short message, pick a piece of music and the insects that will carry it. You get a link and a code; the person enters them in “My gifts” with your first name, and the bouquet moves to their account.'],
-      ['How many copies of each bouquet?', 'Each bouquet of the month’s collection comes in a limited number of copies, shown under its name. Once they are gone, there are no more.'],
     ],
     back: '← Back to the bouquets',
   },
@@ -195,8 +194,7 @@ export default {
 
     <h3>2. The bouquet</h3>
     <p>A bouquet is a digital work: flowers drawn in vector graphics, in a vase, animated on screen. Each bouquet belongs
-      to a month’s collection and is sold only in a limited number of copies, shown under its name with the number of
-      copies left. The bouquet you buy is exactly the one you see, with no variation. Its page shows, before purchase,
+      to a month’s collection. The bouquet you buy is exactly the one you see, with no variation. Its page shows, before purchase,
       its name, its vase, its collection and its price.</p>
     <p>A bouquet lives thirty days from its purchase: it blooms and sways, and a countdown shows the time left. It then
       fades and stays faded and still for good. This change is part of the work and is not a defect.</p>
@@ -223,8 +221,7 @@ export default {
     <h3>6. Order and payment</h3>
     <p>You pay by card, or with Apple Pay or Google Pay, on the payment page of our provider Stripe (Stripe Payments
       Europe, Ltd., Dublin, Ireland). We never see or keep your card numbers. Before paying, you tick a box to ask for
-      immediate delivery (see section 9). Confirming the payment is an order with an obligation to pay. A copy is held
-      for you while the payment page is open, thirty minutes at most.</p>
+      immediate delivery (see section 9). Confirming the payment is an order with an obligation to pay.</p>
 
     <h3>7. Delivery and invoice</h3>
     <p>The bouquet is added to your account as soon as Stripe confirms the payment. You receive a receipt: it states the
@@ -380,7 +377,7 @@ export default {
     legal: 'Legal',
     closeLegal: 'Close the legal panel',
     footer:
-      '<p>Each bouquet is a digital bouquet in a limited series, paid by card, with no VAT (VAT not applicable, art. 293 B of the French General Tax Code). It lives thirty days from its purchase, then stays faded for good. Delivery is immediate, so the right of withdrawal no longer applies once you confirm your purchase.</p><p>No tracking, no advertising: one cookie at most, to remember the language you chose.</p>',
+      '<p>Each bouquet is a digital bouquet, paid by card, with no VAT (VAT not applicable, art. 293 B of the French General Tax Code). It lives thirty days from its purchase, then stays faded for good. Delivery is immediate, so the right of withdrawal no longer applies once you confirm your purchase.</p><p>No tracking, no advertising: one cookie at most, to remember the language you chose.</p>',
     links: { notice: 'Legal notice', terms: 'Terms of sale', privacy: 'Privacy', app: 'Belai Bureau licence', accessibility: 'Accessibility', contact: 'Contact' },
     credit: '',
     language: 'Language',
@@ -396,9 +393,8 @@ export default {
     fadedLower: 'faded',
     fadedForGood: 'Faded for good',
     // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
-    series: '{month} collection · {left} of {total} left',
+    series: '{month} collection',
     fadeReminder: '(Bouquets fade in {n} days)',
-    copiesLeft: '{left}/{total} available',
     fadeShort: 'Fades in {n} days',
     collectionEnds: '{month} collection, ends {when}',
     collectionDone: '{month} collection, closed',
@@ -415,9 +411,9 @@ export default {
     soldOut: 'No copy of this bouquet is left.',
     payError: 'The payment could not go through. Try again in a moment.',
     redirecting: 'Going to the payment page…',
-    paid: 'Your bouquet is yours: copy no. {n} of {total}.',
+    paid: 'Your bouquet is yours: copy no. {n}.',
     paymentPending: 'Confirming the payment…',
-    cancelled: 'Payment cancelled: the copy is back on sale.',
+    cancelled: 'Payment cancelled.',
     accountSoon: 'Your account is coming soon: you will sign in with your mobile number and find your bouquets here.',
     accountSignIn: 'Sign in',
     hello: 'Hello {name}',
@@ -473,7 +469,7 @@ export default {
       terms: 'Terms of sale accepted on that day: {url}',
       taxes: 'VAT not applicable, art. 293 B of the French General Tax Code.',
       copy: 'Copy',
-      copyOf: 'no. {n} of {total}, {month}',
+      copyOf: 'no. {n}, {month}',
       order: 'Order',
       payment: 'Payment',
     },
