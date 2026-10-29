@@ -223,7 +223,9 @@ const hi=DET>=1.5;wash(hi?m.dark||[.92,.8,.68,.56,.44]:m.darkLo||m.dark||[.9,.76
         if(d)E('path',{d,fill:'none',stroke:hi&&!fl?svFaceFill(sh,[[0,col,0],[.12,col,op],[.55,col,op*.75],[1,col,op*.3]],Dm):col,'stroke-opacity':fl?op:hi?1:op*.7,'stroke-width':svF(Dm*w),'stroke-linecap':'round','stroke-linejoin':'round'},cg)}}
     /* m.over(cg,it,sh,front,Dm): a sort's own layer over the washes and veins, under the rim, clipped to the piece (orchids: the tissue's grain); none by default */
     if(m.over)m.over(cg,it,sh,front,Dm);
-    if(m.rw)E('use',{href:'#'+it.id,fill:'none',stroke:front?m.rim:m.brim||m.rim,'stroke-width':svF(Dm*m.rw),'stroke-opacity':m.ro??.4},cg);patch(it)}
+    if(m.rw)E('use',{href:'#'+it.id,fill:'none',stroke:front?m.rim:m.brim||m.rim,'stroke-width':svF(Dm*m.rw),'stroke-opacity':m.ro??.4},cg);
+    /* the morning dew on this face (y3-rosee.js): nothing at all unless DEW_SET or DEW_LIFE asks for it */
+    if(typeof svDew==='function')svDew(cg,it,sh,front,o);patch(it)}
   return k}
 /* ---------- stems in SVG: a lit cylinder along any centre line ----------
    The outline; inside it, washes laid along the stem (the side away from the light darker, a soft highlight on the lit side, a thin gloss) blurred
