@@ -318,6 +318,8 @@ async function start() {
     const x1 = R.l + along + gx, gap = R.r - along - gx - x1;
     const A = ant(-gap - BODY_PX, y0, RIGHT, UP), B = ant(-BODY_PX, y0, LEFT, UP);
     A.pose = B.pose = 'feuille';
+    // (the first time, how long until it is in its place: the pager's carriers set out on that, below)
+    if (dock.eta) { dock.eta((x1 - A.x) / (SPEED * LADEN) + PAUSE + 0.7); dock.eta = null; }
     dock.state = 'moving';
     // the toolbar level between their two grips
     const hold = () => { const p = A.grip(), q = B.grip(); dock.hold(R, [p[0], (p[1] + q[1]) / 2], along); };
@@ -588,6 +590,7 @@ async function start() {
   // the pager (its two beetles); then the footer's Legal pill (the Open button and its carrier are gone, owner 2026-10-26)
   // (once the scene has come in whole: the page's head, build.mjs ENTREE)
   if (window.ENTREE) await window.ENTREE;
+  const dockEta = dock ? new Promise((ok) => { dock.eta = ok; }) : null;
   if (dock) order(dockIn());
   window.PORTEUSES_EN_ROUTE = true;
   // on a phone the dock is at the top: two butterflies lay it (airlift, above); if they cannot, it stands in its place
@@ -626,8 +629,17 @@ async function start() {
     const again = () => { if (pgState === 'off' && !gone()) bring(); };
     const watch = new MutationObserver(again);
     for (const el of [root, pager, pager.closest('.scene'), $('.cartes')].filter(Boolean)) watch.observe(el, { attributes: true, attributeFilter: ['class', 'hidden', 'data-rayon'] });
+    // they set out while the ants are still on their way (owner, 2026-10-29: they came too long after the toolbar), so as to set
+    // the pager half a second after it (their course as airlift draws it)
+    const setOut = dockEta
+      ? dockEta.then((t) => {
+        const R = pg.rest(), rise = DOCK_BAS || DESK.matches ? -110 : 90;
+        const lag = t + 0.5 - (Math.hypot(R.cx + R.w / 2 + 90, rise) * 1.15) / 190;
+        return new Promise((ok) => setTimeout(ok, Math.max(0, lag) * 1000 * SLOW));
+      })
+      : docked;
     // the top waits for their first flight only, whether the pager was set or carried back
-    const pagerIn = Promise.all([docked, shown]).then(bring);
+    const pagerIn = Promise.all([setOut, shown]).then(bring);
     // the top is done once the pager is in its place; a pager still without its dots 3 s after the dock (one bouquet) is not
     // waited for
     haut = docked.then(() => Promise.race([shown.then(() => pagerIn), new Promise((ok) => setTimeout(ok, 3000)).then(() => (pager.hidden ? null : pagerIn))]));
