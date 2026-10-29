@@ -32,9 +32,6 @@ export async function ouvrir(api) {
   const PHONE = !(navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia) || matchMedia('(pointer: coarse) and (max-width: 899px)').matches;
   // a computer: the bee asks first, then its button opens the browser's sharing picker (owner, 2026-10-29, after the try by
   // Belai Bureau: an app to install is too much for a demo), "Entire screen" chosen beforehand; the picker no page can skip
-  // the system's "show the desktop" shortcut, pressed twice: every window out of the way (not only the browser: owner's try,
-  // a window under it was taken for the desktop), then back as they were. No page can minimise or restore its window.
-  const OS = /Win/i.test((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '') ? 'win' : /Mac/i.test(navigator.platform || '') ? 'mac' : '';
 
   // ---------- the layer over the page: the bee and its bubble first; later the desktop's picture and the framed bouquet
   const root = document.createElement('div');
@@ -375,7 +372,9 @@ export async function ouvrir(api) {
       // what the screen shows now (this page): the desktop's picture must differ from it
       const before = await grab(track).catch(() => null);
       for (;;) {
-        etape(OS === 'win' ? T.reduireWin : OS === 'mac' ? T.reduireMac : T.reduire);
+        // the browser minimised, then opened again (owner, 2026-10-29: the "show the desktop" shortcut was too much; a window
+        // under the browser may then be taken for the desktop, which he accepts)
+        etape(T.reduire);
         const ended = new Promise((r) => track.addEventListener('ended', () => r('ended'), { once: true }));
         const hidden = new Promise((r) => {
           if (document.hidden) return r('hidden');
