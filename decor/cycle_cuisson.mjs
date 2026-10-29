@@ -4,7 +4,7 @@
 //
 //   sh decor/scene/mkengine.sh            (engine.js from demo/src)
 //   GATE_MAX=2 sh ws/gate.sh node decor/cycle_cuisson.mjs <id> [--fps 24] [--h 960] [--de 0] [--a 720] [--pas 1] [--sortie <dir>]
-//       [--images-seules] [--crf 24]
+//       [--images-seules] [--svg] [--crf 24]
 //
 // Frames are PNG (transparent) in <sortie>/<id>/f0000.png...; a frame that draws the same as the one before
 // is copied, not drawn (the faded hold). Then <sortie>/<id>/cycle.mp4 and cycle.json (the time map, the box, the sizes). One Chrome, its own profile and port,
@@ -39,6 +39,7 @@ const N = DUR * FPS;
 const DE = Number(argOf('--de', 0));
 const A = Number(argOf('--a', N));
 const ONLY_FRAMES = argv.includes('--images-seules');
+const SVG_TOO = argv.includes('--svg'); // also the frame's SVG (f0000.svg...), to find what changes between two frames
 const ID = argv.filter((a) => !a.startsWith('--'))[0];
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 if (!ID) {
@@ -88,18 +89,22 @@ const SCRIPT = `${PAGE_MAP}
   const lifeOf = (age) => Object.assign(lifeAt(age), { cont: true });
   const dewOfAge = (age) => dewOf(age - 3);
   const fresh = () => { host.innerHTML = ''; const s = document.createElementNS(NS, 'svg'); host.append(s); return s; };
-  /* the box: the fresh bouquet's, widened to the fully faded one's (its nodding heads, its fallen petals), padded */
-  let s = fresh(); draw(s, lifeOf(60), 0); const b1 = s.getBBox();
-  s = fresh(); draw(s, lifeOf(3), 1); const b0 = s.getBBox(), vb0 = s.viewBox.baseVal;
+  /* the fresh wet bouquet first, then the fully faded one;
+     the box: the fresh bouquet's, widened to the faded one's (its nodding heads, its fallen petals), padded */
+  let s = fresh(); draw(s, lifeOf(3), 1); const b0 = s.getBBox(), vb0 = s.viewBox.baseVal;
+  /* the close-up's centre: the wettest place at full dew (each drop's sparkle, counted on a grid); a sparkle inside <defs> is not drawn there */
+  const toS = s.getScreenCTM().inverse(), sparks = [], zn = { vus: 0, defs: 0 };
+  for (const g of s.querySelectorAll('g[data-dew]')) { if (g.closest('defs')) { zn.defs++; continue; } zn.vus++;
+    const sp = g.lastElementChild, M = toS.multiply(sp.getScreenCTM());
+    for (const m of (sp.getAttribute('d') || '').matchAll(/M(-?[0-9.]+)[ ,](-?[0-9.]+)/g)) { const pt = new DOMPoint(+m[1], +m[2]).matrixTransform(M); sparks.push([pt.x, pt.y]); } }
+  s = fresh(); draw(s, lifeOf(60), 0); const b1 = s.getBBox();
   const x0 = Math.min(b0.x, b1.x, vb0.x), y0 = Math.min(b0.y, b1.y, vb0.y), x1 = Math.max(b0.x + b0.width, b1.x + b1.width, vb0.x + vb0.width), y1 = Math.max(b0.y + b0.height, b1.y + b1.height, vb0.y + vb0.height);
   const pad = 0.02 * (x1 - x0), VB = [x0 - pad, y0 - pad, x1 - x0 + 2 * pad, y1 - y0 + 2 * pad];
   let W = Math.round(HPX * VB[2] / VB[3]); W += W % 2;
-  /* the close-up's centre: the wettest place at full dew (each drop's sparkle, counted on a grid) */
   const n = 12, grid = new Float64Array(n * n), pts = [];
-  for (const g of s.querySelectorAll('g[data-dew]')) { const sp = g.lastElementChild, M = s.getScreenCTM().inverse().multiply(sp.getScreenCTM());
-    for (const m of (sp.getAttribute('d') || '').matchAll(/M(-?[0-9.]+)[ ,](-?[0-9.]+)/g)) { const pt = new DOMPoint(+m[1], +m[2]).matrixTransform(M);
-      const i = Math.max(0, Math.min(n - 1, Math.floor((pt.x - VB[0]) / VB[2] * n))), j = Math.max(0, Math.min(n - 1, Math.floor((pt.y - VB[1]) / VB[3] * n)));
-      grid[j * n + i]++; pts.push([pt.x, pt.y, j * n + i]); } }
+  for (const [x, y] of sparks) { if (x < VB[0] || y < VB[1] || x > VB[0] + VB[2] || y > VB[1] + VB[3]) continue;
+    const i = Math.min(n - 1, Math.floor((x - VB[0]) / VB[2] * n)), j = Math.min(n - 1, Math.floor((y - VB[1]) / VB[3] * n));
+    grid[j * n + i]++; pts.push([x, y, j * n + i]); }
   let best = 0; for (let q = 1; q < n * n; q++) if (grid[q] > grid[best]) best = q;
   let sx = 0, sy = 0, sw = 0; for (const [x, y, q] of pts) if (q === best) { sx += x; sy += y; sw++; }
   const zc = sw ? [sx / sw, sy / sw] : [VB[0] + VB[2] / 2, VB[1] + VB[3] / 2];
@@ -112,7 +117,7 @@ const SCRIPT = `${PAGE_MAP}
   host.style.width = W + 'px'; host.style.height = HPX + 'px';
   /* one frame: the age and the dew at t, a key telling a frame that draws as the one before (the still bloom, the faded hold) */
   window.CC = {
-    W, H: HPX, VB, zc,
+    W, H: HPX, VB, zc, zn,
     plan(t) { const age = CC_AGE(t), L = lifeOf(age), dew = dewOfAge(age), v = viewAt(t);
       /* (the bloom is not still: the snowball turns from green to white, the lady's mantle ages through it) */
       const still = age >= 60 && t >= Z.end ? 'end' : null;
@@ -185,9 +190,9 @@ try {
   await send('Page.navigate', { url: `http://127.0.0.1:${HTTP_PORT}/__cc.html?p=${encodeURIComponent(ID)}&h=${HPX}` });
   const t0 = Date.now();
   while (Date.now() - t0 < 300000) { await sleep(500); let st = null; try { st = await evaluate('window.CC_ERR || (window.CC_READY ? "ok" : null)'); } catch (_) {} if (st === 'ok') break; if (st) throw new Error(st); }
-  meta = await evaluate('({ W: CC.W, H: CC.H, VB: CC.VB, zc: CC.zc })');
+  meta = await evaluate('({ W: CC.W, H: CC.H, VB: CC.VB, zc: CC.zc, zn: CC.zn })');
   await send('Emulation.setDeviceMetricsOverride', { width: meta.W, height: meta.H, deviceScaleFactor: 1, mobile: false });
-  console.log(`${ID} : ${meta.W} x ${meta.H} px, boîte ${meta.VB.map((x) => Math.round(x)).join(' ')}, gros plan sur ${meta.zc.map(Math.round).join(' ')}`);
+  console.log(`${ID} : ${meta.W} x ${meta.H} px, boîte ${meta.VB.map((x) => Math.round(x)).join(' ')}, gros plan sur ${meta.zc.map(Math.round).join(' ')} (gouttes ${meta.zn.vus}, ${meta.zn.defs} hors dessin)`);
   let prev = null, drawn = 0;
   const tS = Date.now();
   for (let i = DE; i < A; i += PAS) {
@@ -202,6 +207,7 @@ try {
     await evaluate('new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => r())))');
     const shot = await send('Page.captureScreenshot', { format: 'png', clip: { x: 0, y: 0, width: meta.W, height: meta.H, scale: 1 } });
     writeFileSync(fname(i), Buffer.from(shot.data, 'base64'));
+    if (SVG_TOO) writeFileSync(fname(i).replace(/png$/, 'svg'), await evaluate('document.querySelector("#h svg").outerHTML'));
     drawn++;
     prev = { i, still: plan.still };
     log.push({ i, t, age: +fr.age.toFixed(3), stage: fr.stage, u: +fr.u.toFixed(3), dew: +fr.dew.toFixed(3), drops: fr.drops, els: fr.els });
