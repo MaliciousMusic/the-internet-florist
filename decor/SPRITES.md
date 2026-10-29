@@ -182,10 +182,9 @@ du premier plan aussi, **en gros plan seulement**. Branche `ch/fond-proche`.
 - **Poids lu par gros plan** : au plus 3,5 Mo sur ordinateur (46 morceaux), 1,6 Mo sur téléphone (21 morceaux), plus les
   touffes en vue.
 
-**Question pour le porteur.** Le préchargement se fait à chaque bouquet où la caméra s'arrête, même si le visiteur ne zoome
-pas : environ 1,6 Mo par arrêt sur téléphone. Proposition : le garder sur ordinateur, et sur téléphone ne lire qu'au premier
-toucher du bouquet (le zoom commencerait alors sans le sol fin s'il n'est pas arrivé à mi-chemin), ou passer les morceaux en
-AVIF pour diviser le poids par deux environ.
+**Préchargement (porteur, 29 octobre : « garder tel quel »).** Il reste fait à chaque bouquet où la caméra s'arrête, même
+sans zoom : environ 1,6 Mo par arrêt sur téléphone. On jugera sur un vrai téléphone ; les pistes restent l'AVIF (poids
+divisé par deux environ) ou la lecture au premier toucher du bouquet.
 
 ## Reste
 
