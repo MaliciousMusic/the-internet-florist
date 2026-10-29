@@ -117,17 +117,22 @@ n'en ont pas encore.
   de l'essai. Elle se lit dans tous les navigateurs, Safari compris.
 - **Cadence** : 24 images par seconde, soit 720 images. Le bouquet reste immobile pendant le cycle (pas de brise).
 
-Mise en œuvre retenue (proposition, à corriger au vu du premier cycle) :
+Mise en œuvre retenue :
 - **Âge du bouquet** : le cycle part du matin de la livraison (âge 3 jours, début de la floraison du moteur) et va jusqu'au fané
   complet (âge 60 jours, fin du stade Fané) :
 
   | Temps du cycle | Âge | Ce qu'on voit |
   |---|---|---|
-  | 0 à 3 s | 3 à 3,25 jours | la rosée sèche, zoom serré puis recul jusqu'à 4 s |
-  | 3 à 11 s | 3,25 à 20 jours | la floraison |
-  | 11 à 18 s | 20 à 30 jours | le déclin |
-  | 18 à 29 s | 30 à 60 jours | la fanaison, de plus en plus lente |
-  | 29 à 30 s | 60 jours | le bouquet fané reste un instant |
+  | 0 à 1,5 s | 3 jours | gros plan serré (un dixième de la largeur du bouquet), la rosée entière |
+  | 1,5 à 4,5 s | 3 à 3,25 jours | le recul jusqu'au bouquet entier ; la rosée sèche (jusqu'à 4 s) |
+  | 4 à 7 s | 3,25 à 20 jours | la floraison |
+  | 7 à 12 s | 20 à 30 jours | le déclin |
+  | 12 à 24 s | 30 à 60 jours | la fanaison, de plus en plus lente |
+  | 24 à 30 s | 60 jours | le bouquet fané reste |
+
+  Porteur, 29 octobre 2026, au vu du premier cycle : « plus close up dès le début, avec déjà la rosée, puis on recule, et le fanage
+  commence et finit plus vite, pour tous les bouquets ». Premier découpage : matin 0 à 3 s, floraison jusqu'à 11 s, déclin jusqu'à
+  18 s, fanaison jusqu'à 29 s, gros plan au cinquième de la largeur, tenu 0,8 s.
 
 - **Continuité** : les stades du moteur s'enchaînent avec des sauts (usure, ouverture des boutons, tête qui penche). Une vie
   continue, en option (`LIFE.cont`), les fond l'un dans l'autre. Sans elle, rien ne change.

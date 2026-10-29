@@ -53,11 +53,13 @@ const OUT = join(OUT0, ID);
 mkdirSync(OUT, { recursive: true });
 
 // ---------- the time map (decor/CYCLE.md, owner 2026-10-29: a slow first morning, bloom and decline quick, the fading slowed at the end)
-// keys [cycle seconds, bouquet age in days]; linear between them, the last stretch eased out
-const KEYS = [[0, 3], [3, 3.25], [11, 20], [18, 30], [29, 60], [30, 60]];
-const ZOOM = { hold: 0.8, end: 4, w: 0.2 }; // close on the wettest place until 0.8 s, back to the whole bouquet by 4 s; the window 0.2 of its width
+// keys [cycle seconds, bouquet age in days]; linear between them, the faded stretch (30 to 60 days) eased out
+// (owner 2026-10-29, after the first cycle: closer from the very start, the dew already there, then the pull back, and the fading
+// starting and ending sooner, for every bouquet)
+const KEYS = [[0, 3], [1.5, 3], [4, 3.25], [7, 20], [12, 30], [24, 60], [30, 60]];
+const ZOOM = { hold: 1.5, end: 4.5, w: 0.1 }; // close on the wettest place until 1.5 s (the dew whole), back to the whole bouquet by 4.5 s; the window 0.1 of its width
 const PAGE_MAP = `{const K=${JSON.stringify(KEYS)};window.CC_AGE=t=>{for(let i=1;i<K.length;i++)if(t<=K[i][0]){const[a0,b0]=K[i-1],[a1,b1]=K[i],s=(t-a0)/((a1-a0)||1);
-  return b0+(b1-b0)*(i===4?1-(1-s)*(1-s):s)}return K[K.length-1][1]}}`;
+  return b0+(b1-b0)*(b0===30&&b1===60?1-(1-s)*(1-s):s)}return K[K.length-1][1]}}`;
 
 const PAGE = `<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:transparent}
 #h{position:absolute;left:0;top:0}#h svg{position:absolute;inset:0;width:100%;height:100%;display:block}</style></head>

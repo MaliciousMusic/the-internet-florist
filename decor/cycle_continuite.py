@@ -46,7 +46,9 @@ W, H = 1200, 260
 img = Image.new('RGB', (W, H), 'white')
 dr = ImageDraw.Draw(img)
 top = max(1.0, float(d.max()))
-for t, lab in [(3, 'matin'), (11, 'déclin'), (18, 'fané'), (29, 'fin')]:
+K = meta['cles']
+borders = [(next(t for t, a in K if a >= age), lab) for age, lab in [(3.25, 'floraison'), (20, 'declin'), (30, 'fane'), (60, 'fin')]]
+for t, lab in borders:
     x = int(t / meta['duree'] * W)
     dr.line([(x, 0), (x, H)], fill='#cccccc')
     dr.text((x + 3, 3), lab, fill='#666666')
