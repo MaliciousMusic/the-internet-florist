@@ -109,6 +109,47 @@ n'en ont pas encore.
 - 29 octobre 2026, **le porteur valide l'aspect de la goutte** et demande de brancher la rosée sur les espèces restées sèches (voir
   Couverture ci-dessus).
 
+### Décisions du porteur pour C2 (29 octobre 2026)
+
+- **Horloge** : le premier matin lent (environ 3 s), la floraison et le déclin rapides, puis la fanaison ralentie à la fin.
+- **Gros plan** : la vue part serrée sur un coin mouillé du bouquet pendant le premier matin, puis recule jusqu'au bouquet entier.
+- **Format** : une vidéo MP4 (H.264) à alpha empilé : la couleur en haut, la transparence en gris en bas, recomposées sur le canevas
+  de l'essai. Elle se lit dans tous les navigateurs, Safari compris.
+- **Cadence** : 24 images par seconde, soit 720 images. Le bouquet reste immobile pendant le cycle (pas de brise).
+
+Mise en œuvre retenue (proposition, à corriger au vu du premier cycle) :
+- **Âge du bouquet** : le cycle part du matin de la livraison (âge 3 jours, début de la floraison du moteur) et va jusqu'au fané
+  complet (âge 60 jours, fin du stade Fané) :
+
+  | Temps du cycle | Âge | Ce qu'on voit |
+  |---|---|---|
+  | 0 à 3 s | 3 à 3,25 jours | la rosée sèche, zoom serré puis recul jusqu'à 4 s |
+  | 3 à 11 s | 3,25 à 20 jours | la floraison |
+  | 11 à 18 s | 20 à 30 jours | le déclin |
+  | 18 à 29 s | 30 à 60 jours | la fanaison, de plus en plus lente |
+  | 29 à 30 s | 60 jours | le bouquet fané reste un instant |
+
+- **Continuité** : les stades du moteur s'enchaînent avec des sauts (usure, ouverture des boutons, tête qui penche). Une vie
+  continue, en option (`LIFE.cont`), les fond l'un dans l'autre. Sans elle, rien ne change.
+
+- 29 octobre 2026, **C2 : premier cycle cuit** (Neige de mars), **en attente de l'avis du porteur** :
+  - **Vie continue** (`z1.js`, `c5.js`, en option par `LIFE.cont`) : l'usure, l'ouverture des boutons et la tête qui penche
+    s'installent sur le dernier quart de la floraison ; le déclin finit où le fané commence. Les pétales tombés sont choisis d'avance
+    (au plus 16) : un pétale tombé ne bouge plus et ne disparaît pas. Les tiges repassent sur les têtes dès qu'elles penchent. Sans
+    `LIFE.cont`, rien ne change (les 4 bouquets ont la même empreinte qu'avant).
+  - **Cuisson** `decor/cycle_cuisson.mjs` : un Chrome, 720 images transparentes de 790 × 960 px, 1 s par image pour Neige de mars
+    (22 min). Les images de la fin, identiques, sont copiées. Puis le MP4 à alpha empilé (H.264, CRF 24) : **3,9 Mo**, plus que
+    la cible de 2 Mo.
+  - **Contrôles** : `decor/cycle_continuite.py` ne trouve aucun à-coup ; la courbe ne montre que le recul du zoom. Les images
+    décodées de la vidéo et recomposées comme le fera le lecteur valent les originales (PSNR de 35 à 42 dB, sans liseré au bord).
+  - **Lecteur** `decor/cycle_apercu.html` : la vidéo recomposée en WebGL (couleur prémultipliée en haut, transparence en bas) sur
+    un fond de bureau. Il servira de base à l'essai (C3).
+  - **Reste** : les 3 autres bouquets prêts (Printemps à la carpe, environ 3 s par image), le poids (essayer CRF 28 ou une hauteur
+    de 800 px), la place des vidéos sur le site (C3).
+  - **À noter pour C3** : la première image du cycle (âge 3 jours, vie du moteur) n'est pas exactement le bouquet de la boutique (la
+    viorne y est encore verte). Le cycle commençant en gros plan, le passage du bouquet vivant à la vidéo est de toute façon une
+    coupe.
+
 ### Questions au porteur (C1)
 
 1. **L'aspect d'une goutte (validé le 29 octobre)**.

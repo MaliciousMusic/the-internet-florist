@@ -9,7 +9,10 @@ const LIFE_NAMES=['Bourgeon','Éclosion','Déclin','Fané'];
 /* the stage of a bouquet from its age in days, with the thresholds of the contract: bud < 3, bloom < 20, decline < 30, then faded */
 function lifeAt(days){const d=Math.max(0,days);return d<3?{stage:0,u:d/3}:d<20?{stage:1,u:(d-3)/17}:d<30?{stage:2,u:(d-20)/10}:{stage:3,u:Math.min(1,(d-30)/30)}}
 /* how far the tissues have wilted (0 fresh, 1 dry) */
-const lifeW=L=>!L?0:L.stage===2?.22+.28*L.u:L.stage===3?.62+.3*L.u:0;
+const lifeW=L=>!L?0:L.stage===2?(L.cont?.22+.4*L.u:.22+.28*L.u):L.stage===3?.62+.3*L.u:L.cont&&L.stage===1?.22*svSm((L.u-.75)/.25):0;
+/* L.cont (the accelerated cycle of the try, decor/CYCLE.md C2): the stages flow into each other, no jump at their borders: the wilt, the
+   buds' opening and the nod set in over the last quarter of the bloom, the decline ends where the faded starts, the fallen petals stay put.
+   Without it every stage draws as before */
 /* a stable number in [0,1) from a few values: stage decisions never draw from the bouquet's random stream */
 const lifeH=(...a)=>{let h=2166136261;for(const v of a){h^=Math.round(v*997)|0;h=Math.imul(h,16777619)}return((h>>>0)%100003)/100003};
 /* how each species ages, until the research sheets (catalogue/fanaison) take over:
@@ -33,7 +36,8 @@ function lifeProfile(p){const sid=p&&p.sid;if(!sid)return{k:1,nod:0,shed:0,dry:0
   else r={k:1,nod:LIFE_SOFT.test(sid)?1:.45,shed:LIFE_SHED.test(sid)?1:(a==='radial'||a==='double'||a==='cup'||a==='star')?.5:0,dry:0};
   return LIFE_PROF[sid]=r}
 /* how wilted one element is: the stage, how much its species changes colour, and how long it lasts in a vase (a tulip, 6 days, is further gone at Déclin than a chrysanthemum, 3 weeks) */
-function lifeWEl(L,pr){const w=lifeW(L);if(!w)return 0;if(!pr)return w;const af=pr.days?Math.max(.6,Math.min(1.5,10/pr.days)):1;return Math.min(.95,w*pr.k*(L.stage===2?af:Math.max(.85,Math.min(1.2,af))))}
+function lifeWEl(L,pr){const w=lifeW(L);if(!w)return 0;if(!pr)return w;const af=pr.days?Math.max(.6,Math.min(1.5,10/pr.days)):1,ac=Math.max(.85,Math.min(1.2,af));
+  if(L.cont){const k=L.stage<=2?af:af+(ac-af)*svSm(L.u/.3);return Math.min(.95,w*pr.k*k)}return Math.min(.95,w*pr.k*(L.stage===2?af:ac))}
 /* the colour of a wilting tissue: greens yellow toward olive, then straw and brown; whites go ivory, then parchment;
    deep reds darken to wine; pinks dull to old rose, then tan; yellows and oranges to ochre; blues and violets grey to dusty mauve */
 const LIFE_CC=new Map();
@@ -53,11 +57,11 @@ function lifeWilt(w,own,tag){if(w<=0)return null;const cf=own||lifeCol,fn=a=>{le
 /* the opening of a head at this stage: buds stay buds; open heads close back to buds and half-open ones at Bourgeon; everything is open from Déclin on */
 /* a species the composer may show in bud (the same test as pickStage) */
 const lifeBudOK=it=>!!(it&&it.d3&&(BUD3.has(it.f)||OPENABLE.has(it.f)||(GHI[it.p.sid]||{}).buds||GH_BUDS.has(it.p.sid)));
-function lifeOp(L,st,op0,h,ok=true){if(!L||L.stage===1||(L.stage===0&&!ok))return op0;if(L.stage===0)return st==='bud'?.1:st==='half'?.22+.12*L.u:.14+(.12+.3*L.u)*h;return st==='bud'?.3:st==='half'?.85:1}
+function lifeOp(L,st,op0,h,ok=true){if(L&&L.cont&&L.stage===1){const k=svSm((L.u-.75)/.25);return k>0?op0+((st==='bud'?.3:st==='half'?.85:1)-op0)*k:op0}if(!L||L.stage===1||(L.stage===0&&!ok))return op0;if(L.stage===0)return st==='bud'?.1:st==='half'?.22+.12*L.u:.14+(.12+.3*L.u)*h;return st==='bud'?.3:st==='half'?.85:1}
 /* how far a head nods (degrees, outward and down): soft stems give way under the head, stiff ones hardly move */
-function lifeNod(L,pr,h){if(!L||L.stage<2||!pr.nod)return 0;return Math.min(36,(L.stage===2?6+12*L.u:18+14*L.u)*pr.nod*(.7+.6*h))}
+function lifeNod(L,pr,h){if(L&&L.cont&&L.stage===1&&pr.nod)return Math.min(36,6*svSm((L.u-.75)/.25)*pr.nod*(.7+.6*h));if(!L||L.stage<2||!pr.nod)return 0;return Math.min(36,(L.stage===2?6+12*L.u:18+14*L.u)*pr.nod*(.7+.6*h))}
 /* petals fallen on the table, in front of and beside the vessel: from the heads that shed theirs, in the colour of their wilt, flat on the table with a crisp shadow */
-function lifeFallen(par,L,heads,BP,mw,show,sv){if(!L||L.stage<2)return;const s0=seed;sd(sv*13+977);const g=G(par),sh=G(g,{'data-life':'fallen'}),pg=G(g);
+function lifeFallen(par,L,heads,BP,mw,show,sv){if(L&&L.cont)return lifeFallenCont(par,L,heads,BP,mw,show,sv);if(!L||L.stage<2)return;const s0=seed;sd(sv*13+977);const g=G(par),sh=G(g,{'data-life':'fallen'}),pg=G(g);
   let n=0;const cap=L.stage===2?6:16,w=lifeW(L);
   for(const o of heads){const pr=lifeProfile(o.it.p);if(!pr.shed)continue;const m=Math.round(pr.shed*(L.stage===2?.4+1.4*L.u:1.6+2*L.u)*Math.min(1.6,(o.rr||30)/34));
     for(let i=0;i<m&&n<cap;i++,n++){const len=Math.max(9,(o.rr||30)*R(.62,.95)),wd=len*R(.5,.78),side=o.x>=BP[0]?1:-1,x=BP[0]+side*R(mw*.45,mw*1.5+18)+R(-8,8),
@@ -67,4 +71,19 @@ function lifeFallen(par,L,heads,BP,mw,show,sv){if(!L||L.stage<2)return;const s0=
       const k=G(pg,{transform:tf});E('path',{d,fill:P.b,stroke:P.d2,'stroke-width':.4},k);
       E('path',{d:rpet(len*.8,wd*.26),fill:P.l1,opacity:.5,transform:`translate(0,${f(-len*.07)})`},k);
       E('path',{d:`M0,${f(-len*.12)}L0,${f(-len*.76)}`,stroke:P.d1,'stroke-width':.35,'stroke-opacity':.45,fill:'none'},k)}}
+  seed=s0}
+/* the fallen petals of the continuous cycle (L.cont): the set of the fully faded bouquet chosen first (ranked petal by petal round the heads,
+   16 at most), a petal falls when its head has shed that many, each from its own draw (head, rank): once fallen it never moves nor goes */
+function lifeFallenCont(par,L,heads,BP,mw,show,sv){if(L.stage<2)return;const s0=seed,g=G(par),sh=G(g,{'data-life':'fallen'}),pg=G(g),cand=[];
+  heads.forEach((o,hi)=>{const pr=lifeProfile(o.it.p);if(!pr.shed)return;const sz=Math.min(1.6,(o.rr||30)/34),mF=Math.round(pr.shed*3.6*sz),
+      m=pr.shed*(L.stage===2?.4+1.4*L.u:1.8+1.8*L.u)*sz;for(let i=0;i<mF;i++)cand.push({o,hi,i,on:i+.5<m,pr})});
+  cand.sort((a,b)=>a.i-b.i||a.hi-b.hi);
+  for(const c of cand.slice(0,16)){if(!c.on)continue;const o=c.o;sd(sv*13+977+c.hi*131+c.i*7);
+    const len=Math.max(9,(o.rr||30)*R(.62,.95)),wd=len*R(.5,.78),side=o.x>=BP[0]?1:-1,x=BP[0]+side*R(mw*.45,mw*1.5+18)+R(-8,8),
+      y=FL+R(3,Math.max(6,Math.min(show-3,22))),rot=R(-80,80),sq=R(.32,.55),col=lifeCol(o.it.p.col,lifeWEl(L,c.pr)),P=pal7(col),d=rpet(len,wd/2),
+      tf=`translate(${f(x)},${f(y)}) scale(1,${sq.toFixed(2)}) rotate(${f(rot)})`;
+    E('path',{d,fill:'#2a160e','fill-opacity':.16,transform:`translate(${f(x+2.4)},${f(y+1.6)}) scale(1,${sq.toFixed(2)}) rotate(${f(rot)})`},sh);
+    const k=G(pg,{transform:tf});E('path',{d,fill:P.b,stroke:P.d2,'stroke-width':.4},k);
+    E('path',{d:rpet(len*.8,wd*.26),fill:P.l1,opacity:.5,transform:`translate(0,${f(-len*.07)})`},k);
+    E('path',{d:`M0,${f(-len*.12)}L0,${f(-len*.76)}`,stroke:P.d1,'stroke-width':.35,'stroke-opacity':.45,fill:'none'},k)}
   seed=s0}

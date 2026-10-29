@@ -249,7 +249,7 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
   mark(-1);mk=null;
   /* the last word on overlaps, on the shapes as drawn (every animation at its end): no flower's heart under something painted after it */
   /* then, in a fading bouquet, no stem seen running under a head painted behind its own head (stemsOver) */
-  try{const ws=tw.slice(tw0);for(const w of ws)w.fn(1,1);try{heartsFree(L,list,c);if(LIFE&&LIFE.stage>=2)stemsOver(L,list,c,v)}finally{for(const w of ws)w.fn(0,0)}}catch(_){}
+  try{const ws=tw.slice(tw0);for(const w of ws)w.fn(1,1);try{heartsFree(L,list,c);if(LIFE&&(LIFE.stage>=2||LIFE.cont&&lifeW(LIFE)>0))stemsOver(L,list,c,v)}finally{for(const w of ws)w.fn(0,0)}}catch(_){}
   /* in a glass vessel every stem goes on under the mouth: the continuation of its own stem, down to the bottom */
   if(GL&&feet.length){WILT=LIFE?lifeWilt(lifeW(LIFE)*.85):null;try{growUp(inStems(stemsIn(L.stems,feet,vid)),BP[0],BP[1],t0+250,700)}finally{WILT=null}}
   /* petals fallen on the table (not swayed by the breeze, outside the frame measure) */
