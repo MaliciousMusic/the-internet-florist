@@ -416,9 +416,40 @@ async function start(clumpsOn) {
       copies.delete(key);
       FZ.flip = true;
     }
+    // the close-up's finer pictures (premier.mjs --fin, owner 2026-10-29), read while frise.js holds the close-up's ground,
+    // taken in the frame its ground shows (all of them then, or none: never a change at rest), let go with it
+    const pe = window.Frise.procheEtat;
+    if (pe) {
+      for (const C of copies.values()) {
+        const c = C.c;
+        if (c.fin && !c.finP)
+          c.finP = Assets.load(OUT + c.fin[0])
+            .then((t) => {
+              t.source.scaleMode = 'linear';
+              // (sent to the graphics card while the camera rests, as frise.js its chunks)
+              return window.Frise.gpu ? window.Frise.gpu(t) : t;
+            })
+            .then((t) => (c.finTex = t))
+            .catch(() => {});
+      }
+    } else
+      for (const c of clumps)
+        if (c.finP && !FZ.fine) {
+          const url = OUT + c.fin[0];
+          c.finP.then(() => Assets.unload(url)).catch(() => {});
+          c.finP = c.finTex = null;
+        }
+    const shown = !!(pe && pe.shown);
+    if (shown !== FZ.shown) {
+      FZ.shown = shown;
+      FZ.fine = shown && [...copies.values()].every((C) => !C.c.fin || C.c.finTex);
+    }
     // each copy turns about its foot as its clump does (sway), its heads with it
     for (const C of copies.values()) {
-      const c = C.c, sc = (c.box[2] / c.px[0]) * W.k * essaim.res;
+      const c = C.c;
+      const tex = FZ.fine && c.finTex ? c.finTex : c.tex;
+      if (C.s.texture !== tex) C.s.texture = tex;
+      const sc = (c.box[2] / tex.width) * W.k * essaim.res;
       const X = c.pivot[0] + C.m * T.periode - shift;
       C.s.scale.set(sc);
       C.s.rotation = c.ang;

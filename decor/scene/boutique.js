@@ -143,8 +143,12 @@
     if (e.detail !== Frise.face()) return;
     placeTarget();
     frameCloseUp();
+    // the close-up's finer ground read while the camera rests, so it is there when the zoom passes over it
+    const v = !near && closeUpView();
+    if (v) Frise.proche(v, false);
   });
   document.addEventListener('frise:depart', () => {
+    Frise.proche(null);
     if (!following) following = requestAnimationFrame(follow);
     if (near) closeUp(false);
     $('bq-cible').hidden = true;
@@ -472,7 +476,14 @@
     target.hidden = false;
   }
   function frameCloseUp() {
-    if (!near || !box) return;
+    const v = closeUpView();
+    if (!near || !v) return;
+    Frise.proche(v, true);
+    zoomTo(v.tx, v.ty, v.s);
+  }
+  // the view { tx, ty, s } the close-up of the bouquet facing the camera takes, or null
+  function closeUpView() {
+    if (!box) return null;
     const W = scene.clientWidth;
     const H = scene.clientHeight;
     const [x, y, w, h] = box;
@@ -492,7 +503,7 @@
     // covering the whole screen
     const tx = Math.min(0, Math.max(W - W * s, W / 2 - sax * s));
     const ty = Math.min(0, Math.max(H - H * s, (top + bottom) / 2 - (sy + (h * k) / 2) * s));
-    zoomTo(tx, ty, s);
+    return { tx, ty, s };
   }
   // The close-up's move: the page's scene and the canvas's stage (toile.mjs) take the same transform at every frame, from
   // where they are to where they go, in 0.9 s on the curve the scene's CSS transition had (scene.css); the canvas element is
@@ -567,6 +578,8 @@
       openShelf(null);
       frameCloseUp();
     } else {
+      const v = closeUpView();
+      if (v) Frise.proche(v, false);
       zoomTo(0, 0, 1);
       if (!keepShelf && keptShelf !== undefined) openShelf(keptShelf);
       keptShelf = undefined;
