@@ -292,6 +292,8 @@ function svrDraw(par,items,P,cw,Dm,tol,lf={}){const k=G(par),dd=GDEF||defs,hi=DE
     if(mt.lenZ&&!SVR_OFF.includes('zone'))for(const[z0,z1,zc,za,zf,zs]of mt.lenZ){let d='';run.forEach((it,j)=>{if(it.grp!=='p'||!big(it)||(zf!=null&&it.f>zf))return;const W=it.sh.W,nv=it.sh.nv,
         V=Array.from(it.K,(x,q)=>{const v=Math.floor(q/W)/nv,b=Math.min(v-z0,z1-v,vis[j][q]*.5);return zs?Math.min(b,zs*it.sh.F[q]*3):b});if(!V.some(x=>x>0))return;
         d+=svLoopsD(it.sh,svIso(it.sh.nu,nv,V,0),Math.max(tol*3,Dm*(hi?.008:.016)))});svrSt('zone',d);if(d)E('path',{d,fill:zc,'fill-opacity':za,'fill-rule':'evenodd'},wg)}
+    /* the morning dew on the run's pieces (y3-rosee.js): nothing unless DEW_SET or DEW_LIFE asks for it */
+    if(typeof svDewRun==='function')svDewRun(k,run,vis);
     if(SVR_OFF.includes('rim'))return;
     const lk=lgr();
     /* the paler margin (the inner face's, fainter on a back), and the veins in close-ups */

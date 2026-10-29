@@ -57,23 +57,32 @@ function dwLune(c,e1,e2,a,b,t){const tx=(t[0]*e1[0]+t[1]*e1[1])/a,ty=(t[0]*e2[0]
   const P1=[mx+vx*hh,my+vy*hh],P2=[mx-vx*hh,my-vy*hh],F=[ux,uy],O=[tx,ty],F2=[tx+ux,ty+uy];
   const[l1,s1]=dwFlags([0,0],P1,F,P2),[l2,s2]=dwFlags(O,P2,F2,P1),A=(l,s)=>'A'+dwN(a)+' '+dwN(b)+' '+dwRot(e1)+' '+l+' '+s+' ';
   return'M'+dwP(S(...P1))+A(l1,s1)+dwP(S(...P2))+A(l2,s2)+dwP(S(...P1))+'z'}
-/* the drops of one visible face (it: svDraw's region, s its side; cg: its clipped group): sampled on the sheet, then painted (dewPaint) */
-function svDew(cg,it,sh,front,o){const dew=dewNow();if(!(dew>0)||LOD)return;
-  const m=sh.mat||{},st=front?m.stops:m.bstops,tis0=dewStop(st,.6),leaf=m.dew?m.dew==='leaf'||m.dew.leaf:dewGreen(tis0),P=Object.assign({},leaf?DEW_DEF.leaf:DEW_DEF.petal,typeof m.dew==='object'?m.dew:null);
-  /* the true area of the sheet (projected cells over their slant) and the number of candidate drops */
-  const W=sh.W;let area=0;for(let j=0;j<sh.nv;j++)for(let i=0;i<sh.nu;i++){const q=[j*W+i,j*W+i+1,(j+1)*W+i+1,(j+1)*W+i],pp=q.map(k=>sh.P[k]);let a2=0;for(let k=0;k<4;k++){const p=pp[k],r=pp[(k+1)%4];a2+=p[0]*r[1]-r[0]*p[1]}
-    const fz=Math.abs(q.reduce((s,k)=>s+sh.F[k],0)/4);area+=Math.abs(a2/2)/Math.max(.2,fz)}
-  const N=Math.min(600,Math.round(P.cov*area/(Math.PI/4*dewMeanD2(P.d[0],P.d[1])*(UPC*DEW_K)**2)));if(N<1)return;
-  /* the face's own chance: its base and tip, and its grid */
+/* the candidate drops of one face of a sheet (s: the side seen), where ok(u,v,p) allows: the sheet's own chance (hashed from its base and
+   tip), their number from its true area (projected cells over their slant) and the tissue's coverage, kept where the face looks up.
+   Returns {D, v} (the drops for dewPaint, their mean v) or null */
+function dewSample(sh,s,P,ok){const W=sh.W;let area=0;for(let j=0;j<sh.nv;j++)for(let i=0;i<sh.nu;i++){const q=[j*W+i,j*W+i+1,(j+1)*W+i+1,(j+1)*W+i],pp=q.map(k=>sh.P[k]);let a2=0;
+    for(let k=0;k<4;k++){const p=pp[k],r=pp[(k+1)%4];a2+=p[0]*r[1]-r[0]*p[1]}const fz=Math.abs(q.reduce((t,k)=>t+sh.F[k],0)/4);area+=Math.abs(a2/2)/Math.max(.2,fz)}
+  const N=Math.min(600,Math.round(P.cov*area/(Math.PI/4*dewMeanD2(P.d[0],P.d[1])*(UPC*DEW_K)**2)));if(N<1)return null;
   const pb=svAt(sh,0,0),pt=svAt(sh,0,1),r=svRng(svSeed('rosee',Math.round(pb[0]/2),Math.round(pb[1]/2),Math.round(pt[0]/2),Math.round(pt[1]/2),sh.nu,sh.nv));
   if(!sh._dn)sh._dn=[0,1,2].map(k=>sh.N.map(n=>n[k]));
   const D=[];let vs=0;
   for(let i=0;i<N;i++){const u=r.in(-.96,.96),v=r.in(.04,.97),x=r(),y=r(),z=r();
-    if(it.s*svLerp(sh,sh.F,u,v)<=.04)continue;
-    const n=V3.nz([0,1,2].map(k=>it.s*svLerp(sh,sh._dn[k],u,v)));if(y>=svSm((n[1]+.05)/.65))continue;
-    D.push({c:svAt(sh,u,v),n,x,z});vs+=v}
-  if(!D.length)return;
-  dewPaint(cg,D,P,dew,{tis:dewStop(st,vs/D.length),lit:front?m.lite:m.blite,shd:front?m.shade:m.bshade,cast:m.cast},leaf)}
+    if(s*svLerp(sh,sh.F,u,v)<=.04)continue;
+    const n=V3.nz([0,1,2].map(k=>s*svLerp(sh,sh._dn[k],u,v)));if(y>=svSm((n[1]+.05)/.65))continue;
+    const c=svAt(sh,u,v);if(ok&&!ok(u,v,c))continue;D.push({c,n,x,z});vs+=v}
+  return D.length?{D,v:vs/D.length}:null}
+/* the tissue's settings: green tissue (leaves, bracts, sepals) takes the leaf's, unless the material says (m.dew: 'leaf', 'petal' or own keys) */
+function dewKind(m,tis){const leaf=m&&m.dew?m.dew==='leaf'||!!m.dew.leaf:dewGreen(tis);return[leaf,Object.assign({},leaf?DEW_DEF.leaf:DEW_DEF.petal,m&&typeof m.dew==='object'?m.dew:null)]}
+/* the drops of one visible face drawn by svDraw (it: its region, s its side; cg: its clipped group) */
+function svDew(cg,it,sh,front,o){const dew=dewNow();if(!(dew>0)||LOD)return;
+  const m=sh.mat||{},st=front?m.stops:m.bstops,[leaf,P]=dewKind(m,dewStop(st,.6)),S=dewSample(sh,it.s,P,null);if(!S)return;
+  dewPaint(cg,S.D,P,dew,{tis:dewStop(st,S.v),lit:front?m.lite:m.blite,shd:front?m.shade:m.bshade,cast:m.cast},leaf)}
+/* the drops of one run of svrDraw (y3-rosette.js: ranunculus, roses), over its washes: on each piece where the later pieces of the run leave
+   it seen (vis) and inside its outline; later runs cover them as they cover the pieces */
+function svDewRun(k,run,vis){const dew=dewNow();if(!(dew>0)||LOD)return;
+  run.forEach((it,j)=>{if(it.kind!=='pet'||!it.sh)return;const mt=it.mt||{},[leaf,P]=dewKind(mt,it.tone),V=vis[j],
+      S=dewSample(it.sh,it.s,P,(u,v,c)=>svLerp(it.sh,V,u,v)>0&&svrIn(it.out,c[0],c[1]));
+    if(S)dewPaint(k,S.D,P,dew,{tis:it.tone,lit:it.s>0?mt.lite:mt.blite||mt.lite,shd:it.s>0?mt.shade:mt.bshade||mt.shade,cast:mt.cast},leaf)})}
 /* paints drops on a surface, for svDraw and for any kit that samples its own (a leaf drawn without svDraw): D = [{c: screen point on the
    tissue, n: the visible face's unit normal (view space), x: the drop's size quantile 0..1, z: a second chance 0..1}], in a fixed order (the
    drops kept never depend on the amount of dew); P the tissue's settings (DEW_DEF); col {tis, lit, shd, cast} the tissue's colours */
@@ -108,3 +117,16 @@ function dewPaint(par,D,P,dew,col,leaf){const d0=P.d[0]*UPC*DEW_K,d1=P.d[1]*UPC*
   sC.forEach((L,i)=>E('path',{d:L[0],fill:dk,'fill-opacity':P.co*[.3,.35,.55][i]},g));
   E('path',{d:dR,fill:'none',stroke:dk,'stroke-width':svF(Math.max(.03,rs/nd*.12)),'stroke-opacity':.3},g);
   E('path',{d:dK,fill:'#ffffff','fill-opacity':.95},g)}
+/* the drops of flat-drawn petals (y3-branche.js at lod 1: blossoms of the branches): L = [{p: {Sf}, P: the outline on the screen, z, front}],
+   drawn far to near before; each petal gets a small sheet of its surface for the drops, kept off its foot (the heart, the calyx) and off the
+   petals in front of it. colOf(x): its colours {body, back, shade, lite} */
+const dewIn=(P,x,y)=>{let c=false;for(let i=0,j=P.length-1;i<P.length;j=i++){const a=P[i],b=P[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c}return c};
+function svDewPetals(par,B,O,L,colOf){const dew=dewNow();if(!(dew>0)||LOD||!L.length)return;const S=L.slice().sort((a,b)=>a.z-b.z);
+  S.forEach((x,i)=>{const c=colOf(x),tis=x.front?c.body:c.back||c.body,[leaf,P]=dewKind(null,tis),sh=svSheet(B,O,x.p.Sf,{nu:4,nv:6}),near=S.slice(i+1),
+      R=dewSample(sh,x.front?1:-1,P,(u,v,q)=>v>.4&&!near.some(y=>dewIn(y.P,q[0],q[1])));
+    if(R)dewPaint(par,R.D,P,dew,{tis,lit:c.lite,shd:c.shade,cast:mix(c.shade||tis,'#000000',.5)},leaf)})}
+/* the drops of sheets drawn as plain outlines (a lean level of detail: the bouquet narcissus' florets at level 0): each sheet on the side it
+   mostly shows, where keep(u,v,p) allows, in its material's colours */
+function svDewSheets(par,sheets,keep){const dew=dewNow();if(!(dew>0)||LOD)return;
+  for(const sh of sheets){let sF=0;for(const x of sh.F)sF+=x;const s=sF>=0?1:-1,m=sh.mat||{},st=(s>0?m.stops:m.bstops)||m.stops,[leaf,P]=dewKind(m,dewStop(st,.6)),R=dewSample(sh,s,P,keep);
+    if(R)dewPaint(par,R.D,P,dew,{tis:dewStop(st,R.v),lit:s>0?m.lite:m.blite||m.lite,shd:s>0?m.shade:m.bshade||m.shade,cast:m.cast},leaf)}}

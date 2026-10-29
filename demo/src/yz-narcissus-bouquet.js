@@ -131,7 +131,9 @@ function nbqLean(par,pieces,o,lv,B){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(
     const ord=svOrder(items,Dm*.005),ew=svF(Math.max(.12,Dm*.011));/* the edges' common width and opacity once on the group (bytes) */
     k.setAttribute('stroke-width',ew);k.setAttribute('stroke-opacity',.6);k.setAttribute('stroke-linejoin','round');
     for(const it of ord){if(it.kind!=='reg')continue;const c=nbqRegCol(it.sh,it.s),cup=it.sh.nbq==='cup';
-      const at={d:it.d,fill:c,stroke:mix(c,(it.sh.mat&&it.sh.mat.shade)||'#606060',cup?.35:.55)};if(cup)at['stroke-opacity']=.5;const w0=WILT;if(it.sh.nbq==='back')WILT=null;try{E('path',at,k)}finally{WILT=w0}}/* tube and ovary stay green (as level 2) */
+      const at={d:it.d,fill:c,stroke:mix(c,(it.sh.mat&&it.sh.mat.shade)||'#606060',cup?.35:.55)};if(cup)at['stroke-opacity']=.5;const w0=WILT;if(it.sh.nbq==='back')WILT=null;try{E('path',at,k)}finally{WILT=w0}/* tube and ovary stay green (as level 2) */
+      /* the morning dew (y3-rosee.js; lean: unclipped, the later pieces cover it) */
+      if(typeof svDew==='function'&&it.sh.nbq!=='back')svDew(k,it,it.sh,it.s>0,o)}
     return k}
   /* level 0: outlines (each piece's boundary, wound the same way so the perianth's tepals union under nonzero) */
   const tep=[],oth=[];for(const p of pieces){const sh=p.fn?p.proxy:p;if(!sh)continue;(sh.nbq?oth:tep).push(sh)}
@@ -140,7 +142,9 @@ function nbqLean(par,pieces,o,lv,B){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(
     hull=sh=>{const P=[];for(let j=0;j<=4;j++)for(let i=0;i<=8;i++){const q=svAt(sh,-1+i/4,j/4);P.push([q[0],q[1]])}return hull2(P)},
     col=(sh,s)=>{const m=sh.mat||{},st=(s>0?m.stops:m.bstops)||m.stops;return st?nbqRamp(st,.58):'#e8e8e0'};
   const drawT=()=>{if(!tep.length)return;const bud=tep.length&&NBQ_LV0BUD;let d='';if(bud){const P=[];for(const sh of tep)for(const q of ol(sh))P.push(q);d=svSpl(hull2(P))}else for(const sh of tep)d+=svSpl(ol(sh));
-      E('path',{d,fill:col(tep[0],fz>=0?1:-1),stroke:mix(col(tep[0],1),'#707060',.5),'stroke-width':svF(Math.max(.12,Dm*.01)),'stroke-opacity':.5},k)},
+      E('path',{d,fill:col(tep[0],fz>=0?1:-1),stroke:mix(col(tep[0],1),'#707060',.5),'stroke-width':svF(Math.max(.12,Dm*.01)),'stroke-opacity':.5},k);
+      /* the morning dew on the tepals (y3-rosee.js), off their foot (the cup covers it) */
+      if(typeof svDewSheets==='function')svDewSheets(k,tep,(u,v)=>v>.3)},
     drawO=t=>{for(const sh of oth){if(sh.nbq!==t)continue;const w0=WILT;if(t==='back')WILT=null;try{E('path',{d:svSpl(hull(sh)),fill:col(sh,-1)},k)}finally{WILT=w0}
       if(t==='cup'&&fz>.25){const P=[];for(let i=0;i<=10;i++){const q=svAt(sh,-1+i/5,1);P.push([q[0],q[1]])}E('path',{d:svSpl(P),fill:col(sh,1),'fill-opacity':.9},k)}}};
   if(fz>=0){drawO('back');drawT();drawO('cup')}else{drawO('cup');drawT();drawO('back')}return k}

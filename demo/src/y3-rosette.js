@@ -263,6 +263,8 @@ function svrDraw(par,items,P,cw,Dm,tol,lf={}){const k=G(par),dd=GDEF||defs,hi=DE
     /* lf.wclip: the run's washes clipped to its pieces' outlines (soft shades that never spill past a petal's edge as a halo) */
     let wk=k;if(lf.wclip){const cid='sw'+(gid++);E('path',{d:run.map(it=>it.d).join('')},E('clipPath',{id:cid},dd));wk=G(k,{'clip-path':`url(#${cid})`})}
     const wg=G(wk,{filter:svBlur(Dm*P.wb*(lf.wbK||1))});P.aoV[hi?1:0].forEach(lv=>foot(lv,P.aoA[hi?1:0]));for(const lv of P.dark[hi?1:0])wash(lv,mt.shade,P.da[hi?1:0]*(lf.daK==null?1:lf.daK),1);for(const lv of P.lit[hi?1:0])wash(lv,mt.lite,P.la[hi?1:0],0);
+    /* the morning dew on the run's pieces (y3-rosee.js): nothing unless DEW_SET or DEW_LIFE asks for it */
+    if(typeof svDewRun==='function')svDewRun(k,run,vis);
     if(SVR_OFF.includes('rim'))return;
     const lk=lgr();
     /* the paler margin (the inner face's, fainter on a back), and the veins in close-ups */

@@ -197,7 +197,10 @@ function svBlossom(par,B,O,D,S0,cwx,op,seed,wl,lod){const S=S0._m||(S0._m=Object
       for(const x of inn)for(const p of x.P){const dx=p[0]-cen[0],dy=p[1]-cen[1],r=Math.hypot(dx,dy),b=((Math.round(Math.atan2(dy,dx)/6.2832*nb)%nb)+nb)%nb;if(r>bin[b]){bin[b]=r;pt[b]=p}}
       E('path',{d:poly(pt.filter(Boolean)),fill:svblGrad('hi'+cwx.id+(st.o2*3|0)+(st.dec*3|0),[[0,c2.base],[.7,mix(c2.body,c2.base,.3)],[1,c2.body]]),stroke:mix(c2.body,c2.shade,.35),'stroke-width':fx(R0*.014),'stroke-opacity':.35},k);
       if(showH)svblHeart(k,B,O,R0,S,m,st,g,0)}}
-  else innerDraw(k,items,1);if(calFront){if(CT)ctDraw(k,cols[0]);calDraw(k)}return k}
+  else innerDraw(k,items,1);
+  /* the morning dew on the outer petals (y3-rosee.js): nothing unless DEW_SET or DEW_LIFE asks for it */
+  if(typeof svDewPetals==='function')svDewPetals(k,B,O,S.wh.length>2?items.filter(x=>x.p.w<2):items,x=>colOf(x.p));
+  if(calFront){if(CT)ctDraw(k,cols[0]);calDraw(k)}return k}
 /* the centre: a ring of stamens (filaments and anthers), the pistils (a style, or small curled green leaves when the centre has turned leafy) */
 function svblHeart(...a){return svbOrg('heart',()=>svblHeart0(...a))}
 /* stam.h0: at lod 0 an open flower still shows its stamens, as one path of anther dots (that share of n): the golden brush of the quince */

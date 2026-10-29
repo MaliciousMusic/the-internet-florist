@@ -26792,7 +26792,10 @@ function svBlossom(par,B,O,D,S0,cwx,op,seed,wl,lod){const S=S0._m||(S0._m=Object
       for(const x of inn)for(const p of x.P){const dx=p[0]-cen[0],dy=p[1]-cen[1],r=Math.hypot(dx,dy),b=((Math.round(Math.atan2(dy,dx)/6.2832*nb)%nb)+nb)%nb;if(r>bin[b]){bin[b]=r;pt[b]=p}}
       E('path',{d:poly(pt.filter(Boolean)),fill:svblGrad('hi'+cwx.id+(st.o2*3|0)+(st.dec*3|0),[[0,c2.base],[.7,mix(c2.body,c2.base,.3)],[1,c2.body]]),stroke:mix(c2.body,c2.shade,.35),'stroke-width':fx(R0*.014),'stroke-opacity':.35},k);
       if(showH)svblHeart(k,B,O,R0,S,m,st,g,0)}}
-  else innerDraw(k,items,1);if(calFront){if(CT)ctDraw(k,cols[0]);calDraw(k)}return k}
+  else innerDraw(k,items,1);
+  /* the morning dew on the outer petals (y3-rosee.js): nothing unless DEW_SET or DEW_LIFE asks for it */
+  if(typeof svDewPetals==='function')svDewPetals(k,B,O,S.wh.length>2?items.filter(x=>x.p.w<2):items,x=>colOf(x.p));
+  if(calFront){if(CT)ctDraw(k,cols[0]);calDraw(k)}return k}
 /* the centre: a ring of stamens (filaments and anthers), the pistils (a style, or small curled green leaves when the centre has turned leafy) */
 function svblHeart(...a){return svbOrg('heart',()=>svblHeart0(...a))}
 /* stam.h0: at lod 0 an open flower still shows its stamens, as one path of anther dots (that share of n): the golden brush of the quince */
@@ -27800,7 +27803,9 @@ const hi=DET>=1.5;wash(hi?m.dark||[.92,.8,.68,.56,.44]:m.darkLo||m.dark||[.9,.76
     if(m.veins&&(DET>=1||!o.small)){const VL=m.veins(sh,front);for(const[set,w,col,op]of VL){let d='';for(const pl of set){let run=[];const flush=()=>{if(run.length>1)d+=svQuad(run);run=[]};
           for(const[u,v]of pl){if(it.s*svLerp(sh,sh.F,u,v)>.03)run.push(svAt(sh,u,v));else flush()}flush()}
         if(d)E('path',{d,fill:'none',stroke:hi?svFaceFill(sh,[[0,col,0],[.12,col,op],[.55,col,op*.75],[1,col,op*.3]],Dm):col,'stroke-opacity':hi?1:op*.7,'stroke-width':svF(Dm*w),'stroke-linecap':'round','stroke-linejoin':'round'},cg)}}
-    if(m.rw)E('use',{href:'#'+it.id,fill:'none',stroke:front?m.rim:m.brim||m.rim,'stroke-width':svF(Dm*m.rw),'stroke-opacity':m.ro??.4},cg);patch(it)}
+    if(m.rw)E('use',{href:'#'+it.id,fill:'none',stroke:front?m.rim:m.brim||m.rim,'stroke-width':svF(Dm*m.rw),'stroke-opacity':m.ro??.4},cg);
+    /* the morning dew on this face (y3-rosee.js): nothing unless DEW_SET or DEW_LIFE asks for it */
+    if(typeof svDew==='function')svDew(cg,it,sh,front,o);patch(it)}
   return k}
 /* ---------- the chequer: a net of irregular checks on a sheet, in its (u,v) ----------
    Columns run along the veins (lines of u that waver a little), rows run across (lines of v, unevenly spaced); every other cell is dark (a
@@ -27860,7 +27865,9 @@ function svDrawLean(par,pieces,o){const Dm=o.D,tol=Math.max(.06,Dm*.0035)*1.5,k=
     E('path',{d:it.d,fill:svFaceFill(sh,thin(front?m.stops:m.bstops).map(([v,c,a])=>[v,tone(c),a]),Dm)},k);
     if(m.veins)for(const[set,w,col,op]of m.veins(sh,front)){let d='';for(const pl of set){let run=[];const flush=()=>{if(run.length>1)d+=chain(run);run=[]};
         for(const[u,v]of dense(pl)){if(it.s*svLerp(sh,sh.F,u,v)>.03)run.push(svAt(sh,u,v));else flush()}flush()}
-      if(d)E('path',{d,fill:'none',stroke:col,'stroke-opacity':svF(op*.8),'stroke-width':svF(Dm*w),'stroke-linecap':'round'},k)}}
+      if(d)E('path',{d,fill:'none',stroke:col,'stroke-opacity':svF(op*.8),'stroke-width':svF(Dm*w),'stroke-linecap':'round'},k)}
+    /* the dew (lean: no clip, the drops kept on the seen face) */
+    if(typeof svDew==='function')svDew(k,it,sh,front,o)}
   return k}
 /* ================= y3-ecume.js : a froth of loose cymes, a pleated palmate leaf, water drops (lady's mantle; also gypsophila, sea lavender...) =================
    Three self-contained pieces (y1.js helpers only, no other y3-*.js):
@@ -30959,23 +30966,32 @@ function dwLune(c,e1,e2,a,b,t){const tx=(t[0]*e1[0]+t[1]*e1[1])/a,ty=(t[0]*e2[0]
   const P1=[mx+vx*hh,my+vy*hh],P2=[mx-vx*hh,my-vy*hh],F=[ux,uy],O=[tx,ty],F2=[tx+ux,ty+uy];
   const[l1,s1]=dwFlags([0,0],P1,F,P2),[l2,s2]=dwFlags(O,P2,F2,P1),A=(l,s)=>'A'+dwN(a)+' '+dwN(b)+' '+dwRot(e1)+' '+l+' '+s+' ';
   return'M'+dwP(S(...P1))+A(l1,s1)+dwP(S(...P2))+A(l2,s2)+dwP(S(...P1))+'z'}
-/* the drops of one visible face (it: svDraw's region, s its side; cg: its clipped group): sampled on the sheet, then painted (dewPaint) */
-function svDew(cg,it,sh,front,o){const dew=dewNow();if(!(dew>0)||LOD)return;
-  const m=sh.mat||{},st=front?m.stops:m.bstops,tis0=dewStop(st,.6),leaf=m.dew?m.dew==='leaf'||m.dew.leaf:dewGreen(tis0),P=Object.assign({},leaf?DEW_DEF.leaf:DEW_DEF.petal,typeof m.dew==='object'?m.dew:null);
-  /* the true area of the sheet (projected cells over their slant) and the number of candidate drops */
-  const W=sh.W;let area=0;for(let j=0;j<sh.nv;j++)for(let i=0;i<sh.nu;i++){const q=[j*W+i,j*W+i+1,(j+1)*W+i+1,(j+1)*W+i],pp=q.map(k=>sh.P[k]);let a2=0;for(let k=0;k<4;k++){const p=pp[k],r=pp[(k+1)%4];a2+=p[0]*r[1]-r[0]*p[1]}
-    const fz=Math.abs(q.reduce((s,k)=>s+sh.F[k],0)/4);area+=Math.abs(a2/2)/Math.max(.2,fz)}
-  const N=Math.min(600,Math.round(P.cov*area/(Math.PI/4*dewMeanD2(P.d[0],P.d[1])*(UPC*DEW_K)**2)));if(N<1)return;
-  /* the face's own chance: its base and tip, and its grid */
+/* the candidate drops of one face of a sheet (s: the side seen), where ok(u,v,p) allows: the sheet's own chance (hashed from its base and
+   tip), their number from its true area (projected cells over their slant) and the tissue's coverage, kept where the face looks up.
+   Returns {D, v} (the drops for dewPaint, their mean v) or null */
+function dewSample(sh,s,P,ok){const W=sh.W;let area=0;for(let j=0;j<sh.nv;j++)for(let i=0;i<sh.nu;i++){const q=[j*W+i,j*W+i+1,(j+1)*W+i+1,(j+1)*W+i],pp=q.map(k=>sh.P[k]);let a2=0;
+    for(let k=0;k<4;k++){const p=pp[k],r=pp[(k+1)%4];a2+=p[0]*r[1]-r[0]*p[1]}const fz=Math.abs(q.reduce((t,k)=>t+sh.F[k],0)/4);area+=Math.abs(a2/2)/Math.max(.2,fz)}
+  const N=Math.min(600,Math.round(P.cov*area/(Math.PI/4*dewMeanD2(P.d[0],P.d[1])*(UPC*DEW_K)**2)));if(N<1)return null;
   const pb=svAt(sh,0,0),pt=svAt(sh,0,1),r=svRng(svSeed('rosee',Math.round(pb[0]/2),Math.round(pb[1]/2),Math.round(pt[0]/2),Math.round(pt[1]/2),sh.nu,sh.nv));
   if(!sh._dn)sh._dn=[0,1,2].map(k=>sh.N.map(n=>n[k]));
   const D=[];let vs=0;
   for(let i=0;i<N;i++){const u=r.in(-.96,.96),v=r.in(.04,.97),x=r(),y=r(),z=r();
-    if(it.s*svLerp(sh,sh.F,u,v)<=.04)continue;
-    const n=V3.nz([0,1,2].map(k=>it.s*svLerp(sh,sh._dn[k],u,v)));if(y>=svSm((n[1]+.05)/.65))continue;
-    D.push({c:svAt(sh,u,v),n,x,z});vs+=v}
-  if(!D.length)return;
-  dewPaint(cg,D,P,dew,{tis:dewStop(st,vs/D.length),lit:front?m.lite:m.blite,shd:front?m.shade:m.bshade,cast:m.cast},leaf)}
+    if(s*svLerp(sh,sh.F,u,v)<=.04)continue;
+    const n=V3.nz([0,1,2].map(k=>s*svLerp(sh,sh._dn[k],u,v)));if(y>=svSm((n[1]+.05)/.65))continue;
+    const c=svAt(sh,u,v);if(ok&&!ok(u,v,c))continue;D.push({c,n,x,z});vs+=v}
+  return D.length?{D,v:vs/D.length}:null}
+/* the tissue's settings: green tissue (leaves, bracts, sepals) takes the leaf's, unless the material says (m.dew: 'leaf', 'petal' or own keys) */
+function dewKind(m,tis){const leaf=m&&m.dew?m.dew==='leaf'||!!m.dew.leaf:dewGreen(tis);return[leaf,Object.assign({},leaf?DEW_DEF.leaf:DEW_DEF.petal,m&&typeof m.dew==='object'?m.dew:null)]}
+/* the drops of one visible face drawn by svDraw (it: its region, s its side; cg: its clipped group) */
+function svDew(cg,it,sh,front,o){const dew=dewNow();if(!(dew>0)||LOD)return;
+  const m=sh.mat||{},st=front?m.stops:m.bstops,[leaf,P]=dewKind(m,dewStop(st,.6)),S=dewSample(sh,it.s,P,null);if(!S)return;
+  dewPaint(cg,S.D,P,dew,{tis:dewStop(st,S.v),lit:front?m.lite:m.blite,shd:front?m.shade:m.bshade,cast:m.cast},leaf)}
+/* the drops of one run of svrDraw (y3-rosette.js: ranunculus, roses), over its washes: on each piece where the later pieces of the run leave
+   it seen (vis) and inside its outline; later runs cover them as they cover the pieces */
+function svDewRun(k,run,vis){const dew=dewNow();if(!(dew>0)||LOD)return;
+  run.forEach((it,j)=>{if(it.kind!=='pet'||!it.sh)return;const mt=it.mt||{},[leaf,P]=dewKind(mt,it.tone),V=vis[j],
+      S=dewSample(it.sh,it.s,P,(u,v,c)=>svLerp(it.sh,V,u,v)>0&&svrIn(it.out,c[0],c[1]));
+    if(S)dewPaint(k,S.D,P,dew,{tis:it.tone,lit:it.s>0?mt.lite:mt.blite||mt.lite,shd:it.s>0?mt.shade:mt.bshade||mt.shade,cast:mt.cast},leaf)})}
 /* paints drops on a surface, for svDraw and for any kit that samples its own (a leaf drawn without svDraw): D = [{c: screen point on the
    tissue, n: the visible face's unit normal (view space), x: the drop's size quantile 0..1, z: a second chance 0..1}], in a fixed order (the
    drops kept never depend on the amount of dew); P the tissue's settings (DEW_DEF); col {tis, lit, shd, cast} the tissue's colours */
@@ -31010,6 +31026,19 @@ function dewPaint(par,D,P,dew,col,leaf){const d0=P.d[0]*UPC*DEW_K,d1=P.d[1]*UPC*
   sC.forEach((L,i)=>E('path',{d:L[0],fill:dk,'fill-opacity':P.co*[.3,.35,.55][i]},g));
   E('path',{d:dR,fill:'none',stroke:dk,'stroke-width':svF(Math.max(.03,rs/nd*.12)),'stroke-opacity':.3},g);
   E('path',{d:dK,fill:'#ffffff','fill-opacity':.95},g)}
+/* the drops of flat-drawn petals (y3-branche.js at lod 1: blossoms of the branches): L = [{p: {Sf}, P: the outline on the screen, z, front}],
+   drawn far to near before; each petal gets a small sheet of its surface for the drops, kept off its foot (the heart, the calyx) and off the
+   petals in front of it. colOf(x): its colours {body, back, shade, lite} */
+const dewIn=(P,x,y)=>{let c=false;for(let i=0,j=P.length-1;i<P.length;j=i++){const a=P[i],b=P[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c}return c};
+function svDewPetals(par,B,O,L,colOf){const dew=dewNow();if(!(dew>0)||LOD||!L.length)return;const S=L.slice().sort((a,b)=>a.z-b.z);
+  S.forEach((x,i)=>{const c=colOf(x),tis=x.front?c.body:c.back||c.body,[leaf,P]=dewKind(null,tis),sh=svSheet(B,O,x.p.Sf,{nu:4,nv:6}),near=S.slice(i+1),
+      R=dewSample(sh,x.front?1:-1,P,(u,v,q)=>v>.4&&!near.some(y=>dewIn(y.P,q[0],q[1])));
+    if(R)dewPaint(par,R.D,P,dew,{tis,lit:c.lite,shd:c.shade,cast:mix(c.shade||tis,'#000000',.5)},leaf)})}
+/* the drops of sheets drawn as plain outlines (a lean level of detail: the bouquet narcissus' florets at level 0): each sheet on the side it
+   mostly shows, where keep(u,v,p) allows, in its material's colours */
+function svDewSheets(par,sheets,keep){const dew=dewNow();if(!(dew>0)||LOD)return;
+  for(const sh of sheets){let sF=0;for(const x of sh.F)sF+=x;const s=sF>=0?1:-1,m=sh.mat||{},st=(s>0?m.stops:m.bstops)||m.stops,[leaf,P]=dewKind(m,dewStop(st,.6)),R=dewSample(sh,s,P,keep);
+    if(R)dewPaint(par,R.D,P,dew,{tis:dewStop(st,R.v),lit:s>0?m.lite:m.blite||m.lite,shd:s>0?m.shade:m.bshade||m.shade,cast:m.cast},leaf)}}
 /* ---------- y3-rosette.js: the double rosette (svRosette), a kit piece for every flower of many petals on a spiral ----------
    Double ranunculi, peonies, roses, camellias: dozens of spoon-shaped petals, from the outermost (rank f = 0) to the heart (f = 1), on one spiral
    (the golden angle) or in staggered whorls; each petal cupped across in a true arc and incurved along its length, tight and folded over the heart
@@ -31275,6 +31304,8 @@ function svrDraw(par,items,P,cw,Dm,tol,lf={}){const k=G(par),dd=GDEF||defs,hi=DE
     /* lf.wclip: the run's washes clipped to its pieces' outlines (soft shades that never spill past a petal's edge as a halo) */
     let wk=k;if(lf.wclip){const cid='sw'+(gid++);E('path',{d:run.map(it=>it.d).join('')},E('clipPath',{id:cid},dd));wk=G(k,{'clip-path':`url(#${cid})`})}
     const wg=G(wk,{filter:svBlur(Dm*P.wb*(lf.wbK||1))});P.aoV[hi?1:0].forEach(lv=>foot(lv,P.aoA[hi?1:0]));for(const lv of P.dark[hi?1:0])wash(lv,mt.shade,P.da[hi?1:0]*(lf.daK==null?1:lf.daK),1);for(const lv of P.lit[hi?1:0])wash(lv,mt.lite,P.la[hi?1:0],0);
+    /* the morning dew on the run's pieces (y3-rosee.js): nothing unless DEW_SET or DEW_LIFE asks for it */
+    if(typeof svDewRun==='function')svDewRun(k,run,vis);
     if(SVR_OFF.includes('rim'))return;
     const lk=lgr();
     /* the paler margin (the inner face's, fainter on a back), and the veins in close-ups */
@@ -36348,7 +36379,9 @@ function nbqLean(par,pieces,o,lv,B){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(
     const ord=svOrder(items,Dm*.005),ew=svF(Math.max(.12,Dm*.011));/* the edges' common width and opacity once on the group (bytes) */
     k.setAttribute('stroke-width',ew);k.setAttribute('stroke-opacity',.6);k.setAttribute('stroke-linejoin','round');
     for(const it of ord){if(it.kind!=='reg')continue;const c=nbqRegCol(it.sh,it.s),cup=it.sh.nbq==='cup';
-      const at={d:it.d,fill:c,stroke:mix(c,(it.sh.mat&&it.sh.mat.shade)||'#606060',cup?.35:.55)};if(cup)at['stroke-opacity']=.5;const w0=WILT;if(it.sh.nbq==='back')WILT=null;try{E('path',at,k)}finally{WILT=w0}}/* tube and ovary stay green (as level 2) */
+      const at={d:it.d,fill:c,stroke:mix(c,(it.sh.mat&&it.sh.mat.shade)||'#606060',cup?.35:.55)};if(cup)at['stroke-opacity']=.5;const w0=WILT;if(it.sh.nbq==='back')WILT=null;try{E('path',at,k)}finally{WILT=w0}/* tube and ovary stay green (as level 2) */
+      /* the morning dew (y3-rosee.js; lean: unclipped, the later pieces cover it) */
+      if(typeof svDew==='function'&&it.sh.nbq!=='back')svDew(k,it,it.sh,it.s>0,o)}
     return k}
   /* level 0: outlines (each piece's boundary, wound the same way so the perianth's tepals union under nonzero) */
   const tep=[],oth=[];for(const p of pieces){const sh=p.fn?p.proxy:p;if(!sh)continue;(sh.nbq?oth:tep).push(sh)}
@@ -36357,7 +36390,9 @@ function nbqLean(par,pieces,o,lv,B){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(
     hull=sh=>{const P=[];for(let j=0;j<=4;j++)for(let i=0;i<=8;i++){const q=svAt(sh,-1+i/4,j/4);P.push([q[0],q[1]])}return hull2(P)},
     col=(sh,s)=>{const m=sh.mat||{},st=(s>0?m.stops:m.bstops)||m.stops;return st?nbqRamp(st,.58):'#e8e8e0'};
   const drawT=()=>{if(!tep.length)return;const bud=tep.length&&NBQ_LV0BUD;let d='';if(bud){const P=[];for(const sh of tep)for(const q of ol(sh))P.push(q);d=svSpl(hull2(P))}else for(const sh of tep)d+=svSpl(ol(sh));
-      E('path',{d,fill:col(tep[0],fz>=0?1:-1),stroke:mix(col(tep[0],1),'#707060',.5),'stroke-width':svF(Math.max(.12,Dm*.01)),'stroke-opacity':.5},k)},
+      E('path',{d,fill:col(tep[0],fz>=0?1:-1),stroke:mix(col(tep[0],1),'#707060',.5),'stroke-width':svF(Math.max(.12,Dm*.01)),'stroke-opacity':.5},k);
+      /* the morning dew on the tepals (y3-rosee.js), off their foot (the cup covers it) */
+      if(typeof svDewSheets==='function')svDewSheets(k,tep,(u,v)=>v>.3)},
     drawO=t=>{for(const sh of oth){if(sh.nbq!==t)continue;const w0=WILT;if(t==='back')WILT=null;try{E('path',{d:svSpl(hull(sh)),fill:col(sh,-1)},k)}finally{WILT=w0}
       if(t==='cup'&&fz>.25){const P=[];for(let i=0;i<=10;i++){const q=svAt(sh,-1+i/5,1);P.push([q[0],q[1]])}E('path',{d:svSpl(P),fill:col(sh,1),'fill-opacity':.9},k)}}};
   if(fz>=0){drawO('back');drawT();drawO('cup')}else{drawO('cup');drawT();drawO('back')}return k}

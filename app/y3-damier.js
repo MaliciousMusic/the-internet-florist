@@ -51,7 +51,9 @@ const hi=DET>=1.5;wash(hi?m.dark||[.92,.8,.68,.56,.44]:m.darkLo||m.dark||[.9,.76
     if(m.veins&&(DET>=1||!o.small)){const VL=m.veins(sh,front);for(const[set,w,col,op]of VL){let d='';for(const pl of set){let run=[];const flush=()=>{if(run.length>1)d+=svQuad(run);run=[]};
           for(const[u,v]of pl){if(it.s*svLerp(sh,sh.F,u,v)>.03)run.push(svAt(sh,u,v));else flush()}flush()}
         if(d)E('path',{d,fill:'none',stroke:hi?svFaceFill(sh,[[0,col,0],[.12,col,op],[.55,col,op*.75],[1,col,op*.3]],Dm):col,'stroke-opacity':hi?1:op*.7,'stroke-width':svF(Dm*w),'stroke-linecap':'round','stroke-linejoin':'round'},cg)}}
-    if(m.rw)E('use',{href:'#'+it.id,fill:'none',stroke:front?m.rim:m.brim||m.rim,'stroke-width':svF(Dm*m.rw),'stroke-opacity':m.ro??.4},cg);patch(it)}
+    if(m.rw)E('use',{href:'#'+it.id,fill:'none',stroke:front?m.rim:m.brim||m.rim,'stroke-width':svF(Dm*m.rw),'stroke-opacity':m.ro??.4},cg);
+    /* the morning dew on this face (y3-rosee.js): nothing unless DEW_SET or DEW_LIFE asks for it */
+    if(typeof svDew==='function')svDew(cg,it,sh,front,o);patch(it)}
   return k}
 /* ---------- the chequer: a net of irregular checks on a sheet, in its (u,v) ----------
    Columns run along the veins (lines of u that waver a little), rows run across (lines of v, unevenly spaced); every other cell is dark (a
@@ -111,5 +113,7 @@ function svDrawLean(par,pieces,o){const Dm=o.D,tol=Math.max(.06,Dm*.0035)*1.5,k=
     E('path',{d:it.d,fill:svFaceFill(sh,thin(front?m.stops:m.bstops).map(([v,c,a])=>[v,tone(c),a]),Dm)},k);
     if(m.veins)for(const[set,w,col,op]of m.veins(sh,front)){let d='';for(const pl of set){let run=[];const flush=()=>{if(run.length>1)d+=chain(run);run=[]};
         for(const[u,v]of dense(pl)){if(it.s*svLerp(sh,sh.F,u,v)>.03)run.push(svAt(sh,u,v));else flush()}flush()}
-      if(d)E('path',{d,fill:'none',stroke:col,'stroke-opacity':svF(op*.8),'stroke-width':svF(Dm*w),'stroke-linecap':'round'},k)}}
+      if(d)E('path',{d,fill:'none',stroke:col,'stroke-opacity':svF(op*.8),'stroke-width':svF(Dm*w),'stroke-linecap':'round'},k)}
+    /* the dew (lean: no clip, the drops kept on the seen face) */
+    if(typeof svDew==='function')svDew(k,it,sh,front,o)}
   return k}
