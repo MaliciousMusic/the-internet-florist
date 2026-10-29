@@ -529,7 +529,11 @@ async function start(clumpsOn) {
   const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296);
   const insects = [];
   for (const c of CAST) { lists.set(c, []); fronts.set(c, []); }
+  // their first coming in is spread over ENTRY_S from the first kind's loading (owner, 2026-10-29: all came in at once, then
+  // their number fell to its level; a fleet at once overwhelmed the scene): each its own moment, about as many every second
+  const ENTRY_S = 40;
   const loadCast = async () => {
+    const t0 = performance.now();
     for (const c of CAST) {
       const url = `${BASE}${c.kind}/atlas/${c.kind}`;
       // (a kind already loaded with more levels, the bumblebee of the Open button, is kept as it is)
@@ -548,6 +552,7 @@ async function start(clumpsOn) {
         const s = c.make(M, [essaim, i < n ? lists.get(c) : i < nf ? fronts.get(c) : NO_FLOWERS, rnd]);
         s.bodyMm = c.mm(M);
         s.lengthPx = s.bodyMm * pxmm0;
+        if (s.state === 'away') s.t = Math.max(0.3, 0.5 + rnd() * ENTRY_S - (performance.now() - t0) / 1000);
         essaim.add(s);
         insects.push(s);
       }
