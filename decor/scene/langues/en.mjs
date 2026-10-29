@@ -447,6 +447,8 @@ export default {
       glisserTel: "Here it is, on your home screen. <b>Drag it</b> wherever you like.",
       taille: "<b>Pull a corner</b> to make it larger or smaller.",
       ok: "Just right? Press <b>✓</b> to set it.",
+      appui: "It’s set. To change it later, as in Belai Bureau: <b>press and hold</b> the bouquet for 6 seconds.",
+      revalider: "Free again: move it or size it, then <b>✓</b> to set it once more.",
       valider: "Set it here",
       fin: "That’s how it lives on your desktop, for {jours} days. To keep it there for real: <b>Belai Bureau</b>, free for Windows.",
       finAutre: "That’s how it lives on your desktop, for {jours} days. Belai Bureau is coming soon to your system.",

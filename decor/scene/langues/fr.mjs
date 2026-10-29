@@ -461,6 +461,8 @@ export default {
       glisserTel: "Le voici sur votre écran d’accueil. <b>Faites-le glisser</b> où vous voulez.",
       taille: "<b>Tirez un coin</b> pour l’agrandir ou le réduire.",
       ok: "C’est bien ainsi ? Appuyez sur <b>✓</b> pour le poser.",
+      appui: "Il est posé. Pour le changer plus tard, comme dans Belai Bureau : <b>restez appuyé</b> sur le bouquet 6 secondes.",
+      revalider: "Le voilà libre : déplacez-le ou changez sa taille, puis <b>✓</b> pour le reposer.",
       valider: "Le poser ici",
       fin: "Voilà comment il vit sur votre bureau, pendant {jours} jours. Pour l’y garder pour de vrai : <b>Belai Bureau</b>, gratuit pour Windows.",
       finAutre: "Voilà comment il vit sur votre bureau, pendant {jours} jours. Belai Bureau arrive bientôt sur votre système.",

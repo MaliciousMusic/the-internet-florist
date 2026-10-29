@@ -47,6 +47,22 @@ bureau). Il voudrait un seul bouton, et que la fenêtre se réduise et revienne 
 - Le module est chargé dès l'ouverture du gros plan, pour que le clic ouvre la fenêtre de partage tout de suite.
 - Vérifié dans Chrome sans fenêtre, faux écran partagé, page française : tout le parcours, aucune erreur.
 
+## Deuxième retour du porteur (29 octobre 2026)
+
+Essai réel réussi (son vrai bureau, fond rose). Demandes :
+- **La bulle ne bouge plus** : en haut, au milieu. **L'abeille vient près de ce qu'elle demande de toucher**, avec de petits
+  cercles blancs d'invitation (ceux du bouquet du site) : le bouquet pour le glisser, un coin du cadre resté dans l'écran,
+  le ✓, le bouquet pour l'appui long, puis « Obtenir Belai Bureau ». Sans cible (partage, raccourci), elle se tient au bout
+  de la bulle.
+- **Le ✓ change de coin** : en haut à gauche quand le coin droit sortirait de l'écran, sous le cadre quand le haut sortirait.
+  Il n'apparaît qu'à l'étape qui le demande.
+- **L'appui long pour modifier**, comme dans Belai Bureau (`maintien.rs`) : 6 s sans bouger de plus de 12 px, l'anneau sous
+  le doigt dès 0,5 s. Le cadre revient, puis ✓ de nouveau.
+- Vérifié dans Chrome sans fenêtre (faux écran, page française) : tout le parcours, aucune erreur.
+
+**En attente d'une décision** : le cycle accéléré (rosée du matin, fanaison complète). Les sprites du site n'ont que l'état
+ouvert ; la rosée n'existe nulle part, et la fanaison n'est dessinée que pour une partie des espèces.
+
 ## Fichiers
 
 - `scene/essai.mjs` et `scene/essai.css` (le module est chargé au clic, avec l'empreinte `data-essai-v` de la page) ;

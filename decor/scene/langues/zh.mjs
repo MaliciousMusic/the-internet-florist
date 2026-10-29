@@ -405,6 +405,8 @@ export default {
       glisserTel: "它就在你的主屏幕上。<b>拖动它</b>，放到你喜欢的位置。",
       taille: "<b>拉动一个角</b>，把它放大或缩小。",
       ok: "这样可以吗？按 <b>✓</b> 把它放好。",
+      appui: "放好了。以后想调整，就像在 Belai Bureau 里一样：<b>按住</b>花束 6 秒。",
+      revalider: "又可以移动了：拖动它或调整大小，然后按 <b>✓</b> 再放好。",
       valider: "放在这里",
       fin: "它就这样在你的桌面上生活 {jours} 天。想真正留住它：<b>Belai Bureau</b>，Windows 版免费。",
       finAutre: "它就这样在你的桌面上生活 {jours} 天。Belai Bureau 很快会支持你的系统。",

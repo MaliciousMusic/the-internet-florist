@@ -54,6 +54,8 @@ export async function ouvrir(api) {
         <button class="essai-ok" type="button" aria-label="${T.valider}">✓</button>
       </div>
     </div>
+    <div class="essai-invite" aria-hidden="true" hidden></div>
+    <div class="essai-anneau" aria-hidden="true" hidden><svg viewBox="0 0 40 40"><circle class="fond" cx="20" cy="20" r="16"/><circle class="plein" cx="20" cy="20" r="16" pathLength="100"/></svg></div>
     <div class="essai-bulle" role="status" aria-live="polite"><p class="essai-texte"></p><div class="essai-actions"></div></div>
     <button class="essai-fermer" type="button" aria-label="${T.fermer}">
       <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 7l10 10M17 7 7 17"/></svg>
@@ -66,6 +68,12 @@ export async function ouvrir(api) {
   const bulle = $('.essai-bulle', root);
   const texte = $('.essai-texte', root);
   const actions = $('.essai-actions', root);
+  const invite = $('.essai-invite', root);
+  const anneau = $('.essai-anneau', root);
+  // the long press (as Belai Bureau's, maintien.rs: 6 s, the ring from 0.5 s, 12 px of drift at most): set before the loop reads it
+  const HOLD = { duree: 6000, retard: 500, derive: 12 };
+  let hold = null; // { id, x, y, t0 }
+  const plein = anneau.querySelector('.plein');
 
   let stream = null;
   let shotUrl = null;
@@ -104,7 +112,7 @@ export async function ouvrir(api) {
     if (state.full && document.fullscreenElement !== root) fermer();
   });
 
-  const state = { full: false, moved: 0, sized: false, done: false };
+  const state = { full: false, moved: 0, sized: false, done: false, freed: false };
   let bq = null; // the framed bouquet, once the desktop is shown
 
   // ---------- the guide: one honeybee (insects' runtime, as the HUD's carriers fly theirs), hovering by its bubble
@@ -137,12 +145,20 @@ export async function ouvrir(api) {
     console.error('[essai] abeille', err);
   }
 
-  // ---------- one loop: the bee flies to its spot and hovers, the bubble beside it, the bouquet sways
+  // ---------- one loop (owner, 2026-10-29: the bubble stays put, the bee comes close to what it asks to touch, small white
+  // rings inviting the click there, as on the shop's bouquet): the bee flies by the step's target and hovers, the bouquet
+  // sways, the long press's ring fills
+  let cible = null; // the step's target: () => { x, y, d } (px, the rings' size) or null (the bee by the bubble)
   let last = performance.now();
   const frame = (now) => {
     raf = requestAnimationFrame(frame);
     const dt = Math.min(0.05, (now - last) / 1000);
     last = now;
+    const c = cible ? cible() : null;
+    invite.hidden = !c;
+    if (c) Object.assign(invite.style, { left: c.x + 'px', top: c.y + 'px', width: c.d + 'px', height: c.d + 'px' });
+    if (bee) bee.to = c ? beside(c) : byBubble();
+    if (hold) holdStep(now);
     if (bee) {
       const { b, to } = bee;
       // a hover: a slow figure of eight round its spot
@@ -155,33 +171,31 @@ export async function ouvrir(api) {
       b.frame = [0, 1, 2, 1][++b.tick % 4];
       b.faceFlight(dt);
       bee.e.render();
-      placeBubble(nx, ny);
     }
     if (bq) bq.draw(now);
   };
   raf = requestAnimationFrame(frame);
 
-  // the bubble: beside the bee, on the side away from the bouquet (bee.side), inside the screen; on a narrow screen under it
-  function placeBubble(x, y) {
-    const w = bulle.offsetWidth, h = bulle.offsetHeight;
-    let bx, by;
-    if (W() < 600) {
-      bx = x - w / 2;
-      by = y + 26;
-    } else {
-      const right = bee.side ? bee.side === 'droite' : x < W() * 0.55;
-      bx = right ? x + 30 : x - 30 - w;
-      by = y - h / 2;
-    }
-    bx = Math.max(12, Math.min(W() - w - 12, bx));
-    by = Math.max(12, Math.min(H() - h - 12, by));
-    bulle.style.transform = `translate(${bx.toFixed(1)}px, ${by.toFixed(1)}px)`;
+  // the bee: up and to the left of the target, just off its rings (to its right near the screen's left edge, under it near
+  // the top); with no target, by the bubble's right end (under it on a narrow screen)
+  function beside(c) {
+    const r = c.d / 2 + 26;
+    const x = c.x - r < 30 ? c.x + r : c.x - r;
+    const y = c.y - r * 0.7 < 30 ? c.y + r * 0.7 : c.y - r * 0.7;
+    return [x, y];
   }
+  function byBubble() {
+    const r = bulle.getBoundingClientRect();
+    return W() < 600 ? [r.left + r.width / 2, r.bottom + 34] : [r.right + 40, r.top + r.height / 2];
+  }
+  // an element's middle, as a target of d px
+  const middle = (el, d) => () => {
+    const r = el && el.getBoundingClientRect();
+    return r && r.width ? { x: r.left + r.width / 2, y: r.top + r.height / 2, d } : null;
+  };
 
-  // the bee's spot while the page is still there: beside the close-up's bouquet, on its right; a phone, at the top
-  const home = () => (W() < 600 ? [W() * 0.5, 70] : [W() * 0.76, H() * 0.3, 'droite']);
-  // a step: its words, its buttons ([label, fn, primary]); the bee goes to `at` ([x, y] in px, or a function of the layer)
-  function etape(words, buttons = [], at = null) {
+  // a step: its words, its buttons ([label, fn, primary, href]), what it asks to touch (cible above, or null)
+  function etape(words, buttons = [], target = null) {
     texte.innerHTML = words;
     actions.replaceChildren(
       ...buttons.map(([label, fn, primary, href]) => {
@@ -201,11 +215,7 @@ export async function ouvrir(api) {
     bulle.classList.remove('essai-bulle-neuve');
     void bulle.offsetWidth;
     bulle.classList.add('essai-bulle-neuve');
-    if (bee) {
-      const spot = typeof at === 'function' ? at() : at || home();
-      bee.to = [spot[0], spot[1]];
-      bee.side = spot[2] || null;
-    }
+    cible = target;
     const first = actions.querySelector('button, a');
     if (first) first.focus({ preventScroll: true });
   }
@@ -233,7 +243,7 @@ export async function ouvrir(api) {
       } catch (_) {}
       go();
     };
-    etape(PHONE ? T.pretTel : T.pret, [[T.montrer, full, true]]);
+    etape(PHONE ? T.pretTel : T.pret, [[T.montrer, full, true]], () => ({ x: W() / 2, y: H() * 0.56, d: 64 }));
     root.classList.add('essai-attente');
     root.addEventListener('pointerdown', full);
     document.addEventListener('keydown', full);
@@ -246,27 +256,43 @@ export async function ouvrir(api) {
   if (closed) return;
   pose.hidden = false;
 
-  // ---------- its frame: drag it, pull a corner, ✓ (each step said once the last is done)
-  // beside the bouquet, its bubble away from it (a phone: at the top, the bubble under the bee)
-  const besideBq = () => {
+  // ---------- its frame: drag it, pull a corner, ✓, then the long press that frees it again (Belai Bureau's: 6 s), ✓ once more;
+  // each step said once the last is done, the bee by what it asks to touch
+  const okBtn = $('.essai-ok', root);
+  // a corner of the frame inside the screen, the lower right first
+  const corner = () => {
+    for (const k of ['se', 'sw', 'ne', 'nw']) {
+      const r = $(`.essai-coin[data-coin=${k}]`, root).getBoundingClientRect();
+      if (r.left > 8 && r.right < W() - 8 && r.top > 8 && r.bottom < H() - 8) return { x: r.left + r.width / 2, y: r.top + r.height / 2, d: 40 };
+    }
+    return null;
+  };
+  // the bouquet's flowers: a little over its middle
+  const flowers = (d) => () => {
     const r = pose.getBoundingClientRect();
-    if (W() < 600) return [W() * 0.5, 70];
-    const left = r.left + r.width / 2 > W() * 0.5;
-    return [left ? r.left - 50 : r.right + 50, r.top + r.height * 0.3, left ? 'gauche' : 'droite'];
+    return { x: r.left + r.width / 2, y: r.top + r.height * 0.4, d };
   };
   await new Promise((done) => {
     let step = 'glisser';
     const next = () => {
       if (step === 'glisser' && state.moved > 24) step = 'taille';
       if (step === 'taille' && state.sized) step = 'valider';
-      if (step === 'valider' && state.done) return done();
+      if (step === 'valider' && state.done) step = 'appui';
+      if (step === 'appui' && state.freed) step = 'revalider';
+      if (step === 'revalider' && state.done) return done();
       show();
     };
     let shown = '';
     const show = () => {
       if (shown === step) return;
       shown = step;
-      etape(step === 'glisser' ? (PHONE ? T.glisserTel : T.glisser) : step === 'taille' ? T.taille : T.ok, [], besideBq);
+      // (the ✓ only once it is asked for: a bouquet set before it was moved would end the try)
+      okBtn.hidden = !['valider', 'revalider'].includes(step);
+      if (step === 'glisser') etape(PHONE ? T.glisserTel : T.glisser, [], flowers(60));
+      else if (step === 'taille') etape(T.taille, [], corner);
+      else if (step === 'valider') etape(T.ok, [], middle(okBtn, 46));
+      else if (step === 'appui') etape(T.appui, [], flowers(70));
+      else etape(T.revalider, [], middle(okBtn, 46));
     };
     show();
     bq.onChange = next;
@@ -279,7 +305,9 @@ export async function ouvrir(api) {
   const fin = PHONE ? [T.finTel, [[T.retour, fermer, true]]] : win && B.installer
       ? [fill(T.fin, { jours: api.jours || 30 }), [[T.telecharger, null, true, `telechargements/${B.installer}`], [T.retour, fermer]]]
       : [fill(T.finAutre, { jours: api.jours || 30 }), [[T.retour, fermer, true]]];
-  etape(fin[0], fin[1], besideBq);
+  etape(fin[0], fin[1]);
+  // (its first button, made by etape)
+  cible = middle(actions.querySelector('.essai-bouton-1'), 40);
 
   // ---------- a computer: the screen shared, the desktop shown (the shortcut), grabbed
   function askScreen() {
@@ -409,6 +437,29 @@ export async function ouvrir(api) {
     }
   }
 
+  // ---------- the long press that frees a set bouquet, as Belai Bureau's (maintien.rs): held 6 s without drifting more than
+  // 12 px, the ring under the pointer from 0.5 s (a plain click never flashes it)
+  function startHold(e) {
+    hold = { id: e.pointerId, x: e.clientX, y: e.clientY, t0: performance.now() };
+    try {
+      pose.setPointerCapture(e.pointerId);
+    } catch (_) {}
+  }
+  function stopHold() {
+    hold = null;
+    anneau.hidden = true;
+  }
+  function holdStep(now) {
+    const t = now - hold.t0;
+    anneau.hidden = t < HOLD.retard;
+    Object.assign(anneau.style, { left: hold.x + 'px', top: hold.y + 'px' });
+    plein.style.strokeDashoffset = String(100 - 100 * Math.min(1, t / HOLD.duree));
+    if (t >= HOLD.duree) {
+      stopHold();
+      if (bq && bq.free) bq.free();
+    }
+  }
+
   // ---------- the bouquet: its close-up sprites (sprites.mjs) drawn on a canvas, swaying; placed, moved, sized
   async function bouquet() {
     const idx = await api.index();
@@ -448,6 +499,10 @@ export async function ouvrir(api) {
     box.y = (PHONE ? H() * 0.7 : H() * 0.9) - box.h;
     const lay = () => {
       Object.assign(pose.style, { left: box.x + 'px', top: box.y + 'px', width: box.w + 'px', height: box.h + 'px' });
+      // the ✓ over the frame's top right corner, or its top left when it would leave the screen on the right, under the frame
+      // when it would leave it at the top
+      pose.classList.toggle('essai-ok-gauche', box.x + box.w + 30 > W());
+      pose.classList.toggle('essai-ok-bas', box.y - 60 < 0);
       const dpr = Math.min(2, devicePixelRatio || 1);
       canvas.width = Math.round(box.w * dpr);
       canvas.height = Math.round(box.h * dpr);
@@ -481,7 +536,8 @@ export async function ouvrir(api) {
       grip = { corner, x: e.clientX, y: e.clientY, box: { ...box }, pinch: null };
     };
     on(pose, 'pointerdown', (e) => {
-      if (state.done || e.target.closest('.essai-ok')) return;
+      if (e.target.closest('.essai-ok')) return;
+      if (state.done) return void startHold(e);
       e.preventDefault();
       pose.setPointerCapture(e.pointerId);
       pointers.set(e.pointerId, [e.clientX, e.clientY]);
@@ -510,6 +566,7 @@ export async function ouvrir(api) {
       }
     });
     const release = (e) => {
+      if (hold && e.pointerId === hold.id) return void stopHold();
       pointers.delete(e.pointerId);
       if (pointers.size === 0) {
         grip = null;
@@ -535,6 +592,16 @@ export async function ouvrir(api) {
       pose.classList.add('essai-posee');
       B.onChange();
     });
+    on(pose, 'pointermove', (e) => {
+      if (hold && e.pointerId === hold.id && Math.hypot(e.clientX - hold.x, e.clientY - hold.y) > HOLD.derive) stopHold();
+    });
+    B.free = () => {
+      state.done = false;
+      state.freed = true;
+      cadre.hidden = false;
+      pose.classList.remove('essai-posee');
+      B.onChange();
+    };
     return B;
   }
 }

@@ -460,6 +460,8 @@ export default {
       glisserTel: "Aquí está, en tu pantalla de inicio. <b>Arrástralo</b> adonde quieras.",
       taille: "<b>Tira de una esquina</b> para agrandarlo o reducirlo.",
       ok: "¿Así está bien? Pulsa <b>✓</b> para dejarlo.",
+      appui: "Ya está. Para cambiarlo más tarde, como en Belai Bureau: <b>mantén pulsado</b> el ramo 6 segundos.",
+      revalider: "Libre otra vez: muévelo o cambia su tamaño, y luego <b>✓</b> para dejarlo de nuevo.",
       valider: "Dejarlo aquí",
       fin: "Así vive en tu escritorio, durante {jours} días. Para tenerlo de verdad: <b>Belai Bureau</b>, gratis para Windows.",
       finAutre: "Así vive en tu escritorio, durante {jours} días. Belai Bureau llegará pronto a tu sistema.",

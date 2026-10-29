@@ -59,9 +59,117 @@
   cursor: grabbing;
 }
 
+/* set: no frame, no moving; a long press frees it again (as in Belai Bureau) */
 .essai-pose.essai-posee {
   cursor: default;
+}
+
+/* the ✓ over the top left corner when the right one would leave the screen, under the frame when the top would */
+.essai-pose.essai-ok-gauche .essai-ok {
+  right: auto;
+  left: -18px;
+}
+
+.essai-pose.essai-ok-bas .essai-ok {
+  top: auto;
+  bottom: -46px;
+}
+
+.essai-ok[hidden] {
+  display: none;
+}
+
+/* the small white rings inviting the click (the shop's bouquet's, boutique.css .bq-invite), on what the bee asks to touch */
+.essai-invite {
+  position: absolute;
+  translate: -50% -50%;
   pointer-events: none;
+}
+
+.essai-invite[hidden] {
+  display: none;
+}
+
+.essai-invite::before,
+.essai-invite::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid rgb(255 255 255 / 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgb(10 30 60 / 0.25), inset 0 0 6px rgb(255 255 255 / 0.2);
+  opacity: 0;
+  transform: scale(0.5);
+  animation: essai-invite 2.4s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
+}
+
+.essai-invite::after {
+  border-color: rgb(255 255 255 / 0.55);
+  animation-delay: 0.4s;
+}
+
+@keyframes essai-invite {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  60%,
+  100% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .essai-invite::before {
+    animation: none;
+    opacity: 0.8;
+    transform: none;
+  }
+
+  .essai-invite::after {
+    display: none;
+  }
+}
+
+/* the long press's ring, under the pointer (Belai Bureau's) */
+.essai-anneau {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  translate: -50% -50%;
+  pointer-events: none;
+}
+
+.essai-anneau[hidden] {
+  display: none;
+}
+
+.essai-anneau svg {
+  width: 100%;
+  height: 100%;
+  rotate: -90deg;
+}
+
+.essai-anneau circle {
+  fill: none;
+  stroke-width: 3.5;
+}
+
+.essai-anneau .fond {
+  stroke: rgb(255 255 255 / 0.35);
+}
+
+.essai-anneau .plein {
+  stroke: #fff;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  stroke-linecap: round;
 }
 
 .essai-bouquet {
@@ -141,8 +249,9 @@
 /* the bee's bubble: on glass, beside the bee (essai.mjs moves it), each new step popping in */
 .essai-bulle {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: max(20px, env(safe-area-inset-top, 0px));
+  translate: -50% 0;
   max-width: min(340px, calc(100vw - 24px));
   padding: 12px 14px;
   box-sizing: border-box;
@@ -156,7 +265,6 @@
   font: 500 14.5px/1.4 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   text-shadow: 0 1px 2px rgb(8 36 84 / 0.35);
   pointer-events: auto;
-  will-change: transform;
 }
 
 .essai-bulle-neuve {

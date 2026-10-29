@@ -468,6 +468,8 @@ export default {
       glisserTel: "Hier ist er, auf Ihrem Startbildschirm. <b>Ziehen Sie ihn</b>, wohin Sie möchten.",
       taille: "<b>Ziehen Sie an einer Ecke</b>, um ihn zu vergrößern oder zu verkleinern.",
       ok: "Passt es so? Drücken Sie <b>✓</b>, um ihn abzustellen.",
+      appui: "Er steht. Um ihn später zu ändern, wie in Belai Bureau: den Strauß 6 Sekunden lang <b>gedrückt halten</b>.",
+      revalider: "Wieder frei: Verschieben Sie ihn oder ändern Sie seine Größe, dann <b>✓</b>, um ihn wieder abzustellen.",
       valider: "Hier abstellen",
       fin: "So lebt er auf Ihrem Desktop, {jours} Tage lang. Um ihn wirklich dort zu behalten: <b>Belai Bureau</b>, kostenlos für Windows.",
       finAutre: "So lebt er auf Ihrem Desktop, {jours} Tage lang. Belai Bureau kommt bald für Ihr System.",
