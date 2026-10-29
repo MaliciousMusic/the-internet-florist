@@ -63,6 +63,47 @@ Essai réel réussi (son vrai bureau, fond rose). Demandes :
 **En attente d'une décision** : le cycle accéléré (rosée du matin, fanaison complète). Les sprites du site n'ont que l'état
 ouvert ; la rosée n'existe nulle part, et la fanaison n'est dessinée que pour une partie des espèces.
 
+## Troisième retour du porteur (29 octobre 2026, branche `ch/essai-bulle`)
+
+Essayé en ligne. Trois demandes :
+- **La bulle restait affichée** quand on revenait du gros plan à la vue d'ensemble. Désormais, reculer (clic sur le ciel ou
+  sur le bouquet, rayon du dock, bouquet suivant) ferme l'essai, son abeille et sa bulle. Un partage d'écran accordé après la
+  fermeture est relâché aussitôt.
+- **La bulle cachait le bouquet.** Tant que la page se voit, elle se place dans l'espace libre à droite du bouquet, sinon à
+  gauche, dessous ou dessus ; elle prend la place qui en cache le moins. Sur téléphone, elle se met sous le bouquet, sur le
+  pilier. En plein écran, elle reste en haut au milieu.
+- **Plus de détour par le partage d'écran.** Recensement : aucune page ne peut sauter le sélecteur du navigateur, ni cliquer
+  « Partager » à la place du visiteur, ni réduire les fenêtres. QCM, réponse du porteur : **Belai Bureau**.
+  - Sous Windows, le clic sur « Try on your desktop » ouvre `belai://essai?u=<ouvert.json du bouquet>&n=<son nom>`.
+    Belai Bureau (0.2.0, `bureau/src-tauri/src/essai.rs`) lit ce fichier sur le site. Il n'accepte que les adresses de la
+    boutique. Il remet les morceaux en un seul dessin, les morceaux dans la brise marqués `data-bz`, et le pose sur le
+    vrai bureau, avec son cadre, son coin et son ✓. C'est un essai : un seul à la fois, nommé « Essai · … », retiré au
+    redémarrage suivant de l'appli.
+  - L'abeille dit « je le pose avec Belai Bureau ; si le navigateur demande, choisissez Ouvrir ». Si l'appli prend la main,
+    elle dit « le voilà ». Si rien ne s'ouvre en 4,5 s, elle propose l'installeur, « Réessayer » et « Pas maintenant ».
+  - Le widget ne garde plus, dans chaque calque, que les morceaux dont ce calque a besoin (identifiants pointés), au lieu de
+    tous les morceaux qui ont un identifiant. Sans cela, chacun des quelque 75 calques d'un bouquet du site aurait porté le
+    bouquet entier.
+  - Mac et Linux (pas encore de Belai Bureau) gardent le partage d'écran ; téléphone, la capture choisie.
+
+**Revirement le même soir.** Essayé en ligne : l'installeur de Belai Bureau n'est pas signé, et SmartScreen le bloque
+(« Windows a protégé votre ordinateur »). Décisions du porteur :
+- jamais d'abeille qui explique comment passer un avertissement de Microsoft : les visiteurs croiraient à une arnaque ;
+- ni certificat payant (Certum, 69 € par an), ni SignPath : il exige que toute l'appli soit libre, moteur des fleurs
+  compris ;
+- **pour garder un bouquet** (la version finale) : Belai Bureau passera par le Microsoft Store, avec un compte
+  développeur gratuit. Le porteur crée le compte, puis on fait valider l'appli ;
+- **pour la démo**, installer une appli est trop lourd : on revient au partage d'écran. L'abeille demande d'abord
+  (« Partager mon écran », « Pas maintenant »), son bouton ouvre le sélecteur, et elle dit alors de cliquer sur l'écran
+  puis sur Partager.
+
+Le site n'ouvre donc plus `belai://essai`. Le code de Belai Bureau qui le reçoit (`essai.rs`, version 0.2.0) reste dans
+`bureau/`, pour la version du Store. Il n'est **ni compilé ni testé** : la compilation, lancée depuis Git Bash, a pris le
+`link` de Git au lieu de celui de Visual Studio. Il faut la relancer depuis PowerShell.
+
+Reste vrai : une page ne voit pas le bureau sous le navigateur. Pour la photo du bureau, le visiteur doit l'écarter une
+fois (⊞ + D, deux fois). Aucune page ne peut le faire à sa place.
+
 ## Fichiers
 
 - `scene/essai.mjs` et `scene/essai.css` (le module est chargé au clic, avec l'empreinte `data-essai-v` de la page) ;

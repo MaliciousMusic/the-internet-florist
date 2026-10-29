@@ -143,8 +143,12 @@
     if (e.detail !== Frise.face()) return;
     placeTarget();
     frameCloseUp();
+    // the close-up's finer ground read while the camera rests, so it is there when the zoom passes over it
+    const v = !near && closeUpView();
+    if (v) Frise.proche(v, false);
   });
   document.addEventListener('frise:depart', () => {
+    Frise.proche(null);
     if (!following) following = requestAnimationFrame(follow);
     if (near) closeUp(false);
     $('bq-cible').hidden = true;
@@ -472,7 +476,14 @@
     target.hidden = false;
   }
   function frameCloseUp() {
-    if (!near || !box) return;
+    const v = closeUpView();
+    if (!near || !v) return;
+    Frise.proche(v, true);
+    zoomTo(v.tx, v.ty, v.s);
+  }
+  // the view { tx, ty, s } the close-up of the bouquet facing the camera takes, or null
+  function closeUpView() {
+    if (!box) return null;
     const W = scene.clientWidth;
     const H = scene.clientHeight;
     const [x, y, w, h] = box;
@@ -492,7 +503,7 @@
     // covering the whole screen
     const tx = Math.min(0, Math.max(W - W * s, W / 2 - sax * s));
     const ty = Math.min(0, Math.max(H - H * s, (top + bottom) / 2 - (sy + (h * k) / 2) * s));
-    zoomTo(tx, ty, s);
+    return { tx, ty, s };
   }
   // The close-up's move: the page's scene and the canvas's stage (toile.mjs) take the same transform at every frame, from
   // where they are to where they go, in 0.9 s on the curve the scene's CSS transition had (scene.css); the canvas element is
@@ -540,9 +551,11 @@
   function closeUp(on, keepShelf) {
     if (on === near || (on && !box)) return;
     near = on;
+    // stepping back ends the bouquet's try, its bee and bubble with it (owner, 2026-10-29: the bubble stayed over the frieze)
+    if (!on && essaiMod) essaiMod.then((m) => m.fermer());
     // the camera stays facing the bouquet while it is seen close
     Frise.fige(on);
-    // ("Try on your desktop" fetched now: its click opens the screen picker at once, essai.mjs)
+    // ("Try on your desktop" fetched now: its bee is there at once on the click, essai.mjs)
     if (on) loadEssai().catch(() => {});
     scene.classList.toggle('proche', on);
     // only the chosen bouquet in the close-up (owner 2026-10-26), swaying in its finer sprites (owner 2026-10-27)
@@ -567,6 +580,8 @@
       openShelf(null);
       frameCloseUp();
     } else {
+      const v = closeUpView();
+      if (v) Frise.proche(v, false);
       zoomTo(0, 0, 1);
       if (!keepShelf && keptShelf !== undefined) openShelf(keptShelf);
       keptShelf = undefined;
@@ -713,6 +728,8 @@
           jours: (CFG.vie && CFG.vie.jours) || 30,
           index: () => read(p),
           base: fileOf(p).replace(/sprites\.json$/, ''),
+          // the bouquet on screen, which the bee's bubble keeps clear of while the page is still seen
+          evite: () => (near && !target.hidden ? target.getBoundingClientRect() : null),
           focusBack: () => $('achat-demo').focus({ preventScroll: true }),
         }),
       )
@@ -790,7 +807,20 @@
   });
 
   // ---------- the shop's server
-  const apiBase = () => ((CFG && CFG.api) || q.get('api') || '').replace(/\/$/, '');
+  // (?api= on the developer's machine only: online, a link carrying it would send the visitor's number and code elsewhere)
+  const LOCAL = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+  const apiBase = () => ((CFG && CFG.api) || (LOCAL && q.get('api')) || '').replace(/\/$/, '');
+  // where a purchase may send the visitor: Stripe's payment page, this site, or the shop's server (its simulated page, local)
+  function sortieSure(u) {
+    try {
+      const x = new URL(u, location.href);
+      if (x.protocol === 'https:' && x.hostname === 'checkout.stripe.com') return true;
+      if (!/^https?:$/.test(x.protocol)) return false;
+      return x.origin === location.origin || (!!apiBase() && x.origin === new URL(apiBase()).origin);
+    } catch (_) {
+      return false;
+    }
+  }
   async function api(path, body, method) {
     const r = await fetch(apiBase() + path, {
       method: method || (body ? 'POST' : 'GET'),
@@ -819,6 +849,7 @@
   const errText = (j) =>
     ({
       numero_invalide: T.wrongNumber,
+      pays_non_desservi: T.wrongNumber,
       trop_de_demandes: T.tooMany,
       trop_d_essais: T.tooMany,
       code_expire: T.codeExpired,
@@ -856,7 +887,7 @@
       cx.hidden = true;
     }
     const r = await api('/api/achat', { produit: curP.id, renonce: true, texte: consent.text, langue: I18N.code, retour: location.href });
-    if (r.status !== 200 || !r.url) {
+    if (r.status !== 200 || !r.url || !sortieSure(r.url)) {
       busy(false);
       return void (note.textContent = errText(r));
     }

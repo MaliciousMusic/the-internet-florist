@@ -1,7 +1,7 @@
 /* one bouquet in its window: the drawing, the breeze, moved by dragging it, sized by its corner or its menu (right click) */
 import { angle, FRAME_MS, parseLayer, type Layer } from './breeze.js';
 import { clean } from './clean.js';
-import { isQuiet, placeOf, plan, type LayerPlan, type Part } from './layers.js';
+import { isQuiet, placeOf, plan, usesOf, type LayerPlan, type Part } from './layers.js';
 
 interface TauriWindow {
   listen<T>(name: string, cb: (e: { payload: T }) => void): Promise<() => void>;
@@ -60,12 +60,16 @@ async function show(): Promise<void> {
   root.removeAttribute('height');
   viewBox = (root.getAttribute('viewBox') ?? '').split(/[\s,]+/).map(Number);
   const ser = new XMLSerializer();
-  const parts: Part[] = Array.from(root.children).map(el => ({
-    xml: ser.serializeToString(el),
-    bz: el.getAttribute('data-bz'),
-    quiet: isQuiet(el.localName),
-    defines: el.hasAttribute('id') || el.querySelector('[id]') !== null,
-  }));
+  const parts: Part[] = Array.from(root.children).map(el => {
+    const xml = ser.serializeToString(el);
+    return {
+      xml,
+      bz: el.getAttribute('data-bz'),
+      quiet: isQuiet(el.localName),
+      ids: [el, ...Array.from(el.querySelectorAll('[id]'))].map(e => e.id).filter(Boolean),
+      uses: usesOf(xml),
+    };
+  });
   const open = ser.serializeToString(root.cloneNode(false)).replace(/\/>$|><\/svg>$/, '>');
   plans = plan(open, parts);
   try {

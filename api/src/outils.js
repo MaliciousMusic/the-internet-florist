@@ -64,6 +64,28 @@ export function numero(brut, pays = 'FR') {
   }
   return /^\+[1-9]\d{7,14}$/.test(s) ? s : null;
 }
+// the numbers a text message may go to (env.INDICATIFS_SMS, calling codes separated by commas): the shop's countries only,
+// so that nobody can make the server text premium-rate numbers abroad (SMS pumping). In the +1 zone, only the United States
+// and Canada: the Caribbean area codes share it and are the pumpers' favourite targets.
+export const INDICATIFS_SMS = '33,32,41,352,49,34,39,44,1';
+const CARAIBES = new Set('242 246 264 268 284 345 441 473 649 658 664 721 758 767 784 809 829 849 868 869 876'.split(' '));
+export function joignable(n, liste = INDICATIFS_SMS) {
+  if (typeof n !== 'string') return false;
+  const ok = String(liste)
+    .split(',')
+    .map((s) => s.trim())
+    .filter((s) => /^\d{1,3}$/.test(s))
+    .some((p) => n.startsWith('+' + p));
+  return ok && !(n.startsWith('+1') && CARAIBES.has(n.slice(2, 5)));
+}
+
+// a request made to the server on the developer's own machine (wrangler dev, the tests): the simulated text messages and
+// payment work there only, never online, whatever the configuration says
+export function local(req) {
+  const h = new URL(req.url).hostname;
+  return h === 'localhost' || h === '127.0.0.1' || h === '[::1]' || h.endsWith('.localhost') || h.endsWith('.test');
+}
+
 // a number shown on an invoice: its prefix and its last two digits only (+33 •• •• •• •• 22)
 export function masque(n) {
   if (typeof n !== 'string' || !/^\+\d{8,15}$/.test(n)) return null;

@@ -571,6 +571,12 @@ export let TM_BIG = 13;
 const TM_LOIN = new Set(['tulipe-double', 'tulipe-perroquet', 'iris-hollandais', 'jacinthe']);
 export const setTmBig = (v) => { TM_BIG = v; };
 export const setTmFar = (v) => { TM_FAR = v; };
+// The close-up's ground (frise_proche.mjs, owner 2026-10-29: « en close up la qualité doit être re-up pour ce qui tapisse
+// en arrière-plan », same plants at the same places): every planted head of the mid band takes a full drawing of its
+// colourway (any of the library's tp/, the heavy ones too), chosen by a hash so the chance drawn for the frieze is drawn
+// in the same order and nothing else moves.
+let PROCHE = false;
+export const setProche = (v) => { PROCHE = !!v; };
 // The drawings planted in the ground, by depth file (each drawing lives in one file only: a drawing used by two files
 // weighs in both). Near file (nearer than SPLIT[1]): the full heads, one per colourway (the clumps in front of it
 // bring their own); the heavy full heads (hyacinths, ranunculus, anemones, tazetta, iris: 6-10 Ko each)
@@ -644,9 +650,15 @@ export function plant(seed = 1, { okAt = () => 1, canopy = (X, Z) => canopyAt(X,
         // (double and parrot tulips, irises, hyacinths: the same drawing then lives in the middle and far files)
         else if (zb >= TM_FAR && TM_LOIN.has(d.sid) && hs >= TM_BIG && tms.length) { tier = 'tm'; name = tms[tms.length - 1]; }
         const th = (clamp(d.wind + 5 * r.gauss(), -16, 16) * Math.PI) / 180;
+        // (a silhouette drew no chance for its width: an upgraded one takes it from a hash)
+        const tier0 = tier;
+        if (PROCHE && tier !== 'tp' && vv.tp.length && (tier !== 'sil' || S)) {
+          tier = 'tp';
+          name = vv.tp[Math.floor(hash(seed, d.seed, X, Z, 11) * vv.tp.length)];
+        }
         if (tier !== 'sil') {
           const v = LIB[name], p = pc(name, tier);
-          const sx = r.range(0.93, 1.07);
+          const sx = tier0 === 'sil' ? lerp(0.93, 1.07, hash(seed, d.seed, X, Z, 13)) : r.range(0.93, 1.07);
           // the receptacle: below the head's top by the head's own reach above it; the stem leans with the head
           const headTop = (Math.max(0, -v.head[1]) / UPC / 100) * k;
           const Hr = Math.max(can * 0.6, Hm - headTop);

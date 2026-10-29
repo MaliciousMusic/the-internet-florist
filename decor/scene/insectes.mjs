@@ -416,9 +416,40 @@ async function start(clumpsOn) {
       copies.delete(key);
       FZ.flip = true;
     }
+    // the close-up's finer pictures (premier.mjs --fin, owner 2026-10-29), read while frise.js holds the close-up's ground,
+    // taken in the frame its ground shows (all of them then, or none: never a change at rest), let go with it
+    const pe = window.Frise.procheEtat;
+    if (pe) {
+      for (const C of copies.values()) {
+        const c = C.c;
+        if (c.fin && !c.finP)
+          c.finP = Assets.load(OUT + c.fin[0])
+            .then((t) => {
+              t.source.scaleMode = 'linear';
+              // (sent to the graphics card while the camera rests, as frise.js its chunks)
+              return window.Frise.gpu ? window.Frise.gpu(t) : t;
+            })
+            .then((t) => (c.finTex = t))
+            .catch(() => {});
+      }
+    } else
+      for (const c of clumps)
+        if (c.finP && !FZ.fine) {
+          const url = OUT + c.fin[0];
+          c.finP.then(() => Assets.unload(url)).catch(() => {});
+          c.finP = c.finTex = null;
+        }
+    const shown = !!(pe && pe.shown);
+    if (shown !== FZ.shown) {
+      FZ.shown = shown;
+      FZ.fine = shown && [...copies.values()].every((C) => !C.c.fin || C.c.finTex);
+    }
     // each copy turns about its foot as its clump does (sway), its heads with it
     for (const C of copies.values()) {
-      const c = C.c, sc = (c.box[2] / c.px[0]) * W.k * essaim.res;
+      const c = C.c;
+      const tex = FZ.fine && c.finTex ? c.finTex : c.tex;
+      if (C.s.texture !== tex) C.s.texture = tex;
+      const sc = (c.box[2] / tex.width) * W.k * essaim.res;
       const X = c.pivot[0] + C.m * T.periode - shift;
       C.s.scale.set(sc);
       C.s.rotation = c.ang;
@@ -498,7 +529,11 @@ async function start(clumpsOn) {
   const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296);
   const insects = [];
   for (const c of CAST) { lists.set(c, []); fronts.set(c, []); }
+  // their first coming in is spread over ENTRY_S from the first kind's loading (owner, 2026-10-29: all came in at once, then
+  // their number fell to its level; a fleet at once overwhelmed the scene): each its own moment, about as many every second
+  const ENTRY_S = 40;
   const loadCast = async () => {
+    const t0 = performance.now();
     for (const c of CAST) {
       const url = `${BASE}${c.kind}/atlas/${c.kind}`;
       // (a kind already loaded with more levels, the bumblebee of the Open button, is kept as it is)
@@ -517,6 +552,7 @@ async function start(clumpsOn) {
         const s = c.make(M, [essaim, i < n ? lists.get(c) : i < nf ? fronts.get(c) : NO_FLOWERS, rnd]);
         s.bodyMm = c.mm(M);
         s.lengthPx = s.bodyMm * pxmm0;
+        if (s.state === 'away') s.t = Math.max(0.3, 0.5 + rnd() * ENTRY_S - (performance.now() - t0) / 1000);
         essaim.add(s);
         insects.push(s);
       }

@@ -380,7 +380,7 @@ pub fn peint(app: &AppHandle, label: &str, svg: &str) -> Result<(), String> {
     match nouveau {
         Some(j) => {
             let nom = format!("Bouquet n° {}", j.id);
-            crate::placer(app, &pid, nom, b, Some(j))
+            crate::placer(app, &pid, nom, b, Some(j), false)
         }
         None => {
             std::fs::write(st.drawing(&pid), &b.svg).map_err(|e| e.to_string())?;

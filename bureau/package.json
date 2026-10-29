@@ -1,7 +1,7 @@
 {
   "name": "belai-bureau",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Belai's Flowers on the desktop: living bouquets set on the wallpaper, anywhere, at any size",
   "type": "module",
   "scripts": {

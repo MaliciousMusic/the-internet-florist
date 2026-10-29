@@ -9,11 +9,15 @@ compatibility_date = "2026-10-01"
 [vars]
 # where the site is served from (cross-origin requests with their cookie are accepted from these)
 ORIGINES = "http://localhost:8835,http://127.0.0.1:8835"
-# "faux": the code is written to the console instead of being sent; "ovh": OVHcloud SMS
+# "faux": the code is written to the console instead of being sent (on localhost only: refused online); "ovh": OVHcloud SMS
 SMS = "faux"
+# the calling codes a text may go to (compte.js, against SMS pumping), and the shop's ceiling of texts a day
+INDICATIFS_SMS = "33,32,41,352,49,34,39,44,1"
+SMS_JOUR = "300"
 # the default country for a number written without its prefix (06 12 34 56 78)
 PAYS = "FR"
-# the payment: "faux" (a payment page of this server's own, local work only) or "stripe" (STRIPE_SECRET, STRIPE_WEBHOOK_SECRET)
+# the payment: "faux" (a payment page of this server's own, on localhost only: refused online) or "stripe" (STRIPE_SECRET,
+# STRIPE_WEBHOOK_SECRET); anything else refuses to sell
 PAIEMENT = "faux"
 # what the shop sells: the site's own boutique.json (prices, the month's collection)
 CATALOGUE = "http://localhost:8835/decor/scene/boutique.json"

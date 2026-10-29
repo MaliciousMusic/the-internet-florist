@@ -23,6 +23,9 @@ pub struct Placed {
     /// Set for a bouquet read from the chain: shown only while the linked wallet owns it.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub nft: Option<Jeton>,
+    /// A bouquet of the shop being tried (essai.rs): one at a time, gone when the app starts again.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub essai: bool,
 }
 
 /// A bouquet NFT on the desk.
@@ -193,6 +196,7 @@ mod tests {
             fixe: false,
             devant: false,
             nft: None,
+            essai: false,
         }
     }
 
@@ -214,6 +218,7 @@ mod tests {
                 Placed {
                     fixe: true,
                     devant: true,
+                    essai: true,
                     nft: Some(Jeton {
                         id: "7".into(),
                         adresse: "0xab".into(),

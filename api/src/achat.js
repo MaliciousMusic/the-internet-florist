@@ -8,7 +8,7 @@
 //   GET  /api/commande/<id>                                                 -> the order, its bouquet once paid
 //   POST /api/stripe/webhook     Stripe's events (checkout.session.completed / expired, charge.dispute.created / closed)
 //   GET  /api/faux-stripe/<id>   the simulated payment page (env.PAIEMENT = "faux"); POST: pay or cancel
-import { identifiant, json, erreur } from './outils.js';
+import { identifiant, local, json, erreur } from './outils.js';
 import { session as stripeSession, evenement } from './stripe.js';
 import { session as connecte } from './compte.js';
 import { produit as produitDe } from './catalogue.js';
@@ -38,7 +38,16 @@ const avec = (u, commande, etat) => {
 export const PRIS = `(SELECT COUNT(*) FROM bouquets WHERE produit = ?1 AND mois = ?2 AND etat <> 'rendu')
                    + (SELECT COUNT(*) FROM commandes WHERE produit = ?1 AND mois = ?2 AND etat = 'en_attente' AND expire > ?3)`;
 
+// how this server takes payments: "stripe", or "faux" (the simulated page) on the developer's machine only. Anything else,
+// a missing setting included, refuses to sell: a forgotten line in wrangler.toml must never give bouquets away
+function modePaiement(req, env) {
+  if (env.PAIEMENT === 'stripe') return 'stripe';
+  if (env.PAIEMENT === 'faux' && local(req)) return 'faux';
+  throw Object.assign(new Error(`PAIEMENT « ${env.PAIEMENT} » refusé ici`), { config: true });
+}
+
 export async function achat(req, env, now = Date.now()) {
+  const mode = modePaiement(req, env);
   const s = await connecte(req, env, now);
   if (!s) return erreur('non_connecte', 401);
   const corps = await lireJson(req);
@@ -85,7 +94,7 @@ export async function achat(req, env, now = Date.now()) {
     return json({ commande: id, url: avec(retour.href, id, 'ok') });
   }
 
-  if ((env.PAIEMENT || 'faux') === 'faux') {
+  if (mode === 'faux') {
     const base = new URL(req.url).origin;
     return json({ commande: id, url: `${base}/api/faux-stripe/${id}` });
   }
@@ -236,7 +245,7 @@ export async function commande(req, env, id, now = Date.now()) {
 // ---------- the simulated payment page (local work and tests, never online: env.PAIEMENT = "faux")
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 export async function fauxStripe(req, env, id, now = Date.now()) {
-  if ((env.PAIEMENT || 'faux') !== 'faux') return erreur('introuvable', 404);
+  if (env.PAIEMENT !== 'faux' || !local(req)) return erreur('introuvable', 404);
   const c = await env.DB.prepare('SELECT * FROM commandes WHERE id = ?').bind(id).first();
   if (!c) return erreur('introuvable', 404);
   if (req.method === 'POST') {

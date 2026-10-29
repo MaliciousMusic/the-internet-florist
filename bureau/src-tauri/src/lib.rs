@@ -4,6 +4,7 @@
 mod bouquet;
 mod chaine;
 mod desk;
+mod essai;
 mod lien;
 mod maintien;
 mod nft;
@@ -286,7 +287,7 @@ fn add(app: &AppHandle, path: &std::path::Path) -> Result<(), String> {
         store::new_id(now, &d.bouquets)
     };
     let name = b.name.clone();
-    placer(app, &id, name, b, None)
+    placer(app, &id, name, b, None, false)
 }
 
 /// Sets a drawn bouquet on the desktop, beside the others, and opens its window.
@@ -296,6 +297,7 @@ fn placer(
     name: String,
     b: bouquet::Bouquet,
     nft: Option<Jeton>,
+    essai: bool,
 ) -> Result<(), String> {
     let st = app.state::<App>();
     let placed = {
@@ -314,6 +316,7 @@ fn placer(
             fixe: false,
             devant: false,
             nft,
+            essai,
         };
         std::fs::create_dir_all(&st.drawings).map_err(|e| e.to_string())?;
         std::fs::write(st.drawing(&p.id), b.svg).map_err(|e| e.to_string())?;
@@ -752,6 +755,24 @@ fn remember(
     st.changed();
 }
 
+/// A `belai://` link: a bouquet of the shop to try, or the web app's signed link to a wallet.
+fn lien(app: &AppHandle, url: &str) {
+    if essai::est_essai(url) {
+        essai::recu(app, url);
+    } else {
+        nft::lien_recu(app, url);
+    }
+}
+
+/// A warning in a dialog of its own.
+fn avertir(app: &AppHandle, texte: impl Into<String>) {
+    app.dialog()
+        .message(texte)
+        .title("Belai's Flowers")
+        .kind(MessageDialogKind::Warning)
+        .show(|_| {});
+}
+
 fn links_in(args: &[String]) -> Vec<String> {
     args.iter()
         .skip(1)
@@ -777,7 +798,7 @@ pub fn run() {
             // the running one takes it
             let links = links_in(&args);
             for l in &links {
-                nft::lien_recu(app, l);
+                lien(app, l);
             }
             let files = files_in(&args);
             if files.is_empty() && links.is_empty() {
@@ -847,6 +868,18 @@ pub fn run() {
             }
             let handle = app.handle().clone();
 
+            // the bouquet tried last time is gone
+            let tries: Vec<String> = {
+                let d = handle.state::<App>().desk.lock().unwrap();
+                d.bouquets
+                    .iter()
+                    .filter(|b| b.essai)
+                    .map(|b| b.id.clone())
+                    .collect()
+            };
+            for id in tries {
+                remove(&handle, &id);
+            }
             // bouquets whose screen is gone come back on the main one
             let all = areas(&handle);
             let placed = {
@@ -895,7 +928,7 @@ pub fn run() {
             }
             let args: Vec<String> = std::env::args().collect();
             for l in links_in(&args) {
-                nft::lien_recu(&handle, &l);
+                lien(&handle, &l);
             }
             nft::veiller(handle.clone());
             guetter(handle.clone());
