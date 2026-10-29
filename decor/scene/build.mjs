@@ -171,6 +171,56 @@ const ENTREE = [
     '})();</script>',
 ];
 
+// The page's own protections (security audit, 2026-10-29). GitHub Pages sends no security headers (_worker.js's apply on
+// Cloudflare Pages only), so each page carries them itself, first thing in its head:
+// - its Content-Security-Policy in a meta: scripts from the site only, each inline one by its hash (a script slipped into
+//   the page, or a javascript: address, does not run); 'unsafe-eval' because PixiJS 8 compiles its shaders' code and the
+//   KTX2 transcoder is WebAssembly; the shop's server (boutique.json "api", and the local one on port 8790) may be called
+//   and framed (its invoices);
+// - a guard against clickjacking, which a meta cannot set (frame-ancestors): shown in another site's frame, the page hides
+//   itself and asks to be the whole window. A frame that forbids scripts gets a page whose buttons do nothing.
+const CADRE =
+  '<script>if(top!==self){try{if(top.location.origin!==location.origin)throw 0}catch(e){' +
+  'document.documentElement.style.display="none";try{top.location.replace(location.href)}catch(f){}}}</script>';
+const SERVEUR = (() => {
+  const o = ['http://localhost:8790', 'http://127.0.0.1:8790'];
+  try {
+    const api = JSON.parse(readFileSync(join(HERE, 'boutique.json'), 'utf8')).api;
+    if (api) o.unshift(new URL(api).origin);
+  } catch (_) {}
+  return o.join(' ');
+})();
+function protege(html) {
+  html = html.replace('<meta charset="utf-8">', `<meta charset="utf-8">\n${CADRE}`);
+  const hashes = new Set();
+  for (const [, attrs, body] of html.matchAll(/<script(\s[^>]*)?>([\s\S]*?)<\/script>/g)) {
+    const a = attrs || '';
+    if (/\ssrc=/.test(a)) continue;
+    const type = (/\stype="([^"]*)"/.exec(a) || [])[1];
+    if (type && type !== 'module' && type !== 'text/javascript') continue; // data (JSON-LD, the texts) never runs
+    hashes.add(`'sha256-${createHash('sha256').update(body).digest('base64')}'`);
+  }
+  // the landing picture's onload and onerror (affiche): allowed by their exact text ('unsafe-hashes'), nothing else inline
+  const handlers = new Set();
+  for (const [, body] of html.matchAll(/\son[a-z]+="([^"]*)"/g)) handlers.add(`'sha256-${createHash('sha256').update(body.replace(/&amp;/g, '&')).digest('base64')}'`);
+  if (handlers.size) hashes.add("'unsafe-hashes'").add([...handlers].join(' '));
+  const csp = [
+    "default-src 'self'",
+    `script-src 'self' 'unsafe-eval' ${[...hashes].join(' ')}`,
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data: blob:",
+    "media-src 'self' blob:",
+    "font-src 'self'",
+    `connect-src 'self' data: blob: ${SERVEUR}`,
+    "worker-src 'self' blob:",
+    `frame-src 'self' blob: ${SERVEUR}`,
+    "object-src 'none'",
+    "base-uri 'self'",
+    `form-action 'self' ${SERVEUR}`,
+  ].join('; ');
+  return html.replace(CADRE, `<meta http-equiv="Content-Security-Policy" content="${csp}">\n${CADRE}`);
+}
+
 function preloads() {
   // (all after the landing's picture, which alone makes the first screen: the canvas, its data and PixiJS come behind it)
   return [
@@ -315,7 +365,7 @@ for (const L of langs) {
         return String(v);
       });
     if (page === 'index') html = apercu(html);
-    html = versioned(html);
+    html = protege(versioned(html));
     writeFileSync(join(HERE, p, `${page}.html`), html.replace(/\n/g, '\r\n'));
     written++;
   }

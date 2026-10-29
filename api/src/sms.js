@@ -9,7 +9,8 @@
 const OVH = 'https://eu.api.ovh.com/1.0';
 
 export async function envoie(env, destinataire, message) {
-  if ((env.SMS || 'faux') === 'faux') {
+  // (no sender set is an error, never the simulated one: compte.js lets "faux" work on the developer's machine only)
+  if (env.SMS === 'faux') {
     console.log(`[sms faux] à ${destinataire} : ${message}`);
     // the tests read the last message here
     if (env.__sms) env.__sms.push({ a: destinataire, message });

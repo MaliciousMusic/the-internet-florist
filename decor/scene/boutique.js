@@ -790,7 +790,20 @@
   });
 
   // ---------- the shop's server
-  const apiBase = () => ((CFG && CFG.api) || q.get('api') || '').replace(/\/$/, '');
+  // (?api= on the developer's machine only: online, a link carrying it would send the visitor's number and code elsewhere)
+  const LOCAL = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+  const apiBase = () => ((CFG && CFG.api) || (LOCAL && q.get('api')) || '').replace(/\/$/, '');
+  // where a purchase may send the visitor: Stripe's payment page, this site, or the shop's server (its simulated page, local)
+  function sortieSure(u) {
+    try {
+      const x = new URL(u, location.href);
+      if (x.protocol === 'https:' && x.hostname === 'checkout.stripe.com') return true;
+      if (!/^https?:$/.test(x.protocol)) return false;
+      return x.origin === location.origin || (!!apiBase() && x.origin === new URL(apiBase()).origin);
+    } catch (_) {
+      return false;
+    }
+  }
   async function api(path, body, method) {
     const r = await fetch(apiBase() + path, {
       method: method || (body ? 'POST' : 'GET'),
@@ -819,6 +832,7 @@
   const errText = (j) =>
     ({
       numero_invalide: T.wrongNumber,
+      pays_non_desservi: T.wrongNumber,
       trop_de_demandes: T.tooMany,
       trop_d_essais: T.tooMany,
       code_expire: T.codeExpired,
@@ -856,7 +870,7 @@
       cx.hidden = true;
     }
     const r = await api('/api/achat', { produit: curP.id, renonce: true, texte: consent.text, langue: I18N.code, retour: location.href });
-    if (r.status !== 200 || !r.url) {
+    if (r.status !== 200 || !r.url || !sortieSure(r.url)) {
       busy(false);
       return void (note.textContent = errText(r));
     }

@@ -9,7 +9,7 @@
 //   POST   /api/moi           { prenom }                          -> { compte }
 //   POST   /api/deconnexion                                      -> { ok }
 //   DELETE /api/moi                                               -> { ok }                  erased 30 days later
-import { empreinte, chiffre, sha256, jeton, identifiant, codeChiffres, egal, numero, prenom, json, erreur, cookies } from './outils.js';
+import { empreinte, chiffre, sha256, jeton, identifiant, codeChiffres, egal, numero, prenom, joignable, INDICATIFS_SMS, local, json, erreur, cookies } from './outils.js';
 import { envoie } from './sms.js';
 
 const MIN = 60 * 1000;
@@ -19,12 +19,17 @@ export const COOKIE = 'belai_session';
 const CODE_VIE = 10 * MIN;
 const ESSAIS = 5;
 const SESSION = { site: 30 * J, bureau: 365 * J };
-// how many texts: one a minute and five an hour for a number, ten an hour for an address
+// how many texts: one a minute, five an hour and ten a day for a number, ten an hour for an address, and for the whole shop
+// env.SMS_JOUR a day (a ceiling against SMS pumping from many numbers and addresses at once)
 const LIMITES = [
   ['sms1', MIN, 1],
   ['sms60', H, 5],
+  ['sms24', J, 10],
 ];
 const LIMITE_IP = [H, 10];
+const SMS_JOUR = 300;
+// wrong codes for a number in a day, whatever the number of codes asked for: past it, no more codes until the day is over
+const FAUX_JOUR = 15;
 
 const MESSAGES = {
   fr: (c) => `Belai's Garden : votre code est ${c}. Il est valable 10 minutes. Ne le donnez à personne.`,
@@ -39,16 +44,26 @@ function secrets(env) {
   return env;
 }
 
-// a counter in its window: true while under the limit (counts this one), false once over
+// a counter in its window: true while under the limit (counts this one), false once over. Counted and read in one statement,
+// so that requests sent all at once cannot all read the same count and slip under the limit together
 async function compte1(db, cle, fenetre, max, now) {
+  const row = await db
+    .prepare(
+      `INSERT INTO limites (cle, nombre, debut) VALUES (?1, 1, ?2)
+       ON CONFLICT(cle) DO UPDATE SET nombre = CASE WHEN ?2 - debut >= ?3 THEN 1 ELSE nombre + 1 END,
+                                      debut = CASE WHEN ?2 - debut >= ?3 THEN ?2 ELSE debut END
+       RETURNING nombre, debut`,
+    )
+    .bind(cle, now, fenetre)
+    .first();
+  if (row.nombre <= max) return { ok: true };
+  return { ok: false, attendre: Math.ceil((row.debut + fenetre - now) / 1000) };
+}
+// a counter read without counting: { ok: false, attendre } once it has reached its limit
+async function depasse(db, cle, fenetre, max, now) {
   const row = await db.prepare('SELECT nombre, debut FROM limites WHERE cle = ?').bind(cle).first();
-  if (!row || now - row.debut >= fenetre) {
-    await db.prepare('INSERT INTO limites (cle, nombre, debut) VALUES (?, 1, ?) ON CONFLICT(cle) DO UPDATE SET nombre = 1, debut = excluded.debut').bind(cle, now).run();
-    return { ok: true };
-  }
-  if (row.nombre >= max) return { ok: false, attendre: Math.ceil((row.debut + fenetre - now) / 1000) };
-  await db.prepare('UPDATE limites SET nombre = nombre + 1 WHERE cle = ?').bind(cle).run();
-  return { ok: true };
+  if (!row || now - row.debut >= fenetre || row.nombre < max) return { ok: true };
+  return { ok: false, attendre: Math.ceil((row.debut + fenetre - now) / 1000) };
 }
 
 const lireJson = async (req) => {
@@ -64,18 +79,30 @@ const ECHANGE = 24 * 60 * 60 * 1000;
 
 export async function demande(req, env, now = Date.now()) {
   secrets(env);
+  // the simulated texts write the code to the logs: on the developer's machine only
+  if (env.SMS !== 'ovh' && !(env.SMS === 'faux' && local(req))) throw Object.assign(new Error(`SMS « ${env.SMS} » refusé ici`), { config: true });
   const corps = await lireJson(req);
   const n = numero(corps.numero, env.PAYS);
   if (!n) return erreur('numero_invalide');
+  if (!joignable(n, env.INDICATIFS_SMS || INDICATIFS_SMS)) return erreur('pays_non_desservi');
   const fp = await empreinte(env.POIVRE, n);
+  const f = await depasse(env.DB, `faux:${fp}`, J, FAUX_JOUR, now);
+  if (!f.ok) return erreur('trop_de_demandes', 429, { attendre: f.attendre });
   for (const [nom, fenetre, max] of LIMITES) {
     const r = await compte1(env.DB, `${nom}:${fp}`, fenetre, max, now);
     if (!r.ok) return erreur('trop_de_demandes', 429, { attendre: r.attendre });
   }
   const ip = req.headers.get('cf-connecting-ip') || '';
   if (ip) {
-    const r = await compte1(env.DB, `ip:${await sha256(ip)}`, LIMITE_IP[0], LIMITE_IP[1], now);
+    // (the address keyed with the pepper, as the numbers: a plain hash of an IPv4 address is reversed in minutes)
+    const r = await compte1(env.DB, `ip:${await empreinte(env.POIVRE, `ip:${ip}`)}`, LIMITE_IP[0], LIMITE_IP[1], now);
     if (!r.ok) return erreur('trop_de_demandes', 429, { attendre: r.attendre });
+  }
+  // the shop's ceiling, counted last: only the texts that would really go out
+  const g = await compte1(env.DB, 'sms:boutique', J, Number(env.SMS_JOUR) || SMS_JOUR, now);
+  if (!g.ok) {
+    console.error('[sms] plafond du jour atteint');
+    return erreur('trop_de_demandes', 429, { attendre: g.attendre });
   }
   const code = codeChiffres(6);
   const expire = now + CODE_VIE;
@@ -93,22 +120,37 @@ export async function verifie(req, env, now = Date.now()) {
   if (!n) return erreur('numero_invalide');
   const client = corps.client === 'bureau' ? 'bureau' : 'site';
   const fp = await empreinte(env.POIVRE, n);
-  const row = await env.DB.prepare('SELECT code_hash, expire, essais FROM codes_sms WHERE empreinte = ?').bind(fp).first();
-  if (!row || row.expire <= now) return erreur('code_expire');
-  if (row.essais >= ESSAIS) {
+  // the attempt is counted before the code is compared, in one statement: requests sent all at once each take their own
+  // attempt, and none is compared once the five are used
+  const row = await env.DB.prepare('UPDATE codes_sms SET essais = essais + 1 WHERE empreinte = ? AND expire > ? AND essais < ? RETURNING code_hash, essais')
+    .bind(fp, now, ESSAIS)
+    .first();
+  if (!row) {
+    const r = await env.DB.prepare('SELECT expire FROM codes_sms WHERE empreinte = ?').bind(fp).first();
+    if (!r || r.expire <= now) return erreur('code_expire');
     await env.DB.prepare('DELETE FROM codes_sms WHERE empreinte = ?').bind(fp).run();
     return erreur('trop_d_essais', 429);
   }
   const code = String(corps.code || '').replace(/\D/g, '');
   if (!egal(await sha256(`${fp}:${code}`), row.code_hash)) {
-    await env.DB.prepare('UPDATE codes_sms SET essais = essais + 1 WHERE empreinte = ?').bind(fp).run();
-    return erreur('code_faux', 400, { reste: Math.max(0, ESSAIS - row.essais - 1) });
+    // the wrong codes of the day, all codes together: past them the code goes, and no other is sent until the day is over
+    const f = await compte1(env.DB, `faux:${fp}`, J, FAUX_JOUR, now);
+    if (!f.ok) {
+      await env.DB.prepare('DELETE FROM codes_sms WHERE empreinte = ?').bind(fp).run();
+      return erreur('trop_d_essais', 429);
+    }
+    return erreur('code_faux', 400, { reste: Math.max(0, ESSAIS - row.essais) });
   }
   // the account: found by its fingerprint, made if new (a deletion asked for is cancelled by signing in again). A new one
-  // needs a first name: without one the code is kept, to be sent again with it
+  // needs a first name: without one the code is kept (and this attempt given back), to be sent again with it
   let c = await env.DB.prepare('SELECT * FROM comptes WHERE empreinte = ?').bind(fp).first();
-  if (!c && !prenom(corps.prenom)) return erreur('prenom_requis');
-  await env.DB.prepare('DELETE FROM codes_sms WHERE empreinte = ?').bind(fp).run();
+  if (!c && !prenom(corps.prenom)) {
+    await env.DB.prepare('UPDATE codes_sms SET essais = essais - 1 WHERE empreinte = ? AND essais > 0').bind(fp).run();
+    return erreur('prenom_requis');
+  }
+  // the code used once: of two right requests at the same time, only one signs in
+  const pris = await env.DB.prepare('DELETE FROM codes_sms WHERE empreinte = ? AND code_hash = ? RETURNING empreinte').bind(fp, row.code_hash).first();
+  if (!pris) return erreur('code_expire');
   let nouveau = false;
   if (!c) {
     nouveau = true;

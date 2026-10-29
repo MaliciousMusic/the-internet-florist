@@ -48,10 +48,19 @@ npx wrangler d1 execute belai --remote --command "UPDATE bouquets SET fin = COAL
 - **Le numéro** n'est jamais stocké en clair. Il est chiffré en AES-GCM avec `CLE_NUMEROS`, et une empreinte HMAC calculée
   avec `POIVRE` sert à retrouver le compte. Il n'est relu que pour envoyer un SMS.
 - **Les codes et les jetons** ne sont gardés que sous forme d'empreinte SHA-256, et comparés en temps constant.
-- **Les limites** :
-  - un SMS par minute et cinq par heure pour un numéro ;
-  - dix par heure pour une adresse IP ;
-  - cinq essais faux par code, puis le code est détruit.
+- **Les limites** (comptées et lues en une seule requête SQL : des requêtes envoyées toutes à la fois ne passent pas
+  dessous ensemble) :
+  - un SMS par minute, cinq par heure et dix par jour pour un numéro ;
+  - dix par heure pour une adresse IP (gardée en empreinte avec `POIVRE`) ;
+  - `SMS_JOUR` SMS par jour pour toute la boutique (300 par défaut) ;
+  - cinq essais faux par code, puis le code est détruit ; quinze codes faux par jour pour un numéro, puis plus aucun
+    code jusqu'au lendemain.
+- **Les pays desservis** : un SMS ne part que vers les indicatifs de `INDICATIFS_SMS` (par défaut 33, 32, 41, 352, 49,
+  34, 39, 44 et 1), et dans la zone +1 vers les États-Unis et le Canada seulement : les numéros des Caraïbes qui la
+  partagent sont la cible favorite du SMS pumping.
+- **Les modes simulés** : `SMS = "faux"` et `PAIEMENT = "faux"` ne marchent que sur la machine du développeur
+  (`localhost`, `127.0.0.1`, `*.test`). En ligne, ces réglages, comme un réglage absent, renvoient une erreur de
+  configuration : un oubli dans `wrangler.toml` ne peut ni écrire les codes dans les journaux, ni donner des bouquets.
 - **Le CORS** n'est ouvert, avec cookie, qu'aux pages listées dans `ORIGINES`.
 - **Le cookie** est `HttpOnly; Secure; SameSite=Lax`. En ligne, le site et ce serveur doivent donc être sur le même
   domaine (par exemple `belai.garden` et `belai.garden/api` sur Cloudflare), sinon les navigateurs refusent le cookie.
