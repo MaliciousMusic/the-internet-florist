@@ -86,11 +86,23 @@ Essayé en ligne. Trois demandes :
     bouquet entier.
   - Mac et Linux (pas encore de Belai Bureau) gardent le partage d'écran ; téléphone, la capture choisie.
 
-**Questions ouvertes (propositions faites, à confirmer) :**
-- Q2 du QCM, Mac et Linux : partage d'écran raccourci (un seul raccourci) ou capture choisie ? Rien n'a changé pour eux.
-- Durée de l'essai dans Belai Bureau : jusqu'au redémarrage de l'appli (proposé), ou quelques minutes ?
-- Un Belai Bureau 0.1.0 déjà installé ne connaît pas `belai://essai` : il répond « Cette version de l'appli ne lit pas
-  encore les bouquets NFT ». Il faut installer la 0.2.0.
+**Revirement le même soir.** Essayé en ligne : l'installeur de Belai Bureau n'est pas signé, et SmartScreen le bloque
+(« Windows a protégé votre ordinateur »). Décisions du porteur :
+- jamais d'abeille qui explique comment passer un avertissement de Microsoft : les visiteurs croiraient à une arnaque ;
+- ni certificat payant (Certum, 69 € par an), ni SignPath : il exige que toute l'appli soit libre, moteur des fleurs
+  compris ;
+- **pour garder un bouquet** (la version finale) : Belai Bureau passera par le Microsoft Store, avec un compte
+  développeur gratuit. Le porteur crée le compte, puis on fait valider l'appli ;
+- **pour la démo**, installer une appli est trop lourd : on revient au partage d'écran. L'abeille demande d'abord
+  (« Partager mon écran », « Pas maintenant »), son bouton ouvre le sélecteur, et elle dit alors de cliquer sur l'écran
+  puis sur Partager.
+
+Le site n'ouvre donc plus `belai://essai`. Le code de Belai Bureau qui le reçoit (`essai.rs`, version 0.2.0) reste dans
+`bureau/`, pour la version du Store. Il n'est **ni compilé ni testé** : la compilation, lancée depuis Git Bash, a pris le
+`link` de Git au lieu de celui de Visual Studio. Il faut la relancer depuis PowerShell.
+
+Reste vrai : une page ne voit pas le bureau sous le navigateur. Pour la photo du bureau, le visiteur doit l'écarter une
+fois (⊞ + D, deux fois). Aucune page ne peut le faire à sa place.
 
 ## Fichiers
 

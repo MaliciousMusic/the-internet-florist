@@ -555,7 +555,7 @@
     if (!on && essaiMod) essaiMod.then((m) => m.fermer());
     // the camera stays facing the bouquet while it is seen close
     Frise.fige(on);
-    // ("Try on your desktop" fetched now: its click opens the screen picker at once, essai.mjs)
+    // ("Try on your desktop" fetched now: its bee is there at once on the click, essai.mjs)
     if (on) loadEssai().catch(() => {});
     scene.classList.toggle('proche', on);
     // only the chosen bouquet in the close-up (owner 2026-10-26), swaying in its finer sprites (owner 2026-10-27)
@@ -728,9 +728,6 @@
           jours: (CFG.vie && CFG.vie.jours) || 30,
           index: () => read(p),
           base: fileOf(p).replace(/sprites\.json$/, ''),
-          // the bouquet open in one file, as Belai Bureau reads it to set it on the desktop (belai://essai)
-          ouvert: new URL(p.bouquet.replace(/manifeste\.json$/, 'ouvert.json'), document.baseURI).href,
-          nom: p.nom,
           // the bouquet on screen, which the bee's bubble keeps clear of while the page is still seen
           evite: () => (near && !target.hidden ? target.getBoundingClientRect() : null),
           focusBack: () => $('achat-demo').focus({ preventScroll: true }),
