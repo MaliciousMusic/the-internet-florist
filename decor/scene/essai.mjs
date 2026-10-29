@@ -358,21 +358,24 @@ export async function ouvrir(api) {
   // ---------- Windows: Belai Bureau sets the bouquet; the app taking the focus says it opened. Nothing after a few seconds:
   // not installed yet (or the browser's own question still open), the installer offered and the link once more
   function bureau() {
-    let opened = false;
+    // (only while a launch is awaited: later, the installer or any other window taking the focus says nothing of the app;
+    // owner, 2026-10-29: Windows' SmartScreen over the installer was taken for Belai Bureau)
+    let awaiting = false;
     let wait = 0;
     const essayer = (launch) => {
-      opened = false;
+      awaiting = true;
       if (launch) location.href = lien();
       etape(T.bureau);
       clearTimeout(wait);
       wait = setTimeout(() => {
-        if (closed || opened) return;
+        if (closed || !awaiting) return;
+        awaiting = false;
         etape(T.bureauAbsent, [[T.telecharger, null, true, `telechargements/${B.installer}`], [T.reessayer, () => essayer(true)], [T.annuler, fermer]]);
       }, 4500);
     };
     on(window, 'blur', () => {
-      if (opened || closed) return;
-      opened = true;
+      if (!awaiting || closed) return;
+      awaiting = false;
       clearTimeout(wait);
       etape(T.bureauPose, [[T.retour, fermer, true]]);
     });
