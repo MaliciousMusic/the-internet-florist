@@ -728,6 +728,9 @@
           jours: (CFG.vie && CFG.vie.jours) || 30,
           index: () => read(p),
           base: fileOf(p).replace(/sprites\.json$/, ''),
+          // the bouquet open in one file, as Belai Bureau reads it to set it on the desktop (belai://essai)
+          ouvert: new URL(p.bouquet.replace(/manifeste\.json$/, 'ouvert.json'), document.baseURI).href,
+          nom: p.nom,
           // the bouquet on screen, which the bee's bubble keeps clear of while the page is still seen
           evite: () => (near && !target.hidden ? target.getBoundingClientRect() : null),
           focusBack: () => $('achat-demo').focus({ preventScroll: true }),

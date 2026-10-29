@@ -63,6 +63,35 @@ Essai réel réussi (son vrai bureau, fond rose). Demandes :
 **En attente d'une décision** : le cycle accéléré (rosée du matin, fanaison complète). Les sprites du site n'ont que l'état
 ouvert ; la rosée n'existe nulle part, et la fanaison n'est dessinée que pour une partie des espèces.
 
+## Troisième retour du porteur (29 octobre 2026, branche `ch/essai-bulle`)
+
+Essayé en ligne. Trois demandes :
+- **La bulle restait affichée** quand on revenait du gros plan à la vue d'ensemble. Désormais, reculer (clic sur le ciel ou
+  sur le bouquet, rayon du dock, bouquet suivant) ferme l'essai, son abeille et sa bulle. Un partage d'écran accordé après la
+  fermeture est relâché aussitôt.
+- **La bulle cachait le bouquet.** Tant que la page se voit, elle se place dans l'espace libre à droite du bouquet, sinon à
+  gauche, dessous ou dessus ; elle prend la place qui en cache le moins. Sur téléphone, elle se met sous le bouquet, sur le
+  pilier. En plein écran, elle reste en haut au milieu.
+- **Plus de détour par le partage d'écran.** Recensement : aucune page ne peut sauter le sélecteur du navigateur, ni cliquer
+  « Partager » à la place du visiteur, ni réduire les fenêtres. QCM, réponse du porteur : **Belai Bureau**.
+  - Sous Windows, le clic sur « Try on your desktop » ouvre `belai://essai?u=<ouvert.json du bouquet>&n=<son nom>`.
+    Belai Bureau (0.2.0, `bureau/src-tauri/src/essai.rs`) lit ce fichier sur le site. Il n'accepte que les adresses de la
+    boutique. Il remet les morceaux en un seul dessin, les morceaux dans la brise marqués `data-bz`, et le pose sur le
+    vrai bureau, avec son cadre, son coin et son ✓. C'est un essai : un seul à la fois, nommé « Essai · … », retiré au
+    redémarrage suivant de l'appli.
+  - L'abeille dit « je le pose avec Belai Bureau ; si le navigateur demande, choisissez Ouvrir ». Si l'appli prend la main,
+    elle dit « le voilà ». Si rien ne s'ouvre en 4,5 s, elle propose l'installeur, « Réessayer » et « Pas maintenant ».
+  - Le widget ne garde plus, dans chaque calque, que les morceaux dont ce calque a besoin (identifiants pointés), au lieu de
+    tous les morceaux qui ont un identifiant. Sans cela, chacun des quelque 75 calques d'un bouquet du site aurait porté le
+    bouquet entier.
+  - Mac et Linux (pas encore de Belai Bureau) gardent le partage d'écran ; téléphone, la capture choisie.
+
+**Questions ouvertes (propositions faites, à confirmer) :**
+- Q2 du QCM, Mac et Linux : partage d'écran raccourci (un seul raccourci) ou capture choisie ? Rien n'a changé pour eux.
+- Durée de l'essai dans Belai Bureau : jusqu'au redémarrage de l'appli (proposé), ou quelques minutes ?
+- Un Belai Bureau 0.1.0 déjà installé ne connaît pas `belai://essai` : il répond « Cette version de l'appli ne lit pas
+  encore les bouquets NFT ». Il faut installer la 0.2.0.
+
 ## Fichiers
 
 - `scene/essai.mjs` et `scene/essai.css` (le module est chargé au clic, avec l'empreinte `data-essai-v` de la page) ;

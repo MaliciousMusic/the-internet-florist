@@ -38,23 +38,26 @@ test('only links inside the drawing or embedded pictures stay', () => {
   assert.ok(!safeHref('data:text/html,<b>'));
 });
 
-import { isQuiet, placeOf, plan } from '../ui/js/layers.js';
+import { isQuiet, placeOf, plan, usesOf } from '../ui/js/layers.js';
 
 test('the drawing is cut into still and swaying layers, in painting order', () => {
-  const P = (xml, bz = null, quiet = false, defines = false) => ({ xml, bz, quiet, defines });
+  const P = (xml, bz = null, quiet = false, ids = []) => ({ xml, bz, quiet, ids, uses: usesOf(xml) });
   const layers = plan('<svg>', [
     P('<defs/>', null, true),
-    P('<g id="a"/>', null, false, true),
+    P('<g id="a"><use href="#z"/></g>', null, false, ['a']),
     P('<g b/>'),
-    P('<g s1/>', '1,2,3'),
+    P('<g s1 fill="url(#a)"/>', '1,2,3'),
     P('<g c/>'),
     P('<g s2/>', '1,2,3'),
     P('<g s3/>', '0.5,2,3'),
+    P('<g id="z"/>', null, false, ['z']),
   ]);
-  assert.deepEqual(layers.map(l => l.bz), [null, '1,2,3', null, '1,2,3', '0.5,2,3']);
-  assert.equal(layers[0].svg, '<svg><defs/><g id="a"/><g b/></svg>');
-  // the other layers keep the definitions hidden, and drop what defines nothing
-  assert.equal(layers[1].svg, '<svg><defs/><g visibility="hidden"><g id="a"/></g><g s1/></svg>');
+  assert.deepEqual(layers.map(l => l.bz), [null, '1,2,3', null, '1,2,3', '0.5,2,3', null]);
+  assert.equal(layers[0].svg, '<svg><defs/><g id="a"><use href="#z"/></g><g b/><g visibility="hidden"><g id="z"/></g></svg>');
+  // a layer keeps hidden what it points at, and what that points at; the others drop it
+  assert.equal(layers[1].svg, '<svg><defs/><g visibility="hidden"><g id="a"><use href="#z"/></g></g><g s1 fill="url(#a)"/><g visibility="hidden"><g id="z"/></g></svg>');
+  assert.equal(layers[3].svg, '<svg><defs/><g s2/></svg>');
+  assert.deepEqual(usesOf('<path fill="url(#g1)" xlink:href="#u2" href="#g1"/>'), ['g1', 'u2']);
   assert.equal(plan('<svg>', [P('<defs/>', null, true)]).length, 0);
   assert.ok(isQuiet('linearGradient') && isQuiet('defs') && !isQuiet('g') && !isQuiet('path'));
 });

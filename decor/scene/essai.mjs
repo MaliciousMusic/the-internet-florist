@@ -5,11 +5,15 @@
 //     screen is grabbed while the page is hidden: their bare desktop, taskbar and icons as they are. The sharing stops at
 //     once; the picture never leaves the page (no upload). Back on the page, one click brings it full screen (the
 //     Fullscreen API): the picture fills the screen pixel for pixel, the page is gone, the bouquet stands on the desktop;
-//   - a phone (no screen sharing there): the visitor takes a screenshot of their home screen and picks it.
+//   - a phone (no screen sharing there): the visitor takes a screenshot of their home screen and picks it;
+//   - a Windows computer (owner, 2026-10-29: no detour by the screen any more): Belai Bureau sets the bouquet on the real
+//     desktop itself, opened by a belai://essai link on the very click (essai.rs, in bureau/); the bee says what happens,
+//     and gives the installer when nothing opened.
 // Then, in its frame (as Belai Bureau places it): drag it, pull a corner, ✓. It sways in the breeze (its close-up sprites,
 // sprites.mjs, each piece turning about its joint as on the frieze). Escape, the ✕ or leaving full screen close it.
 //
-//   import('./essai.mjs').then((m) => m.ouvrir(api))   api: { T, I18N, index: () => Promise<sprites index>, base, focusBack }
+//   import('./essai.mjs').then((m) => m.ouvrir(api))
+//     api: { T, I18N, index: () => Promise<sprites index>, base, ouvert, nom, evite: () => DOMRect | null, focusBack }
 //   m.fermer()
 
 const BASE = new URL('../../insectes/', import.meta.url).href;
@@ -30,9 +34,15 @@ export async function ouvrir(api) {
   if (run) return;
   const T = api.T.essai;
   const PHONE = !(navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia) || matchMedia('(pointer: coarse) and (max-width: 899px)').matches;
-  // a computer: the browser's sharing picker opens on the very click of "Try on your desktop" (owner, 2026-10-28: one button
-  // rather than steps before it; the picker itself no page can skip), its "Entire screen" chosen beforehand
-  let firstAsk = PHONE ? null : askScreen();
+  // Windows: Belai Bureau, opened on the very click (an app is launched only from a click), the bouquet's file named in
+  // the link (only the shop's addresses are read by the app)
+  const B = api.I18N.bureau || {};
+  const BUREAU = !PHONE && /Windows/.test(navigator.userAgent) && !!B.installer && !!api.ouvert;
+  const lien = () => `belai://essai?u=${encodeURIComponent(api.ouvert)}&n=${encodeURIComponent(api.nom || '')}`;
+  if (BUREAU) location.href = lien();
+  // another computer: the browser's sharing picker opens on the very click of "Try on your desktop" (owner, 2026-10-28: one
+  // button rather than steps before it; the picker itself no page can skip), its "Entire screen" chosen beforehand
+  let firstAsk = PHONE || BUREAU ? null : askScreen();
   if (firstAsk) firstAsk.catch(() => {}); // (declined before it is awaited: no unhandled rejection)
   // the system's "show the desktop" shortcut, pressed twice: every window out of the way (not only the browser: owner's try,
   // a window under it was taken for the desktop), then back as they were. No page can minimise or restore its window.
@@ -255,6 +265,8 @@ export async function ouvrir(api) {
     if (first) first.focus({ preventScroll: true });
   }
 
+  if (BUREAU) return void bureau();
+
   // ---------- the desktop's picture
   const shot = PHONE ? await phoneShot() : await desktopShot();
   if (!shot || closed) return;
@@ -335,7 +347,6 @@ export async function ouvrir(api) {
   if (closed) return;
 
   // ---------- the end: the bouquet set, the way to keep it
-  const B = api.I18N.bureau || {};
   const win = /Windows/.test(navigator.userAgent);
   const fin = PHONE ? [T.finTel, [[T.retour, fermer, true]]] : win && B.installer
       ? [fill(T.fin, { jours: api.jours || 30 }), [[T.telecharger, null, true, `telechargements/${B.installer}`], [T.retour, fermer]]]
@@ -344,7 +355,32 @@ export async function ouvrir(api) {
   // (its first button, made by etape)
   cible = middle(actions.querySelector('.essai-bouton-1'), 40);
 
-  // ---------- a computer: the screen shared, the desktop shown (the shortcut), grabbed
+  // ---------- Windows: Belai Bureau sets the bouquet; the app taking the focus says it opened. Nothing after a few seconds:
+  // not installed yet (or the browser's own question still open), the installer offered and the link once more
+  function bureau() {
+    let opened = false;
+    let wait = 0;
+    const essayer = (launch) => {
+      opened = false;
+      if (launch) location.href = lien();
+      etape(T.bureau);
+      clearTimeout(wait);
+      wait = setTimeout(() => {
+        if (closed || opened) return;
+        etape(T.bureauAbsent, [[T.telecharger, null, true, `telechargements/${B.installer}`], [T.reessayer, () => essayer(true)], [T.annuler, fermer]]);
+      }, 4500);
+    };
+    on(window, 'blur', () => {
+      if (opened || closed) return;
+      opened = true;
+      clearTimeout(wait);
+      etape(T.bureauPose, [[T.retour, fermer, true]]);
+    });
+    offs.push(() => clearTimeout(wait));
+    essayer(false);
+  }
+
+  // ---------- another computer: the screen shared, the desktop shown (the shortcut), grabbed
   function askScreen() {
     return navigator.mediaDevices.getDisplayMedia({
       video: { displaySurface: 'monitor', frameRate: 5 },

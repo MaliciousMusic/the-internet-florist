@@ -1,6 +1,6 @@
 [package]
 name = "belai-bureau"
-version = "0.1.0"
+version = "0.2.0"
 description = "Belai's Flowers on the desktop: living bouquets set on the wallpaper"
 edition = "2021"
 publish = false
