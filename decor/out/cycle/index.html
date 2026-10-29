@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cycle des bouquets</title>
+<style>
+  :root { --fond: #3d6f8e; }
+  html, body { margin: 0; height: 100%; background: var(--fond); color: #fff; font: 600 14px system-ui, sans-serif; }
+  body { display: grid; place-items: center; overflow: hidden; }
+  canvas { height: min(86vh, 960px); max-width: 96vw; object-fit: contain; }
+  #barre { position: fixed; left: 12px; top: 10px; right: 12px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  button { font: inherit; padding: 5px 10px; border: 0; border-radius: 6px; background: #ffffffd9; color: #1d2b33; cursor: pointer; }
+  button[aria-pressed="true"] { background: #1d2b33; color: #fff; }
+  #etat { margin-left: 8px; }
+</style>
+</head>
+<body>
+<div id="barre">
+  <span id="choix"></span>
+  <button id="rejouer">Rejouer</button>
+  <label>Fond <input id="fond" type="color" value="#3d6f8e"></label>
+  <span id="etat"></span>
+</div>
+<canvas id="c" width="790" height="960"></canvas>
+<video id="v" muted playsinline preload="auto" style="display:none"></video>
+<script>
+// The accelerated cycle of the shop's bouquets (decor/CYCLE.md, lot C2), before it goes into the try: each <id>.mp4 is a stacked-alpha video
+// (premultiplied colour on top, alpha as grey below) put back together on a WebGL canvas over a plain desktop colour.
+const BQ = [['neige-de-mars', 'Neige de mars'], ['citrine', 'Citrine'], ['ronde-bleue', 'Ronde bleue'], ['printemps-a-la-carpe', 'Printemps à la carpe']];
+const v = document.getElementById('v'), c = document.getElementById('c'), etat = document.getElementById('etat'), choix = document.getElementById('choix');
+const gl = c.getContext('webgl', { premultipliedAlpha: true, alpha: true });
+const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; };
+const pr = gl.createProgram();
+gl.attachShader(pr, sh(gl.VERTEX_SHADER, 'attribute vec2 p;varying vec2 uv;void main(){uv=vec2(p.x*.5+.5,.5-p.y*.5);gl_Position=vec4(p,0.,1.);}'));
+gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, 'precision mediump float;varying vec2 uv;uniform sampler2D tx;void main(){vec3 col=texture2D(tx,vec2(uv.x,uv.y*.5)).rgb;float a=texture2D(tx,vec2(uv.x,.5+uv.y*.5)).r;gl_FragColor=vec4(min(col,vec3(a)),a);}'));
+gl.linkProgram(pr); gl.useProgram(pr);
+gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer()); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+const loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+gl.bindTexture(gl.TEXTURE_2D, gl.createTexture());
+for (const [k, val] of [[gl.TEXTURE_MIN_FILTER, gl.LINEAR], [gl.TEXTURE_MAG_FILTER, gl.LINEAR], [gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE], [gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE]]) gl.texParameteri(gl.TEXTURE_2D, k, val);
+(function draw() {
+  if (v.readyState >= 2 && v.videoWidth) {
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, v);
+    gl.viewport(0, 0, c.width, c.height); gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    if (!v.paused) etat.textContent = v.currentTime.toFixed(1).replace('.', ',') + ' s';
+  }
+  requestAnimationFrame(draw);
+})();
+v.addEventListener('loadedmetadata', () => { c.width = v.videoWidth; c.height = v.videoHeight / 2; });
+v.addEventListener('ended', () => { etat.textContent = 'fini'; });
+v.addEventListener('error', () => { etat.textContent = 'pas encore cuit'; gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT); });
+function ouvrir(id) {
+  for (const b of choix.children) b.setAttribute('aria-pressed', String(b.dataset.id === id));
+  etat.textContent = 'chargement…';
+  v.src = id + '.mp4';
+  v.play().catch((e) => { etat.textContent = e && e.name === 'NotAllowedError' ? 'cliquer sur Rejouer' : 'pas encore cuit'; });
+  history.replaceState(null, '', '#' + id);
+}
+for (const [id, nom] of BQ) { const b = document.createElement('button'); b.textContent = nom; b.dataset.id = id; b.onclick = () => ouvrir(id); choix.append(b); }
+document.getElementById('rejouer').onclick = () => { v.currentTime = 0; v.play(); };
+document.getElementById('fond').oninput = (e) => document.documentElement.style.setProperty('--fond', e.target.value);
+ouvrir(BQ.some(([id]) => '#' + id === location.hash) ? location.hash.slice(1) : BQ[0][0]);
+</script>
+</body>
+</html>
