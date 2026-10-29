@@ -154,6 +154,7 @@ export async function ouvrir(api) {
     raf = requestAnimationFrame(frame);
     const dt = Math.min(0.05, (now - last) / 1000);
     last = now;
+    placeBubble();
     const c = cible ? cible() : null;
     invite.hidden = !c;
     if (c) Object.assign(invite.style, { left: c.x + 'px', top: c.y + 'px', width: c.d + 'px', height: c.d + 'px' });
@@ -186,7 +187,41 @@ export async function ouvrir(api) {
   }
   function byBubble() {
     const r = bulle.getBoundingClientRect();
-    return W() < 600 ? [r.left + r.width / 2, r.bottom + 34] : [r.right + 40, r.top + r.height / 2];
+    if (W() >= 600 && r.right + 70 < W()) return [r.right + 40, r.top + r.height / 2];
+    return [r.left + r.width / 2, r.bottom + 70 < H() ? r.bottom + 34 : r.top - 30];
+  }
+  // the bubble while the page is still seen (owner, 2026-10-29: never over the bouquet): in the room on the bouquet's right,
+  // else on its left, under it, over it; when none has room, the place hiding the least of it. Full screen, the stylesheet's
+  // place (the top's middle)
+  let placed = '';
+  function placeBubble() {
+    const a = !root.classList.contains('essai-plein') && api.evite ? api.evite() : null;
+    if (!a || !a.width) {
+      if (placed) Object.assign(bulle.style, { left: '', top: '', translate: '' });
+      placed = '';
+      return;
+    }
+    const w = bulle.offsetWidth, h = bulle.offsetHeight, m = 16, gap = 24;
+    // (under the top band and the ✕)
+    const top = 64, x = (v) => Math.max(m, Math.min(W() - m - w, v)), y = (v) => Math.max(top, Math.min(H() - m - h, v));
+    const mid = y(H() * 0.45 - h / 2);
+    const spots = [
+      [Math.max(a.right + gap, (a.right + W() - w) / 2), mid],
+      [Math.min(a.left - gap - w, (a.left - w) / 2), mid],
+      [W() / 2 - w / 2, a.bottom + gap],
+      [W() / 2 - w / 2, a.top - gap - h],
+    ];
+    let best = null, least = Infinity;
+    for (const [sx, sy] of spots) {
+      const bx = x(sx), by = y(sy);
+      const over = Math.max(0, Math.min(bx + w, a.right) - Math.max(bx, a.left)) * Math.max(0, Math.min(by + h, a.bottom) - Math.max(by, a.top));
+      if (over < least) (least = over), (best = [bx, by]);
+      if (!over) break;
+    }
+    const at = `${Math.round(best[0])},${Math.round(best[1])}`;
+    if (at === placed) return;
+    placed = at;
+    Object.assign(bulle.style, { left: Math.round(best[0]) + 'px', top: Math.round(best[1]) + 'px', translate: 'none' });
   }
   // an element's middle, as a target of d px
   const middle = (el, d) => () => {
@@ -327,11 +362,13 @@ export async function ouvrir(api) {
         const ask = firstAsk;
         firstAsk = null;
         stream = await ask.catch(() => null);
-        if (closed) return null;
+        // (closed while the picker was open: a screen shared since is let go at once)
+        if (closed) return stopStream(), null;
       } else {
         const go = await new Promise((r) => etape(T.partagerEncore, [[T.partagerBouton, () => r(true), true], [T.annuler, () => r(false)]]));
         if (!go || closed) return fermer(), null;
         stream = await askScreen().catch(() => null);
+        if (closed) return stopStream(), null;
       }
       // declined: asked again, with a button
       if (!stream) continue;

@@ -551,6 +551,8 @@
   function closeUp(on, keepShelf) {
     if (on === near || (on && !box)) return;
     near = on;
+    // stepping back ends the bouquet's try, its bee and bubble with it (owner, 2026-10-29: the bubble stayed over the frieze)
+    if (!on && essaiMod) essaiMod.then((m) => m.fermer());
     // the camera stays facing the bouquet while it is seen close
     Frise.fige(on);
     // ("Try on your desktop" fetched now: its click opens the screen picker at once, essai.mjs)
@@ -726,6 +728,8 @@
           jours: (CFG.vie && CFG.vie.jours) || 30,
           index: () => read(p),
           base: fileOf(p).replace(/sprites\.json$/, ''),
+          // the bouquet on screen, which the bee's bubble keeps clear of while the page is still seen
+          evite: () => (near && !target.hidden ? target.getBoundingClientRect() : null),
           focusBack: () => $('achat-demo').focus({ preventScroll: true }),
         }),
       )
