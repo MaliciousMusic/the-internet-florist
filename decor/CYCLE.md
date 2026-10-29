@@ -137,7 +137,7 @@ Mise en œuvre retenue :
 - **Continuité** : les stades du moteur s'enchaînent avec des sauts (usure, ouverture des boutons, tête qui penche). Une vie
   continue, en option (`LIFE.cont`), les fond l'un dans l'autre. Sans elle, rien ne change.
 
-- 29 octobre 2026, **C2 : premier cycle cuit** (Neige de mars), **en attente de l'avis du porteur** :
+- 29 octobre 2026, **C2 : premier cycle cuit** (Neige de mars) :
   - **Vie continue** (`z1.js`, `c5.js`, en option par `LIFE.cont`) : l'usure, l'ouverture des boutons et la tête qui penche
     s'installent sur le dernier quart de la floraison ; le déclin finit où le fané commence. Les pétales tombés sont choisis d'avance
     (au plus 16) : un pétale tombé ne bouge plus et ne disparaît pas. Les tiges repassent sur les têtes dès qu'elles penchent. Sans
@@ -154,6 +154,28 @@ Mise en œuvre retenue :
   - **À noter pour C3** : la première image du cycle (âge 3 jours, vie du moteur) n'est pas exactement le bouquet de la boutique (la
     viorne y est encore verte). Le cycle commençant en gros plan, le passage du bouquet vivant à la vidéo est de toute façon une
     coupe.
+
+- 29 octobre 2026, **C2 : les 4 bouquets prêts sont cuits et en ligne** avec le nouveau découpage, sur la page de visionnage
+  `decor/out/cycle/` (https://maliciousmusic.github.io/the-internet-florist/decor/out/cycle/) :
+
+  | Bouquet | Taille | Temps de cuisson | Poids (CRF 30) |
+  |---|---|---|---|
+  | Neige de mars | 790 × 960 | 19 min | 1,8 Mo |
+  | Citrine | 702 × 960 | 19 min | 1,8 Mo |
+  | Ronde bleue | 746 × 960 | 25 min | 2,4 Mo |
+  | Printemps à la carpe | 806 × 960 | 41 min | 3,7 Mo |
+
+  - **Poids** : CRF 30 au lieu de 24, deux fois plus léger, les gouttes du gros plan aussi nettes (comparaison image à image).
+    C'est maintenant la valeur par défaut de la cuisson. Printemps à la carpe reste au-dessus des 2 Mo (28 variétés).
+  - **Gros plan de Citrine** : il s'ouvrait sur un coin vide. Les gouttes rangées dans `<defs>` (jamais dessinées là) tiraient le
+    centre hors du bouquet. Elles ne comptent plus ; Citrine s'ouvre sur un arum mouillé.
+  - **Page de visionnage** : changer de bouquet recharge la page. Redimensionner le canevas WebGL pendant la lecture laissait la
+    vidéo suivante petite, dans un coin.
+  - **Continuité** : aucun à-coup sur Neige de mars, Citrine et Ronde bleue. **Résidu** sur Printemps à la carpe à 18 s (image
+    432, écart 0,7 contre 0,1 autour) : deux feuilles fanées qui se chevauchent échangent leur ordre (les raccords d'occlusion
+    de `svDraw`), et l'une passe d'un coup devant la viorne. La viorne elle-même ne change pas (mêmes entrées d'une image à
+    l'autre). Laissé de côté après deux essais ; à reprendre si le porteur le voit.
+  - **Outils** : `cycle_cuisson.mjs --svg` écrit aussi le SVG de chaque image, pour comparer deux images.
 
 ### Questions au porteur (C1)
 

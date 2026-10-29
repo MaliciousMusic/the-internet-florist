@@ -4,7 +4,7 @@
 //
 //   sh decor/scene/mkengine.sh            (engine.js from demo/src)
 //   GATE_MAX=2 sh ws/gate.sh node decor/cycle_cuisson.mjs <id> [--fps 24] [--h 960] [--de 0] [--a 720] [--pas 1] [--sortie <dir>]
-//       [--images-seules] [--svg] [--crf 24]
+//       [--images-seules] [--svg] [--crf 30]
 //
 // Frames are PNG (transparent) in <sortie>/<id>/f0000.png...; a frame that draws the same as the one before
 // is copied, not drawn (the faded hold). Then <sortie>/<id>/cycle.mp4 and cycle.json (the time map, the box, the sizes). One Chrome, its own profile and port,
@@ -32,7 +32,7 @@ const argOf = (k, d) => {
 const FPS = Number(argOf('--fps', 24));
 const HPX = Number(argOf('--h', 960));
 const PAS = Number(argOf('--pas', 1));
-const CRF = Number(argOf('--crf', 24));
+const CRF = Number(argOf('--crf', 30)); // 30: the drops stay as sharp as at 24 for half the weight (2026-10-29)
 const OUT0 = resolve(argOf('--sortie', join(process.env.TEMP || '.', 'cycle')));
 const DUR = 30;
 const N = DUR * FPS;
