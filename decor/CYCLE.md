@@ -96,10 +96,14 @@ n'en ont pas encore.
     dans les deux sens sur une trentaine de modules (certains modules d'`app/` sont plus anciens que `demo/src`). Seuls
     `y3-rosee.js`, la ligne de `y1.js` et `build.sh` ont été portés à la main dans `demo/src`.
 
+- 29 octobre 2026, **décision du porteur sur l'échelle : vraie grandeur** (`DEW_K` reste à 1). La rosée se verra de près dans le
+  cycle (C2 ou C3 : gros plan pendant le premier matin). L'aspect de la goutte (question 1) n'a pas encore reçu de réponse
+  explicite.
+
 ### Questions au porteur (C1)
 
 1. **L'aspect d'une goutte** (gros plans de la planche) : est-ce le bon ?
-2. **L'échelle** : en vraie grandeur, une goutte de 2 mm fait 1 à 2 px quand le bouquet entier tient sur l'écran. La rosée ne se
+2. **L'échelle (tranché : vraie grandeur)** : en vraie grandeur, une goutte de 2 mm fait 1 à 2 px quand le bouquet entier tient sur l'écran. La rosée ne se
    voit alors qu'en gros plan, comme sur un vrai bouquet vu à un mètre. *Proposition :* garder la vraie grandeur et laisser le
    cycle montrer la rosée de près (C2 ou C3 : un zoom pendant le premier matin). Sinon, grossir les gouttes (`DEW_K`, ×2,5 sur
    la planche d'échelle), ce qui les rend visibles de loin mais plus rares.
