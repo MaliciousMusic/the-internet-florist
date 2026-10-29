@@ -276,7 +276,9 @@ GR_FLORET.clochette=(c,f,lod)=>{const P=c.P,L=f.L,gt=f.gt,dec=svSm((f.w-P.dec[0]
       sp.push(c.V(p));nm.push(nI);for(let s2=0;s2<2;s2++)ed[s2].push(c.V(V3.add(V3.add(p,V3.sc(tdj,(s2?-1:1)*hw)),V3.sc(nI,cup*hw))))}
     const nf=j=>{const n=V3.nz(c.Vd(nm[j]));return n[2]>0?[n,1]:[V3.sc(n,-1),0]},zz=sp.reduce((a,q)=>a+q[2],0)/sp.length;
     if(P.wMin)grUnpinch(sp,ed,[0,jm,jk],P.wMin);
-    lobes.push({sp,ed,tip:sp[sp.length-1],z:zz,front:zz>=zc,f1:nf(1),f2:nf(jk)})}
+    lobes.push({sp,ed,tip:sp[sp.length-1],z:zz,front:zz>=zc,f1:nf(1),f2:nf(jk),nm})}
+  /* the lobes left on the context for the morning dew (y3-rosee.js, dewLobes) */
+  c.lobes=lobes;
   /* written with few points: the whole lobe, its foot, its curled tip, the midrib's lens, the margin, the bend's sheen */
   const out=lb=>[lb.ed[0][0],lb.ed[0][jm],lb.ed[0][jk],lb.tip,lb.ed[1][jk],lb.ed[1][jm],lb.ed[1][0]],
     ins=(lb,s2,j,k2)=>V3.add(lb.sp[j],V3.sc(V3s(lb.ed[s2][j],lb.sp[j]),k2));
@@ -415,7 +417,9 @@ GR_FLORET.entonnoir=(c,f,lod)=>{const P=c.P,gt=f.gt,L=f.L,dec=svSm((f.w-P.dec[0]
       if(j)p=V3.add(p,V3.sc(d,ll/ns));const nI=V3.nz(V3.cr(d,td)),hw=lw*.5*(t<.6?(Lp.wb??.55)+(1-(Lp.wb??.55))*Math.sin(t/.6*Math.PI/2):Math.max(.1,Math.cos((t-.6)/.4*Math.PI/2*.78)));
       sp.push(c.V(p));nm.push(nI);for(let s2=0;s2<2;s2++)ed[s2].push(c.V(V3.add(V3.add(p,V3.sc(td,(s2?-1:1)*hw)),V3.sc(nI,cup*hw))))}
     const nf=j=>{const v=V3.nz(c.Vd(nm[j]));return v[2]>0?[v,1]:[V3.sc(v,-1),0]},zz=sp.reduce((s,q)=>s+q[2],0)/sp.length;
-    lobes.push({sp,ed,tip:sp[ns],tx:V3.add(sp[ns],V3.sc(V3s(sp[ns],sp[ns-1]),.35)),z:zz,front:zz>=zc,f1:nf(1),f2:nf(jk),vent,dors})}
+    lobes.push({sp,ed,tip:sp[ns],tx:V3.add(sp[ns],V3.sc(V3s(sp[ns],sp[ns-1]),.35)),z:zz,front:zz>=zc,f1:nf(1),f2:nf(jk),vent,dors,nm})}
+  /* the lobes left on the context for the morning dew (y3-rosee.js, dewLobes) */
+  c.lobes=lobes;
   const out=lb=>[lb.ed[0][0],lb.ed[0][jm],lb.ed[0][jk],lb.ed[0][ns],lb.tx,lb.ed[1][ns],lb.ed[1][jk],lb.ed[1][jm],lb.ed[1][0]],ins=(lb,s2,j,k2)=>V3.add(lb.sp[j],V3.sc(V3s(lb.ed[s2][j],lb.sp[j]),k2)),
     tol=Math.max(.1,L*.02),body=c.d2(svSimp(grRevO(c,zt,rf,lod>0?GR_T2:GR_T0,1,null),tol)),ey=c.eye,Ve=ey[2],side=V3.nz(V3s(ey,V3.sc([0,0,1],Ve))),
     nS=V3l(side)>.1?V3.nz(c.Vd(side)):c.Vd([1,0,0]),tubeV=c.lit(nS),lc=lb=>c.col(c.lit(lb.f1[0]),f,lb.f1[1]?'fr':'bk');

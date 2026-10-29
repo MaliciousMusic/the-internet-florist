@@ -19,6 +19,8 @@ let DEW_SET=null;
 let DEW_LIFE=false;
 /* the drops' size scale (1: real size at UPC units per cm; a sheet drawing one head much larger than life sets its own) */
 let DEW_K=1;
+/* the drops painted since the page loaded (sheets count them: drops painted as a kit's primitives have no group of their own) */
+let DEW_N=0;
 /* per tissue: coverage of a face looking straight up (share of its area), diameters (cm), sphericity (height / radius), crescent width and
    opacity, shadow opacity, the gathered light's whiteness */
 const DEW_DEF={
@@ -110,13 +112,15 @@ function dewPaint(par,D,P,dew,col,leaf){const d0=P.d[0]*UPC*DEW_K,d1=P.d[1]*UPC*
     /* the gathered light on the far side, the contact line, the sparkle on the dark band toward the light */
     dG+=dwEll([c[0]-toL[0]*.34*rd,c[1]-toL[1]*.34*rd],e1,a*.58,b*.52);dR+=dwEll(c,e1,a,b);
     const sr=Math.max(.06,.16*rd),so=.5*rd*(.7+.3*f);dK+=dwEll([c[0]+toL[0]*so,c[1]+toL[1]*so],[1,0],sr,sr);nd++;rs+=rd}
-  if(!nd)return;
-  const g=G(par,{'data-dew':nd,'data-dewk':leaf?'f':'p'}),tis=col.tis,dk=col.shd||mix(tis,'#000000',.6);
-  sS.forEach((L,i)=>{if(L[0])E('path',{d:L[0],fill:col.cast||'#1a1030','fill-opacity':P.so*(i?.45:.7)},g)});
-  E('path',{d:dG,fill:mix(mix(tis,col.lit||tis,.5),'#fffaf0',P.gw),'fill-opacity':.5},g);
-  sC.forEach((L,i)=>E('path',{d:L[0],fill:dk,'fill-opacity':P.co*[.3,.35,.55][i]},g));
-  E('path',{d:dR,fill:'none',stroke:dk,'stroke-width':svF(Math.max(.03,rs/nd*.12)),'stroke-opacity':.3},g);
-  E('path',{d:dK,fill:'#ffffff','fill-opacity':.95},g)}
+  if(!nd)return;DEW_N+=nd;
+  /* par: a group, or a kit's sink of primitives (y3-grappe.js: {d, f, fo, s, sw, so}, painted in its own order) */
+  const sink=typeof par==='function',g=sink?null:G(par,{'data-dew':nd,'data-dewk':leaf?'f':'p'}),tis=col.tis,dk=col.shd||mix(tis,'#000000',.6),
+    out=a=>sink?par({d:a.d,f:a.fill==='none'?null:a.fill,fo:a['fill-opacity'],s:a.stroke,sw:a['stroke-width'],so:a['stroke-opacity']}):E('path',a,g);
+  sS.forEach((L,i)=>{if(L[0])out({d:L[0],fill:col.cast||'#1a1030','fill-opacity':P.so*(i?.45:.7)})});
+  out({d:dG,fill:mix(mix(tis,col.lit||tis,.5),'#fffaf0',P.gw),'fill-opacity':.5});
+  sC.forEach((L,i)=>out({d:L[0],fill:dk,'fill-opacity':P.co*[.3,.35,.55][i]}));
+  out({d:dR,fill:'none',stroke:dk,'stroke-width':svF(Math.max(.03,rs/nd*.12)),'stroke-opacity':.3});
+  out({d:dK,fill:'#ffffff','fill-opacity':.95})}
 /* the drops of flat-drawn petals (y3-branche.js at lod 1: blossoms of the branches): L = [{p: {Sf}, P: the outline on the screen, z, front}],
    drawn far to near before; each petal gets a small sheet of its surface for the drops, kept off its foot (the heart, the calyx) and off the
    petals in front of it. colOf(x): its colours {body, back, shade, lite} */
@@ -130,3 +134,37 @@ function svDewPetals(par,B,O,L,colOf){const dew=dewNow();if(!(dew>0)||LOD||!L.le
 function svDewSheets(par,sheets,keep){const dew=dewNow();if(!(dew>0)||LOD)return;
   for(const sh of sheets){let sF=0;for(const x of sh.F)sF+=x;const s=sF>=0?1:-1,m=sh.mat||{},st=(s>0?m.stops:m.bstops)||m.stops,[leaf,P]=dewKind(m,dewStop(st,.6)),R=dewSample(sh,s,P,keep);
     if(R)dewPaint(par,R.D,P,dew,{tis:dewStop(st,R.v),lit:s>0?m.lite:m.blite||m.lite,shd:s>0?m.shade:m.bshade||m.shade,cast:m.cast},leaf)}}
+/* the drops of a cluster's florets (y3-grappe.js: the hyacinth's bell, the freesia's funnel). Each floret leaves its lobes on the kit's context
+   (c.lobes: spine sp, margins ed, local normals nm, in view space); each lobe in front is a ribbon from its spine to its margins, sampled like a
+   sheet, and its drops go out as the kit's primitives right after the floret, so the florets painted after it (nearer) cover them. Layouts cut in
+   depth slabs (S.slabs, the wisteria) paint layer by layer across florets: a drop could show over a neighbour there, so they get none. */
+function dewLobes(c,f,lobes){const dew=dewNow();if(!(dew>0)||LOD||(c.S&&c.S.slabs)||f.w>.3)return;
+  const tis=c.col(.6,f,'fr'),[leaf,P]=dewKind(null,tis),cols={tis,lit:c.col(.95,f,'fr'),shd:c.col(.12,f,'fr'),cast:mix(c.col(.05,f,'fr'),'#000000',.5)},lerp=(A,t)=>{const x=t*(A.length-1),j=Math.min(A.length-2,Math.floor(x)),q=x-j;return V3.add(V3.sc(A[j],1-q),V3.sc(A[j+1],q))};
+  for(const lb of lobes){if(!lb.front||!lb.nm||lb.sp.length<2)continue;const n=lb.sp.length-1;let area=0;
+    for(let j=0;j<n;j++)area+=V3l(V3.cr(V3s(lb.sp[j+1],lb.sp[j]),V3s(lb.ed[1][j],lb.ed[0][j])));
+    const N=Math.min(60,Math.round(P.cov*area/(Math.PI/4*dewMeanD2(P.d[0],P.d[1])*(UPC*DEW_K)**2)));if(N<1)continue;
+    const r=svRng(svSeed('rosee-lobe',Math.round(lb.tip[0]),Math.round(lb.tip[1]),n)),D=[];
+    for(let i=0;i<N;i++){const u=r.in(-.9,.9),t=r.in(.15,.95),x=r(),y=r(),z=r(),sp=lerp(lb.sp,t),ed=lerp(lb.ed[u<0?1:0],t),p=V3.add(sp,V3.sc(V3s(ed,sp),Math.abs(u)));
+      let nv=V3.nz(c.Vd(lerp(lb.nm,t)));if(nv[2]<0)nv=V3.sc(nv,-1);if(y>=svSm((nv[1]+.05)/.65))continue;D.push({c:[p[0],-p[1]],n:nv,x,z})}
+    if(D.length)dewPaint(c.put,D,P,dew,cols,leaf)}}
+if(typeof GR_FLORET!=='undefined')for(const t of['clochette','entonnoir'])if(GR_FLORET[t]){const g0=GR_FLORET[t];
+  GR_FLORET[t]=(c,f,lod)=>{c.lobes=null;const r=g0(c,f,lod);if(c.lobes)dewLobes(c,f,c.lobes);c.lobes=null;return r}}
+/* the drops of a capitulum's rays (y3-capitule.js: chrysanthemum, gerbera): svcapRay wrapped, the drops laid right after its ray is painted
+   (the rays are painted by depth: the nearer ones cover them), inside its width, on the face seen */
+function dewRay(k,B,O,q,P){const dew=dewNow();if(!(dew>0)||LOD||!q.m)return;const sp=svcapSpine(q,P.ns),R0=q.R0,v1=(q.vt||1)*.95,at=(s,v)=>svcapAt(sp,q,s,v),
+    hw=v=>svcapW(q,v)*R0;let area=0;for(let i=0;i<8;i++){const va=.08+(v1-.08)*i/8,vb=.08+(v1-.08)*(i+1)/8;area+=V3l(V3.cr(V3s(at(0,vb),at(0,va)),V3s(at(hw(va),va),at(-hw(va),va))))}
+  const tis=q.m.body||'#f0f0e8',[leaf,Pd]=dewKind({dew:'petal'},tis),N=Math.min(40,Math.round(Pd.cov*area/(Math.PI/4*dewMeanD2(Pd.d[0],Pd.d[1])*(UPC*DEW_K)**2)));if(N<1)return;
+  const tip=PJ(B,O,at(0,v1)),r=svRng(svSeed('rosee-ray',Math.round(tip[0]),Math.round(tip[1]),q.hid||0)),D=[];
+  for(let i=0;i<N;i++){const u=r.in(-.8,.8),v=r.in(.1,v1),x=r(),y=r(),z=r(),s=u*hw(v),a=at(s,v),b=at(s+.02*R0,v),c=at(s,Math.min(1,v+.02));
+    let n=V3.nz(toV(B,V3.cr(V3s(c,a),V3s(b,a))));if(n[2]<0)n=V3.sc(n,-1);if(y>=svSm((n[1]+.05)/.65))continue;const p=PJ(B,O,a);D.push({c:[p[0],p[1]],n,x,z})}
+  if(D.length)dewPaint(k,D,Pd,dew,{tis,lit:mix(tis,'#ffffff',.4),shd:q.m.shade||mix(tis,'#000000',.4),cast:q.m.shadow||q.m.shade},leaf)}
+if(typeof svcapRay==='function'){const r0=svcapRay;svcapRay=function(B,O,q,m,P,hi){const it=r0(B,O,q,m,P,hi);if(it&&it.draw){const d0=it.draw;it.draw=k=>{d0(k);dewRay(k,B,O,q,P)}}return it}}
+/* the drops of a ball of florets (y3-boule.js: snowball viburnum), band by band after the band is painted: each floret a flat wheel (its local
+   disc pt(a, rad, h), its view normal nv), the drops kept off the nearer florets of the same band (their outlines); the later bands cover them */
+function dewBall(k,L,C){const dew=dewNow();if(!(dew>0)||LOD)return;const[leaf,P]=dewKind({dew:'petal'},C.body),cols={tis:C.body,lit:C.light,shd:C.shade,cast:C.deep};
+  const S=L.slice().sort((a,b)=>a.z-b.z);
+  S.forEach((w,i)=>{let n=w.nv;if(n[2]<=.05)return;const ar=Math.PI*w.r*w.r*(w.kr||1)**2,N=Math.min(12,Math.round(P.cov*ar/(Math.PI/4*dewMeanD2(P.d[0],P.d[1])*(UPC*DEW_K)**2)));if(N<1)return;
+    const near=S.slice(i+1),cz=w.sc(w.pt(0,0,0)),r=svRng(svSeed('rosee-boule',Math.round(cz[0]*4),Math.round(cz[1]*4))),D=[],M=N;
+    for(let j=0;j<M;j++){const a=r()*6.2832,rad=w.r*.85*Math.sqrt(r()),x=r(),y=r(),z=r();if(y>=svSm((n[1]+.05)/.65))continue;
+      const p=w.sc(w.pt(a,rad,w.lift(rad)));if(near.some(o=>dewIn(o.o,p[0],p[1])))continue;D.push({c:p,n,x,z})}
+    if(D.length)dewPaint(k,D,P,dew,cols,leaf)})}

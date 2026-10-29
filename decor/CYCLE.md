@@ -83,20 +83,23 @@ n'en ont pas encore.
     mi-séchage, puis un gros plan ×5 sans rosée, à pleine rosée et à mi-séchage. Planche d'échelle
     [out/cycle/planche-rosee-echelle.jpg](out/cycle/planche-rosee-echelle.jpg) : vraie grandeur contre gouttes ×2,5. Outils :
     `rosee_planche.mjs` (un Chrome, à passer par `ws/gate.sh`) et `planche_rosee.py`.
-  - **Chiffres** à pleine rosée (après le branchement des autres peintres, ci-dessous) : 7 810 gouttes sur Printemps à la carpe,
-    2 134 sur Citrine, 5 745 sur Ronde bleue, 2 483 sur Neige de mars. Cela fait 1,1 à 4 Mo de SVG en plus et 0,3 à 1,2 s de
-    dessin. À mi-séchage, il reste environ un tiers des gouttes.
-  - **Couverture** : `svDraw` couvre l'iris, le lilas, les tulipes simple, perroquet et frangée, les anémones, le narcisse trompette,
-    le pois de senteur, l'arum et les feuilles en lanière. Depuis le 29 octobre au soir, les autres peintres ont leur crochet :
-    `svrDraw` (`y3-rosette.js` : renoncule, rose, tulipe double), `svDrawP` et `svDrawLean` (`y3-damier.js` : fritillaire et ses
-    feuilles), les fleurs des branches à la taille du bouquet (`y3-branche.js`, lod 1 : cerisier, cognassier, forsythia) et le
-    narcisse bouquet (`yz-narcissus-bouquet.js`). Ses fleurons regardent de face et ne retiennent presque pas de gouttes, ce qui
-    est juste.
-  - **Restent sèches** : jacinthe, muscari, glycine et freesia (kit des grappes, `y3-grappe.js`), viorne (`svBoule`) et
-    chrysanthème. Le kit des grappes peint ses fleurons en primitives 2D, rangées par tranche de profondeur et par couche, sans
-    ordre entre fleurons d'une même tranche : une goutte risquerait d'y flotter par-dessus le fleuron voisin. Il faut un
-    branchement propre à ce kit (par fleuron, dans sa couche la plus haute, avec un test de recouvrement). C'est la prochaine
-    étape. L'alchémille garde ses propres perles d'eau.
+  - **Chiffres** à pleine rosée (toutes les gouttes peintes, primitives des grappes comprises) : environ 10 000 sur Printemps à la
+    carpe, 3 800 sur Citrine, 6 900 sur Ronde bleue, 2 900 sur Neige de mars, pour 1,6 à 4,4 Mo de SVG en plus. À mi-séchage, il en
+    reste environ un tiers.
+  - **Couverture** : chaque peintre a son crochet, inactif sans rosée.
+    - `svDraw` (`y1.js`) : iris, lilas, tulipes simple, perroquet et frangée, anémones, narcisse trompette, pois de senteur, arum,
+      feuilles en lanière.
+    - `svrDraw` (`y3-rosette.js`) : renoncule, rose, tulipe double.
+    - `svDrawP` et `svDrawLean` (`y3-damier.js`) : fritillaire et ses feuilles.
+    - `y3-branche.js` (lod 1) : fleurs du cerisier, du cognassier, du forsythia.
+    - `yz-narcissus-bouquet.js` (niveaux 0 et 1) : narcisse bouquet.
+    - `y3-grappe.js` (lobes des fleurons clochette et entonnoir, émis comme primitives du kit juste après chaque fleuron) : jacinthe,
+      freesia.
+    - `y3-capitule.js` (`svcapRay` enveloppé, gouttes posées après chaque ligule) : chrysanthème (et gerbera).
+    - `y3-boule.js` (bande par bande, hors des fleurons plus proches de la bande) : viorne.
+  - **Restent sèches** : le muscari (fleuron « urne », un grelot fermé de quelques millimètres sans lobes à porter de gouttes) et la
+    glycine (grappes pendantes, peintes par tranches de profondeur : une goutte pourrait passer sur le fleuron voisin). L'alchémille
+    garde ses propres perles d'eau.
   - **`sync_demo.sh` n'a pas été lancé** : il est câblé sur l'atelier principal et pousse `main`. `app/` et `demo/src` divergent
     dans les deux sens sur une trentaine de modules (certains modules d'`app/` sont plus anciens que `demo/src`). Seuls
     `y3-rosee.js`, la ligne de `y1.js` et `build.sh` ont été portés à la main dans `demo/src`.

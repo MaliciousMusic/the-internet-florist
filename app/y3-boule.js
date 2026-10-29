@@ -90,6 +90,8 @@ function svBoule(par,B,O,D,S,cwx,op,seed,wl,o={}){const P=S._m||(S._m=Object.ass
     fl.sort((a,b)=>a.z-b.z);const K=P.bands[hi],z0=fl[0].z,z1=fl[fl.length-1].z,bands=[];for(const q of fl){const b=Math.min(K-1,Math.floor((q.z-z0)/((z1-z0)||1)*K));(bands[b]=bands[b]||[]).push(q)}
     const kr=.7+.3*fo,lift=s*(1-fo)*P.fold*(1-.6*fan),cup=s*P.cup*fo*(1-.8*fan)-s*.25*dec;
     for(let b=0;b<K;b++){const L=bands[b];if(!L)continue;const dd=fills.map(()=>''),de=[];let dsh='',dth='',dlt='',dcr='';
+      /* the band's florets kept for the morning dew (y3-rosee.js, dewBall), only when there is dew */
+      const DWB=typeof dewBall==='function'&&dewNow()>0&&!LOD?[]:null;
       for(const q of L){const t1=V3.nz(V3.cr(q.nf,Math.abs(q.nf[2])<.9?[0,0,1]:[1,0,0])),t2=V3.cr(q.nf,t1),nl=q.nl,at=[],rt=[];
         for(let j=0;j<nl;j++){at.push(q.rot+j*6.2832/nl+(q.lj[j]-.5)*.35);rt.push(s*(1+P.lobeJ*(q.lj[(j+2)%5]*2-1)))}
         const pt=(a,rad,h)=>V3.add(V3.add(q.c,V3.sc(V3.add(V3.sc(t1,Math.cos(a)),V3.sc(t2,Math.sin(a))),rad*kr)),V3.sc(q.nf,h)),
@@ -101,6 +103,7 @@ function svBoule(par,B,O,D,S,cwx,op,seed,wl,o={}){const P=S._m||(S._m=Object.ass
             if(l<rb*.25){const v=bouSc(B,V3.add(V3.sc(t1,Math.cos(at[j])),V3.sc(t2,Math.sin(at[j]))));dx=v[0];dy=v[1];l=Math.hypot(dx,dy)||1}
             const b=[cs[0]+dx/l*rb*f,cs[1]+dy/l*rb*f];return[b[0]+(p[0]-b[0])*wb,b[1]+(p[1]-b[1])*wb]};
           Ts=Ts.map((p,j)=>bt(p,j,1+.06*(q.lj[j]-.5)));C1s=C1s.map((p,j)=>bt(p,j,1.04));C2s=C2s.map((p,j)=>bt(p,j,1.04));Ns=Ns.map((p,j)=>bt(p,j,.84))}
+        if(DWB)DWB.push({z:q.z,nv:q.nv,o:Ns.flatMap((p,j)=>[p,Ts[j]]),pt,r:Math.min(...rt),kr,lift:liftAt,sc:sc3});
         /* the outline: from notch to notch over each lobe, two quadratic arches meeting at its tip (a rounded, broad lobe) */
         let x=svR(Ns[nl-1][0]),y=svR(Ns[nl-1][1]),d='M'+svJ([x,y]);
         for(let j=0;j<nl;j++){const Tt=[svR(Ts[j][0]),svR(Ts[j][1])],Bn=[svR(Ns[j][0]),svR(Ns[j][1])];
@@ -120,7 +123,8 @@ function svBoule(par,B,O,D,S,cwx,op,seed,wl,o={}){const P=S._m||(S._m=Object.ass
       if(dsh){const a={d:dsh,fill:C.deep,'fill-opacity':P.sh[1]};if(clip)a['clip-path']=`url(#${clip})`;E('path',a,k)}
       dd.forEach((d,i)=>{if(d)E('path',{d,fill:fills[i]},k)});
       if(dth)E('path',{d:dth,fill:C.shade,'fill-opacity':svF(P.wall[1]+.2*(1-rp))},k);if(dlt)E('path',{d:dlt,fill:C.light,'fill-opacity':P.wall[2]},k);if(dcr)E('path',{d:dcr,fill:'none',stroke:C.shade,'stroke-width':svF(Math.max(.15,s*.025)),'stroke-opacity':.4},k);
-      if(de.length&&!LOD)E('path',{d:svDots(de),fill:'none',stroke:C.eye,'stroke-width':svF(Math.max(.35,s*P.eye*(.55+.45*fo))),'stroke-linecap':'round'},k)}
+      if(de.length&&!LOD)E('path',{d:svDots(de),fill:'none',stroke:C.eye,'stroke-width':svF(Math.max(.35,s*P.eye*(.55+.45*fo))),'stroke-linecap':'round'},k);
+      if(DWB&&DWB.length)dewBall(k,DWB,C)}
   }finally{WILT=T0}
   return k}
 /* ---------- the sub-corymbs of a mophead (P.clus): [radial bump -.4 .. .6, the tilt of a floret away from its cluster's centre] ----------

@@ -32,6 +32,8 @@ const ZOOM = Number(argOf('--zoom', 0.2));
 // --k: the drops' size scale (DEW_K, 1 = real size); --nom: suffix of the rows' files
 const KDEW = Number(argOf('--k', 1));
 const SUFFIX = argOf('--nom', '');
+// --fenetre cx,cy: the close-up's centre in the drawing's units (default: the wettest place)
+const WIN = argOf('--fenetre', '');
 const OUT = resolve(argOf('--sortie', join(process.env.TEMP || '.', 'rosee')));
 const WANT = argv.filter((a) => !a.startsWith('--'));
 const IDS = WANT.length ? WANT : ['printemps-a-la-carpe', 'citrine', 'ronde-bleue', 'neige-de-mars'];
@@ -79,7 +81,8 @@ const SCRIPT = `(async () => {
   for (const dew of LV) {
     const cell = document.createElement('div'); cell.className = 'cell'; row.append(cell);
     const svg = document.createElementNS(NS, 'svg'); cell.append(svg);
-    DEW_SET = dew; const t0 = performance.now(); let cq = null; try { cq = draw(svg); } finally { DEW_SET = null; }
+    DEW_SET = dew; const n0 = typeof DEW_N !== 'undefined' ? DEW_N : 0, t0 = performance.now(); let cq = null; try { cq = draw(svg); } finally { DEW_SET = null; }
+    const painted = (typeof DEW_N !== 'undefined' ? DEW_N : 0) - n0;
     const ms = performance.now() - t0;
     const gs = [...svg.querySelectorAll('g[data-dew]')], drops = gs.reduce((s, g) => s + +g.getAttribute('data-dew'), 0);
     const els = gs.reduce((s, g) => s + g.querySelectorAll('*').length, 0), kb = gs.reduce((s, g) => s + new XMLSerializer().serializeToString(g).length, 0) / 1024;
@@ -89,7 +92,7 @@ const SCRIPT = `(async () => {
     const sidOf = (n) => { const e = n && n.closest('[data-o]'), o = e && cq && cq.list ? cq.list[+e.getAttribute('data-o')] : null; return o && o.it && o.it.p ? o.it.p.sid : '?'; };
     const bySid = {};for (const o of (cq && cq.list) || []) if (o.it && o.it.p && o.kind !== 'garnish') bySid[o.it.p.sid] = bySid[o.it.p.sid] || 0;
     for (const g of gs) { const k = sidOf(g); bySid[k] = (bySid[k] || 0) + +g.getAttribute('data-dew'); }
-    stats.push({ dew, bySid, byLayer, hash: (hh >>> 0).toString(16) + '/' + xs.length, drops, leafDrops, faces: gs.length, dewEls: els, dewKB: Math.round(kb), allEls: svg.querySelectorAll('*').length, ms: Math.round(ms) });
+    stats.push({ dew, painted, bySid, byLayer, hash: (hh >>> 0).toString(16) + '/' + xs.length, drops, leafDrops, faces: gs.length, dewEls: els, dewKB: Math.round(kb), allEls: svg.querySelectorAll('*').length, ms: Math.round(ms) });
     const b = document.createElement('b'); b.textContent = p.nom + ' · rosée ' + dew; cell.append(b); cells.push({ cell, svg, dew, gs });
   }
   /* the close-up: the wettest place of the first drawing (each drop's sparkle, the last path of its face, counted on a grid), the same
@@ -101,7 +104,7 @@ const SCRIPT = `(async () => {
       grid[j * n + i] += k; pts.push([pt.x, pt.y, k, j * n + i]); } }
   let best = 0; for (let q = 1; q < n * n; q++) if (grid[q] > grid[best]) best = q;
   let sx = 0, sy = 0, sw = 0; for (const [x, y, k, q] of pts) if (q === best) { sx += x * k; sy += y * k; sw += k; }
-  const zw = vb.width * ZM, zh = zw * 1.25, cx = sw ? sx / sw : vb.x + vb.width / 2, cy = sw ? sy / sw : vb.y + vb.height / 2;
+  const zw = vb.width * ZM, zh = zw * 1.25, W0 = (Q.get('win') || '').split(',').map(Number), cx = W0.length === 2 ? W0[0] : sw ? sx / sw : vb.x + vb.width / 2, cy = W0.length === 2 ? W0[1] : sw ? sy / sw : vb.y + vb.height / 2;
   for (const c of cells) {
     const cell = document.createElement('div'); cell.className = 'cell'; row.append(cell);
     const z = c.svg.cloneNode(true); z.setAttribute('viewBox', [cx - zw / 2, cy - zh / 2, zw, zh].map((x) => Math.round(x * 10) / 10).join(' ')); cell.append(z);
@@ -169,7 +172,7 @@ try {
   for (const id of IDS) {
     const w = (CELL + 6) * LEVELS.length * 2 + 6, h = Math.round(CELL * 1.25) + 12;
     await send('Emulation.setDeviceMetricsOverride', { width: w, height: h, deviceScaleFactor: 1, mobile: false });
-    await send('Page.navigate', { url: `http://127.0.0.1:${HTTP_PORT}/__rosee.html?p=${encodeURIComponent(id)}&dew=${LEVELS.join(',')}&zoom=${ZOOM}&k=${KDEW}` });
+    await send('Page.navigate', { url: `http://127.0.0.1:${HTTP_PORT}/__rosee.html?p=${encodeURIComponent(id)}&dew=${LEVELS.join(',')}&zoom=${ZOOM}&k=${KDEW}&win=${WIN}` });
     const t0 = Date.now();
     let rs = null;
     while (Date.now() - t0 < 240000) { await sleep(500); try { rs = await evaluate('window.RS || null'); } catch (_) {} if (rs) break; }
