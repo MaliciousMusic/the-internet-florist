@@ -32,6 +32,21 @@ Une page ne voit pas à travers elle-même : le bureau est une image, prise une 
 - **Garde-fous :** une fenêtre ou un onglet partagé au lieu de l'écran → l'abeille redemande l'écran entier ; une image
   encore identique à la page (le navigateur pas réduit) → elle redemande de réduire.
 
+## Retour du porteur et allègement (28-29 octobre 2026)
+
+Essayé en vrai sur son ordinateur : « ça marche », mais la fenêtre de partage, puis réduire et rouvrir l'onglet, c'est
+rébarbatif ; et réduire le navigateur ne garantit pas le fond d'écran (sa fenêtre Claude, sous Chrome, a été prise pour le
+bureau). Il voudrait un seul bouton, et que la fenêtre se réduise et revienne d'elle-même.
+
+- **La fenêtre de partage** : aucune page ne peut s'en passer (sécurité des navigateurs). Elle s'ouvre maintenant dès le clic
+  sur « Try on your desktop », « Tout l'écran » déjà choisi ; l'abeille dit seulement de cliquer sur Partager.
+- **Réduire et revenir** : aucune page ne peut réduire ni rouvrir sa propre fenêtre. L'abeille donne le raccourci « afficher le
+  bureau » du système, deux fois : <kbd>⊞</kbd> + <kbd>D</kbd> sous Windows, <kbd>⌘</kbd> + <kbd>F3</kbd> sur Mac (sinon,
+  « réduisez la fenêtre »). Toutes les fenêtres s'écartent, donc l'image est bien le bureau, puis elles reviennent comme avant.
+- **Au retour** : un clic n'importe où (ou une touche) passe en plein écran ; le bouton « Montrer » reste.
+- Le module est chargé dès l'ouverture du gros plan, pour que le clic ouvre la fenêtre de partage tout de suite.
+- Vérifié dans Chrome sans fenêtre, faux écran partagé, page française : tout le parcours, aucune erreur.
+
 ## Fichiers
 
 - `scene/essai.mjs` et `scene/essai.css` (le module est chargé au clic, avec l'empreinte `data-essai-v` de la page) ;

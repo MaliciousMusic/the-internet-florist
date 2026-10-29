@@ -30,6 +30,13 @@ export async function ouvrir(api) {
   if (run) return;
   const T = api.T.essai;
   const PHONE = !(navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia) || matchMedia('(pointer: coarse) and (max-width: 899px)').matches;
+  // a computer: the browser's sharing picker opens on the very click of "Try on your desktop" (owner, 2026-10-28: one button
+  // rather than steps before it; the picker itself no page can skip), its "Entire screen" chosen beforehand
+  let firstAsk = PHONE ? null : askScreen();
+  if (firstAsk) firstAsk.catch(() => {}); // (declined before it is awaited: no unhandled rejection)
+  // the system's "show the desktop" shortcut, pressed twice: every window out of the way (not only the browser: owner's try,
+  // a window under it was taken for the desktop), then back as they were. No page can minimise or restore its window.
+  const OS = /Win/i.test((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '') ? 'win' : /Mac/i.test(navigator.platform || '') ? 'mac' : '';
 
   // ---------- the layer over the page: the bee and its bubble first; later the desktop's picture and the framed bouquet
   const root = document.createElement('div');
@@ -210,22 +217,28 @@ export async function ouvrir(api) {
   img.src = shot;
   await img.decode().catch(() => {});
 
-  // one click: full screen (a click is needed for it), the page gone, the desktop and the bouquet
-  await new Promise((go) =>
-    etape(PHONE ? T.pretTel : T.pret, [
-      [
-        T.montrer,
-        async () => {
-          try {
-            await root.requestFullscreen({ navigationUI: 'hide' });
-            state.full = true;
-          } catch (_) {}
-          go();
-        },
-        true,
-      ],
-    ]),
-  );
+  // one click, anywhere (a click or a key is needed for full screen): the page gone, the desktop and the bouquet
+  await new Promise((go) => {
+    let gone = false;
+    const full = async (e) => {
+      if (gone || (e && e.target && e.target.closest && e.target.closest('.essai-fermer'))) return;
+      if (e && e.type === 'keydown' && e.key === 'Escape') return;
+      gone = true;
+      root.classList.remove('essai-attente');
+      root.removeEventListener('pointerdown', full);
+      document.removeEventListener('keydown', full);
+      try {
+        await root.requestFullscreen({ navigationUI: 'hide' });
+        state.full = true;
+      } catch (_) {}
+      go();
+    };
+    etape(PHONE ? T.pretTel : T.pret, [[T.montrer, full, true]]);
+    root.classList.add('essai-attente');
+    root.addEventListener('pointerdown', full);
+    document.addEventListener('keydown', full);
+    offs.push(() => (root.removeEventListener('pointerdown', full), document.removeEventListener('keydown', full)));
+  });
   if (closed) return;
   root.classList.add('essai-plein');
   img.hidden = false;
@@ -268,22 +281,32 @@ export async function ouvrir(api) {
       : [fill(T.finAutre, { jours: api.jours || 30 }), [[T.retour, fermer, true]]];
   etape(fin[0], fin[1], besideBq);
 
-  // ---------- a computer: the screen shared, the browser minimised, the desktop grabbed
+  // ---------- a computer: the screen shared, the desktop shown (the shortcut), grabbed
+  function askScreen() {
+    return navigator.mediaDevices.getDisplayMedia({
+      video: { displaySurface: 'monitor', frameRate: 5 },
+      audio: false,
+      selfBrowserSurface: 'exclude',
+      surfaceSwitching: 'exclude',
+      monitorTypeSurfaces: 'include',
+    });
+  }
   async function desktopShot() {
     for (;;) {
-      const go = await new Promise((r) => etape(T.partager, [[T.partagerBouton, () => r(true), true], [T.annuler, () => r(false)]]));
-      if (!go || closed) return fermer(), null;
-      try {
-        stream = await navigator.mediaDevices.getDisplayMedia({
-          video: { displaySurface: 'monitor', frameRate: 5 },
-          audio: false,
-          selfBrowserSurface: 'exclude',
-          surfaceSwitching: 'exclude',
-          monitorTypeSurfaces: 'include',
-        });
-      } catch (_) {
-        continue; // declined: asked again
+      if (firstAsk) {
+        // the picker already open: the bee says what to choose in it
+        etape(T.partager);
+        const ask = firstAsk;
+        firstAsk = null;
+        stream = await ask.catch(() => null);
+        if (closed) return null;
+      } else {
+        const go = await new Promise((r) => etape(T.partagerEncore, [[T.partagerBouton, () => r(true), true], [T.annuler, () => r(false)]]));
+        if (!go || closed) return fermer(), null;
+        stream = await askScreen().catch(() => null);
       }
+      // declined: asked again, with a button
+      if (!stream) continue;
       const track = stream.getVideoTracks()[0];
       const surface = track.getSettings().displaySurface;
       if (surface && surface !== 'monitor') {
@@ -295,7 +318,7 @@ export async function ouvrir(api) {
       // what the screen shows now (this page): the desktop's picture must differ from it
       const before = await grab(track).catch(() => null);
       for (;;) {
-        etape(T.reduire);
+        etape(OS === 'win' ? T.reduireWin : OS === 'mac' ? T.reduireMac : T.reduire);
         const ended = new Promise((r) => track.addEventListener('ended', () => r('ended'), { once: true }));
         const hidden = new Promise((r) => {
           if (document.hidden) return r('hidden');

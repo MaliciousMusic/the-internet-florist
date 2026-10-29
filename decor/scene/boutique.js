@@ -542,6 +542,8 @@
     near = on;
     // the camera stays facing the bouquet while it is seen close
     Frise.fige(on);
+    // ("Try on your desktop" fetched now: its click opens the screen picker at once, essai.mjs)
+    if (on) loadEssai().catch(() => {});
     scene.classList.toggle('proche', on);
     // only the chosen bouquet in the close-up (owner 2026-10-26), swaying in its finer sprites (owner 2026-10-27)
     const f = Frise.face();
@@ -696,11 +698,14 @@
   // ---------- "Try on your desktop" (essai.mjs, owner 2026-10-28, in place of the device demo): the page seems to vanish on
   // the visitor's own desktop (a picture of it, taken once), the bouquet framed on it, a honeybee giving the steps
   let essaiMod = null;
+  // (with the digest of the try's files: never an old module from a cache)
+  function loadEssai() {
+    return (essaiMod ||= import(`./essai.mjs?v=${document.documentElement.dataset.essaiV || ''}`));
+  }
   $('achat-demo').addEventListener('click', () => {
     const p = curP;
     if (!p) return;
-    // (with the digest of the try's files: never an old module from a cache)
-    (essaiMod ||= import(`./essai.mjs?v=${document.documentElement.dataset.essaiV || ''}`))
+    loadEssai()
       .then((m) =>
         m.ouvrir({
           T,
