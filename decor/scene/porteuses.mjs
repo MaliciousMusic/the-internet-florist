@@ -454,8 +454,10 @@ async function start() {
   // under the place when positive, over it when negative); right: in from the right instead of the left; speed (px/s along the
   // course); away(R): where they fly off to;
   // gone() (optional): true while the piece is out of sight, then it is set in its place with no flight, or dropped there at
-  // once if they are on their way; tilt(t, u) (optional): degrees the left end hangs lower at time t (s) and course fraction u,
-  // the piece turning about the right flyer's grip. Resolves once the piece is in its place.
+  // once if they are on their way; cut() (optional): true while the piece is out of sight, then it is not brought (unless gone
+  // says so first), or, if they are on their way, they turn round and carry it back off the screen the way they came; tilt(t, u)
+  // (optional): degrees the left end hangs lower at time t (s) and course fraction u, the piece turning about the right flyer's
+  // grip. Resolves true once the piece is in its place, false once it has been carried off (cut).
   async function airlift(box, names, o) {
     const e = await swarm(!!o.under);
     const pair = [], flaps = [];
@@ -510,23 +512,59 @@ async function start() {
       flaps[i](b, dt);
     };
     let s = 0, phase = 'in', t = 0, clock = 0;
-    if (o.gone && o.gone()) { for (const b of pair) b.visible = false; settle(); return; }
+    if (o.gone && o.gone()) { for (const b of pair) b.visible = false; settle(); return true; }
+    if (o.cut && o.cut()) { for (const b of pair) b.visible = false; box.away(); return false; }
     place(...bez(0), o.tilt ? o.tilt(0, 0) : 0).fly.forEach((q, i) => { pair[i].P = [q[0], q[1], 0]; });
     box.state = 'moving';
     flying++;
+    // the piece's centre as last drawn, and the velocity of the whole (px/s) when they carry it back
+    let c = bez(0), vel = null;
+    const back = o.right ? 1 : -1;
+    const flown = () => {
+      for (const b of pair) b.visible = false;
+      flying--;
+      e.render();
+    };
     return new Promise((set) => run((function* () {
       for (;;) {
         const dt = yield;
         // out of sight on the way: the piece drops into its place, they fly off from where they are, no hover
-        if (phase === 'in' && o.gone && o.gone()) { settle(); set(); phase = 'let'; t = 0.35; }
+        if (phase === 'in' && !o.cut && o.gone && o.gone()) { settle(); set(true); phase = 'let'; t = 0.35; }
+        // cut on the way (owner, 2026-10-29): they keep the piece and take it back off the screen, turning round as they fly
+        if (phase === 'in' && o.cut && o.cut()) {
+          phase = 'out';
+          vel = pair[0].V ? [pair[0].V[0], pair[0].V[1]] : [-back * o.speed, 0];
+        }
         if (phase === 'in') {
           s = Math.min(len, s + o.speed * dt);
           clock += dt;
           const deg = o.tilt ? o.tilt(clock, s / len) : 0, q = place(...bez(s / len), deg);
           q.fly.forEach((p, i) => fly(i, p, dt));
+          c = q.c;
           st.translate = `${(q.c[0] - R.cx).toFixed(1)}px ${(q.c[1] - R.cy).toFixed(1)}px`;
           if (o.tilt) st.rotate = `${(-deg).toFixed(2)}deg`;
-          if (s >= len) { settle(); set(); phase = 'let'; t = 0; }
+          if (s >= len) { settle(); set(true); phase = 'let'; t = 0; }
+        } else if (phase === 'out') {
+          // the whole moves as one, its velocity swinging round to the way back (a little upward), faster and faster
+          t += dt;
+          const sp = o.speed * (1 + Math.min(1, t)), k = Math.min(1, dt * 4);
+          vel[0] += (back * sp * 0.97 - vel[0]) * k;
+          vel[1] += (-sp * 0.24 - vel[1]) * k;
+          const d = [vel[0] * dt, vel[1] * dt];
+          pair.forEach((b, i) => fly(i, [b.P[0] + d[0], b.P[1] + d[1]], dt));
+          c = [c[0] + d[0], c[1] + d[1]];
+          // its place moves with the bubble going down: measured again each frame, the piece kept in sight over its hidden bubble
+          const R1 = box.rest();
+          st.translate = `${(c[0] - R1.cx).toFixed(1)}px ${(c[1] - R1.cy).toFixed(1)}px`;
+          st.visibility = 'visible';
+          const off = (x) => (back < 0 ? x < -R.w / 2 - 90 : x > W() + R.w / 2 + 90);
+          if (off(c[0]) && pair.every((b) => off(b.P[0]) || b.P[1] < -60)) {
+            box.away();
+            st.visibility = ''; st.rotate = ''; st.transformOrigin = '';
+            flown();
+            set(false);
+            return;
+          }
         } else {
           // let go: a short hover, then off, faster and faster
           t += dt;
@@ -536,9 +574,7 @@ async function start() {
             fly(i, [b.P[0] + (d[0] / l) * sp * dt, b.P[1] + (d[1] / l) * sp * dt], dt);
           });
           if (pair.every((b) => b.P[1] < -60 || b.P[0] > W() + 80 || b.P[0] < -80)) {
-            for (const b of pair) b.visible = false;
-            flying--;
-            e.render();
+            flown();
             return;
           }
         }
@@ -560,8 +596,9 @@ async function start() {
     : dock ? new Promise((ok) => { dock.after = ok; }) : Promise.resolve();
   // the pager (one dot per bouquet of the day, by the dock: under it on a phone, just above it on a computer), brought by a
   // ladybird and a rose chafer once the dock is in its place and the pager has its dots (boutique.js shows it when there are two
-  // bouquets or more). Out of sight (the close-up hides it, the open shelf covers it), it is not carried: it stands in its place
-  // and shows again alone (owner, 2026-10-25)
+  // bouquets or more). Out of sight when they would set out (the close-up hides it, the open shelf covers it), it is not
+  // carried: it stands in its place and shows again alone (owner, 2026-10-25). Out of sight on their way (owner, 2026-10-29),
+  // they carry it back off the screen and bring it again once it can be seen
   const pager = $('#pager');
   let haut = docked;
   if (pager) {
@@ -578,9 +615,19 @@ async function start() {
       const mo = new MutationObserver(() => { if (!pager.hidden) { mo.disconnect(); ok(); } });
       mo.observe(pager, { attributes: true, attributeFilter: ['hidden'] });
     });
-    const pagerIn = Promise.all([docked, shown])
-      .then(() => airlift(pg, ['coccinelle', 'cetoine'], { pxmm: BEETLE_PXMM, hang: 0.12, inset: [11, 6], rise: DOCK_BAS || DESK.matches ? -110 : 90, speed: 190, away: (R) => [W() + 140, R.cy - 70], gone, tilt }))
-      .catch((err) => { console.error('[porteuses]', err); pg.home(); pager.style.rotate = ''; pager.style.transformOrigin = ''; });
+    // wait (for the dock and the dots), off (to be brought again), coming (on its way, or being carried back), laid
+    let pgState = 'wait';
+    const bring = () => {
+      pgState = 'coming';
+      return airlift(pg, ['coccinelle', 'cetoine'], { pxmm: BEETLE_PXMM, hang: 0.12, inset: [11, 6], rise: DOCK_BAS || DESK.matches ? -110 : 90, speed: 190, away: (R) => [W() + 140, R.cy - 70], gone, cut: gone, tilt })
+        .catch((err) => { console.error('[porteuses]', err); pg.home(); pager.style.rotate = ''; pager.style.transformOrigin = ''; return true; })
+        .then((ok) => { pgState = ok ? 'laid' : 'off'; again(); });
+    };
+    const again = () => { if (pgState === 'off' && !gone()) bring(); };
+    const watch = new MutationObserver(again);
+    for (const el of [root, pager, pager.closest('.scene'), $('.cartes')].filter(Boolean)) watch.observe(el, { attributes: true, attributeFilter: ['class', 'hidden', 'data-rayon'] });
+    // the top waits for their first flight only, whether the pager was set or carried back
+    const pagerIn = Promise.all([docked, shown]).then(bring);
     // the top is done once the pager is in its place; a pager still without its dots 3 s after the dock (one bouquet) is not
     // waited for
     haut = docked.then(() => Promise.race([shown.then(() => pagerIn), new Promise((ok) => setTimeout(ok, 3000)).then(() => (pager.hidden ? null : pagerIn))]));
@@ -594,22 +641,31 @@ async function start() {
   // ("On your desktop"). The swallowtail holds Buy by its upper edge and flies off to the right along it; the bees follow it
   // from the same side, at its speed, set out so as to lay their box once it has gone: they never overlap (owner, 2026-10-27).
   // From then on the bubble comes and goes whole with the close-up, as without carriers (owner, 2026-10-25: only a reload
-  // brings them anew). Closed before they are done, the pieces drop into their places and go down with the bubble
+  // brings them anew). Closed before they are done (owner, 2026-10-29), those on their way turn round and carry their piece back
+  // off the screen, those not yet set out stay away; they all bring them again at the next close-up
   const achat = $('#achat');
   if (achat && buy && demo) {
     const far = () => achat.hidden || achat.classList.contains('loin');
-    const lay = (box, names, o) => airlift(box, names, { gone: far, away: (R) => [W() + 140, R.cy - 180], ...o })
-      .catch((err) => { console.error('[porteuses]', err); box.home(); });
-    let laid = false;
+    const lay = (box, names, o) => airlift(box, names, { cut: far, away: (R) => [W() + 140, R.cy - 180], ...o })
+      .catch((err) => { console.error('[porteuses]', err); box.home(); return true; });
+    // each piece: off (to be brought), coming (on its way or about to set out, or being carried back), laid
+    const state = { buy: 'off', demo: 'off' };
+    const brought = (k) => (ok) => { state[k] = ok ? 'laid' : 'off'; if (ok && k === 'buy') buy.after(); check(); };
     const check = () => {
-      if (laid || far()) return;
-      laid = true;
-      lay(buy, ['machaon'], { pxmm: BUY_PXMM, hang: 0.3, inset: 0, rise: -110, speed: 210, away: (R) => [W() + 160, R.cy + 30] }).then(() => buy.after());
-      // (the bees set out so as to set their box 1.8 s after Buy, the swallowtail gone from under it: their course and its, as
-      // airlift draws them)
-      const course = (R, rise) => (Math.hypot(R.cx + R.w / 2 + 90, rise) * 1.15) / 210;
-      const lag = Math.max(1.2, course(buy.rest(), -110) + 1.8 - course(demo.rest(), -150));
-      setTimeout(() => lay(demo, ['abeille', 'abeille'], { pxmm: BEE_PXMM, hang: 0.15, inset: 8, rise: -150, speed: 210, under: true }), lag * 1000 * SLOW);
+      if (far()) return;
+      const buyFirst = state.buy !== 'laid';
+      if (state.buy === 'off') {
+        state.buy = 'coming';
+        lay(buy, ['machaon'], { pxmm: BUY_PXMM, hang: 0.3, inset: 0, rise: -110, speed: 210, away: (R) => [W() + 160, R.cy + 30] }).then(brought('buy'));
+      }
+      if (state.demo === 'off') {
+        state.demo = 'coming';
+        // (the bees set out so as to set their box 1.8 s after Buy, the swallowtail gone from under it: their course and its, as
+        // airlift draws them; Buy already in its place, they set out at once)
+        const course = (R, rise) => (Math.hypot(R.cx + R.w / 2 + 90, rise) * 1.15) / 210;
+        const lag = buyFirst ? Math.max(1.2, course(buy.rest(), -110) + 1.8 - course(demo.rest(), -150)) : 0.2;
+        setTimeout(() => lay(demo, ['abeille', 'abeille'], { pxmm: BEE_PXMM, hang: 0.15, inset: 8, rise: -150, speed: 210, under: true }).then(brought('demo')), lag * 1000 * SLOW);
+      }
     };
     new MutationObserver(check).observe(achat, { attributes: true, attributeFilter: ['class', 'hidden'] });
     check();
