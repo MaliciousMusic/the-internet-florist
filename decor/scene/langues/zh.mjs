@@ -56,7 +56,7 @@ export default {
     budVases: '单枝花瓶即将上架：一枝花，配一只花瓶。',
     noneCollected: '还没有花束找到它的收藏者。',
     seeOpenSea: '在 OpenSea 上查看收藏系列',
-    onDesktop: "在桌面上试试",
+    onDesktop: "在我的设备上试试",
     buy: '购买',
     // the purchase sheet: the express waiver of the right of withdrawal (French Consumer Code L221-28, 13°)
     sheetTitle: '付款之前',

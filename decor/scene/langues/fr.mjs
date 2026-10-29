@@ -56,7 +56,7 @@ export default {
     budVases: 'Les soliflores arrivent bientôt : une seule fleur dans son vase.',
     noneCollected: 'Aucun bouquet n’a encore trouvé son collectionneur.',
     seeOpenSea: 'Voir la collection sur OpenSea',
-    onDesktop: "Essayer sur votre bureau",
+    onDesktop: "Essayer sur mon appareil",
     buy: 'Acheter',
     // the purchase sheet: the express waiver of the right of withdrawal (French Consumer Code L221-28, 13°)
     sheetTitle: 'Avant de payer',

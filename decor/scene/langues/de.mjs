@@ -56,7 +56,7 @@ export default {
     budVases: 'Solitärvasen kommen bald: eine einzelne Blume in ihrer Vase.',
     noneCollected: 'Noch hat kein Blumenstrauß seinen Sammler gefunden.',
     seeOpenSea: 'Die Sammlung auf OpenSea ansehen',
-    onDesktop: "Auf Ihrem Desktop ausprobieren",
+    onDesktop: "Auf meinem Gerät ausprobieren",
     buy: 'Kaufen',
     // the purchase sheet: the express waiver of the right of withdrawal (French Consumer Code L221-28, 13°)
     sheetTitle: 'Vor der Zahlung',

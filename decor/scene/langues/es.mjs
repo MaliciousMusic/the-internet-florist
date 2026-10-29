@@ -61,7 +61,7 @@ export default {
     budVases: 'Muy pronto, los floreros solitarios: una sola flor en su jarrón.',
     noneCollected: 'Ningún ramo ha encontrado todavía a su coleccionista.',
     seeOpenSea: 'Ver la colección en OpenSea',
-    onDesktop: "Pruébalo en tu escritorio",
+    onDesktop: "Probar en mi dispositivo",
     buy: 'Comprar',
     // the purchase sheet: the express waiver of the right of withdrawal (French Consumer Code L221-28, 13°)
     sheetTitle: 'Antes de pagar',

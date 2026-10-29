@@ -56,7 +56,7 @@ export default {
     budVases: 'Bud vases are coming soon: a single flower in its vase.',
     noneCollected: 'No bouquet has found its collector yet.',
     seeOpenSea: 'See the collection on OpenSea',
-    onDesktop: "Try on your desktop",
+    onDesktop: "Try on my device",
     buy: 'Buy',
     // the purchase sheet: the express waiver of the right of withdrawal (French Consumer Code L221-28, 13°)
     sheetTitle: 'Before you pay',
