@@ -58,7 +58,8 @@ function ouvrir(id) {
   v.play().catch((e) => { etat.textContent = e && e.name === 'NotAllowedError' ? 'cliquer sur Rejouer' : 'pas encore cuit'; });
   history.replaceState(null, '', '#' + id);
 }
-for (const [id, nom] of BQ) { const b = document.createElement('button'); b.textContent = nom; b.dataset.id = id; b.onclick = () => ouvrir(id); choix.append(b); }
+// another bouquet reloads the page: resizing the WebGL canvas to the next video while one plays left it drawn small in a corner
+for (const [id, nom] of BQ) { const b = document.createElement('button'); b.textContent = nom; b.dataset.id = id; b.onclick = () => { history.replaceState(null, '', '#' + id); location.reload(); }; choix.append(b); }
 document.getElementById('rejouer').onclick = () => { v.currentTime = 0; v.play(); };
 document.getElementById('fond').oninput = (e) => document.documentElement.style.setProperty('--fond', e.target.value);
 ouvrir(BQ.some(([id]) => '#' + id === location.hash) ? location.hash.slice(1) : BQ[0][0]);
