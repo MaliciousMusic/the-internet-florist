@@ -155,6 +155,37 @@ préfère encore un écran d'attente à ça ; il a choisi « affiche nette, basc
 - Au début, sur téléphone émulé, le ciel seul se décale une fois vers 0,5 s, avant l'entrée. C'est probablement l'émulation
   (`dvh`) : à vérifier sur un vrai téléphone.
 
+## Le fond du gros plan (29 octobre 2026)
+
+Porteur : en gros plan, les fleurs du fond « font vraiment pauvre » ; il veut un deuxième état du décor pour le gros plan,
+avec la **même sélection de fleurs** et les **mêmes plantes aux mêmes places**, seulement de meilleure qualité ; les touffes
+du premier plan aussi, **en gros plan seulement**. Branche `ch/fond-proche`.
+
+- **La cause.** La frise dessine la prairie au-delà de 3,3 m avec les têtes réduites du moteur et des silhouettes, cuites à
+  1,2 pixel par unité. Le gros plan les agrandit 1,9 fois sur ordinateur (1920 × 930) et 2 fois sur téléphone.
+- **Le sol fin** (`decor/frise_proche.mjs`). Chaque tranche du sol est redessinée par `frise_sol.mjs` avec `setProche` de
+  `fleurs.mjs` : toutes les têtes de la bande du milieu prennent un dessin entier de leur coloris (les lourdes aussi :
+  jacinthes, renoncules, anémones, iris). Le hasard de la frise est tiré dans le même ordre, donc rien d'autre ne bouge
+  (vérifié : sans `setProche`, la bande z6 ressort identique à l'octet près). L'herbe et les points de la prairie lointaine
+  ne changent pas. Découpe en morceaux de 400 unités, seulement à moins de 800 unités d'un pilier, cuits à 2,4 pixels par
+  unité : `out/frise/proche/<tranche>/<j>.webp` et `out/frise/proche.json` (36 Mo en tout, de 0,6 Mo pour « loin » à 14 Mo
+  pour z1).
+- **Les touffes fines** (`node decor/premier.mjs --fin --bas 1460`) : même cadrage, 2,4 pixels par unité au lieu de 1,6,
+  dans `out/premier/fin/`, et un champ `fin` dans chaque entrée de `premier.json` (2,3 Mo).
+- **Dans la page.** Quand la caméra est posée sur un bouquet, `boutique.js` calcule le cadre du futur gros plan et
+  `Frise.proche` lit les morceaux qui couvrent la vue à mi-zoom, posés cachés au-dessus des tuiles de leur bande et envoyés
+  à la carte graphique un par image (`Frise.gpu`). Ils apparaissent pendant le zoom, à l'image où la vue entre dedans,
+  jamais au repos ; au retour, ils disparaissent dès que la vue en sortirait. `insectes.mjs` échange les touffes dans la même
+  image. `?proche=non` garde le décor de la frise pour comparer ; `Frise.procheEtat` donne l'état.
+- **Mesuré** (Chrome sans fenêtre, rendu logiciel) : l'échange se fait à 270 ms d'un zoom de 900 ms (vers 1,4×), sur
+  ordinateur comme sur téléphone ; au retour, vers 1,2×. Aucune erreur dans la console.
+- **Poids lu par gros plan** : au plus 3,5 Mo sur ordinateur (46 morceaux), 1,6 Mo sur téléphone (21 morceaux), plus les
+  touffes en vue.
+
+**Préchargement (porteur, 29 octobre : « garder tel quel »).** Il reste fait à chaque bouquet où la caméra s'arrête, même
+sans zoom : environ 1,6 Mo par arrêt sur téléphone. On jugera sur un vrai téléphone ; les pistes restent l'AVIF (poids
+divisé par deux environ) ou la lecture au premier toucher du bouquet.
+
 ## Reste
 
 - Les porteuses du bandeau gardent leurs deux canvases, au-dessus du bandeau HTML. On peut les réunir en une seule.

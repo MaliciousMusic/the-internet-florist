@@ -863,6 +863,134 @@
         if (window.ENTREE_FAITE) window.ENTREE_FAITE();
       });
 
+  // ---------- the close-up's ground
+  // The same meadow, its heads at full detail and baked finer, for the close-up only (frise_proche.mjs; owner 2026-10-29).
+  // boutique.js gives the view the close-up will have while the camera rests on a bouquet: the chunks over it are read
+  // then, laid over their strips' tiles, hidden. They show during the zoom, from the frame where the view lies inside them
+  // (a change seen in motion only, SPRITES.md), and hide on the way back once the view would reach past them.
+  const PROCHE_MI = 0.5;
+  let procheP = null;
+  let pro = null; // { key, parts: [{ s, url }], spans: [[x0, x1]] (scene px), pret, keep, want, shown }
+  // a texture sent to the graphics card while the camera rests, one a frame (shown hidden, PixiJS would send them all in the
+  // zoom's frame where they show: a hitch in the move)
+  let gpuChain = Promise.resolve();
+  const gpu = (tex) =>
+    (gpuChain = gpuChain.then(
+      () =>
+        new Promise((r) =>
+          requestAnimationFrame(() => {
+            try {
+              toile.app.renderer.texture.initSource(tex.source);
+            } catch (_) {}
+            r(tex);
+          }),
+        ),
+    ));
+  const procheJson = () => (procheP ||= fetch(`${OUT}frise/proche.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null));
+  const dropPro = () => {
+    for (const p of pro.parts) {
+      p.s.destroy();
+      letGo(p.url);
+    }
+    pro = null;
+  };
+  async function proche(vue, on) {
+    // (?proche=non: the frieze's ground in the close-up too, to compare)
+    if (q.get('proche') === 'non') return;
+    if (!vue) {
+      if (pro) pro.keep = pro.want = false;
+      return;
+    }
+    const J = await procheJson();
+    if (!J || !toile || !M) return;
+    const W = scene.clientWidth, H = scene.clientHeight;
+    // the chunks cover the view half-way through the zoom (PROCHE_MI of its move), so they show while it still moves fast
+    const tx = vue.tx * PROCHE_MI, ty = vue.ty * PROCHE_MI, s = 1 + (vue.s - 1) * PROCHE_MI;
+    const xa = -tx / s, xb = (W - tx) / s;
+    const ya = (-ty / s - mt) / k, yb = ((H - ty) / s - mt) / k;
+    const key = [c, xa, xb, ya, yb, k].map(Math.round).join(',');
+    // (shown, or covering this view already, they stay: the close-up's own view differs by a few px from the one read at
+    // rest, the price bubble then in its place)
+    if (pro && (pro.shown || (pro.c === c && pro.spans.every(([a, b]) => a <= xa && xb <= b)))) {
+      pro.keep = true;
+      pro.want = on;
+      return;
+    }
+    if (pro && pro.key !== key) dropPro();
+    if (pro) {
+      pro.keep = true;
+      pro.want = on;
+      return;
+    }
+    pro = { key, c, parts: [], spans: [], keep: true, want: on, shown: false, pret: false };
+    const me = pro, waits = [];
+    for (const B of bands) {
+      const list = J.bandes[B.id];
+      if (!list) continue;
+      // the view in the strip's own units (copy m of a chunk laid m x B.w further, as strip() lays the tiles)
+      const shift = c * B.f;
+      const toU = (x) => (x - ml) / k + shift + B.cx - M.cx;
+      const ua = toU(xa) - 4, ub = toU(xb) + 4;
+      // (a band is taken whole across the view as soon as one of its chunks there reaches into it)
+      const copies = (x, w, fn) => {
+        for (let m = Math.floor((ua - x - w) / B.w) + 1; x + m * B.w < ub; m++) if (x + m * B.w + w > ua) fn(m);
+      };
+      let seen = false;
+      for (const [, , x, y, w, h] of list) if (!(y > yb || y + h < ya)) copies(x, w, () => (seen = true));
+      if (!seen) continue;
+      let lo = Infinity, hi = -Infinity;
+      for (const [, src, x, y, w, h] of list) {
+        copies(x, w, (m) => {
+          const x0 = x + m * B.w;
+          const url = OUT + 'frise/' + src;
+          const s = new toile.PIXI.Sprite();
+          s.position.set(x0 - B.cx + M.cx, y);
+          s.visible = false;
+          B.layer.addChild(s);
+          hold(url);
+          me.parts.push({ s, url });
+          waits.push(
+            toile
+              .texture(url)
+              .then(gpu)
+              .then((tex) => {
+                if (me !== pro) return;
+                s.texture = tex;
+                s.width = w;
+                s.height = h;
+              }),
+          );
+          // (a chunk's span is its strip's, CH units, whatever its drawn box)
+          const j0 = Math.floor((x0 - B.x0 - m * B.w) / J.ch) * J.ch + B.x0 + m * B.w;
+          lo = Math.min(lo, j0);
+          hi = Math.max(hi, j0 + J.ch);
+        });
+      }
+      // what the band's chunks cover, in the scene's px
+      if (lo < hi) me.spans.push([ml + (lo - shift - B.cx + M.cx) * k, ml + (hi - shift - B.cx + M.cx) * k]);
+    }
+    Promise.all(waits).then(() => {
+      if (me === pro) me.pret = true;
+    });
+  }
+  // every frame: shown while wanted and the view lies inside every band's chunks, or while zooming back out inside them
+  // (they never come in while the view rests: read too late, after the zoom, they wait for the next close-up)
+  let lastS = 1;
+  const procheStep = () => {
+    const v = toile.vueActuelle;
+    const moving = v.s !== lastS;
+    lastS = v.s;
+    if (!pro) return;
+    const x0 = -v.tx / v.s, x1 = (scene.clientWidth - v.tx) / v.s;
+    const inside = pro.pret && pro.spans.every(([a, b]) => a <= x0 + 0.5 && x1 - 0.5 <= b);
+    const show = inside && ((pro.want && (moving || pro.shown)) || (pro.shown && v.s > 1));
+    if (show !== pro.shown) {
+      pro.shown = show;
+      for (const p of pro.parts) p.s.visible = show;
+    }
+    if (!pro.keep && !pro.shown) dropPro();
+  };
+
   // ---------- start
   let decorRes;
   const decor = new Promise((r) => (decorRes = r));
@@ -884,6 +1012,7 @@
         foldStep(now);
         replieStep(now);
         swayClumps(now);
+        procheStep();
         for (const fn of swaying) fn(now);
       });
       // (the landing bouquet's, written in the page by build.mjs so it comes in with the landing's picture: taken over)
@@ -997,6 +1126,15 @@
       }
     },
     ajusteNom: () => fitName(),
+    // the close-up's ground for the view { tx, ty, s } it will have: read (on false), shown in the close-up (on true);
+    // null: let go once out of view
+    proche,
+    // a texture sent to the graphics card at the next free frame, one a frame (resolves with it)
+    gpu,
+    // (for the checks: how many chunks, read, shown, and what they cover in the scene's px)
+    get procheEtat() {
+      return pro && { n: pro.parts.length, pret: pro.pret, keep: pro.keep, want: pro.want, shown: pro.shown, spans: pro.spans };
+    },
     // the world folded into the ground but the bouquets (true), or standing again (false)
     replie(on) {
       revele();
