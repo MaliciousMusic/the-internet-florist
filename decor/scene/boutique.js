@@ -726,6 +726,8 @@
           T,
           I18N,
           jours: (CFG.vie && CFG.vie.jours) || 30,
+          // (its 30-day cycle, where one is baked: decor/out/cycle/<id>)
+          id: p.id,
           index: () => read(p),
           base: fileOf(p).replace(/sprites\.json$/, ''),
           // the bouquet on screen, which the bee's bubble keeps clear of while the page is still seen

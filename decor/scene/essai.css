@@ -64,6 +64,19 @@
   cursor: default;
 }
 
+/* the 30-day cycle (decor/CYCLE.md C3): its video drawn over the desktop in the bouquet's place, the live bouquet hidden meanwhile */
+.essai-cycle {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.essai-pose.essai-en-cycle {
+  visibility: hidden;
+}
+
 /* the ✓ over the top left corner when the right one would leave the screen, under the frame when the top would */
 .essai-pose.essai-ok-gauche .essai-ok {
   right: auto;

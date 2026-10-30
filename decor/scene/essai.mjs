@@ -13,6 +13,7 @@
 //   m.fermer()
 
 const BASE = new URL('../../insectes/', import.meta.url).href;
+const CYCLE = new URL('../out/cycle/', import.meta.url).href; // the 30-day cycles: <id>.mp4 and <id>.json (decor/CYCLE.md C3)
 const V = new URL(import.meta.url).search;
 const AHEAD = 60000; // the breeze's common head start (frise.js)
 const BEE_PXMM = 3; // the guide's scale: a honeybee 37 px long
@@ -72,6 +73,7 @@ export async function ouvrir(api) {
 
   let stream = null;
   let shotUrl = null;
+  let cyc = null; // the 30-day cycle while it plays: { draw(), stop() }
   let closed = false;
   let raf = 0;
   const offs = [];
@@ -90,6 +92,7 @@ export async function ouvrir(api) {
       closed = true;
       cancelAnimationFrame(raf);
       stopStream();
+      if (cyc) cyc.stop();
       for (const off of offs) off();
       if (document.fullscreenElement === root) document.exitFullscreen().catch(() => {});
       if (shotUrl) URL.revokeObjectURL(shotUrl);
@@ -169,6 +172,7 @@ export async function ouvrir(api) {
       bee.e.render();
     }
     if (bq) bq.draw(now);
+    if (cyc) cyc.draw();
   };
   raf = requestAnimationFrame(frame);
 
@@ -348,15 +352,119 @@ export async function ouvrir(api) {
   });
   if (closed) return;
 
-  // ---------- the end: the bouquet set, the way to keep it
+  // ---------- the end: the bouquet set, the way to keep it, and its 30 days in 30 seconds where it has them (decor/CYCLE.md C3)
   const B = api.I18N.bureau || {};
   const win = /Windows/.test(navigator.userAgent);
-  const fin = PHONE ? [T.finTel, [[T.retour, fermer, true]]] : win && B.installer
-      ? [fill(T.fin, { jours: api.jours || 30 }), [[T.telecharger, null, true, `telechargements/${B.installer}`], [T.retour, fermer]]]
-      : [fill(T.finAutre, { jours: api.jours || 30 }), [[T.retour, fermer, true]]];
-  etape(fin[0], fin[1]);
-  // (its first button, made by etape)
-  cible = middle(actions.querySelector('.essai-bouton-1'), 40);
+  const jours = api.jours || 30;
+  const fiche = api.id ? await fetch(`${CYCLE}${api.id}.json${V}`).then((r) => (r.ok ? r.json() : null)).catch(() => null) : null;
+  if (closed) return;
+  const voir = fiche ? [[fill(T.cycle, { jours }), () => cycle(fiche)]] : [];
+  function finir() {
+    const fin = PHONE ? [T.finTel, [...voir, [T.retour, fermer]]] : win && B.installer
+        ? [fill(T.fin, { jours }), [[T.telecharger, null, true, `telechargements/${B.installer}`], ...voir, [T.retour, fermer]]]
+        : [fill(T.finAutre, { jours }), [...voir, [T.retour, fermer]]];
+    // (the first button leads: the installer, else the cycle, else back to the bouquets)
+    fin[1][0] = [fin[1][0][0], fin[1][0][1], true, fin[1][0][3]];
+    etape(fin[0], fin[1]);
+    // (its first button, made by etape)
+    cible = middle(actions.querySelector('.essai-bouton-1'), 40);
+  }
+  finir();
+
+  // ---------- the 30-day cycle (lot C3): its baked video (decor/cycle_cuisson.mjs, a stacked-alpha MP4: premultiplied colour on
+  // top, alpha as grey below) drawn in the bouquet's place on WebGL, the live bouquet hidden meanwhile. It opens close on the
+  // wet bouquet over the whole screen, then the view narrows and settles on the bouquet where it stands as the video pulls
+  // back (the same eased time as its zoom); the bee names the moments; the video over, the live bouquet comes back
+  async function cycle(f) {
+    if (cyc) return;
+    const v = document.createElement('video');
+    v.muted = true;
+    v.playsInline = true;
+    v.preload = 'auto';
+    v.src = `${CYCLE}${f.id}.mp4${V}`;
+    const cv = document.createElement('canvas');
+    cv.className = 'essai-cycle';
+    cv.setAttribute('aria-hidden', 'true');
+    const gl = cv.getContext('webgl', { premultipliedAlpha: true, alpha: true });
+    const ok = gl && (await new Promise((r) => {
+      v.addEventListener('loadeddata', () => r(true), { once: true });
+      v.addEventListener('error', () => r(false), { once: true });
+    }));
+    if (closed) return;
+    if (!ok) return finir();
+    const sh = (type, src) => {
+      const o = gl.createShader(type);
+      gl.shaderSource(o, src);
+      gl.compileShader(o);
+      return o;
+    };
+    const pr = gl.createProgram();
+    // the quad: [0,1]² mapped onto the rectangle r (clip space, it may run off the canvas)
+    gl.attachShader(pr, sh(gl.VERTEX_SHADER, 'attribute vec2 p;uniform vec4 r;varying vec2 uv;void main(){uv=p;gl_Position=vec4(r.xy+p*r.zw,0.,1.);}'));
+    gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, 'precision mediump float;varying vec2 uv;uniform sampler2D tx;void main(){vec3 c=texture2D(tx,vec2(uv.x,(1.-uv.y)*.5)).rgb;float a=texture2D(tx,vec2(uv.x,.5+(1.-uv.y)*.5)).r;gl_FragColor=vec4(min(c,vec3(a)),a);}'));
+    gl.linkProgram(pr);
+    gl.useProgram(pr);
+    gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([0, 0, 1, 0, 0, 1, 1, 1]), gl.STATIC_DRAW);
+    const loc = gl.getAttribLocation(pr, 'p');
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    const ur = gl.getUniformLocation(pr, 'r');
+    gl.bindTexture(gl.TEXTURE_2D, gl.createTexture());
+    for (const [k, val] of [[gl.TEXTURE_MIN_FILTER, gl.LINEAR], [gl.TEXTURE_MAG_FILTER, gl.LINEAR], [gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE], [gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE]]) gl.texParameteri(gl.TEXTURE_2D, k, val);
+    pose.after(cv);
+    pose.classList.add('essai-en-cycle');
+    cible = null;
+    // the moments, from the time map: the morning until the bloom's age (3.25 days), the bloom until the decline (20), the
+    // decline until the faded (30)
+    const at = (age) => (f.cles.find(([, a]) => a >= age) || [f.duree])[0];
+    const moments = [[at(30), T.cycleFane], [at(20), T.cycleDeclin], [at(3.25), T.cycleFloraison], [0, T.cycleRosee]];
+    let said = null;
+    const Z = f.zoom;
+    cyc = {
+      draw() {
+        const t = v.currentTime;
+        const m = moments.find(([t0]) => t >= t0)[1];
+        if (m !== said) etape((said = m));
+        if (v.readyState < 2) return;
+        const dpr = Math.min(2, devicePixelRatio || 1);
+        const cw = Math.round(W() * dpr), ch = Math.round(H() * dpr);
+        if (cv.width !== cw || cv.height !== ch) (cv.width = cw), (cv.height = ch);
+        // where the video's box stands with the bouquet (its drawing's coordinates through the sprites' world), and the same
+        // box grown to cover the screen; between the two by the zoom's eased time
+        const [ax, ay] = bq.toScreen(f.vb[0], f.vb[1]), [bx, by] = bq.toScreen(f.vb[0] + f.vb[2], f.vb[1] + f.vb[3]);
+        const end = [ax, ay, bx - ax, by - ay];
+        const c = Math.max(W() / f.w, H() / f.h), first = [(W() - f.w * c) / 2, (H() - f.h * c) / 2, f.w * c, f.h * c];
+        const u = Math.max(0, Math.min(1, (t - Z.hold) / (Z.end - Z.hold))), k = u * u * (3 - 2 * u);
+        const R = first.map((x, i) => x + (end[i] - x) * k);
+        gl.viewport(0, 0, cw, ch);
+        gl.clearColor(0, 0, 0, 0);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, v);
+        gl.uniform4f(ur, (R[0] / W()) * 2 - 1, 1 - ((R[1] + R[3]) / H()) * 2, (R[2] / W()) * 2, (R[3] / H()) * 2);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      },
+      stop() {
+        v.pause();
+        v.removeAttribute('src');
+        v.load();
+        cv.remove();
+        pose.classList.remove('essai-en-cycle');
+        cyc = null;
+      },
+    };
+    v.addEventListener('ended', async () => {
+      if (!cyc) return;
+      cyc.stop();
+      etape(T.cycleRevient);
+      await sleep(2600);
+      if (!closed && !cyc) finir();
+    }, { once: true });
+    v.play().catch(() => {
+      if (cyc) cyc.stop();
+      finir();
+    });
+  }
 
   // ---------- a computer: the screen shared, the desktop shown (the shortcut), grabbed
   function askScreen() {
@@ -558,6 +666,11 @@ export async function ouvrir(api) {
     lay();
     const B = {
       onChange: () => {},
+      // a point of the bouquet's drawing (its viewBox's coordinates: the cycle's video box) on the screen, where it stands now
+      toScreen(dx, dy) {
+        const wx = idx.boite[0] + ((dx - idx.vb[0]) * idx.boite[2]) / idx.vb[2], wy = idx.boite[1] + ((dy - idx.vb[1]) * idx.boite[3]) / idx.vb[3];
+        return [box.x + ((wx - x0) * box.w) / bw, box.y + ((wy - y0) * box.h) / bh];
+      },
       draw(now) {
         const s = canvas.width / bw;
         g.setTransform(1, 0, 0, 1, 0, 0);
