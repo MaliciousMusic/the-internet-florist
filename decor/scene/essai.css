@@ -237,16 +237,16 @@
   top: -46px;
   width: 34px;
   height: 34px;
-  border: 0;
+  border: 1px solid #0058b8;
   border-radius: 50%;
-  background: linear-gradient(to bottom, #1477e6, #0a6cdb 40%, #0863cb);
+  background: #0a6cdb;
   color: #fff;
   font: 700 17px/34px system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   box-shadow: 0 2px 8px rgb(8 36 84 / 0.35);
   cursor: pointer;
 }
 
-/* the bee's bubble: on glass, beside the bee (essai.mjs moves it), each new step popping in */
+/* the bee's bubble: opaque sky blue (entete.css), beside the bee (essai.mjs moves it), each new step popping in */
 .essai-bulle {
   position: absolute;
   left: 50%;
@@ -258,12 +258,10 @@
   border: 1px solid var(--glass-bord);
   border-radius: 16px;
   background: var(--glass-texte);
-  -webkit-backdrop-filter: var(--glass-flou);
-  backdrop-filter: var(--glass-flou);
   box-shadow: var(--glass-ombre);
   color: #fff;
   font: 500 14.5px/1.4 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  text-shadow: 0 1px 2px rgb(8 36 84 / 0.35);
+  text-shadow: var(--encre-bord);
   pointer-events: auto;
 }
 
@@ -318,23 +316,136 @@
   display: none;
 }
 
+/* its buttons as Buy is (boutique.css): opaque, a darker edge, a soft shadow; the first in Buy's blue, the others in the
+   sky blue, a step darker than the bubble so they stand out of it */
 .essai-bouton {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  height: 32px;
-  padding: 0 14px;
-  border: 1px solid var(--glass-bord);
+  gap: 8px;
+  height: 34px;
+  padding: 0 16px;
+  border: 1px solid #5bbdc5;
   border-radius: 999px;
-  background: var(--glass);
+  background: #80d3d9;
+  box-shadow: 0 2px 8px rgb(0 60 90 / 0.22);
   color: #fff;
-  font: 600 13px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font: 600 13.5px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   text-decoration: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.15s ease, opacity 0.2s ease;
+}
+
+.essai-bouton:hover {
+  background: #74cdd4;
+}
+
+.essai-bouton:active {
+  background: #66c3cb;
 }
 
 .essai-bouton-1 {
-  border-color: transparent;
-  background: linear-gradient(to bottom, #1477e6, #0a6cdb 40%, #0863cb);
+  border: 1px solid #0058b8;
+  background: #0a6cdb;
+  text-shadow: none;
+}
+
+.essai-bouton-1:hover {
+  background: #075fc2;
+}
+
+.essai-bouton-1:active {
+  background: #0553ab;
+}
+
+/* the click's answer: the button gives under the pointer and springs back */
+.essai-presse {
+  animation: essai-presse 0.42s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+@keyframes essai-presse {
+  25% {
+    scale: 0.9;
+  }
+}
+
+/* then, leading on, its word gives way to a small ring turning in its middle till the next step (its width kept, so the
+   bubble does not jump); the other buttons fade */
+.essai-encours::after {
+  content: '';
+  position: absolute;
+  left: calc(50% - 8px);
+  top: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: essai-tourne 0.7s linear infinite;
+}
+
+.essai-encours {
+  color: transparent;
+  cursor: progress;
+}
+
+.essai-occupe .essai-bouton:not(.essai-encours) {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+@keyframes essai-tourne {
+  to {
+    rotate: 1turn;
+  }
+}
+
+/* waiting on the browser (its screen picker): three dots beat under the words */
+.essai-patience {
+  display: inline-flex;
+  gap: 5px;
+  height: 14px;
+  align-items: center;
+}
+
+.essai-patience i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--encre-bord);
+  animation: essai-bat 1s ease-in-out infinite;
+}
+
+.essai-patience i:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.essai-patience i:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes essai-bat {
+  0%,
+  60%,
+  100% {
+    opacity: 0.35;
+    translate: 0 0;
+  }
+
+  30% {
+    opacity: 1;
+    translate: 0 -4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .essai-presse,
+  .essai-patience i {
+    animation: none;
+  }
 }
 
 .essai-bouton:focus-visible,
@@ -355,9 +466,12 @@
   border: 1px solid var(--glass-bord);
   border-radius: 50%;
   background: var(--glass);
-  -webkit-backdrop-filter: var(--glass-flou);
-  backdrop-filter: var(--glass-flou);
+  box-shadow: var(--glass-ombre);
   color: #fff;
   cursor: pointer;
   pointer-events: auto;
+}
+
+.essai-fermer svg {
+  filter: var(--glass-encre);
 }

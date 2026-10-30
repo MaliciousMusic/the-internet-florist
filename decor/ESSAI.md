@@ -104,6 +104,21 @@ Le site n'ouvre donc plus `belai://essai`. Le code de Belai Bureau qui le reçoi
 Reste vrai : une page ne voit pas le bureau sous le navigateur. Pour la photo du bureau, le visiteur doit l'écarter une
 fois (⊞ + D, deux fois). Aucune page ne peut le faire à sa place.
 
+## Quatrième retour du porteur (29 octobre 2026, au soir)
+
+- **Plus de verre sur tout le site.** Les jetons `--glass*` d'`entete.css` sont maintenant un bleu ciel opaque, le Pantone
+  14-4620 Island Paradise (`#95dee3`) : bord un peu plus foncé, ombre douce, sans flou ni reflet. Les anneaux de lumière
+  et le reflet du dock sont retirés. Cela vaut pour le dock, le pager, la pastille et le volet du pied de page, le rayon,
+  la pile de Belai Bureau, les pages À propos et Mentions, « Essayer sur mon appareil », la bulle de l'abeille et sa croix.
+  Les boutons sont faits comme Acheter. Le premier bouton de la bulle et le ✓ prennent le bleu d'Acheter (`#0a6cdb`).
+- **L'encre** (réponse du porteur) : le texte et les icônes restent blancs, bordés d'un bleu foncé en dégradé doux
+  (`--encre-bord`, `--glass-encre`), pour se lire sur le bleu ciel.
+- **Un clic dans la bulle répond tout de suite.** Le bouton s'enfonce et revient, comme un ressort. S'il mène à la suite,
+  un petit anneau tourne en son bout et les autres boutons pâlissent, jusqu'à l'étape suivante. Après « Partager mon
+  écran », le sélecteur du navigateur peut tarder : l'anneau tourne 0,65 s, puis l'abeille dit quoi choisir, et trois
+  points battent sous ses mots jusqu'à la réponse du sélecteur.
+- Restent verts, comme décidé le 27 octobre : les deux boutons de téléchargement de Belai Bureau (Windows, Mac).
+
 ## Fichiers
 
 - `scene/essai.mjs` et `scene/essai.css` (le module est chargé au clic, avec l'empreinte `data-essai-v` de la page) ;

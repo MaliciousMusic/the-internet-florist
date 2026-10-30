@@ -1,5 +1,5 @@
 <!doctype html>
-<html data-essai-v="76525a2bbe" lang="de">
+<html data-essai-v="4dff3bc226" lang="de">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'sha256-xI4J8XJj5gV4nLV7DtP9x3iNYwMcEmgldRlAOjOzclw='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self'; connect-src 'self' data: blob: http://localhost:8790 http://127.0.0.1:8790; worker-src 'self' blob:; frame-src 'self' blob: http://localhost:8790 http://127.0.0.1:8790; object-src 'none'; base-uri 'self'; form-action 'self' http://localhost:8790 http://127.0.0.1:8790">
@@ -36,10 +36,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>.ciel{position:absolute;left:0;width:100%;top:-103.704%;height:255.556%;z-index:0;pointer-events:none;background:linear-gradient(158.9969deg,rgba(242,246,251,0.1994) 32.343%,rgba(242,246,251,0.1918) 33.497%,rgba(242,246,251,0.1825) 34.648%,rgba(242,246,251,0.1626) 36.952%,rgba(242,246,251,0.123) 41.561%,rgba(242,246,251,0.1043) 43.865%,rgba(242,246,251,0.0869) 46.170%,rgba(242,246,251,0.0712) 48.474%,rgba(242,246,251,0.057) 50.778%,rgba(242,246,251,0.0446) 53.083%,rgba(242,246,251,0.0338) 55.387%,rgba(242,246,251,0.0245) 57.692%,rgba(242,246,251,0.017) 59.996%,rgba(242,246,251,0.0111) 62.300%,rgba(242,246,251,0.0065) 64.605%,rgba(242,246,251,0.0029) 66.909%,rgba(242,246,251,0.0004) 69.214%),linear-gradient(180deg,rgb(108,155,207) 40.580%,rgb(113,160,210) 43.413%,rgb(115,162,211) 44.830%,rgb(116,164,212) 45.539%,rgb(119,165,213) 46.246%,rgb(124,169,214) 47.663%,rgb(127,171,215) 48.373%,rgb(130,174,216) 49.080%,rgb(134,176,217) 49.789%,rgb(139,179,219) 50.496%,rgb(143,182,220) 51.206%,rgb(147,184,221) 51.913%,rgb(162,194,225) 54.746%,rgb(167,197,226) 55.456%,rgb(169,199,226) 55.809%,rgb(173,201,227) 56.163%,rgb(176,203,228) 56.517%,rgb(181,206,229) 56.873%,rgb(188,210,230) 57.226%,rgb(195,214,232) 57.580%,rgb(200,217,233) 57.757%,rgb(205,220,234) 57.933%,rgb(209,223,235) 58.110%,rgb(212,225,236) 58.289%,rgb(215,226,236) 58.466%,rgb(216,227,237) 58.643%,rgb(218,228,237) 58.996%,rgb(219,229,237) 59.350%,rgb(220,229,237) 59.706%,rgb(220,230,238) 60.413%,rgb(221,230,238) 63.246%)}</style>
 <link rel="stylesheet" href="scene.css?v=b2268b607f">
-<link rel="stylesheet" href="entete.css?v=3fb3031db0">
+<link rel="stylesheet" href="entete.css?v=6763cdca91">
 <style>
-  /* The legal page: the shop's still decor behind (as the About page), one frosted-glass panel that scrolls between the
-     header and the footer's pill, with a table of contents and one section per text. */
+  /* The legal page: the shop's still decor behind (as the About page), one opaque sky-blue panel (no glass since
+     2026-10-29, entete.css) that scrolls between the header and the footer's pill, with a table of contents and one section
+     per text. */
   .legal {
     position: fixed;
     top: calc(var(--entete-bas) + 12px);
@@ -51,12 +52,12 @@
     overflow-y: auto;
     overscroll-behavior: contain;
     padding: 22px clamp(18px, 5vw, 34px) 26px;
-    border: 1px solid var(--verre-bord);
+    border: 1px solid var(--glass-bord);
     border-radius: 20px;
-    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
-    -webkit-backdrop-filter: blur(20px) saturate(1.1);
-    backdrop-filter: blur(20px) saturate(1.1);
+    background: var(--glass-texte);
+    box-shadow: var(--glass-ombre);
     color: #fff;
+    text-shadow: var(--encre-bord);
     font: 400 15px/1.6 var(--texte);
     transform: translateX(-50%);
     scroll-padding-top: 12px;
@@ -399,6 +400,6 @@
   <a class="retour" href="de/index.html">← Zurück zu den Blumensträußen</a>
 </main>
 
-<script src="entete.js?v=6eb5841632" defer></script>
+<script src="entete.js?v=e5d556fc28" defer></script>
 </body>
 </html>

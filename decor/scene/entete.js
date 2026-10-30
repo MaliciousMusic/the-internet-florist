@@ -1,7 +1,7 @@
 // entete.js: the header and the footer shared by the shop's pages (index.html, about.html, desktop.html, legal.html).
 //
-// - The header is a dock of round frosted-glass icons, drawn here in SVG: a vase with flowers (the bouquets of the day), a
-//   bud vase (the soliflores), a screen with a vase (Belai Bureau to download: a glass stack in the middle of the screen with
+// - The header is a dock of round icons (sky blue, no glass), drawn here in SVG: a vase with flowers (the bouquets of the day), a
+//   bud vase (the soliflores), a screen with a vase (Belai Bureau to download: a sky-blue stack in the middle of the screen with
 //   Windows and Mac, owner 2026-10-27; desktop.html only leads to it), then a gift (my gifts), a head (my account), on the shop page a speaker (the sound of nature, son.mjs) and an i
 //   (the About page); the bouquets already sold and our
 //   collection on OpenSea left the dock on 2026-10-27 (owner). On the shop page the bouquets, the soliflores, the gifts
@@ -99,7 +99,7 @@
     dock.append(el);
   };
   for (const [name, label] of SHELVES) shelfButton(name, label);
-  // Belai Bureau, the app that sets the bouquets on a desktop: the glass stack of its downloads (below); on a phone with a
+  // Belai Bureau, the app that sets the bouquets on a desktop: the sky-blue stack of its downloads (below); on a phone with a
   // download icon
   const phone = !matchMedia('(min-width: 900px) and (min-aspect-ratio: 4/3)').matches;
   const desk = document.createElement('button');

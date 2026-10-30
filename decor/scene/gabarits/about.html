@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="entete.css">
 <style>
   /* The About page: the shop's still decor behind (the same files as the shop page, already in the browser's cache), one
-     frosted-glass panel that scrolls between the header and the footer's pill. */
+     opaque sky-blue panel (no glass since 2026-10-29, entete.css) that scrolls between the header and the footer's pill. */
   .apropos {
     position: fixed;
     top: calc(var(--entete-bas) + 12px);
@@ -20,12 +20,12 @@
     overflow-y: auto;
     overscroll-behavior: contain;
     padding: 22px clamp(18px, 5vw, 34px) 26px;
-    border: 1px solid var(--verre-bord);
+    border: 1px solid var(--glass-bord);
     border-radius: 20px;
-    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
-    -webkit-backdrop-filter: blur(20px) saturate(1.1);
-    backdrop-filter: blur(20px) saturate(1.1);
+    background: var(--glass-texte);
+    box-shadow: var(--glass-ombre);
     color: #fff;
+    text-shadow: var(--encre-bord);
     font: 400 15px/1.6 var(--texte);
     transform: translateX(-50%);
   }

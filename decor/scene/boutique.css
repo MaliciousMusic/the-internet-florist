@@ -1,6 +1,6 @@
 /* Shop layer of the scene test bench: the shelf under the header, the gallery of frames on the horizon, the bouquet's
-   pieces on the pillar, the price bubble (bottom), the pillar marker and the measures of ?debug=1 / ?perf=1. Frosted
-   glass: a light veil, a thin clear edge and the sky blurred behind; never a halo or a glow. Only transforms move. */
+   pieces on the pillar, the price bubble (bottom), the pillar marker and the measures of ?debug=1 / ?perf=1. Opaque
+   sky blue (no glass since 2026-10-29, entete.css): a slightly darker edge, a soft shadow; never a halo or a glow. Only transforms move. */
 :root {
   --verre: rgb(255 255 255 / 0.17);
   --verre-bas: rgb(16 48 86 / 0.1);
@@ -38,7 +38,7 @@
   display: none;
 }
 
-/* a shelf with nothing on it yet: one line on glass */
+/* a shelf with nothing on it yet: one line on the blue */
 .rayon {
   display: flex;
   justify-content: center;
@@ -53,10 +53,9 @@
   border: 1px solid var(--glass-bord);
   border-radius: 16px;
   background: var(--glass-texte);
-  -webkit-backdrop-filter: var(--glass-flou);
-  backdrop-filter: var(--glass-flou);
   box-shadow: var(--glass-ombre);
   color: var(--encre);
+  text-shadow: var(--encre-bord);
   font: 500 14px/1.45 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   text-align: center;
 }
@@ -310,8 +309,6 @@
   border: 1px solid var(--glass-bord);
   border-radius: 999px;
   background: var(--glass);
-  -webkit-backdrop-filter: var(--glass-flou);
-  backdrop-filter: var(--glass-flou);
   box-shadow: var(--glass-ombre);
   color: #fff;
   font: 600 12px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -322,11 +319,23 @@
 .achat-demo {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  transition: transform 0.38s cubic-bezier(0.3, 1.6, 0.5, 1), background-color 0.15s ease;
+}
+
+.achat-demo:hover {
+  background: #88d8de;
+}
+
+/* pressed, it gives and springs back, as the dock's icons */
+.achat-demo:active {
+  background: #74cdd4;
+  transform: scale(0.92);
+  transition-duration: 0.08s;
 }
 
 .achat-demo {
   position: relative;
-  text-shadow: 0 1px 2px rgb(8 36 84 / 0.35);
+  text-shadow: var(--encre-bord);
 }
 
 .achat-demo:focus-visible {
@@ -382,8 +391,6 @@
   border: 1px solid var(--glass-bord);
   border-radius: 999px;
   background: var(--glass);
-  -webkit-backdrop-filter: var(--glass-flou);
-  backdrop-filter: var(--glass-flou);
   box-shadow: var(--glass-ombre);
   transform: translateX(-50%);
 }
@@ -410,14 +417,15 @@
   width: 6px;
   height: 6px;
   border-radius: 3px;
-  background: rgb(255 255 255 / 0.55);
+  background: rgb(255 255 255 / 0.6);
+  box-shadow: 0 0 2px rgb(6 52 104 / 0.6);
   transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 .point[aria-current='true']::before {
   width: 14px;
   background: #fff;
-  box-shadow: 0 0 6px rgb(255 255 255 / 0.8);
+  box-shadow: 0 0 2px rgb(6 52 104 / 0.8), 0 1px 3px rgb(6 52 104 / 0.4);
 }
 
 .point:focus-visible {
@@ -990,8 +998,6 @@
 
 .facture-fenetre::backdrop {
   background: rgb(16 40 70 / 0.28);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
 }
 
 .facture-barre {

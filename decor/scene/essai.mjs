@@ -224,9 +224,15 @@ export async function ouvrir(api) {
     return r && r.width ? { x: r.left + r.width / 2, y: r.top + r.height / 2, d } : null;
   };
 
-  // a step: its words, its buttons ([label, fn, primary, href]), what it asks to touch (cible above, or null)
-  function etape(words, buttons = [], target = null) {
+  // a step: its words, its buttons ([label, fn, primary, href]), what it asks to touch (cible above, or null); waiting, three
+  // dots beat under the words (a browser's picker can take a moment to open)
+  function etape(words, buttons = [], target = null, waiting = false) {
     texte.innerHTML = words;
+    const dots = document.createElement('span');
+    dots.className = 'essai-patience';
+    dots.setAttribute('aria-hidden', 'true');
+    dots.innerHTML = '<i></i><i></i><i></i>';
+    actions.classList.remove('essai-occupe');
     actions.replaceChildren(
       ...buttons.map(([label, fn, primary, href]) => {
         const el = document.createElement(href ? 'a' : 'button');
@@ -238,9 +244,22 @@ export async function ouvrir(api) {
         else el.type = 'button';
         el.className = 'essai-bouton' + (primary ? ' essai-bouton-1' : '');
         el.textContent = label;
-        if (fn) el.addEventListener('click', fn);
+        // pressed, it gives and springs back; a button that leads on keeps turning until the next step, the others dimmed
+        // (owner, 2026-10-29: the screen share's picker is not always instant, and a click with no answer looked lost).
+        // fn runs at once, inside the click, for what needs it (the picker, full screen, the file input)
+        el.addEventListener('click', (e) => {
+          if (actions.classList.contains('essai-occupe')) return e.preventDefault();
+          el.classList.remove('essai-presse');
+          void el.offsetWidth;
+          el.classList.add('essai-presse');
+          if (!fn) return;
+          actions.classList.add('essai-occupe');
+          el.classList.add('essai-encours');
+          fn(e);
+        });
         return el;
       }),
+      ...(waiting ? [dots] : []),
     );
     bulle.classList.remove('essai-bulle-neuve');
     void bulle.offsetWidth;
@@ -353,9 +372,10 @@ export async function ouvrir(api) {
     for (;;) {
       const go = await new Promise((r) => etape(T.partagerEncore, [[T.partagerBouton, () => r(true), true], [T.annuler, () => r(false)]]));
       if (!go || closed) return fermer(), null;
-      // the picker open: the bee says what to choose in it
+      // the picker opening: the button turns a moment, then the bee says what to choose in it, dots beating till it answers
       const ask = askScreen();
-      etape(T.partager);
+      const answered = ask.then(() => true, () => true);
+      if (!(await Promise.race([answered, sleep(650)])) && !closed) etape(T.partager, [], null, true);
       stream = await ask.catch(() => null);
       // (closed while the picker was open: a screen shared since is let go at once)
       if (closed) return stopStream(), null;
