@@ -97,12 +97,12 @@ function bfSpots(svg,c,box){try{const M=svg.getScreenCTM(),br=box.getBoundingCli
 const bfKind=k=>k==='quelques'||k==='nuee'?'trois':k||'aucun';
 /* ---------- reveal overlay ---------- */
 const today=()=>new Date().toLocaleDateString('fr-FR',{day:'numeric',month:'short'});
-function curGift(){return{to:S.to||'Belai',from:S.from||'Moi',msg:S.msg.trim()||'Pour toi, avec tout mon amour.',route:S.route,ids:expand(),model:S.route==='model'?S.model:null,seed:SEED,vase:S.vase,bg:S.bg,occ:S.occ,conf:S.conf,bf:S.bf,music:S.music}}
+function curGift(){return{to:S.to||'Belai',from:S.from||'Moi',msg:S.msg.trim()||'Pour toi, avec tout mon amour.',route:S.route,ids:expand(),model:S.route==='model'?S.model:null,seed:SEED,vase:FIT.vid||S.vase,bg:S.bg,occ:S.occ,conf:S.conf,bf:S.bf,music:S.music}}
 function openOv(mode,d){d=d||curGift();OV={mode,d};stopIdle();stopMusic();const o=$('ov');o.classList.add('on');o.classList.remove('rec');o.setAttribute('aria-hidden','false');
   {const c=bgCol(d.bg),o2=$('ov');o2.style.background=bgCss(c);o2.classList.toggle('dark',isDark(c))}
   $('ovTitle').textContent=mode==='preview'?`Voici ce que verra ${d.to}`:`Un bouquet de ${d.from}`;$('ovBq').innerHTML='';$('ovHearts').innerHTML='';$('ovCard').classList.remove('show');$('ovAct').innerHTML='';$('ovWid').hidden=true;$('env').hidden=false;$('envTo').textContent='pour '+d.to;
   $('cTo').textContent=d.to+',';$('cMsg').textContent=d.msg;$('cFrom').textContent=d.from}
-$('env').onclick=()=>{if(!OV)return;const d=OV.d;$('env').hidden=true;tw.length=0;idle.length=0;DEPTH_BG=bgCol(d.bg);const c=buildBq($('ovBq'),d.ids||[],d.seed||7,d.vase,100,d.occ,d.model||null);DEPTH_BG='#efe8de';lastOvC=c;growBq($('ovBq'),c);playMusic(d.music);
+$('env').onclick=()=>{if(!OV)return;const d=OV.d;$('env').hidden=true;tw.length=0;idle.length=0;DEPTH_BG=bgCol(d.bg);const c=buildBq($('ovBq'),d.ids||[],d.seed||7,(typeof vpVid==='function'?vpVid(d.vase):d.vase),100,d.occ,d.model||null);DEPTH_BG='#efe8de';lastOvC=c;growBq($('ovBq'),c);playMusic(d.music);
   setTimeout(()=>OV&&confetti($('ovHearts'),d.conf||'coeurs',RM?12:40),900);setTimeout(()=>{if(!OV)return;const[sp,px]=bfSpots($('ovBq'),c,$('ovHearts'));butterflies($('ovHearts'),bfKind(d.bf),0,0,sp,px)},1400);setTimeout(()=>OV&&$('ovCard').classList.add('show'),2300);setTimeout(actions,2700)};
 function actions(){if(!OV)return;const a=$('ovAct'),fr=OV.d.from;
   if(OV.mode==='preview'){a.innerHTML=`<button class="btn2" type="button" id="aEdit">Modifier</button><button class="cta" type="button" id="aPay"><span>Payer</span><b>${eur(total())}</b></button>`;$('aEdit').onclick=closeOv;$('aPay').onclick=pay}
@@ -130,7 +130,7 @@ if(!GARDEN){const m0=MODELS[0],m1=MODELS[Math.min(5,MODELS.length-1)];GARDEN=[];
   if(m1)GARDEN.push({kind:'envoye',to:'Maman',from:'Moi',msg:'Bonne fête maman, je t’aime fort !',route:'model',model:m1,seed:77,vase:m1.vase,occ:'merci',conf:'petales',bf:'aucun',music:'none',date:'26 mai'})}
 function enterGarden(){const L=GARDEN.filter(b=>b.kind===GT),g=$('bGrid');$('gTabs').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x.dataset.g===GT));
   g.innerHTML=L.length?L.map(b=>`<button class="bcard" type="button" data-i="${GARDEN.indexOf(b)}"><div class="art" style="background:${bgCss(bgCol(b.bg))}"><svg viewBox="0 0 10 10" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg></div><b>${b.kind==='recu'?'De '+esc(b.from):'Pour '+esc(b.to)}</b><small>${b.model?esc(b.model.nom):(b.ids||[]).length+' fleurs'} · ${esc(b.date||'')}</small></button>`).join(''):`<p class="emptyg" style="grid-column:1/-1">${GT==='recu'?'Les bouquets qu’on t’offre arriveront ici.':'Les bouquets que tu envoies seront gardés ici.'}</p>`;
-  g.querySelectorAll('.bcard').forEach(c=>{const b=GARDEN[+c.dataset.i];LOD=1;try{renderStatic(()=>buildBq(c.querySelector('svg'),b.ids||[],b.seed||7,b.vase,0,b.occ,b.model||null))}catch(_){}LOD=0})}
+  g.querySelectorAll('.bcard').forEach(c=>{const b=GARDEN[+c.dataset.i];LOD=1;try{renderStatic(()=>buildBq(c.querySelector('svg'),b.ids||[],b.seed||7,(typeof vpVid==='function'?vpVid(b.vase):b.vase),0,b.occ,b.model||null))}catch(_){}LOD=0})}
 $('gTabs').onclick=e=>{const b=e.target.closest('button');if(!b)return;GT=b.dataset.g;enterGarden()};
 $('bGrid').onclick=e=>{const c=e.target.closest('.bcard');if(c)openOv('recipient',GARDEN[+c.dataset.i])};
 /* ---------- start ---------- */

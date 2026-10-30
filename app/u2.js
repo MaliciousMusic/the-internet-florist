@@ -14,7 +14,7 @@ const stemCount=c=>c.out.filter(o=>o.kind==='head'||o.kind==='self'||o.kind==='d
 function thumb(svg,p){LOD=1;try{renderStatic(()=>{const g=G(svg);if(p.info.k==='head')drawRec(g,0,p.rec,{col:p.col,ax:[.2,.3,.95],roll:0});else if(p.info.an)drawRec(G(g,{transform:`translate(0,${f(-p.info.an[1])})`}),0,p.rec,{col:p.col});else drawRec(g,0,p.rec,{col:p.col})})}catch(_){}LOD=0;fitBox(svg,.06)}
 /* ---------- model detail ---------- */
 function openModel(m){S.route='model';S.model=JSON.parse(JSON.stringify(m));S.vase=m.vase||'coupe-blanche';SEED=1+Math.floor(Math.random()*1e5);MD=1;$('md').classList.add('on');$('mdT').textContent=m.nom;renderModel()}
-function renderModel(now){const m=S.model;stopIdle();tw.length=0;idle.length=0;const c=buildBq($('mdBq'),[],SEED,S.vase,now?0:100,null,m);lastMdC=c;if(now){for(const w of tw)w.fn(1,1);tw.length=0;aliveBq($('mdBq'),c)}else growBq($('mdBq'),c);
+function renderModel(now){const m=S.model;FIT=flowFit();stopIdle();tw.length=0;idle.length=0;const c=buildBq($('mdBq'),[],SEED,FIT.vid,now?0:100,null,m);lastMdC=c;if(now){for(const w of tw)w.fn(1,1);tw.length=0;aliveBq($('mdBq'),c)}else growBq($('mdBq'),c);
   $('mdS').textContent=`${stemsOf(m)} tiges · ${m.notes||''}`;$('mdP').textContent=eur(total());
   /* every element of the model under the player's hand: stems (− n +), place from 1 (back) to 10 (front), Échanger, Retirer */
   const box=$('mdEls'),sc=[1,2,3,4,5,6,7,8,9,10];box.innerHTML=m.els.map((e,i)=>{const p=prodFor(e.id,e.col);if(!p)return'';const n=Math.max(1,Math.round(e.n)),s=e.place||5;
@@ -38,7 +38,7 @@ const STEPS={composition:'La composition',contenant:'Le contenant',message:'Ton 
 let FS=[],FI=0;
 function openFlow(){FS=(S.route==='model'?[]:['composition']).concat(['contenant','message','confettis','papillons','musique','apercu']);FI=0;FLOW=1;$('fl').classList.add('on');if(S.route==='compose')SEED=SEED||7;drawFlowBq();showStep()}
 /* now: redrawn at once in its final state (a change of the player's hand), else it grows */
-function drawFlowBq(now){stopIdle();tw.length=0;idle.length=0;$('flBq').style.background=bgCss(bgCol(S.bg));DEPTH_BG=bgCol(S.bg);const t0=now?0:100,c=S.route==='model'?buildBq($('flBq'),[],SEED,S.vase,t0,null,S.model):withOpt(()=>buildBq($('flBq'),expand(),SEED,S.vase,t0,S.occ,null));
+function drawFlowBq(now){FIT=flowFit();stopIdle();tw.length=0;idle.length=0;$('flBq').style.background=bgCss(bgCol(S.bg));DEPTH_BG=bgCol(S.bg);const t0=now?0:100,c=S.route==='model'?buildBq($('flBq'),[],SEED,FIT.vid,t0,null,S.model):withOpt(()=>buildBq($('flBq'),expand(),SEED,FIT.vid,t0,S.occ,null));
   DEPTH_BG='#efe8de';if(now){for(const w of tw)w.fn(1,1);tw.length=0;aliveBq($('flBq'),c)}else growBq($('flBq'),c);return c}
 function miniVessel(svg,id){const D0=GDEF;GDEF=E('defs',{},svg);try{miniV(svg,id)}finally{GDEF=D0}}
 function miniV(svg,id){const v=VZ[id]||{};
@@ -61,8 +61,8 @@ function showStep(){const k=FS[FI],b=$('flBody');$('flT').textContent=STEPS[k];$
   else if(k==='contenant'){const fam0=(VZ[S.vase]||{}).fam||'cylindre';
     b.innerHTML=`<div class="vfams" id="fVF" role="tablist">${VFAMS.map(([id,n])=>`<button class="oc${fam0===id?' on':''}" data-f="${id}" type="button" role="tab">${n}</button>`).join('')}</div><div class="vases" id="fV"></div><p class="vwhy" id="fVW"></p>`+
       `<p class="papl">Couleur du fond</p><div class="papers" id="fBg">${BGS.map(b=>`<button class="pap${S.bg===b.id?' on':''}" data-b="${b.id}" style="--pc:${b.c}" type="button" aria-label="Fond ${b.n}" title="${b.n}"></button>`).join('')}</div>`;
-    const why=()=>{const v=VZ[S.vase]||{};$('fVW').textContent=v.why?`${v.n}, ${v.m}. ${v.why}`:''},
-      fill=fam=>{$('fV').innerHTML=VASES.filter(v=>v.fam===fam).map(v=>`<button class="vase${S.vase===v.id?' on':''}" data-v="${v.id}" type="button"><svg viewBox="0 0 10 10" aria-hidden="true"></svg><b>${esc(v.n)}</b><small>${v.p?'+'+eur(v.p):'Inclus'}</small></button>`).join('');
+    const why=()=>{const v=VZ[S.vase]||{};$('fVW').innerHTML=(v.why?esc(`${v.n}, ${v.m}. ${v.why}`)+'<br>':'')+gaugeHtml(FIT)+propHtml()},
+      fill=fam=>{$('fV').innerHTML=VASES.filter(v=>v.fam===fam).map(v=>`<button class="vase${S.vase===v.id?' on':''}" data-v="${v.id}" type="button"><svg viewBox="0 0 10 10" aria-hidden="true"></svg><b>${esc(v.n)}</b><small>${v.p?'+'+eur(v.p):'Inclus'}</small><small class="vg" style="display:block;margin-top:3px;white-space:nowrap">${gaugeHtml(flowFit(v.id),1)}</small></button>`).join('');
         const L0=LOD;LOD=1;try{$('fV').querySelectorAll('.vase').forEach(x=>renderStatic(()=>miniVessel(x.querySelector('svg'),x.dataset.v)))}finally{LOD=L0}
         $('fVF').querySelectorAll('.oc').forEach(x=>x.classList.toggle('on',x.dataset.f===fam));$('fV').scrollLeft=0};
     fill(fam0);why();$('fVF').onclick=e=>{const x=e.target.closest('.oc');if(x)fill(x.dataset.f)};
@@ -79,7 +79,21 @@ function showStep(){const k=FS[FI],b=$('flBody');$('flT').textContent=STEPS[k];$
   else if(k==='musique'){b.innerHTML=`<div class="music" id="fM">${MUS.map(m=>`<button class="mu${S.music===m.id?' on':''}" data-m="${m.id}" type="button"><b>${m.n}</b><small>${m.p?'+'+eur(m.p):'Offert'}</small>${m.id!=='none'?`<span class="play" data-play="${m.id}" title="Écouter">▶</span>`:''}</button>`).join('')}</div>`;
     $('fM').onclick=e=>{const pl=e.target.closest('[data-play]');if(pl){preview(pl.dataset.play);return}const x=e.target.closest('.mu');if(!x)return;S.music=x.dataset.m;$('fM').querySelectorAll('.mu').forEach(y=>y.classList.toggle('on',y===x));$('flP').textContent=eur(total())}}
   else{b.innerHTML=`<div class="sum">${sums()}</div><p class="bqstat">Le lien s’ouvre sur une enveloppe : le bouquet éclot, ${S.conf!=='aucun'?'les confettis tombent, ':''}${S.bf!=='aucun'?'les papillons s’envolent, ':''}puis ton mot apparaît.</p>`}}
-function statLine(){const c=lastFlowC,el=$('fcS'),w=$('fWhy');if(el&&c)el.textContent=`${c.P.tot} tiges composées pour « ${OCCS[S.occ].n} »`;if(w&&c&&c.P.notes)w.innerHTML=c.P.notes.map(n=>`<li>${esc(n)}</li>`).join('')}
+function statLine(){const c=lastFlowC,el=$('fcS'),w=$('fWhy');if(el&&c)el.innerHTML=`${c.P.tot} tiges composées pour « ${esc(OCCS[S.occ].n)} »<br>${gaugeHtml(FIT)}${propHtml()}`;if(w&&c&&c.P.notes)w.innerHTML=c.P.notes.map(n=>`<li>${esc(n)}</li>`).join('')}
+/* the vessel's neck (z7-plan vpFit, owner 2026-10-23): the Composer draws the vessel scaled up when the bouquet needs it (FIT.vid), and its
+   gauge says how full the neck is, how much the vessel was enlarged, or how many stems it takes at most */
+let FIT={vid:'',k:1,ok:true,L:null};
+function flowFit(vid=S.vase){if(typeof vpFit!=='function')return{vid,k:1,ok:true,L:null};
+  try{const P=S.route==='model'?planModel(S.model):withOpt(()=>plan(expand(),S.occ,vid));return vpFit(P,vid)}catch(_){return{vid,k:1,ok:true,L:null}}}
+function gaugeHtml(F,short){const L=F&&F.L;if(!L)return'';const pc=Math.round(Math.min(1,L.fill)*100),col=!F.ok?'#b5462f':F.k>1?'#c98a1c':L.fill>.8?'#c98a1c':'#5d8a3e',
+    bar=`<span style="display:inline-block;width:${short?24:64}px;height:6px;border-radius:3px;background:rgba(0,0,0,.12);vertical-align:middle;margin-right:${short?4:6}px"><i style="display:block;height:100%;width:${F.ok&&F.k===1?pc:100}%;border-radius:3px;background:${col}"></i></span>`,
+    k=String(F.k).replace('.',',');
+  if(short)return bar+(!F.ok?'trop étroit':F.k>1?`agrandi ×${k}`:`col ${pc} %`);
+  return bar+(!F.ok?`Trop de tiges pour ce col : ${L.maxGrow} au plus, même agrandi ×${String(VP_GROW).replace('.',',')}. Choisis un vase plus large.`:
+    F.k>1?`Vase agrandi ×${k} pour tenir ses ${L.n} tiges (${L.max} au plus à sa taille).`:`Col du vase rempli à ${pc} % (${L.n} tiges, ${L.max} au plus).`)}
+/* how tall the bouquet stands over its vessel (z7-plan vpProp: 1 to 2 times the vessel's larger size) */
+function propHtml(){const c=lastFlowC,p=c&&typeof vpProp==='function'?vpProp(c,FIT.vid||S.vase):null;if(!p)return'';const x=p.r.toFixed(1).replace('.',',');
+  return'<br>'+(p.cls==='petit'?`Bouquet bas pour ce vase (${x} fois sa taille) : un vase plus petit l'élancerait.`:p.cls==='grand'?`Bouquet haut pour ce vase (${x} fois sa taille) : un vase plus grand le porterait mieux.`:`Bouquet à ${x} fois la taille du vase.`)}
 let lastFlowC=null;const _dfb=drawFlowBq;drawFlowBq=function(now){lastFlowC=_dfb(now);return lastFlowC};
 /* the composition's elements: every variety, chosen or proposed, with its stems (− n +), its place from 1 (back) to 10 (front), and Retirer */
 function elRows(){const P=lastFlowC&&lastFlowC.P;if(!P)return[];const L=expand().map(id=>({p:PBY[id],prop:S.prop.has(id)}));if(!S.adopt)for(const it of P.adds)L.push({p:it.p,prop:1,why:it.why});return L.filter(x=>x.p)}
