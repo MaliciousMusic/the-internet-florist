@@ -177,6 +177,22 @@ Mise en œuvre retenue :
     l'autre). Laissé de côté après deux essais ; à reprendre si le porteur le voit.
   - **Outils** : `cycle_cuisson.mjs --svg` écrit aussi le SVG de chaque image, pour comparer deux images.
 
+- 30 octobre 2026, **C3 : le cycle dans l'essai** (`decor/scene/essai.mjs`) :
+  - **À la fin de l'essai**, l'abeille propose « Voir ses 30 jours en 30 secondes » à côté de « Obtenir Belai Bureau » et
+    « Retour aux bouquets », pour les bouquets qui ont un cycle cuit (les 4 prêts). Pour les autres, le bouton n'apparaît pas.
+  - **La lecture** : la vidéo (`decor/out/cycle/<id>.mp4`) est recomposée en WebGL sur le bureau du visiteur, à la place du
+    bouquet vivant, caché pendant ce temps. Sa fiche (`<id>.json`, écrite par la cuisson : la boîte du dessin, le zoom, les
+    temps) la pose exactement où se tient le bouquet, par le monde des sprites (`vb` → `boite` de `sprites.json`).
+  - **Le gros plan** : la rosée remplit d'abord tout l'écran, puis la vue rétrécit et se pose sur le bouquet à sa place, au
+    rythme du recul de la vidéo (0 à 4,5 s). *Décision prise sans le porteur* (question restée sans réponse) : les autres voies
+    étaient le gros plan dans le seul cadre du bouquet, ou un cycle sans gros plan sur le bureau (recuisson).
+  - **L'abeille nomme les moments**, d'après les temps de la fiche : le premier matin et la rosée, la pleine floraison, le
+    début de la fanaison, le fané. La vidéo finie, le bouquet vivant revient (« Et le revoici, comme au premier jour »), puis
+    les boutons de fin, d'où l'on peut revoir le cycle. Textes dans les cinq langues (`langues/*.mjs`).
+  - **Vérifié** sur un ordinateur, dans le navigateur de l'application, avec un partage d'écran simulé (un canevas à la place
+    de l'écran, la réduction de la fenêtre simulée). Le bouquet de la vidéo tombe à la place du bouquet vivant. **Pas vérifié** :
+    le vrai partage d'écran, le téléphone.
+
 ### Questions au porteur (C1)
 
 1. **L'aspect d'une goutte (validé le 29 octobre)**.

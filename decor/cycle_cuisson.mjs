@@ -7,7 +7,8 @@
 //       [--images-seules] [--svg] [--crf 30]
 //
 // Frames are PNG (transparent) in <sortie>/<id>/f0000.png...; a frame that draws the same as the one before
-// is copied, not drawn (the faded hold). Then <sortie>/<id>/cycle.mp4 and cycle.json (the time map, the box, the sizes). One Chrome, its own profile and port,
+// is copied, not drawn (the faded hold). Then <sortie>/<id>/cycle.mp4, cycle.json (the time map, the box, the sizes) and fiche.json
+// (what the try reads: copied as decor/out/cycle/<id>.json beside <id>.mp4). One Chrome, its own profile and port,
 // closed whatever happens; refuses to start under 3.5 GB of free memory. Its own static server serves decor/scene (port CC_PORT, 8875).
 import { spawn, spawnSync } from 'node:child_process';
 import { freemem } from 'node:os';
@@ -218,6 +219,8 @@ try {
   await closeChrome();
   server.close();
   writeFileSync(join(OUT, 'cycle.json'), JSON.stringify({ id: ID, fps: FPS, duree: DUR, cles: KEYS, zoom: ZOOM, ...(meta || {}), images: log }, null, 1));
+  // what the try reads beside <id>.mp4 (decor/out/cycle/<id>.json, essai.mjs): the drawing's box the video shows whole, the zoom and the time map
+  if (meta) writeFileSync(join(OUT, 'fiche.json'), JSON.stringify({ id: ID, vb: meta.VB.map((x) => +x.toFixed(2)), w: meta.W, h: meta.H, fps: FPS, duree: DUR, cles: KEYS, zoom: ZOOM }));
 }
 
 // ---------- the stacked-alpha MP4: colour premultiplied (no dark fringe where the alpha falls), alpha as grey under it
